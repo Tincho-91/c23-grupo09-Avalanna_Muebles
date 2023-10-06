@@ -13,3 +13,11 @@
 
 ## Formato del registro: [https://www.rodak.com.ar/account/register/]
 
+## Lista de paginas que utilizamos como referencia o nos atrajó su diseño:
+## [https://www.landmark.com.ar/] formato de registro.
+## [https://www.xlshop.com.ar/] formato version movil.
+## [https://shop.blvdfurniture.com.ar/?gclid=CjwKCAjw9-6oBhBaEiwAHv1QvHOvlMzyrf2-RJ9u4bu3vCcRSqdJvz2s3na0ZExcuGARRZCYWVSHiBoCpFIQAvD_BwE] diseño de las letras sobre las imagenes.
+## []
+## [https://woodmarket.com.ar/] carrito que utiliza de fondo.
+## [https://www.cuestablanca.com/?uam=true&mobile=4] footer.
+
