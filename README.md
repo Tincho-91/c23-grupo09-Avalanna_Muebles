@@ -4,7 +4,7 @@
 
 ## Nuestro equipo está formado por 4 integrantes: 
 ### Luana Ampuero
-### Flavia Fernández
+### Flavia Fernández-34 años - San Miguel
 ### Martín Baryuk - 31 años - Lanús
 ### Melany Strack - 21 años - Lanús
 ## Estas son las tipografías: principales[https://fonts.google.com/share?selection.family=Raleway:wght@100;600], secundarias[https://fonts.google.com/specimen/Oxygen?selection.family=Raleway:wght@100;600&sort=popularity]
