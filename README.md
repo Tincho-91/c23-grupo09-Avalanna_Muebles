@@ -4,20 +4,24 @@
 
 ## Nuestro equipo está formado por 4 integrantes: 
 ### Luana Ampuero
-### Flavia Fernández-34 años - San Miguel
+### Flavia Fernández- 34 años - San Miguel
 ### Martín Baryuk - 31 años - Lanús
 ### Melany Strack - 21 años - Lanús
-## Estas son las tipografías: principales[https://fonts.google.com/share?selection.family=Raleway:wght@100;600], secundarias[https://fonts.google.com/specimen/Oxygen?selection.family=Raleway:wght@100;600&sort=popularity]
 
-## Gama de colores elegidos para la página [https://color.adobe.com/My-Color-Theme-color-theme-ded75dfb-29de-495e-9c1b-febc431e2c15/]
 
-## Formato del registro: [https://www.rodak.com.ar/account/register/]
+## Lista de páginas que utilizamos como referencia o nos atrajo su diseño:
 
-## Lista de paginas que utilizamos como referencia o nos atrajó su diseño:
-## [https://www.landmark.com.ar/] formato de registro.
-## [https://www.xlshop.com.ar/] formato version movil.
-## [https://shop.blvdfurniture.com.ar/?gclid=CjwKCAjw9-6oBhBaEiwAHv1QvHOvlMzyrf2-RJ9u4bu3vCcRSqdJvz2s3na0ZExcuGARRZCYWVSHiBoCpFIQAvD_BwE] diseño de las letras sobre las imagenes.
-## []
-## [https://woodmarket.com.ar/] carrito que utiliza de fondo.
-## [https://www.cuestablanca.com/?uam=true&mobile=4] footer.
+## [https://www.landmark.com.ar/] Diseño de body y estetica general.
+
+## [https://www.xlshop.com.ar/] Formato version movil.
+
+## [https://shop.blvdfurniture.com.ar/?gclid=CjwKCAjw9-6oBhBaEiwAHv1QvHOvlMzyrf2-RJ9u4bu3vCcRSqdJvz2s3na0ZExcuGARRZCYWVSHiBoCpFIQAvD_BwE] Diseño de las letras sobre las imagenes.
+
+## [https://www.rodak.com.ar/account/register/] Diseño.
+
+## [https://altorancho.com/] Formulario de registro minimalista.
+
+## [https://woodmarket.com.ar/] Formato de carrousel y diseño.
+
+## [https://www.cuestablanca.com/?uam=true&mobile=4] Diseño minimalista.
 
