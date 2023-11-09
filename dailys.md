@@ -9,3 +9,7 @@ Melany: Continua trabajando en html.
 Flavia: Continua trabajando en css.
 Martin: Poniendose al día con el material.
 Luana: Subió archivo dailys al repositorio.
+9/11/23: Vimos lo que tenemos hasta el momento y como vamos a ir avanzando.
+Flavia: Continua con css.
+Martin: Iniciando login.
+Melany: tuvo que ausentarse.
