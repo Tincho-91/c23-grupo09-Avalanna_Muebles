@@ -13,3 +13,8 @@ Luana: Subió archivo dailys al repositorio.
 Flavia: Continua con css.
 Martin: Iniciando login.
 Melany: tuvo que ausentarse.
+10/11/23 
+flavia:continua trabajando el css .va comenzar a aplicar flex box.
+melany:finalizo con html y comenzara con css del home.
+luana :estuvo ausente en la reunion.
+martin:tambien se ausento .

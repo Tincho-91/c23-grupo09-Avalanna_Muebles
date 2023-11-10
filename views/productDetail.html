@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>avallana</title>
     <link rel="stylesheet" href="/css/productDetail.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/b2415c23bd.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
@@ -26,7 +26,7 @@
         </div> 
 </header>
 
- <main class="home_productos">
+ <main class="home_productos_img">
         <img class="detalle" src="img/sillon 3 cuerpos.jpg" alt="">      
         <section class="seccion__productos">
             <h1 class="seccion__productos--titulo">Sillon de 3 cuerpos</h1>
@@ -37,8 +37,10 @@
             <div>
                <p>Comprar ahora</p>
                <p>Agregar al carrito</p>
-               <h4>Envios a domicilio</h4><img src="img/truck.jpg" alt="truck">
-               <p><b>Ver Más</b></p>
+               <h4>Envios a domicilio</h4>
+
+                <button type="submit" class="button"><a href="http://localhost:3000/">Enviar </a></button>
+            
             </div>
             <article>
                 <h4><b>Descripción</b></h4>
@@ -54,19 +56,21 @@
                  <li><a href="">Ancho 220cm</a></li> 
                 <li><a href="">Profundidad 170cm</a></li>  
         </ul>
-<article>
-    <h2>Productos relacionados</h2>
-    <img src="img/sillon1.jpg" alt="">
-    <img src="img/sillon living.jpg" alt="">
+        <h2>Productos relacionados</h2>
+<article class="imagenes_relacionadas">
+  <div class="conetenedor1">
+    <img class="img1" src="img/sillon1.jpg" alt="">
+    <img class="img2" src="img/sillon living.jpeg" alt="">
     <img src="img/sillon.jpg" alt="">
-    <img src="img/juego sillon.jpg" alt="">
-    <img src="img/images.jpeg" alt="">
+</div>
+<div  class="contenedor2">
+    <img class="img4" src="img/juego sillon.jpg" alt="">
+    <img class="img5" src="img/images.jpeg" alt="">
     <img src="img/divan.jpeg" alt="">
-</article>
-    
-    </article>
+</article>   
+</div>
     </main>
-    <footer>
+    <footer class="footer">
         <h3><b>Contacto</b></h3>
         <i class="fa-regular fa-map-location-dot" style="color: #0f151e;"><h5>Dr Ignacio Pirivano 1864,B1665 José C. Paz, Provincia de Buenos
             Aires</h5></i><br>
