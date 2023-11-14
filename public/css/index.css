@@ -16,6 +16,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    padding:3% 0% 5% 0%;
 }
 .index__main__section__categorias a{
     width: 40%;
@@ -27,15 +28,48 @@
 }
 .index__main__section__categorias a article{
     position: relative;
+    display: flex;
+    justify-content: center;
 }
 .index__main__section__categorias a article h2{
     position:absolute;
-    right: 25%;
-    top: 40%;
-    font-size: 19px;
+    font-size: 18px;
     color: var(--color-blanco);
+    top: 45%;
 }
 
-.index__main__div__frase {
+.index__main__div__frase{
+    background-color: var(--color-blanco);
+    border: 1px solid violet;
+    padding: 3%;
+}
 
+.index__main__div__frase h4{
+    text-shadow: 1px 1px 10px black;
+    font-size: 8px;
+    text-align: center;
+}
+
+.carousel-caption {
+    left: 5%;
+    right: 50%;
+}
+.carousel-item {
+    position: relative;
+}
+.carousel-item h2{
+    position: absolute;
+    top: 45%;
+    left: 12%;
+    font-size: 14px;
+    font-weight: 500;
+    color: white;
+}
+.carousel-item p {
+    position: absolute;
+    top: 55%;
+    left: 12%;
+    font-size: 10px;
+    font-weight: 100;
+    color: white;
 }
