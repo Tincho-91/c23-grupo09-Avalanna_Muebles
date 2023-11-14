@@ -9,6 +9,10 @@ app.get("/", (req, res) => {
    return res.sendFile(path.join(__dirname, "/views/productDetail.html"));
 })
 
+app.get("/login", (req, res) => {
+   return res.sendFile(path.join(__dirname, "/views/login.html"));
+})
+
 app.listen(3000, () => console.log("corriendo en el puerto 3000"));
 
 app.use(express.static("public"));

@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/Tincho-91/c23-grupo09-Avalanna_Muebles#readme",
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "nodemon": "^3.0.1"
   }
 }
