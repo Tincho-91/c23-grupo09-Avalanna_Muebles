@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>registrarme</title>
+</head>
+<body>
+
+    <nav>
+        <ul type="none">
+            <li class="enlinea"><a href="/index">HOME |</a></li>
+            <li class="enlinea"><a href="/login">MI CUENTA |</a></li>
+            <li class="enlinea"><a href="/register">CREAR CUENTA |</a></li>
+        </ul>
+    </nav>
+    <h3>Crear Cuenta</h3>
+    <form action="register" method="post">
+        <p>
+            <label for="name">Nombre y Apellido*</label><br>
+            <input type="text" name="nombre" id="nombre" required>
+          </p>
+    
+          <p>
+            <label for="email">Email*</label><br>
+            <input type="email" name="email" id="email" required>
+          </p>
+          
+          <p>
+            <label for="tel">Telefono (opcional)</label><br>
+            <input type="tel" name="tel" id="tel">
+          </p>
+
+          <p>
+            <label for="contraseña">Contraseña*</label><br>
+            <input type="password" name="password" id="contraseña" required>
+          </p>
+
+          <p>
+            <label for="contraseña">Confirmar Contraseña*</label><br>
+            <input type="password" name="password" id="contraseña" required>
+          </p>
+
+          <p>
+            <input type="submit" value="Crear Cuenta">
+          </p>
+          <span><h4>¿ya tenes una cuenta?<p><a href="/login">Inicia Seción |</a></p></span></h4>
+    </form>
+
+</body>
+</html>
