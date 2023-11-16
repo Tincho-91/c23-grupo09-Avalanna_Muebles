@@ -1,0 +1,8 @@
+.header__section__article-busqueda{
+    position: absolute;
+}
+
+.header__section__article-busqueda i{
+    position: relative;
+    right: 2%;
+}
