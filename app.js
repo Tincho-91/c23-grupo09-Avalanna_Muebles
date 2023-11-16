@@ -6,7 +6,7 @@ const PORT = 3000;
 
 
 app.get("/", (req, res) => {
-   return res.sendFile(path.join(__dirname, "/views/productDetail.html"));
+   return res.sendFile(path.join(__dirname, "/views/productCart.html"));
 })
 
 app.listen(3000, () => console.log("corriendo en el puerto 3000"));
