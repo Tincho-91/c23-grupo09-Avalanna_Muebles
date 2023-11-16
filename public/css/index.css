@@ -24,6 +24,7 @@
     position: relative;
     display: flex;
     justify-content: center;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 60%);
 }
 .index__main__section__categorias a article h2{
     position:absolute;
@@ -136,6 +137,6 @@
         transition: all 1s;
     }
     .index__main__section__categorias a article:hover{
-        box-shadow: 3px 3px 10px black;
+        box-shadow: 4px 4px 5px 5px rgba(0, 0, 0, 100%);
     }
 }
