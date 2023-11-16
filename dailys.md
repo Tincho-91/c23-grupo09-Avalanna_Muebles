@@ -28,3 +28,16 @@ Flavia: Tuvo que ausentarse.
 Luana: Realizó html del header y el carrito de compras.
 Melany: Finalizó html y comenzó con css.
 Martin: Sigue con el html del login y del footer.
+
+14/11/23
+Hablamos de las dificultades que tuvo cada uno.
+Flavia: Tuvo bloqueos con flex.
+Martin: Esta poniendose al día con el material y avanza con el html.
+Melany: Finaliza detalles de css de la página index.
+
+15/11/23
+Organizamos las tareas para los últimos días del sprint.
+Flavia: Resolvió bloqueos y avanzó con el css del product detail.
+Martin: Finalizó el html de login, register y el footer.
+Luana: Comenzó a agregar estilos al header.
+Melany: Finalizó los estilos del home y comenzará a agregar estilos a las páginas login y register.
