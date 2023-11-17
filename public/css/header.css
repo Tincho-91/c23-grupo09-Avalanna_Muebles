@@ -1,0 +1,19 @@
+.header{
+    display: flex;
+    justify-content: 60%;
+    
+}
+
+.button{
+    border-radius: 5px;
+    text-align: center;
+    font-size: 20px;
+    margin: auto;
+    display: block;
+    max-width: 40px;
+    padding: 8px 9px;
+    position:absolute;
+    right: 45%;
+    top:250px;
+}
+
