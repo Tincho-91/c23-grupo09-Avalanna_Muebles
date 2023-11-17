@@ -41,3 +41,14 @@ Flavia: Resolvió bloqueos y avanzó con el css del product detail.
 Martin: Finalizó el html de login, register y el footer.
 Luana: Comenzó a agregar estilos al header.
 Melany: Finalizó los estilos del home y comenzará a agregar estilos a las páginas login y register.
+
+16/11/23
+Flavia y Melany: Resolvieron bloqueos del estilo de productDetail.
+Martin: Comenzó a agregar estilos al footer.
+Luana: Comenzó a agregar estilos al header.
+
+17/11/23
+Flavia: Comenzó a realizar los medias queries de productDetail.
+Melany: Agregó estilos a register.
+Luana: Aplicó flexbox al header.
+Martin: Continua agregando estilos al footer.
