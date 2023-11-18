@@ -88,6 +88,9 @@
 }
 
 @media (min-width:768px) {
+    .register__main {
+        padding-bottom: 10%;
+    }
     .register__main__nav__ul li {
         
         padding-right: 1.5%;
@@ -102,7 +105,7 @@
     }
     .register__main__section__form {
         margin-top: 5%;
-        padding-bottom: 10%;
+        padding-bottom: 1%;
     }
 
     .register__main__section__form div input {
