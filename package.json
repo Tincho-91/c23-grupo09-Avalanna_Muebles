@@ -1,22 +1,14 @@
 {
-  "name": "c23-grupo09-Avalanna_Muebles",
+  "name": "c23-grupo09-avalanna_muebles",
   "version": "1.0.0",
-  "description": "## Descripción del trabajo: este proyecto es la página market de una mueblería, la cual estamos realizando como equipo para el trabajo práctico grupal del curso de programación de DigitalHouse, sin embargo, tambien tiene la finalidad de funcionar como página de ventas de una empresa familiar de muebles para el hogar. Esta cuenta con más de diez años de experiencia en el rubro y busca con la página expandir su alcance de ventas tanto en su zona como en los alrededores, poder exponer sus productos con facilidad, y brindar al usuario la posibilidad de ver precios, realizar presupuestos y pedidos on line. Esta empresa apunta hacia un público es su mayoria familiar y empresarial que busquen renovar tanto su hogar como empresa o espacio de trabajo.",
+  "description": "",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Tincho-91/c23-grupo09-Avalanna_Muebles.git"
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Tincho-91/c23-grupo09-Avalanna_Muebles/issues"
-  },
-  "homepage": "https://github.com/Tincho-91/c23-grupo09-Avalanna_Muebles#readme",
   "dependencies": {
     "express": "^4.18.2",
     "nodemon": "^3.0.1"
