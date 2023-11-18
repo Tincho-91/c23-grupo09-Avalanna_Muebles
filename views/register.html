@@ -3,49 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
     <title>registrarme</title>
 </head>
 <body>
-
-    <nav>
-        <ul type="none">
-            <li ><a href="/">HOME</a></li>
-            <li ><a href="/login">MI CUENTA</a></li>
-            <li ><a href="/register">CREAR CUENTA</a></li>
-        </ul>
-    </nav>
+   <main class="register__main">
+    <nav class="register__main__nav">
+      <ul class="register__main__nav__ul">
+          <li class="li__home"><a href="/">HOME</a></li>
+          <li class="li__miCuenta"><a href="/login">MI CUENTA</a></li>
+          <li ><a href="/register">CREAR CUENTA</a></li>
+      </ul>
+  </nav>
+  <section class="register__main__section">
     <h1>Crear Cuenta</h1>
-    <form action="register" method="post">
-        <p>
+    <form action="register" method="post" class="register__main__section__form">
+        <div>
             <label for="name">Nombre y Apellido*</label><br>
-            <input type="text" name="nombre" id="nombre" required>
-          </p>
+            <input type="text" name="nombre" id="name" required>
+        </div>
     
-          <p>
+          <div>
             <label for="email">Email*</label><br>
             <input type="email" name="email" id="email" required>
-          </p>
+          </div>
           
-          <p>
+          <div>
             <label for="tel">Telefono (opcional)</label><br>
             <input type="tel" name="tel" id="tel">
-          </p>
-
-          <p>
+          </div>
+  
+          <div>
             <label for="contraseña">Contraseña*</label><br>
             <input type="password" name="password" id="contraseña" required>
-          </p>
-
-          <p>
-            <label for="contraseña">Confirmar Contraseña*</label><br>
+          </div>
+  
+          <div>
+            <label for="contraseña">Confirmar contraseña*</label><br>
             <input type="password" name="password" id="contraseña" required>
-          </p>
-
-          <p>
-            <input type="submit" value="Crear Cuenta">
-          </p>
-          <span><h4>¿ya tenes una cuenta?<p><a href="/login">Inicia Seción |</a></p></span></h4>
+          </div>
+          <p class="register__main__section__form--p-campos">*Campos obligatorios</p>
+          
+            <button type="submit">Crear cuenta</button>
+          
+          <div>
+            <p>¿Ya tenés una cuenta? <a href="/login" class="register__main__section__form__div__p__a">Iniciá sesión</a></p>
+          </div>
     </form>
+  </section>
+  
+   </main>
+    
 
 </body>
 </html>

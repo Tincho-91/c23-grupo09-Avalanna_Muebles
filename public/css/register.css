@@ -1,0 +1,82 @@
+.register__main {
+    font-family: "Raleway", sans-serif;
+}
+.register__main__nav {
+}
+.register__main__nav__ul {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 1%;
+}
+.register__main__nav__ul li {
+    margin: 2% 0%;
+    padding-right: 3%;
+    padding-left: 3%;
+}
+.li__home{
+    border-right: 1px solid rgba(0, 0, 0, 65%);
+}
+.li__miCuenta {
+    border-right: 1px solid rgba(0, 0, 0, 65%);
+}
+.register__main__nav__ul li a{
+    font-size: 12px;
+    color: rgba(0, 0, 0, 65%);
+}
+.register__main__section {
+    margin-top: 6%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.register__main__section h1 {
+    font-size: 30px;
+}
+.register__main__section__form {
+    margin-top: 3%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.register__main__section__form div {
+    width: 100%;
+    margin-left: 20%;
+    margin-bottom: 3%;
+}
+.register__main__section__form div label{
+    color: rgba(0, 0, 0, 75%);
+    
+}
+.register__main__section__form div input {
+    background-color: var(--color-beige);
+    border: 0px solid black;
+    padding: 3%;
+    width: 80%;
+}
+.register__main__section__form button {
+    color: white;
+    background-color:var(--color-gris-claro);
+    padding: 2% 15%;
+    border: 0px solid black;
+    margin-top: 11%;
+    font-size: 25px;
+}
+
+.register__main__section__form--p-campos{
+    font-size: 12px;
+    color: rgba(0, 0, 0, 50%);
+    margin-right: 43%;
+    margin-top: -2%;
+}
+
+.register__main__section__form div p{
+    font-size: 12px;
+    margin-left: 10%;
+}
+
+.register__main__section__form div p a{
+    
+    font-weight: 700;
+}
