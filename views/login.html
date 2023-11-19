@@ -3,33 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/cbbf860933.js" crossorigin="anonymous"></script>
-    <title>Login</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="https://kit.fontawesome.com/fc9c9e5a32.js" crossorigin="anonymous"></script>
+    <title>Ingresar</title>
 </head>
 <body> 
-    <main>
-        <img src="img/sillon-login.jpg" alt="">
+    <main class="login__main">
+        <section class="login__main__section-bienvenidos">
         <img src="img/logo-circular.png" alt="">
-    
         <h1>Bienvenidos</h1>
+        </section>
     
-        <form action="login" method="post">
-            <div>
-            <label for="name"></label>
-            <input type="text" name="nombre" id="nombre"  placeholder="Usuario">
-            </div>
-            <div>
-            <label for="contraseña"></label>
-            <input type="password" name="password" id="contraseña" placeholder="contraseña">
-            </div>
-            <div>  
-            <input type="submit" value="Entrar">
-            </div>
-        </form>
-        <ul type="none" id="menú-final">
-            <li class="enlinea"><a href="/register">Registrarme |</a></li>
-            <li class="enlinea"><a href="/">Olvide mi contraseña |</a></li>
-        </ul>
+        <section class="login__main__section-form">
+            <h2>Acceso <i class="fa-solid fa-user"></i></h2>
+            <form action="login" method="post" class="login__main__section__form">
+                
+                <input type="text" name="nombre" id="nombre" class="usuario" placeholder="Usuario">
+                
+                <input type="password" name="password" id="contraseña" placeholder="Contraseña">
+
+                <button type="submit" class="login__main__section__form-button">Entrar</button>
+
+            </form>
+            <ul type="none" class="login__main__section__ul">
+                <li ><a href="/register">Registrarme </a></li>
+                <li ><a href="/">Olvidé mi contraseña </a></li>
+            </ul>
+        </section>
     </main>
    
 </body>
