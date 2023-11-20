@@ -157,18 +157,45 @@
         margin-right: 4%;
     }
     .login__main__section-form h2 {
-        font-size: 50px;
+        font-size: 62px;
         font-weight: 600;
+        margin-bottom: 15%;
     }
     .login__main__section__form-button{
         width: 75%;
         padding: 5% 4%;
     }
+    .login__main__section-form form input{
+        margin-top: 16%;
+        padding: 6% 4%;
+    }
+
+#nombre::placeholder {
+    font-size: 28px;
+  }
+  #contraseña::placeholder {
+    font-size: 28px;
+  }
+  .login__main__section__form-button{
+    font-size: 45px;
+    padding: 3% 4%;
+    transition: all 1s;
+  }
+  .login__main__section__form-button:hover{
+    background-color: var(--color-gris-claro);
+    color: black;
+    cursor: pointer;
+    box-shadow: 1px 1px 10px black;
+    width: 78%;
+  }
+  .login__main a:hover{
+    border-bottom: 1px solid black;
+  }
+  
 .login__main__section__ul li{
     margin-top: 25%;
   }
   .login__main__section__ul li a{
     font-size: 25px;
 }
-
 }
