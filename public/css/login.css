@@ -4,7 +4,10 @@
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    
+    box-shadow: 0 1px 10px -2px black;
+    z-index: 15;
+    position: relative;
+    padding-bottom: 0.1%;
 }
 .login__main__section-bienvenidos {
     background-image: url(../img/sillon-login.jpg);
@@ -95,6 +98,7 @@
     .login__main{
         flex-direction: row;
         flex-wrap: wrap;
+        padding-bottom: 0%;
     }
     .login__main__section-bienvenidos{
         width: 50%;
@@ -141,6 +145,9 @@
 }
 
 @media (min-width:1024px){
+    .login__main{
+        padding-bottom: 0%;
+    }
     .login__main__section-bienvenidos{
         width: 55%;
     }

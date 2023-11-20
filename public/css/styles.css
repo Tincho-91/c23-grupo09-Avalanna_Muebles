@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap');
 @import"./generales.css";
 @import"./header.css";
+@import"./footer.css";
 @import"./index.css";
 @import"./register.css";
 @import"./login.css";
