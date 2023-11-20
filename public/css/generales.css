@@ -5,3 +5,18 @@
     --color-negro: #090915;
     --color-blanco: #FFFFFF;
 }
+
+*{
+    padding: 0;
+    margin: 0; 
+    box-sizing: border-box;
+}
+
+li {
+    list-style-type: none;
+}
+a {
+    text-decoration: none;
+    color: black;
+    cursor:pointer;
+}
