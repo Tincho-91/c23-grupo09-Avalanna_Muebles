@@ -2,9 +2,10 @@
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
-    padding:5px;
+    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+    padding: 5px;
     align-items: center;
+
 }
 
 .header_boton {
@@ -37,12 +38,13 @@
 }
 
 .header img {
-    width: 100px;
+    width: 105px;
     position: absolute;
     right: 24%;
     top: 0%;
 
 }
+
 
 .search {
     position: relative;
@@ -52,18 +54,18 @@
 }
 
 .lupa {
-     position: absolute; 
-     top: 18px;
-     right: 59%; 
+    position: absolute;
+    top: 18px;
+    right: 59%;
 }
 
 .desplegable:hover {
     display: none;
-    margin-bottom:100px;
+    margin-bottom: 100px;
 }
 
-.desplegable{
-  
+.desplegable {
+
     display: flex;
 }
 
@@ -76,22 +78,22 @@
     display: inline;
     width: 100%;
     overflow: auto;
-  }
+}
 
-  .contenido-desplegable a {
+.contenido-desplegable a {
     display: block;
     color: #fff;
     padding: 5px;
     text-decoration: none;
-  }
+}
 
-  .menu-desplegable {
+.menu-desplegable {
     display: none;
     position: absolute;
     top: 7%;
     left: 0;
-    padding:10px;
-    background-color:#000;
+    padding: 10px;
+    background-color: #000;
 }
 
 .menu-desplegable.mostrar {
@@ -99,7 +101,7 @@
 }
 
 
-@media(min-width:768px){
+@media(min-width:768px) {
     .header_boton {
         font-size: 50px;
     }
@@ -107,44 +109,46 @@
     .search {
         width: 100%;
         left: 50px;
-        height: 40px ;
+        height: 40px;
 
     }
-   
 
-    .header img{
-        display:flex;
-        top: -14px; 
+
+    .header img {
+        display: flex;
+        top: -14px;
         margin: 5px;
-        width: 30%;
+        width: 220px;
     }
 
-    .iconos{
-        right:11px;
-        top:15px;
-        
+    .iconos {
+        right: 11px;
+        top: 15px;
+
     }
 
     .iconos a {
         font-size: 28px;
-        margin:11px;
+        margin: 11px;
     }
 
-    .lupa{
-        top:32px;
-        font-size:25px ;
+    .lupa {
+        top: 32px;
+        font-size: 25px;
         left: 260px;
 
     }
 
     .menu-desplegable {
-        top:12%;
+        top: 12%;
     }
-    
 
-};
 
-@media(min-width:1024px){
+}
+
+
+
+@media(min-width:1024px) {
     .header_boton {
         font-size: 50px;
     }
@@ -152,29 +156,29 @@
     .search {
         right: -18%;
         font-size: 29px;
-        top:9px;
+        top: 1px;
     }
 
-    .lupa{
+    .lupa {
         top: 32px;
-        right: 63%;
+        left: 450px;
     }
 
-    
-    .header img{
-        width: 20%;
+
+    .header img {
+        width: 225px;
         right: 23%;
-        top: -1%;
+        top: -2%;
         margin: 10px;
     }
 
-    .iconos{
-        right:15px;
-        top:5px;
+    .iconos {
+        right: 15px;
+        top: 5px;
     }
 
     .iconos a {
         font-size: 35px;
-        margin:18px;
+        margin: 18px;
     }
-}
+} 
