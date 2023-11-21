@@ -2,7 +2,8 @@
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    padding-bottom: 2%;
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+    padding:5px;
 }
 
 .header_boton {
@@ -35,7 +36,7 @@
 }
 
 .header img {
-    width: 35%;
+    width: 100px;
     position: absolute;
     right: 24%;
     top: 1%;
@@ -45,41 +46,59 @@
 .search {
     position: relative;
     right: center;
-    width: 95%;
+    width: 60%;
     margin: 2px;
 }
 
 .lupa {
-    position: absolute;
-    top: 12px;
-    right: 64%;
+     position: absolute; 
+     top: 18px;
+     right: 59%; 
 }
 
-.desplegable:hover .contenido-desplegable{
+.desplegable:hover {
     display: none;
     margin-bottom:100px;
 }
 
 .desplegable{
-    display:block;
+    /* display:block;
     position: relative;
-    width: 100%;
+    width: 100%; */
+    display: flex;
+}
+
+.input-container {
+    display: flex;
+    justify-content: space-between;
 }
 
 .contenido-desplegable {
     display: inline;
     width: 100%;
     overflow: auto;
-    background-color: #0000;
   }
 
   .contenido-desplegable a {
     display: block;
-    color: #000000;
+    color: #fff;
     padding: 5px;
     text-decoration: none;
-    background-color: #fff
   }
+
+  .menu-desplegable {
+    display: none;
+    position: absolute;
+    top: 7%;
+    left: 0;
+    padding:10px;
+    background-color:#000;
+}
+
+.menu-desplegable.mostrar {
+    display: block;
+}
+
 
 @media(min-width:768px) {
     .header_boton {
@@ -87,22 +106,23 @@
     }
 
     .search {
-        right: -9%;
+        /* right: -9%; */
         width: 100%;
-        margin: 5px;
-        font-size: 17px;
-        top:5px;
+        /* margin: 5px; */
+        /* font-size: 17px; */
+        /* top:5px; */
     }
 
     .lupa{
-        top: 21px;
-        right: 65%;
+        /* top: 21px;
+        right: 65%; */
     }
 
     .header img{
-        width: 26%;
-        right: 25%;
-        top: -1%;
+        display:flex;
+        /* width: 20%;
+        right: 25%; */
+        top: -1%; 
         margin: 5px;
     }
 

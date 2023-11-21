@@ -12,30 +12,30 @@
 
 <body>
     <header class="header">
-        <div class="desplegable">
-            <button button-desplegable class="header_boton" id="boton"></button>
-            <i class="fa-solid fa-bars"></i>
+        <button class="header_boton" id="boton"><i class="fa-solid fa-bars"></i></button>
+        <div class="menu-desplegable">
             <div class="contenido-desplegable">
                 <a href="">Muestrario de telas</a>
-                <a href="">Muestrario de marmol</a>
+                <a href="">Muestrario de mármol</a>
                 <a href="">Más diseños</a>
             </div>
         </div>
-        <article class="buscador">
-            <form action="">
-                <input class="search" type="text" placeholder="Buscar" id="search">
-            </form>
-            <i class="fa-solid fa-magnifying-glass lupa"></i>
-        </article>
-
         <img src="/img/imagotipo.png" alt="logo">
-
-        <article class="iconos">
+        <div class="iconos">
             <a href="/"><i class="fa-regular fa-user"></i></a>
             <a href="/"><i class="fa-solid fa-cart-shopping"></i></a>
-        </article>
-
+        </div>
+        <form action="" class="input-container">
+            <input class="search" type="text" placeholder="Buscar" id="search">
+            <i class="fa-solid fa-magnifying-glass lupa"></i>
+        </form>
     </header>
+
+    <script>
+        document.getElementById('boton').addEventListener('click', function () {
+            document.querySelector('.menu-desplegable').classList.toggle('mostrar');
+        });
+    </script>
 </body>
 
 </html>

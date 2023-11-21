@@ -3,12 +3,14 @@ const path = require("path");
 const app = express();
 const PORT = 3030;
 
-
-
 app.get("/", (req, res) => {
-   return res.sendFile(path.join(__dirname, "/views/header.html"));
+   return res.sendFile(path.join(__dirname, "/views/index.html"));
 })
 
-app.listen(3000, () => console.log("corriendo en el puerto 3000"));
+app.get("/detalleDelProducto", (req, res) => {
+   return res.sendFile(path.join(__dirname, "/views/productDetail.html"));
+})
+
+app.listen(3030, () => console.log("corriendo en el puerto 3030"));
 
 app.use(express.static("public"));
