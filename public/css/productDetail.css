@@ -1,23 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;400;500;600;700;800;900&display=swap');
 
-/*VARIABLES*/
+
 :root {
     --gris-oscuro: #4d4d4d;
     --gris-claro: #d1d1d1;
     --gis:#c7c1bf;
     --negro:#090915;
   
-/* Fuentes */
+
 --fuentes:"Raleway"
 
- /*TAMAÑO DE LETRAS*/
+
  --parrafos: 24px;
       --titulos: 40px;
       --precio: 10px;
       --descuento: 12px;
       --descripcion: 24px;
 }
-/*GENERALES*/
+
 img {
     width: 22%;
     height: 50px;
@@ -40,7 +39,7 @@ p {
 body {
     background-color:var(--gris-claro);
 }
-/*MAIN*/
+
 
     .productDetail__main {
         width: 100%;
@@ -173,7 +172,7 @@ h6{
     margin-left:-15.5% ;
     margin-top:-8% ;
   }
-/*TABLET*/
+
 @media(min-width:768px){
     img {
         width: 150px;
@@ -233,8 +232,8 @@ h6{
                 }
 
 }
-/*DESKTOP*/
-@media(min-width:1024px){
+
+@media (min-width:1024px){
 .color{
     margin-bottom: 7%;
 }
@@ -316,7 +315,5 @@ h6{
                 font-size: 20px;
                 font-style: normal;
                 margin-left: 31px;
-           }  
-           
-}
-
+           }
+        }

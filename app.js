@@ -11,6 +11,6 @@ app.get("/detalleDelProducto", (req, res) => {
    return res.sendFile(path.join(__dirname, "/views/productDetail.html"));
 })
 
-app.listen(3030, () => console.log("corriendo en el puerto 3030"));
+app.listen(3000, () => console.log("corriendo en el puerto 3000"));
 
 app.use(express.static("public"));
