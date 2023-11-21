@@ -4,6 +4,10 @@
     flex-direction: column;
     background-color: var(--color-gris-claro);
     font-family: "Raleway", sans-serif;
+    box-shadow: 0 1px 10px -2px black;
+    z-index: 15;
+    position: relative;
+    padding-bottom: 0.1%;
 }
  
 .index__main__section__categorias {
