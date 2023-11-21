@@ -19,9 +19,9 @@
 }
 /*GENERALES*/
 img {
-    width: 22%;
-    height: 50px;
-    padding-bottom: 20px;
+    width: 40%;
+    
+    padding-bottom: 0px;
     margin-right:5px ;
     }
 
@@ -55,7 +55,7 @@ body {
  margin-left: 190px;
 }
 
-   .detalles{
+   .detalles img{
     height: 120px;
     margin-top: 15px;
     width: 100px;
@@ -153,8 +153,8 @@ body {
     text-align:left ;
     margin-top: -5px;
     margin-left: -15.5%;
-}  
-h6{
+   }  
+.productDetail_descripcion{
     font-size:8px ;
     margin-left:-15.5% ;
 }
@@ -175,7 +175,7 @@ h6{
   }
 /*TABLET*/
 @media(min-width:768px){
-    img {
+    .detalles img {
         width: 150px;
         height: 100px;
         padding-bottom: 25px;
@@ -237,16 +237,17 @@ h6{
 @media(min-width:1024px){
 .color{
     margin-bottom: 7%;
+    font-size: 10px;
 }
-    img {
-        width: 20%;
+     .detalles img {
+        width: 50%;
        padding-bottom: 35px;
         margin-right:15px ;
         }
         .detalles{
-            height: 230px;
+            height:350px;
             margin-top: 15px;
-            width: 250px;
+            width: 50%;
             } 
         
             .productDetail-descripcion{
@@ -262,23 +263,21 @@ h6{
                 
                 .precios{
                     background-color: var(--gris-claro);
-                    width: 150px;
-                    height: 225px;
+                    width: 250px;
+                    height:350px;
                      margin: 15px;
                      border:1px solid rgba(1, 10, 10, 0.74)
                 }
 
-                p {
-                    font-size: 7px;
-                    text-align: left 100%;
-                    margin: 4px;
-                    padding: 0;
-            }
+             
                 .productDetail-button{
                     background-color:#a9a6a6;
                     border-radius: 28%;
-                    width: 90px;
-                    height: 18px;
+                    width: 150px;
+                margin-right:50%;
+                    margin-bottom: 12%;
+                    
+                    
                 } 
                 .productDetail-button:hover{
                     background-color:var(--gris-oscuro);
@@ -289,8 +288,9 @@ h6{
                     font-size: medium;
                     background-color:#a9a6a6;
                     border-radius: 28%;
-                    width: 50px;
+                    width: 80px;
                     height: 19px;
+                    margin-right:50%;
                 }
                 .button_a_p:hover{
                     background-color:var(--gris-oscuro);
@@ -301,15 +301,10 @@ h6{
                     flex-wrap: wrap;
                     justify-content: left ;
                      width: 100%;
-                     
-                     
-             }
-             .imagenes_relacionadas img{
-            width: 25%;
-          
-             }
-             h3{
-                height: 10px;
+                     }
+             
+             .productDetail_relacionados{
+                height: 20px;
                 text-align: left;
                 margin: 45px ;
                 margin-top: 15px;
@@ -317,6 +312,11 @@ h6{
                 font-style: normal;
                 margin-left: 31px;
            }  
-           
+           p {
+            font-size: 10px;
+            text-align: left 100%;
+            margin: 0;
+            padding: 2.5% 0%  2.5% 0%;
+        }
 }
 
