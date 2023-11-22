@@ -17,8 +17,6 @@ app.get("/footer", (req, res) => {
    return res.sendFile(path.join(__dirname, "/views/footer.html"));
 })
 
-
-
 app.get("/registrarme", (req, res) => {
    return res.sendFile(path.join(__dirname, "/views/register.html"));
 })
@@ -31,6 +29,14 @@ app.get("/productCart", (req, res) => {
    return res.sendFile(path.join(__dirname, "/views/productCart.html"));
 })
 
+
+app.get("/", (req, res) => {
+   return res.sendFile(path.join(__dirname, "/views/header.html"));
+})
+
+app.listen(3030, () => console.log("corriendo en el puerto 3030"));
+
 app.listen(3000, () => console.log("corriendo en el puerto 3000"));
+
 
 app.use(express.static("public"));
