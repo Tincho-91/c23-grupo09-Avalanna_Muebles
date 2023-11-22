@@ -482,6 +482,7 @@ li{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    
   }
   .footer__section__2{
     width: 60%;
