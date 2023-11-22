@@ -1,7 +1,7 @@
 const express = require("express");
 const path = require("path");
 const app = express();
-const PORT = 3000;
+const PORT = 3030;
 
 app.get("/", (req, res) => {
    return res.sendFile(path.join(__dirname, "/views/index.html"));
@@ -17,6 +17,10 @@ app.get("/registrarme", (req, res) => {
 
 app.get("/ingresar", (req, res) => {
    return res.sendFile(path.join(__dirname, "/views/login.html"));
+})
+
+app.get("/productCart", (req, res) => {
+   return res.sendFile(path.join(__dirname, "/views/productCart.html"));
 })
 
 app.listen(3000, () => console.log("corriendo en el puerto 3000"));
