@@ -1,0 +1,184 @@
+.header {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+    padding: 5px;
+    align-items: center;
+
+}
+
+.header_boton {
+    background: none;
+    border: none;
+    font-size: 20px;
+}
+
+.header__section__article-busqueda {
+    width: 30%;
+}
+
+.buscador {
+    right: center;
+    width: 26%;
+}
+
+.iconos {
+    display: flex;
+    right: 1%;
+    position: absolute;
+    top: 5px;
+
+}
+
+.iconos a {
+    margin: 9px;
+    font-size: 18px;
+    color: black;
+}
+
+.header img {
+    width: 105px;
+    position: absolute;
+    right: 24%;
+    top: 0%;
+
+}
+
+
+.search {
+    position: relative;
+    right: center;
+    width: 60%;
+    margin: 2px;
+}
+
+.lupa {
+    position: absolute;
+    top: 18px;
+    right: 59%;
+}
+
+.header__desplegable:hover {
+    display: none;
+    margin-bottom: 100px;
+}
+
+.header__desplegable {
+
+    display: flex;
+}
+
+.input-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header__contenido-desplegable {
+    display: inline;
+    width: 100%;
+    overflow: auto;
+}
+
+.header__contenido-desplegable a {
+    display: block;
+    color: #fff;
+    padding: 5px;
+    text-decoration: none;
+}
+
+.menu-desplegable:ac {
+    display: none;
+    position: absolute;
+    top: 7%;
+    left: 0;
+    padding: 10px;
+    background-color: #000;
+}
+
+.menu-desplegable.mostrar {
+    display: block;
+}
+
+
+@media(min-width:768px) {
+    .header_boton {
+        font-size: 50px;
+    }
+
+    .search {
+        width: 100%;
+        left: 50px;
+        height: 40px;
+
+    }
+
+
+    .header img {
+        display: flex;
+        top: -14px;
+        margin: 5px;
+        width: 220px;
+    }
+
+    .iconos {
+        right: 11px;
+        top: 15px;
+
+    }
+
+    .iconos a {
+        font-size: 28px;
+        margin: 11px;
+    }
+
+    .lupa {
+        top: 32px;
+        font-size: 25px;
+        left: 260px;
+
+    }
+
+    .menu-desplegable {
+        top: 12%;
+    }
+
+
+}
+
+
+
+@media(min-width:1024px) {
+    .header_boton {
+        font-size: 50px;
+    }
+
+    .search {
+        right: -18%;
+        font-size: 29px;
+        top: 1px;
+    }
+
+    .lupa {
+        top: 32px;
+        left: 450px;
+    }
+
+
+    .header img {
+        width: 225px;
+        right: 23%;
+        top: -2%;
+        margin: 10px;
+    }
+
+    .iconos {
+        right: 15px;
+        top: 5px;
+    }
+
+    .iconos a {
+        font-size: 35px;
+        margin: 18px;
+    }
+} 
