@@ -3,88 +3,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>avallana</title>
-    <link rel="stylesheet" href="/css/productDetail.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" rel="stylesheet" />
+    <title>AVALANNA MUEBLES.</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="https://kit.fontawesome.com/b2415c23bd.js" crossorigin="anonymous"></script>
 </head>
-<body>
-    <header>
-        <div class="burger-menu">
-            <i class="fas fa-bars"></i>
-            <div class="busqueda">
-                <input type="search" name="" id="" placeholder="Buscar">
-                <button><i class="fa-solid fa-magnifying-glass"></i></button>
-
-            <div class="contenedor_logo">
-<div class="logo">
-    <a href="/"><img src="/img/logo.png" alt=""></a>
-</div>
-    <div class="login">
-        <i class="fa-solid fa-user" style=""></i>
-        <div class="carrito">
-            <i class="fa-solid fa-cart-shopping" style="color: #0b111c;"></i>
-        </div> 
-</header>
-
- <main class="home_productos">
-        <img class="detalle" src="img/sillon 3 cuerpos.jpg" alt="">      
-        <section class="seccion__productos">
-            <h1 class="seccion__productos--titulo">Sillon de 3 cuerpos</h1>
-            <p><del>$560.000</del></p>
-            <p>$246.000</p>
-            <p><b>Ahorras un 40%</b></p>
-            <p>comprar ahora</p>
-            <div>
-               <p>Comprar ahora</p>
-               <p>Agregar al carrito</p>
-               <h4>Envios a domicilio</h4><img src="img/truck.jpg" alt="truck">
-               <p><b>Ver Más</b></p>
+   <body class="productDetail__body">
+    <header class="header">
+        <button class="header_boton" id="boton"><i class="fa-solid fa-bars"></i></button>
+        <div class="menu-desplegable">
+            <div class="contenido-desplegable">
+                <a href="">Muestrario de telas</a>
+                <a href="">Muestrario de mármol</a>
+                <a href="">Más diseños</a>
+                <a href="">Inicio</a>
             </div>
-            <article>
-                <h4><b>Descripción</b></h4>
-                <p>Armados con madera maciza, cepillada y<br>
+        </div>
+        <img src="/img/imagotipo.png" alt="logo">
+        <div class="iconos">
+            <a href="/ingresar"><i class="fa-regular fa-user"></i></a>
+            <a href="/productCart"><i class="fa-solid fa-cart-shopping"></i></a>
+        </div>
+        <form action="" class="input-container">
+            <input class="search" type="text" placeholder="Buscar" id="search">
+            <i class="fa-solid fa-magnifying-glass lupa"></i>
+        </form>
+    </header>
+ <main class="productDetail__main">
+            
+        <section class="seccion__productos">
+            <img class="detalles img" src="img/sillon3cuerpos.png" alt="">  
+            <div class="precios">
+                <div class="seccion__productos--titulo">  
+            <h1 class="seccion__productos--titulo">Sillon de 3 cuerpos</h1>
+            <p class="color"><del>$560.000</del></p>
+            <p class="color">$246.000</p>
+            <p class="color"><b>Ahorras un 40%</b></p>
+            <button class="productDetail-button">comprar ahora</button>
+            <div>
+            
+               <button class="productDetail-button">Agregar al carrito</button>
+              <button class="productDetail-button">Envios a domicilio  <i class="fa-solid fa-truck-fast" style="color: #000000;"></i></button> <br>
+               <button type="submit" class="button_a_p"><a href="http://localhost:3030/"><p>ver mas</p></a></button><b>
+         
+            </div>
+            </div>
+        </div>
+      
+            <article  class="productDetail-descripcion">
+                <h4 class="Descripción__detail">Descripción</h4>
+                <h6 class="productDetail_descripcion-h6">Armados con madera maciza, cepillada y<br>
                     estacionada. No madera verde, ni madera de<br>
                     palets. Con terminaciones de primer nivel, <br>con sus
                     esquinas encoladas y bien escuadradas. <br>
                     
-                    Patas: forma piramidal recta macizas en madera de paraiso</p>
-                    <p>Medidas</p>
-                    <ul>
-                 <li><a href="">Alto 82cm</a></li>
-                 <li><a href="">Ancho 220cm</a></li> 
-                <li><a href="">Profundidad 170cm</a></li>  
+                   Patas:forma piramidal recta macizas en madera de paraiso  Medidas</h6>
+                    <ul class="productDetail-li">
+                <li>Alto 82cm</li>
+                 <li>Ancho 220cm</li> 
+                <li>Profundidad 170cm</li></b>
         </ul>
-<article>
-    <h2>Productos relacionados</h2>
-    <img src="img/sillon1.jpg" alt="">
-    <img src="img/sillon living.jpg" alt="">
-    <img src="img/sillon.jpg" alt="">
-    <img src="img/juego sillon.jpg" alt="">
-    <img src="img/images.jpeg" alt="">
-    <img src="img/divan.jpeg" alt="">
-</article>
+      </article>
+    </section>
     
-    </article>
-    </main>
-    <footer>
-        <h3><b>Contacto</b></h3>
-        <i class="fa-regular fa-map-location-dot" style="color: #0f151e;"><h5>Dr Ignacio Pirivano 1864,B1665 José C. Paz, Provincia de Buenos
-            Aires</h5></i><br>
-            <i class="fa-solid fa-phone" style="color: #000309;"><h5>011 3076-1743</h5></i> 
-<h3>Productos</h3>
-<ul>
-    <li><a href="">Categoria</a></li>
-    <li><a href="">Personalizado</a></li>
-    <h3>Sobre nosotros</h3>
-    <ul>
-        <li>Quienes somos</li>
-        <h3>Seguinos en nuestras redes</h3>
-        <i class="fa-brands fa-square-facebook" style="color: #151516;"></i>
-        <h3>Consultas Frecuentes</h3>
-        
-    </ul>
-    
-</ul>
-    </footer>
+    <div class="uno">    
+        <h3 class="productDetail_relacionados">Productos relacionados</h3>
+<article class="imagenes_relacionadas">
+     <img class="img1" src="img/sillon1.png" alt="" width="600px">
+    <img class="img1" src="img/sillon.png" alt="">
+    <img class="img1" src="img/juego.png" alt="">
+    <img class="img1" src="img/sillon2.png" alt="">
+    <img class="img1" src="img/juego sillon.png" alt="">
+    <img class="img1" src="img/divan.png" alt="">
+</article>   
+</div>  
+</main> 
+
+<footer>
+    <section class="footer__section__1">
+    <nav>
+        <ul class="lista-footer"> 
+            <h4>Contacto</h4>
+            <li><a href="https://maps.app.goo.gl/L9F3eao7vvRmiH7f6" target="_blank"><i class="fa-solid fa-map-location-dot"></i> Dr. Ignacio Pirovano 1864,<br>
+                 B1665 José C. Paz,<br>
+                  Provincia de Buenos Aires</a></li><br>
+            <li><a href="tel:1130761743"target="_blank"><i class="fa-solid fa-phone"></i> 011 3076-1743</a></li><br>
+            <li><a href="https://wa.me/1130761743" target="_blank"><i class="fa-brands fa-whatsapp"></i> 011 3076-1743</a></li>
+        </ul>
+    </nav>
+
+    <nav>
+        <ul class="lista-footer"> 
+            <h4>Productos</h4>
+            <li><a href=""><i class="fa-solid fa-circle fa-2xs"></i>  Categorías</a></li><br>
+            <li><a href=""><i class="fa-solid fa-circle fa-2xs"></i>  Personalizado</a></li>
+        </ul>
+    </nav>
+</section>
+<section class="footer__section__2">
+    <nav>
+        <ul class="lista-footer"> 
+            <h4>Seguinos en las redes</h4>
+            <li><a href="https://www.facebook.com/Avalannamuebles" target="_blank"><i class="fa-brands fa-square-facebook"></i> Facebook</a></li>
+        </ul>
+    </nav>
+
+    <nav>
+        <ul class="lista-footer"> 
+            <h4>Sobre nosotros</h4>
+            <li><a href=""><i class="fa-solid fa-circle fa-2xs"></i> Quienes somos</a></li>
+        </ul>
+    </nav>
+
+    <nav>
+        <ul class="lista-footer"> 
+            <h4>Consultas frecuentes</h4>
+            <li><a href=""><i class="fa-solid fa-credit-card"></i> Métodos de pago</a></li><br>
+            <li><a href=""><i class="fa-solid fa-truck"></i> Métodos de envío</a></li>
+        </ul>
+    </nav>
+</section>
+
+   <div class="desplegable">
+    <button button-desplegable> Contacto <i class="fa-solid fa-caret-down"></i></button>
+    <div class="contenido-desplegable">
+    <a href="https://maps.app.goo.gl/L9F3eao7vvRmiH7f6" target="_blank"><i class="fa-solid fa-map-location-dot"></i> Dr. Ignacio Pirovano 1864, B1665 José C. Paz, Provincia de Buenos Aires</a>
+    <a href="tel:1130761743" target="_blank"><i class="fa-solid fa-phone"></i> 011 3076-1743</a>
+    <a href="https://wa.me/1130761743"><i class="fa-brands fa-whatsapp" target="_blank"></i> 011 3076-1743</a>
+    </div>
+  </div>
+
+  <div class="desplegable">
+    <button> Productos <i class="fa-solid fa-caret-down"></i></button>
+    <div class="contenido-desplegable">
+    <a href=""><i class="fa-solid fa-circle fa-2xs"></i>  Categorías</a>
+    <a href=""><i class="fa-solid fa-circle fa-2xs"></i>  Personalizado</a>
+    </div>
+  </div>
+
+  <div class="desplegable">
+    <button > Seguinos en las redes <i class="fa-solid fa-caret-down"></i></button>
+    <div class="contenido-desplegable">
+    <a href="https://www.facebook.com/search/top?q=avalanna%20muebles
+    "><i class="fa-brands fa-square-facebook"></i> Facebook</a>
+    </div>
+  </div>
+
+  <div class="desplegable">
+    <button> Sobre nosotros <i class="fa-solid fa-caret-down"></i></button>
+    <div class="contenido-desplegable">
+    <a href=""><i class="fa-solid fa-circle fa-2xs"></i>Quienes somos</a>
+    </div>
+  </div>
+
+  <div class="desplegable">
+    <button class="button__preguntas"> Consultas frecuentes <i class="fa-solid fa-caret-down"></i></button>
+    <div class="contenido-desplegable">
+    <a href=""><i class="fa-solid fa-truck"></i> Métodos de pago</a>
+    <a href=""><i class="fa-solid fa-credit-card"></i> Métodos de envío</a>
+    </div>
+  </div>
+
+</footer>
+
+<script>
+    document.getElementById('boton').addEventListener('click', function () {
+        document.querySelector('.header__menu-desplegable').classList.toggle('mostrar');
+    });
+</script>
 </body>
 </html>

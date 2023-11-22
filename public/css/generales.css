@@ -10,6 +10,12 @@
 * {
     padding: 0;
     margin: 0;
+
+}
+
+* {
+    padding: 0;
+    margin: 0;
     box-sizing: border-box;
 }
 
@@ -21,4 +27,10 @@ a {
     text-decoration: none;
     color: black;
     cursor: pointer;
+
+    a {
+        text-decoration: none;
+        color: black;
+        cursor: pointer;
+    }
 }
