@@ -87,7 +87,7 @@
     text-decoration: none;
 }
 
-.menu-desplegable:active {
+.menu-desplegable:ac {
     display: none;
     position: absolute;
     top: 7%;
