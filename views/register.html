@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/fc9c9e5a32.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>registrarme</title>
+</head>
+<body>
+  <header class="header">
+    <button class="header_boton" id="boton"><i class="fa-solid fa-bars"></i></button>
+    <div class="header__menu-desplegable">
+        <div class="header__contenido-desplegable">
+            <a href="">Muestrario de telas</a>
+            <a href="">Muestrario de mármol</a>
+            <a href="">Más diseños</a>
+            <a href="">Inicio</a>
+        </div>
+    </div>
+    <img src="/img/imagotipo.png" alt="logo">
+    <div class="iconos">
+        <a href="/ingresar"><i class="fa-regular fa-user"></i></a>
+        <a href="/productCart"><i class="fa-solid fa-cart-shopping"></i></a>
+    </div>
+    <form action="" class="input-container">
+        <input class="search" type="text" placeholder="Buscar" id="search">
+        <i class="fa-solid fa-magnifying-glass lupa"></i>
+    </form>
+</header>
+
+   <main class="register__main">
+    <nav class="register__main__nav">
+      <ul class="register__main__nav__ul">
+          <li class="li__home"><a href="/">Home</a></li>
+          <li class="li__miCuenta"><a href="/login">Mi cuenta</a></li>
+          <li ><a href="/registrarme">Crear cuenta</a></li>
+      </ul>
+  </nav>
+  <section class="register__main__section">
+    <h1>Crear Cuenta</h1>
+    <form action="register" method="post" class="register__main__section__form">
+        <div>
+            <label for="name">Nombre y Apellido*</label><br>
+            <input type="text" name="nombre" id="name" required>
+        </div>
+    
+          <div>
+            <label for="email">Email*</label><br>
+            <input type="email" name="email" id="email" required>
+          </div>
+          
+          <div>
+            <label for="tel">Teléfono (Opcional)</label><br>
+            <input type="tel" name="tel" id="tel">
+          </div>
+  
+          <div>
+            <label for="contraseña">Contraseña*</label><br>
+            <input type="password" name="password" id="contraseña" required>
+          </div>
+  
+          <div>
+            <label for="confirm">Confirmar contraseña*</label><br>
+            <input type="password" name="password" id="confirm" required>
+          </div>
+          <span>
+            <p class="register__main__section__form--p-campos">*Campos obligatorios</p>
+          </span>
+          
+            <button type="submit">Crear cuenta</button>
+          
+    </form>
+    <p class="register__main__section__form--p--cuenta">¿Ya tenés una cuenta? <a href="/ingresar" class="register__main__section__form__div__p__a">Iniciá sesión</a></p>
+  </section>
+  
+   </main>
+   <footer>
+    <section class="footer__section__1">
+    <nav>
+        <ul class="lista-footer"> 
+            <h4>Contacto</h4>
+            <li><a href="https://maps.app.goo.gl/L9F3eao7vvRmiH7f6" target="_blank"><i class="fa-solid fa-map-location-dot"></i> Dr. Ignacio Pirovano 1864,<br>
+                 B1665 José C. Paz,<br>
+                  Provincia de Buenos Aires</a></li><br>
+            <li><a href="tel:1130761743"target="_blank"><i class="fa-solid fa-phone"></i> 011 3076-1743</a></li><br>
+            <li><a href="https://wa.me/1130761743" target="_blank"><i class="fa-brands fa-whatsapp"></i> 011 3076-1743</a></li>
+        </ul>
+    </nav>
+
+    <nav>
+        <ul class="lista-footer"> 
+            <h4>Productos</h4>
+            <li><a href=""><i class="fa-solid fa-circle fa-2xs"></i>  Categorías</a></li><br>
+            <li><a href=""><i class="fa-solid fa-circle fa-2xs"></i>  Personalizado</a></li>
+        </ul>
+    </nav>
+</section>
+<section class="footer__section__2">
+    <nav>
+        <ul class="lista-footer"> 
+            <h4>Seguinos en las redes</h4>
+            <li><a href="https://www.facebook.com/Avalannamuebles" target="_blank"><i class="fa-brands fa-square-facebook"></i> Facebook</a></li>
+        </ul>
+    </nav>
+
+    <nav>
+        <ul class="lista-footer"> 
+            <h4>Sobre nosotros</h4>
+            <li><a href=""><i class="fa-solid fa-circle fa-2xs"></i> Quienes somos</a></li>
+        </ul>
+    </nav>
+
+    <nav>
+        <ul class="lista-footer"> 
+            <h4>Consultas frecuentes</h4>
+            <li><a href=""><i class="fa-solid fa-credit-card"></i> Métodos de pago</a></li><br>
+            <li><a href=""><i class="fa-solid fa-truck"></i> Métodos de envío</a></li>
+        </ul>
+    </nav>
+</section>
+
+   <div class="desplegable">
+    <button button-desplegable> Contacto <i class="fa-solid fa-caret-down"></i></button>
+    <div class="contenido-desplegable">
+    <a href="https://maps.app.goo.gl/L9F3eao7vvRmiH7f6" target="_blank"><i class="fa-solid fa-map-location-dot"></i> Dr. Ignacio Pirovano 1864, B1665 José C. Paz, Provincia de Buenos Aires</a>
+    <a href="tel:1130761743" target="_blank"><i class="fa-solid fa-phone"></i> 011 3076-1743</a>
+    <a href="https://wa.me/1130761743"><i class="fa-brands fa-whatsapp" target="_blank"></i> 011 3076-1743</a>
+    </div>
+  </div>
+
+  <div class="desplegable">
+    <button> Productos <i class="fa-solid fa-caret-down"></i></button>
+    <div class="contenido-desplegable">
+    <a href=""><i class="fa-solid fa-circle fa-2xs"></i>  Categorías</a>
+    <a href=""><i class="fa-solid fa-circle fa-2xs"></i>  Personalizado</a>
+    </div>
+  </div>
+
+  <div class="desplegable">
+    <button > Seguinos en las redes <i class="fa-solid fa-caret-down"></i></button>
+    <div class="contenido-desplegable">
+    <a href="https://www.facebook.com/search/top?q=avalanna%20muebles
+    "><i class="fa-brands fa-square-facebook"></i> Facebook</a>
+    </div>
+  </div>
+
+  <div class="desplegable">
+    <button> Sobre nosotros <i class="fa-solid fa-caret-down"></i></button>
+    <div class="contenido-desplegable">
+    <a href=""><i class="fa-solid fa-circle fa-2xs"></i>Quienes somos</a>
+    </div>
+  </div>
+
+  <div class="desplegable">
+    <button class="button__preguntas"> Consultas frecuentes <i class="fa-solid fa-caret-down"></i></button>
+    <div class="contenido-desplegable">
+    <a href=""><i class="fa-solid fa-truck"></i> Métodos de pago</a>
+    <a href=""><i class="fa-solid fa-credit-card"></i> Métodos de envío</a>
+    </div>
+  </div>
+
+</footer>
+<script>
+  document.getElementById('boton').addEventListener('click', function () {
+      document.querySelector('.header__menu-desplegable').classList.toggle('mostrar');
+  });
+</script>
+</body>
+</html>

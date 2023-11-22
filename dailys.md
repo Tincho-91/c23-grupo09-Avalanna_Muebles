@@ -21,13 +21,11 @@ Vimos lo que tenemos hasta el momento y como vamos a ir avanzando.
 Flavia: Continua con css.
 Martin: Iniciando login.
 Melany: tuvo que ausentarse.
-<<<<<<< HEAD
 10/11/23 
 flavia:continua trabajando el css .va comenzar a aplicar flex box.
 melany:finalizo con html y comenzara con css del home.
 luana :estuvo ausente en la reunion.
 martin:tambien se ausento .
-=======
 
 13/11/23 
 Nos pusimos al tanto de lo que estamos haciendo.
@@ -59,4 +57,3 @@ Flavia: Comenzó a realizar los medias queries de productDetail.
 Melany: Agregó estilos a register.
 Luana: Aplicó flexbox al header.
 Martin: Continua agregando estilos al footer.
->>>>>>> e8c564d0c00858d1c9da39c7f38d1b07b33ed66a

@@ -1,6 +1,9 @@
+@import url(header.css);
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap');
 @import"./generales.css";
 @import"./header.css";
+@import"./footer.css";
 @import"./index.css";
 @import"./register.css";
 @import"./login.css";
