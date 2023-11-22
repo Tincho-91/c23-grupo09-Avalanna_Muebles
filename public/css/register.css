@@ -3,7 +3,8 @@
     box-shadow: 0 1px 10px -2px black;
     z-index: 15;
     position: relative;
-    padding-bottom: 0.1%;
+    padding-bottom: 2%;
+    padding-top: 2%;
 }
 
 .register__main__nav__ul {
