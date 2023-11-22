@@ -59,12 +59,12 @@
     right: 59%;
 }
 
-.desplegable:hover {
+.header__desplegable:hover {
     display: none;
     margin-bottom: 100px;
 }
 
-.desplegable {
+.header__desplegable {
 
     display: flex;
 }
@@ -74,20 +74,20 @@
     justify-content: space-between;
 }
 
-.contenido-desplegable {
+.header__contenido-desplegable {
     display: inline;
     width: 100%;
     overflow: auto;
 }
 
-.contenido-desplegable a {
+.header__contenido-desplegable a {
     display: block;
     color: #fff;
     padding: 5px;
     text-decoration: none;
 }
 
-.menu-desplegable {
+.menu-desplegable:active {
     display: none;
     position: absolute;
     top: 7%;
