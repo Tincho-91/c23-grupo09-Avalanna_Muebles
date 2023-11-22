@@ -5,12 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Avalanna Muebles</title>
+<<<<<<< HEAD
+    <link rel="shortcut icon" href="/img/aval.png" />
+    <link rel="stylesheet" href="/css/productCart.css">
+=======
     <link rel="shortcut icon" href="/img/aval.jpg" />
+>>>>>>> 6732027c43b06e2402c2d2fd88c9cf83d4e2541e
     <script src="https://kit.fontawesome.com/17cacf0970.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <header>
+<<<<<<< HEAD
+
+=======
         <button class="button" id="boton"><a href="" class="hamburguesa"></a>
             <i class="fa-solid fa-bars"></i>
             <section>
@@ -28,38 +36,137 @@
                     <a href="/"><i class="fa-solid fa-cart-shopping" style="color: #000000;"></i></a>
                 </article>
             </section>
+>>>>>>> 6732027c43b06e2402c2d2fd88c9cf83d4e2541e
     </header>
     <section>
-        <article>
-            <p>Carrito de compra</p>
-            <a href="/"><i class="fa-solid fa-cart-shopping" style="color: #000000;"></i></a>
-        </article>
-        <article>
-            <h3>Producto</h3>
-            <img src="/img/mueblecocina.jpg" alt="producto" width="50%">
-            <h4>Combo de cocina en mdf con
-                contorno y tiradores de aluminio.</h4>
-        </article>
-        <article>
-            <h3>Precio</h3>
-            <h4>$95000</h4>
-        </article>
-        <article>
-            <h3>Cantidad</h3>
-            <h4>+ 1 -</h4>
-        </article>
-        <article>
-            <h3>Total</h3>
-            <h4>$950000</h4>
-        </article>
-        <button>Actualizar carrito</button>
-        <button>Seguir comprando</button>
-        <article>
-            <h2>Subtotal</h2>
-            <h2>$950000</h2>
+        <div class="titulo-icon">
+            <p class="titulo">Carrito de compra</p>
+            <a href="/"><i class="fa-solid fa-cart-shopping icon-cart" style="color: #000000;"></i></a>
+        </div>
+        <hr>
+        <div class="subtitulos">
+            <h3 class="producto">Producto</h3>
+            <h3 class="precio">Precio</h3>
+            <h3 class="Cantidad">Cantidad</h3>
+            <h3 class="total">Total</h3>
+        </div>
+        <hr>
+        <div class="contenedor-detalle">
+            <div class="producto-detalle">
+                <img class="imagen-detalle" src="/img/mueblecocina.jpg" alt="producto" width="50%">
+                <h4 class="texto-detalle">Combo de cocina en mdf con
+                    contorno y tiradores de aluminio.</h4>
+            </div>
+            <div class="producto-precio">
+                <h4>$95000</h4>
+            </div>
+            <div class="producto-cantidad">
+                <button class="uno">+  1  -</button>
+            </div>
+            <div class="producto-total">
+                <h4>$950000</h4>
+            </div>
+        </div>
+        <article class="actualizar_seguir">
+            <span class="boton1">
+                <button>Actualizar carrito</button></span>
+            <span class="boton2"><button>Seguir comprando</button></span>
+            <hr>
         </article>
     </section>
-    <button>Finalizar compra</button>
+    <article class="subtotal_precio">
+        <h2 class="subtotal">Subtotal</h2>
+        <h2 class="precio-total">$950000</h2>
+    </article>
+    <hr>
+    <article class="finalizar-compra">
+        <button class="finalizar">Finalizar compra</button>
+    </article>
+    <footer>
+        <section class="footer__section__1">
+        <nav>
+            <ul class="lista-footer"> 
+                <h4>Contacto</h4>
+                <li><a href=""><i class="fa-solid fa-map-location-dot"></i> Dr. Ignacio Pirovano 1864,<br>
+                     B1665 José C. Paz,<br>
+                      Provincia de Buenos Aires</a></li><br>
+                <li><a href=""><i class="fa-solid fa-phone"></i> 011 3076-1743</a></li><br>
+                <li><a href=""><i class="fa-brands fa-whatsapp"></i> 011 3076-1743</a></li>
+            </ul>
+        </nav>
+    
+        <nav>
+            <ul class="lista-footer"> 
+                <h4>Productos</h4>
+                <li><a href=""><i class="fa-solid fa-circle fa-2xs"></i>  Categorías</a></li><br>
+                <li><a href=""><i class="fa-solid fa-circle fa-2xs"></i>  Personalizado</a></li>
+            </ul>
+        </nav>
+    </section>
+    <section class="footer__section__2">
+        <nav>
+            <ul class="lista-footer"> 
+                <h4>Seguinos en las redes</h4>
+                <li><a href=""><i class="fa-brands fa-square-facebook"></i> Facebook</a></li>
+            </ul>
+        </nav>
+    
+        <nav>
+            <ul class="lista-footer"> 
+                <h4>Sobre nosotros</h4>
+                <li><a href=""><i class="fa-solid fa-circle fa-2xs"></i> Quienes somos</a></li>
+            </ul>
+        </nav>
+    
+        <nav>
+            <ul class="lista-footer"> 
+                <h4>Consultas frecuentes</h4>
+                <li><a href=""><i class="fa-solid fa-credit-card"></i> Métodos de pago</a></li><br>
+                <li><a href=""><i class="fa-solid fa-truck"></i> Métodos de envío</a></li>
+            </ul>
+        </nav>
+    </section>
+    
+       <div class="desplegable">
+        <button button-desplegable> Contacto <i class="fa-solid fa-caret-down"></i></button>
+        <div class="contenido-desplegable">
+        <a href=""><i class="fa-solid fa-map-location-dot"></i> Dr. Ignacio Pirovano 1864, B1665 José C. Paz, Provincia de Buenos Aires</a>
+        <a href=""><i class="fa-solid fa-phone"></i> 011 3076-1743</a>
+        <a href=""><i class="fa-brands fa-whatsapp"></i> 011 3076-1743</a>
+        </div>
+      </div>
+    
+      <div class="desplegable">
+        <button> Productos <i class="fa-solid fa-caret-down"></i></button>
+        <div class="contenido-desplegable">
+        <a href=""><i class="fa-solid fa-circle fa-2xs"></i>  Categorías</a>
+        <a href=""><i class="fa-solid fa-circle fa-2xs"></i>  Personalizado</a>
+        </div>
+      </div>
+    
+      <div class="desplegable">
+        <button > Seguinos en las redes <i class="fa-solid fa-caret-down"></i></button>
+        <div class="contenido-desplegable">
+        <a href=""><i class="fa-brands fa-square-facebook"></i> Facebook</a>
+        </div>
+      </div>
+    
+      <div class="desplegable">
+        <button> Sobre nosotros <i class="fa-solid fa-caret-down"></i></button>
+        <div class="contenido-desplegable">
+        <a href=""><i class="fa-solid fa-circle fa-2xs"></i>Quienes somos</a>
+        </div>
+      </div>
+    
+      <div class="desplegable">
+        <button> Consultas frecuentes <i class="fa-solid fa-caret-down"></i></button>
+        <div class="contenido-desplegable">
+        <a href=""><i class="fa-solid fa-truck"></i> Métodos de pago</a>
+        <a href=""><i class="fa-solid fa-credit-card"></i> Métodos de envío</a>
+        </div>
+      </div>
+    
+    </footer>
 </body>
 
 </html>
