@@ -1,3 +1,4 @@
+/*header*/
 .header {
     display: flex;
     flex-wrap: wrap;
@@ -157,11 +158,13 @@
         right: -18%;
         font-size: 29px;
         top: 1px;
+        
     }
 
     .lupa {
         top: 32px;
         left: 450px;
+        
     }
 
 
@@ -182,3 +185,5 @@
         margin: 18px;
     }
 } 
+
+

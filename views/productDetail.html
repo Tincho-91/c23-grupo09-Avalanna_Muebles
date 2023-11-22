@@ -4,13 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AVALANNA MUEBLES.</title>
-    <link rel="stylesheet" href="/css/productDetail.css">
+    <link rel="stylesheet" href="/css/styles.css">
     <script src="https://kit.fontawesome.com/b2415c23bd.js" crossorigin="anonymous"></script>
 </head>
-   <body>
-    
-       
-
+   <body class="productDetail__body">
+    <header class="header">
+        <button class="header_boton" id="boton"><i class="fa-solid fa-bars"></i></button>
+        <div class="menu-desplegable">
+            <div class="contenido-desplegable">
+                <a href="">Muestrario de telas</a>
+                <a href="">Muestrario de mármol</a>
+                <a href="">Más diseños</a>
+                <a href="">Inicio</a>
+            </div>
+        </div>
+        <img src="/img/imagotipo.png" alt="logo">
+        <div class="iconos">
+            <a href="/ingresar"><i class="fa-regular fa-user"></i></a>
+            <a href="/productCart"><i class="fa-solid fa-cart-shopping"></i></a>
+        </div>
+        <form action="" class="input-container">
+            <input class="search" type="text" placeholder="Buscar" id="search">
+            <i class="fa-solid fa-magnifying-glass lupa"></i>
+        </form>
+    </header>
  <main class="productDetail__main">
             
         <section class="seccion__productos">
@@ -21,11 +38,11 @@
             <p class="color"><del>$560.000</del></p>
             <p class="color">$246.000</p>
             <p class="color"><b>Ahorras un 40%</b></p>
-            <button class="productDetail-button"><p>comprar ahora</p></button>
+            <button class="productDetail-button">comprar ahora</button>
             <div>
             
-               <button class="productDetail-button"><p>Agregar al carrito</p></button>
-              <button class="productDetail-button"><p>Envios a domicilio  <i class="fa-solid fa-truck-fast" style="color: #000000;"></i></button> <br><b></p>
+               <button class="productDetail-button">Agregar al carrito</button>
+              <button class="productDetail-button">Envios a domicilio  <i class="fa-solid fa-truck-fast" style="color: #000000;"></i></button> <br>
                <button type="submit" class="button_a_p"><a href="http://localhost:3030/"><p>ver mas</p></a></button><b>
          
             </div>
@@ -33,8 +50,8 @@
         </div>
       
             <article  class="productDetail-descripcion">
-                <h4><b class="Descripción__detail">Descripción</h4>
-                <h6 class="productDetail_descripcion">Armados con madera maciza, cepillada y<br>
+                <h4 class="Descripción__detail">Descripción</h4>
+                <h6 class="productDetail_descripcion-h6">Armados con madera maciza, cepillada y<br>
                     estacionada. No madera verde, ni madera de<br>
                     palets. Con terminaciones de primer nivel, <br>con sus
                     esquinas encoladas y bien escuadradas. <br>
@@ -57,10 +74,101 @@
     <img class="img1" src="img/sillon2.png" alt="">
     <img class="img1" src="img/juego sillon.png" alt="">
     <img class="img1" src="img/divan.png" alt="">
-
 </article>   
 </div>  
 </main> 
 
+<footer>
+    <section class="footer__section__1">
+    <nav>
+        <ul class="lista-footer"> 
+            <h4>Contacto</h4>
+            <li><a href="https://maps.app.goo.gl/L9F3eao7vvRmiH7f6" target="_blank"><i class="fa-solid fa-map-location-dot"></i> Dr. Ignacio Pirovano 1864,<br>
+                 B1665 José C. Paz,<br>
+                  Provincia de Buenos Aires</a></li><br>
+            <li><a href="tel:1130761743"target="_blank"><i class="fa-solid fa-phone"></i> 011 3076-1743</a></li><br>
+            <li><a href="https://wa.me/1130761743" target="_blank"><i class="fa-brands fa-whatsapp"></i> 011 3076-1743</a></li>
+        </ul>
+    </nav>
+
+    <nav>
+        <ul class="lista-footer"> 
+            <h4>Productos</h4>
+            <li><a href=""><i class="fa-solid fa-circle fa-2xs"></i>  Categorías</a></li><br>
+            <li><a href=""><i class="fa-solid fa-circle fa-2xs"></i>  Personalizado</a></li>
+        </ul>
+    </nav>
+</section>
+<section class="footer__section__2">
+    <nav>
+        <ul class="lista-footer"> 
+            <h4>Seguinos en las redes</h4>
+            <li><a href="https://www.facebook.com/Avalannamuebles" target="_blank"><i class="fa-brands fa-square-facebook"></i> Facebook</a></li>
+        </ul>
+    </nav>
+
+    <nav>
+        <ul class="lista-footer"> 
+            <h4>Sobre nosotros</h4>
+            <li><a href=""><i class="fa-solid fa-circle fa-2xs"></i> Quienes somos</a></li>
+        </ul>
+    </nav>
+
+    <nav>
+        <ul class="lista-footer"> 
+            <h4>Consultas frecuentes</h4>
+            <li><a href=""><i class="fa-solid fa-credit-card"></i> Métodos de pago</a></li><br>
+            <li><a href=""><i class="fa-solid fa-truck"></i> Métodos de envío</a></li>
+        </ul>
+    </nav>
+</section>
+
+   <div class="desplegable">
+    <button button-desplegable> Contacto <i class="fa-solid fa-caret-down"></i></button>
+    <div class="contenido-desplegable">
+    <a href="https://maps.app.goo.gl/L9F3eao7vvRmiH7f6" target="_blank"><i class="fa-solid fa-map-location-dot"></i> Dr. Ignacio Pirovano 1864, B1665 José C. Paz, Provincia de Buenos Aires</a>
+    <a href="tel:1130761743" target="_blank"><i class="fa-solid fa-phone"></i> 011 3076-1743</a>
+    <a href="https://wa.me/1130761743"><i class="fa-brands fa-whatsapp" target="_blank"></i> 011 3076-1743</a>
+    </div>
+  </div>
+
+  <div class="desplegable">
+    <button> Productos <i class="fa-solid fa-caret-down"></i></button>
+    <div class="contenido-desplegable">
+    <a href=""><i class="fa-solid fa-circle fa-2xs"></i>  Categorías</a>
+    <a href=""><i class="fa-solid fa-circle fa-2xs"></i>  Personalizado</a>
+    </div>
+  </div>
+
+  <div class="desplegable">
+    <button > Seguinos en las redes <i class="fa-solid fa-caret-down"></i></button>
+    <div class="contenido-desplegable">
+    <a href="https://www.facebook.com/search/top?q=avalanna%20muebles
+    "><i class="fa-brands fa-square-facebook"></i> Facebook</a>
+    </div>
+  </div>
+
+  <div class="desplegable">
+    <button> Sobre nosotros <i class="fa-solid fa-caret-down"></i></button>
+    <div class="contenido-desplegable">
+    <a href=""><i class="fa-solid fa-circle fa-2xs"></i>Quienes somos</a>
+    </div>
+  </div>
+
+  <div class="desplegable">
+    <button class="button__preguntas"> Consultas frecuentes <i class="fa-solid fa-caret-down"></i></button>
+    <div class="contenido-desplegable">
+    <a href=""><i class="fa-solid fa-truck"></i> Métodos de pago</a>
+    <a href=""><i class="fa-solid fa-credit-card"></i> Métodos de envío</a>
+    </div>
+  </div>
+
+</footer>
+
+<script>
+    document.getElementById('boton').addEventListener('click', function () {
+        document.querySelector('.header__menu-desplegable').classList.toggle('mostrar');
+    });
+</script>
 </body>
 </html>
