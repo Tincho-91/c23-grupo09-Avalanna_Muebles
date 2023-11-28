@@ -4,9 +4,8 @@
     flex-wrap: wrap;
     width: 100%;
     box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
-    padding: 5px;
+    padding: 5px 5px 8px 5px;
     align-items: center;
-
 }
 
 .header_boton {
@@ -60,12 +59,12 @@
     right: 59%;
 }
 
-.header__desplegable:hover {
+.header__contenido-desplegable:hover {
     display: none;
     margin-bottom: 100px;
 }
 
-.header__desplegable {
+.header__contenido-desplegable {
 
     display: flex;
 }
@@ -88,7 +87,7 @@
     text-decoration: none;
 }
 
-.menu-desplegable:ac {
+.header__menu-desplegable:ac {
     display: none;
     position: absolute;
     top: 7%;
@@ -97,7 +96,7 @@
     background-color: #000;
 }
 
-.menu-desplegable.mostrar {
+.header__menu-desplegable.mostrar {
     display: block;
 }
 
@@ -140,7 +139,7 @@
 
     }
 
-    .menu-desplegable {
+    .header__menu-desplegable {
         top: 12%;
     }
 
