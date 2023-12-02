@@ -256,19 +256,37 @@
     left: 15%;
 }
 
-.producto-precio{
+.precio-total{
     display: flex;
+    /* justify-content: end; */
     position: relative;
+    top:-33%;
+    justify-content: space-around;
+   
 }
-/* 
 
+.producto-cantidad button {
+    padding: 3px;
+    width: 90%;
+    top: 400%;
+    left: 2%;
+
+}
+
+/* .producto-precio{
+
+   display: flex;
+   justify-content: end;
+
+  
+ 
 }
 
 .producto-total {
-    position: absolute;
-    left: 75%;
-}
-
+   
+    text-align: center;
+} */
+/* 
 .texto-detalle {
     position: absolute;
     top: 37%;
