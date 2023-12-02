@@ -1,4 +1,4 @@
-body {
+/* body {
     font-family: "Raleway", sans-serif;
 }
 
@@ -203,125 +203,137 @@ body {
     }
 
 
+} */
+
+
+.titulo {
+    font-size: 26px;
+    padding: 10px;
 }
 
-/*@media(min-width:320px) {
-    .titulo {
-        font-size: 20px;
-    }
 
+.titulo-icon {
+    display: flex;
+    font-size: 20px;
+    right: -12%;
+    position: relative;
+}
 
-    .titulo-icon {
-        font-size: 22px;
-        top: 50px;
-    }
+.subtitulos {
+    font-size: 10px;
+    display: flex;
+    justify-content: space-between;
+    padding: 13px;
+   
+}
 
-    .subtitulos {
-        font-size: 10px;
-        padding: 0px;
-    }
+.contenedor-detalle {
+    width: 30%px;
+    height: 340px;
+}
 
-    .contenedor-detalle {
-        width: 30%px;
-        height: 340px;
-    }
+.Cantidad {
+    display: none;
+}
 
-    .Cantidad {
-        display: none;
-    }
+.producto-cantidad button {
+    position: absolute;
 
-    .producto-cantidad button {
-        position: absolute;
+}
 
-    }
+.imagen-detalle {
+    width: 50%;
+    height: 90px;
+    display: flex;
+    position: relative;
+    top:20px;
+    right: -8px;
 
-    .imagen-detalle {
-        width: 98%;
-        height: 30%;
-        top: 17px;
+}
 
-    }
+.precio {
+    position: relative;
+    left: 15%;
+}
 
-    .producto-precio {
-        position: absolute;
-        left: 50%;
+.producto-precio{
+    display: flex;
+    position: relative;
+}
+/* 
 
+}
 
-    }
+.producto-total {
+    position: absolute;
+    left: 75%;
+}
 
-    .producto-total {
-        position: absolute;
-        left: 75%;
-    }
+.texto-detalle {
+    position: absolute;
+    top: 37%;
+    width: 60%;
+    right: 31%;
+}
 
-    .texto-detalle {
-        position: absolute;
-        top: 37%;
-        width: 60%;
-        right: 31%;
-    }
+.producto-cantidad button {
+    padding: 3px;
+    width: 90%;
+    top: 51.5%;
+    left: 2%;
 
-    .producto-cantidad button {
-        padding: 3px;
-        width: 90%;
-        top: 51.5%;
-        left: 2%;
+}
 
-    }
+.actualizar_seguir {
+    position: absolute;
+    top: 73%;
+    left: 15px;
+}
 
-    .actualizar_seguir {
-        position: absolute;
-        top: 73%;
-        left: 15px;
-        
-
-
-    }
-
-    .boton1 button {
-        padding: 4px 2px;
-        background-color: #000;
-        color: white;
-        border: none;
-        position: absolute;
-        top: -180%;
-        left: 15%;
-        position: absolute;
-      
-
-
-    }
-
-    .boton2 button {
-        padding: 4px 4px;
-        background-color: #000;
-        color: white;
-        border: none;
-        margin-top: -18px;
-    }
-
-    .subtotal_precio {
-
-        font-size: 11px;
-
-    }
-
-    .finalizar-compra button {
-
-        position: absolute;
-        top: 89%;
-        right: 18%;
-        padding: 5px;
-    }
+.boton1 button {
+    padding: 4px 2px;
+    background-color: #000;
+    color: white;
+    border: none;
+    position: absolute;
+    top: -180%;
+    left: 15%;
+    position: absolute;
 
 
 
+}
+
+.boton2 button {
+    padding: 4px 4px;
+    background-color: #000;
+    color: white;
+    border: none;
+    margin-top: -18px;
+}
+
+.subtotal_precio {
+
+    font-size: 11px;
+
+}
+
+.finalizar-compra button {
+
+    position: absolute;
+    top: 89%;
+    right: 18%;
+    padding: 5px;
+}
+ */
 
 
 
- }*/
 
-@media(min-width:1024px) {
+
+
+
+/* @media(min-width:1024px) {
     body {
         font-family: "Raleway", sans-serif;
     }
@@ -491,4 +503,4 @@ body {
         font-size: 25px;
 
     }
-}
+} */
