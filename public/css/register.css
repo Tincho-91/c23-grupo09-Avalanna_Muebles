@@ -1,6 +1,6 @@
 .register__main {
     font-family: "Raleway", sans-serif;
-    box-shadow: 0 1px 10px -2px black;
+    box-shadow: 0 5px 10px -8px black;
     z-index: 15;
     position: relative;
     padding-bottom: 2%;
