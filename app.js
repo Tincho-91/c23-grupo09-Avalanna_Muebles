@@ -28,11 +28,6 @@ app.get("/productCart", (req, res) => {
 })
 
 
-app.get("/", (req, res) => {
-   return res.sendFile(path.join(__dirname, "/views/header.html"));
-})
-
-
 app.listen(3000, () => console.log("corriendo en el puerto 3000"));
 
 
