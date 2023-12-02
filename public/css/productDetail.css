@@ -1,12 +1,6 @@
 
 
 :root {
-    --gris-oscuro: #4d4d4d;
-    --gris-claro: #d1d1d1;
-    --gis:#c7c1bf;
-    --negro:#090915;
-  
-
 --fuentes:"Raleway"
 
 
@@ -38,7 +32,7 @@
     
 }
 .productDetail__main {
-    background-color:var(--gris-claro);
+    background-color:var(--color-gris-claro);
     font-family: "Raleway", sans-serif;
 }
 
@@ -48,12 +42,13 @@
         flex-wrap: wrap;
       border: #090915;
       justify-content: center;
-      background-color: var(--gris-claro)
+      background-color: var(--color-gris-claro)
      }
    .seccion__productos{
     display: flex;
  flex-wrap: wrap;
  margin-left: 190px;
+ padding-bottom: 4%;
 }
 
    .detalles{
@@ -63,12 +58,12 @@
     } 
 
     .precios{
-        background-color: var(--gris-claro);
+        background-color: var(--color-gris-claro);
         width:30%;
-        
          margin: 15px 0px 0px 15px;
-         border:1px solid rgba(1, 10, 10, 0.74);
+         border:1px solid rgba(1, 10, 10, 25%);
          text-align: left;
+         box-shadow: 1px 4px 2px rgba(1, 10, 10, 50%);
     }
 
     .seccion__productos--titulo{
@@ -86,20 +81,27 @@
     background-color:#a9a6a6;
     border-radius: 30%;
     margin-bottom: 7px;
-    padding: 1%;
-    margin-right:28%;
+    padding: 2%;
+    display: block;
+    border:none;
+    margin-left: 2%;
+    font-weight: 700;
+    }    
     
-    
-    }                
+    .productDetail__main__section_div_buttons{
+        text-align: left;
+        margin-top:2%;
+    }
 .productDetail-button_a_p{
     font-size: 5px;
     background-color:#a9a6a6;
-    border-radius: 30%;
-    margin-bottom: 7px;
-     margin-right:49%;
-     margin-left: 5px;
-     width: 40px;  
-    
+    border-radius: 20%;
+    width: 40px;  
+    border:none;
+    padding: 1.5%;
+    margin-left: 2%;
+    margin-top:-15%;
+    font-weight: 700;
 }
 
 .productDetail-li{
@@ -108,18 +110,19 @@
     padding-top: 5%;
     }
     .productDetail_relacionados{
-        height: 7px;
         text-align: left;
-        margin: 45px ;
-        margin-top: 5px;
+        margin: 5px 0px 45px 10px;
         font-size: 10px;
         font-style: normal;
-        margin-left: 45px;
+        background-color: var(--color-gris-claro) ;
+        display: block;
+        width: 40%;
+        padding: 1%;
         }
     .imagenes_relacionadas{
         display: flex;
         flex-wrap: wrap;
-        justify-content:right ;
+        justify-content:center;
          margin-top:-25px;
  }
 
@@ -153,8 +156,9 @@
     font-size:8px ;
   }
 
-  .uno {
-    background-color:var(--gris-claro);
+  .productDetail__uno {
+    background-color:white;
+    padding: 1%;
   }
 
 @media(min-width:768px){
@@ -179,10 +183,9 @@
                 }
                 
                 .precios{
-                    background-color: var(--gris-claro);
+                    background-color: var(--color-gris-claro);
                     width: 30%;
                      margin: 13px;
-                     border:1px solid rgba(1, 10, 10, 0.74)
                 }
 
                 .productDetail__main  p {
@@ -195,15 +198,13 @@
                 .productDetail-button{
                     font-size: 10px;
                     background-color:#a9a6a6;
-                     border-radius: 30%;
                      margin-top: 2%;
-                     margin-bottom:5%;
+                     margin-bottom:8%;
                     padding: 2%;
-                    margin-right:60%;
                     margin-left: 3%;
                     width: 55%; 
-                          
                 } 
+                
                 .productDetail-button_a_p{
                     font-size: 10px;
                     background-color:#a9a6a6;
@@ -215,9 +216,14 @@
                    margin-left: 3%;
                    width: 25%;
                 }
+                .productDetail__main__section_div_buttons {
+                    padding-top: 2%;
+                }
                 .productDetail_relacionados {
                     font-size: 18px;
                     margin-top: 2%;
+                    width: 30%;
+                    margin-left: 3%;
                 }
                 .productDetail-li{
                     font-size: 12px;
@@ -261,8 +267,11 @@
                     width: 50%;
                     margin-left: 3%;
                 } 
+                .productDetail_relacionados{
+                    width: 25%;
+                }
                 .productDetail-button:hover{
-                    background-color:var(--gris-oscuro);
+                    background-color:var(--color-gris-oscuro);
                     color:#a9a6a6;
                     }
 
@@ -274,16 +283,14 @@
                    margin-left: 3%;
                 }
                 .productDetail-button_a_p:hover{
-                    background-color:var(--gris-oscuro);
-                color: var(--gris-claro);
+                    background-color:var(--color-gris-oscuro);
+                color: var(--color-gris-claro);
                 }
                 .imagenes_relacionadas{
                     display: flex;
                     flex-wrap: wrap;
                     justify-content: left ;
                      width: 100%;
-                     
-                     
              }
              .imagenes_relacionadas img{
             width: 25%;
@@ -291,13 +298,11 @@
           
              }
             .productDetail__main h3{
-                height: 10px;
                 text-align: left;
                 margin: 45px ;
                 margin-top: 15px;
                 font-size: 20px;
                 font-style: normal;
-                margin-left: 31px;
            }
            .productDetail-li{
             font-size: 15px;
