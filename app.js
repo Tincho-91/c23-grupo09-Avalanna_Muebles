@@ -10,9 +10,7 @@ app.get("/", (req, res) => {
 app.get("/detalleDelProducto", (req, res) => {
    return res.sendFile(path.join(__dirname, "/views/productDetail.html"));
 })
-app.get("/header", (req, res) => {
-   return res.sendFile(path.join(__dirname, "/views/header.html"));
-})
+
 app.get("/footer", (req, res) => {
    return res.sendFile(path.join(__dirname, "/views/footer.html"));
 })
@@ -34,7 +32,6 @@ app.get("/", (req, res) => {
    return res.sendFile(path.join(__dirname, "/views/header.html"));
 })
 
-app.listen(3030, () => console.log("corriendo en el puerto 3030"));
 
 app.listen(3000, () => console.log("corriendo en el puerto 3000"));
 
