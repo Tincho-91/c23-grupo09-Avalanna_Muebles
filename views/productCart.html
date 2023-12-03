@@ -11,25 +11,40 @@
 </head>
 
 <body>
-    <header>
-        <button class="button" id="boton"><a href="" class="hamburguesa"></a>
-            <i class="fa-solid fa-bars"></i>
-            <section>
-                <article class="">
-                    <form action="">
-                            <input type="text" placeholder="Buscar" id="search">
-                    </form>
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </article>
-                <article>
-                    <img src="/img/imagotipo.png" alt="logo" width="50%">
-                </article>
-                <article>
-                    <a href="/"><i class="fa-regular fa-user" style="color: #000000;"></i></a>
-                    <a href="/"><i class="fa-solid fa-cart-shopping" style="color: #000000;"></i></a>
-                </article>
-            </section>
+
+    <header class="header">
+
+        <div class="header__menu-desplegable">
+        <button class="header_boton"><i class="fa-solid fa-bars"></i></button>
+            <div class="header__contenido-desplegable">
+                <a href="/">Inicio</a>
+                <a href="/">Productos</a>
+                <a href="/">Colecciones</a>
+                <a href="/">Muebles personalizados</a>
+                <a href="/">Muestrario de telas</a>
+                <a href="/">Muestrario de mármol</a>
+            </div>
+            <div class="header__contenido-desplegable header__forms">
+                <a href="/ingresar">Ingresá</a>
+                <a href="/registrarme">Creá tu cuenta</a>
+            </div>
+        </div>
+        
+        <div class="header__div-form">
+            <form action="" class="input-container">
+                <input class="search" type="text" placeholder="Buscar..." id="search">
+                <i class="fa-solid fa-magnifying-glass lupa"></i>
+            </form>
+        </div>
+
+        <img src="/img/Imagotipo.png" alt="logo">
+        <div class="iconos">
+            <a href="/ingresar"><i class="fa-regular fa-user"></i></a>
+            <a href="/productCart"><i class="fa-solid fa-cart-shopping"></i></a>
+        </div>
+        
     </header>
+    
     <section>
         <div class="titulo-icon">
             <p class="titulo">Carrito de compra</p>
