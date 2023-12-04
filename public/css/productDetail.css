@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 :root {
+<<<<<<< HEAD
     --gris-oscuro: #4d4d4d;
     --gris-claro: #d1d1d1;
     --gis: #c7c1bf;
@@ -36,6 +37,9 @@
     margin: 0%;
     padding: 0%;
 }
+=======
+--fuentes:"Raleway"
+>>>>>>> 1da14e3adda6e6ca4291e44d4de69f9ca49f3924
 
 =======
 
@@ -54,7 +58,11 @@
         margin: 0%;
         padding: 0%;
     }
+<<<<<<< HEAD
 >>>>>>> 53580c2d191444551b6f03bded2917269aa9efe4
+=======
+
+>>>>>>> 1da14e3adda6e6ca4291e44d4de69f9ca49f3924
 .productDetail__main p {
     font-size: 8px;
     padding: 0%;
@@ -65,14 +73,19 @@
 
 .productDetail__main {
 <<<<<<< HEAD
+<<<<<<< HEAD
     background-color: var(--gris-claro);
 =======
     background-color:var(--color-gris-claro);
 >>>>>>> 53580c2d191444551b6f03bded2917269aa9efe4
+=======
+    background-color:var(--color-gris-claro);
+>>>>>>> 1da14e3adda6e6ca4291e44d4de69f9ca49f3924
     font-family: "Raleway", sans-serif;
 }
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 .productDetail__main {
     width: 100%;
@@ -81,6 +94,8 @@
     justify-content: center;
     background-color: var(--gris-claro)
 =======
+=======
+>>>>>>> 1da14e3adda6e6ca4291e44d4de69f9ca49f3924
     .productDetail__main {
         width: 100%;
         flex-wrap: wrap;
@@ -93,7 +108,10 @@
  flex-wrap: wrap;
  margin-left: 190px;
  padding-bottom: 4%;
+<<<<<<< HEAD
 >>>>>>> 53580c2d191444551b6f03bded2917269aa9efe4
+=======
+>>>>>>> 1da14e3adda6e6ca4291e44d4de69f9ca49f3924
 }
 
 .seccion__productos {
@@ -107,8 +125,11 @@
     margin-top: 15px;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 =======
+=======
+>>>>>>> 1da14e3adda6e6ca4291e44d4de69f9ca49f3924
     .precios{
         background-color: var(--color-gris-claro);
         width:30%;
@@ -117,16 +138,11 @@
          text-align: left;
          box-shadow: 1px 4px 2px rgba(1, 10, 10, 50%);
     }
+<<<<<<< HEAD
 >>>>>>> 53580c2d191444551b6f03bded2917269aa9efe4
+=======
+>>>>>>> 1da14e3adda6e6ca4291e44d4de69f9ca49f3924
 
-.precios {
-    background-color: var(--gris-claro);
-    width: 30%;
-
-    margin: 15px 0px 0px 15px;
-    border: 1px solid rgba(1, 10, 10, 0.74);
-    text-align: left;
-}
 
 .seccion__productos--titulo {
     text-align: center;
@@ -141,6 +157,7 @@
 
 .productDetail-button {
     font-size: 5px;
+<<<<<<< HEAD
 <<<<<<< HEAD
     background-color: #a9a6a6;
     border-radius: 28%;
@@ -162,6 +179,8 @@
     font-size: 7px;
     font-family: "Raleway";
 =======
+=======
+>>>>>>> 1da14e3adda6e6ca4291e44d4de69f9ca49f3924
     background-color:#a9a6a6;
     border-radius: 30%;
     margin-bottom: 7px;
@@ -215,7 +234,10 @@
     text-align:left;
     padding: 5%;
     margin:15% 1% 15% 1% ;
+<<<<<<< HEAD
 >>>>>>> 53580c2d191444551b6f03bded2917269aa9efe4
+=======
+>>>>>>> 1da14e3adda6e6ca4291e44d4de69f9ca49f3924
 }
 
 .productDetail_relacionados {
@@ -256,11 +278,15 @@
 .seccion__productos {
     margin-left: 30px;
 <<<<<<< HEAD
+<<<<<<< HEAD
     text-align: left;
     background-color: rgba(204, 211, 211, 0.995);
 =======
     background-color:rgba(204, 211, 211, 0.995);
 >>>>>>> 53580c2d191444551b6f03bded2917269aa9efe4
+=======
+    background-color:rgba(204, 211, 211, 0.995);
+>>>>>>> 1da14e3adda6e6ca4291e44d4de69f9ca49f3924
 }
 
 .img1 {
@@ -270,15 +296,21 @@
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 .productDetail-li {
     font-size: 8px;
 }
 =======
+=======
+>>>>>>> 1da14e3adda6e6ca4291e44d4de69f9ca49f3924
   .productDetail__uno {
     background-color:white;
     padding: 1%;
   }
+<<<<<<< HEAD
 >>>>>>> 53580c2d191444551b6f03bded2917269aa9efe4
+=======
+>>>>>>> 1da14e3adda6e6ca4291e44d4de69f9ca49f3924
 
 .uno {
     background-color: var(--gris-claro);
@@ -288,6 +320,7 @@
     .detalles {
         width: 50%;
         padding-bottom: 25px;
+<<<<<<< HEAD
 <<<<<<< HEAD
         margin-right: 8px;
     }
@@ -428,6 +461,8 @@
     }
 }
 =======
+=======
+>>>>>>> 1da14e3adda6e6ca4291e44d4de69f9ca49f3924
         margin-right:8px ;
         }
         
@@ -570,5 +605,9 @@
            .productDetail-li{
             font-size: 15px;
            }
+<<<<<<< HEAD
 }
 >>>>>>> 53580c2d191444551b6f03bded2917269aa9efe4
+=======
+        }
+>>>>>>> 1da14e3adda6e6ca4291e44d4de69f9ca49f3924
