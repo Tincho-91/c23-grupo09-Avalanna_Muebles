@@ -258,3 +258,96 @@
 
 }
 
+@media(min-width:1024px) {
+
+    .titulo {
+        font-size: 40px;
+        text-align: center;
+
+    }
+
+    .carrito {
+
+        font-size: 27px;
+    }
+
+
+
+    .subtitulos {
+        font-size: 25px;
+
+    }
+
+    .imagen-detalle {
+        width: 43%;
+        height: 50%;
+    }
+
+    .contenedor-detalle {
+
+        height: 430px;
+
+    }
+
+    .producto-precio {
+        font-size: 30px;
+        right: -48%;
+    }
+
+    .producto-cantidad button {
+        height: 51px;
+        top: 30%;
+        font-size: 29px;
+    }
+
+    .producto-total {
+        top: 31%;
+        font-size: 30px;
+
+
+    }
+
+
+    .texto-detalle {
+       
+        font-size: 25px;
+        top: 48%;
+      
+
+    }
+
+    .boton1 button {
+        font-size: 30px;
+        top:17px;
+    }
+
+    .boton2 button{
+        font-size: 30px;
+    }
+
+    .subtotal_precio {
+        font-size: 26px;
+    }
+
+    .linea {
+    
+        margin: 77px auto 0 auto;
+
+
+    }
+
+    .finalizar-compra button {
+        top: 87%;
+        right: 36%;
+        font-size: 38px;
+    }
+
+
+
+
+
+
+
+
+
+}
