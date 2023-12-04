@@ -11,32 +11,40 @@
 </head>
 
 <body>
-    <header class="header">
-        <button class="header_boton" id="boton"><i class="fa-solid fa-bars"></i></button>
+    <header class="header ">
+
         <div class="header__menu-desplegable">
+        <button class="header_boton"><i class="fa-solid fa-bars"></i></button>
             <div class="header__contenido-desplegable">
-                <a href="">Muestrario de telas</a>
-                <a href="">Muestrario de mármol</a>
-                <a href="">Más diseños</a>
-                <a href="">Inicio</a>
+                <a href="/">Inicio</a>
+                <a href="/">Productos</a>
+                <a href="/">Colecciones</a>
+                <a href="/">Muebles personalizados</a>
+                <a href="/">Muestrario de telas</a>
+                <a href="/">Muestrario de mármol</a>
+            </div>
+            <div class="header__contenido-desplegable header__forms">
+                <a href="/ingresar">Ingresá</a>
+                <a href="/registrarme">Creá tu cuenta</a>
             </div>
         </div>
+        
+        <div class="header__div-form">
+            <form action="" class="input-container">
+                <input class="search" type="text" placeholder="Buscar..." id="search">
+                <i class="fa-solid fa-magnifying-glass lupa"></i>
+            </form>
+        </div>
+
         <img src="/img/Imagotipo.png" alt="logo">
         <div class="iconos">
             <a href="/ingresar"><i class="fa-regular fa-user"></i></a>
             <a href="/productCart"><i class="fa-solid fa-cart-shopping"></i></a>
         </div>
-        <form action="" class="input-container">
-            <input class="search" type="text" placeholder="Buscar" id="search">
-            <i class="fa-solid fa-magnifying-glass lupa"></i>
-        </form>
+        
     </header>
 
-    <script>
-        document.getElementById('boton').addEventListener('click', function () {
-            document.querySelector('.header__menu-desplegable').classList.toggle('mostrar');
-        });
-    </script>
+    
 </body>
 
 </html>
