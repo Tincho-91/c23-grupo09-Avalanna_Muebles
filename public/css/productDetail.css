@@ -1,22 +1,12 @@
 
-
 :root {
---fuentes:"Raleway"
 
-
- --parrafos: 22px;
+    --parrafos: 22px;
       --titulos: 40px;
       --precio: 10px;
       --descuento: 12px;
       --descripcion: 24px;
 }
-
-
-
-    * {
-       
-        font-family: var(--fuentes);
-    }
 
     .productDetail__body{
         width: 100vw;
