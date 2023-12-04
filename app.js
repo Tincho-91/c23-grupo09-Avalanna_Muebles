@@ -10,12 +10,6 @@ app.get("/", (req, res) => {
 app.get("/detalleDelProducto", (req, res) => {
    return res.sendFile(path.join(__dirname, "/views/productDetail.html"));
 })
-app.get("/header", (req, res) => {
-   return res.sendFile(path.join(__dirname, "/views/header.html"));
-})
-app.get("/footer", (req, res) => {
-   return res.sendFile(path.join(__dirname, "/views/footer.html"));
-})
 
 app.get("/registrarme", (req, res) => {
    return res.sendFile(path.join(__dirname, "/views/register.html"));

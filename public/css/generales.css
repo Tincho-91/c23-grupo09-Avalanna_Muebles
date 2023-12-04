@@ -3,20 +3,15 @@
     --color-gris-oscuro: #4D4D4D;
     --color-beige: #C7C1BF;
     --color-negro: #090915;
-    --colorblanco: #FFFFFF;-
-    font-family: "Raleway", sans-serif;
+    --color-blanco: #FFFFFF;
 }
 
-* {
-    padding: 0;
-    margin: 0;
-
-}
 
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: "Raleway", sans-serif;
 }
 
 li {
@@ -28,9 +23,4 @@ a {
     color: black;
     cursor: pointer;
 
-    a {
-        text-decoration: none;
-        color: black;
-        cursor: pointer;
-    }
 }
