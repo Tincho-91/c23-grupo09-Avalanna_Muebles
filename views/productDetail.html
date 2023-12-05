@@ -8,26 +8,39 @@
     <script src="https://kit.fontawesome.com/b2415c23bd.js" crossorigin="anonymous"></script>
 </head>
    <body class="productDetail__body">
-    <header class="header">
-        <button class="header_boton" id="boton"><i class="fa-solid fa-bars"></i></button>
-        <div class="menu-desplegable">
-            <div class="contenido-desplegable">
-                <a href="">Muestrario de telas</a>
-                <a href="">Muestrario de mármol</a>
-                <a href="">Más diseños</a>
-                <a href="">Inicio</a>
+    <header class="header header-vistas">
+
+        <div class="header__menu-desplegable">
+        <button class="header_boton header__boton-vistas"><i class="fa-solid fa-bars"></i></button>
+            <div class="header__contenido-desplegable">
+                <a href="/">Inicio</a>
+                <a href="/">Productos</a>
+                <a href="/">Colecciones</a>
+                <a href="/">Muebles personalizados</a>
+                <a href="/">Muestrario de telas</a>
+                <a href="/">Muestrario de mármol</a>
+            </div>
+            <div class="header__contenido-desplegable header__forms">
+                <a href="/ingresar">Ingresá</a>
+                <a href="/registrarme">Creá tu cuenta</a>
             </div>
         </div>
-        <img src="/img/imagotipo.png" alt="logo">
-        <div class="iconos">
+        
+        <div class="header__div-form">
+            <form action="" class="input-container input-Container-vistas">
+                <input class="search buscador" type="text" placeholder="Buscar..." id="search">
+                <i class="fa-solid fa-magnifying-glass lupa lupaIcon"></i>
+            </form>
+        </div>
+    
+        <img src="/img/Imagotipo.png" alt="logo">
+        <div class="iconos iconos-vistas">
             <a href="/ingresar"><i class="fa-regular fa-user"></i></a>
             <a href="/productCart"><i class="fa-solid fa-cart-shopping"></i></a>
         </div>
-        <form action="" class="input-container">
-            <input class="search" type="text" placeholder="Buscar" id="search">
-            <i class="fa-solid fa-magnifying-glass lupa"></i>
-        </form>
+        
     </header>
+    
  <main class="productDetail__main">
             
         <section class="seccion__productos">
@@ -37,14 +50,12 @@
             <h1 class="seccion__productos--titulo">Sillon de 3 cuerpos</h1>
             <p class="color"><del>$560.000</del></p>
             <p class="color">$246.000</p>
-            <p class="color"><b>Ahorras un 40%</b></p>
-            <button class="productDetail-button">comprar ahora</button>
-            <div>
-            
-               <button class="productDetail-button">Agregar al carrito</button>
-              <button class="productDetail-button">Envios a domicilio  <i class="fa-solid fa-truck-fast" style="color: #000000;"></i></button> <br>
-               <button type="submit" class="button_a_p"><a href="http://localhost:3030/"><p>ver mas</p></a></button><b>
-         
+            <p class="color">Ahorras un 40%</b></p>
+            <div class="productDetail__main__section_div_buttons">
+                <button class="productDetail-button">COMPRAR AHORA</button>
+               <button class="productDetail-button">AGREGAR AL CARRITO</button>
+              <button class="productDetail-button productDetail-button-envios">Envios a domicilio  <i class="fa-solid fa-truck-fast" style="color: #000000;"></i></button> <br>
+               <button type="submit" class="productDetail-button_a_p"><a href="/"><p>Ver mas</p></a></button><b>
             </div>
             </div>
         </div>
@@ -56,8 +67,9 @@
                     palets. Con terminaciones de primer nivel, <br>con sus
                     esquinas encoladas y bien escuadradas. <br>
                     
-                   Patas:forma piramidal recta macizas en madera de paraiso  Medidas</h6>
+                   Patas:forma piramidal recta macizas en madera de paraiso </h6>
                     <ul class="productDetail-li">
+                   <li>Medidas</li>     
                 <li>Alto 82cm</li>
                  <li>Ancho 220cm</li> 
                 <li>Profundidad 170cm</li></b>
@@ -65,7 +77,7 @@
       </article>
     </section>
     
-    <div class="uno">    
+    <div class="productDetail__uno">    
         <h3 class="productDetail_relacionados">Productos relacionados</h3>
 <article class="imagenes_relacionadas">
      <img class="img1" src="img/sillon1.png" alt="" width="600px">
@@ -165,10 +177,5 @@
 
 </footer>
 
-<script>
-    document.getElementById('boton').addEventListener('click', function () {
-        document.querySelector('.header__menu-desplegable').classList.toggle('mostrar');
-    });
-</script>
 </body>
 </html>
