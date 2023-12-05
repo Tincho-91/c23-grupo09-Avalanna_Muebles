@@ -1,0 +1,208 @@
+
+.login__main {
+    font-family: "Raleway", sans-serif;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    box-shadow: 0 1px 10px -2px black;
+    z-index: 15;
+    position: relative;
+    padding-bottom: 0.1%;
+}
+.login__main__section-bienvenidos {
+    background-image: url(../img/sillon-login.jpg);
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-size: 100% 100%;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.login__main__section-bienvenidos img{
+    width: 45%;
+    filter: brightness(1.1);
+    mix-blend-mode: multiply;
+    margin: 25%;
+}
+.login__main__section-bienvenidos h1 {
+    font-size: 45px;
+    margin-bottom: 50%;
+    font-weight: 400;
+}
+.login__main__section-form {
+    background-color: var(--color-beige);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    padding-top: 8%;
+    padding-bottom: 20%;
+    width: 100%;
+}
+.login__main__section-form h2{
+    font-size: 40px;
+    font-weight: 400;
+    padding: 1%
+}
+.login__main__section-form form{
+    padding: 2%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+}
+.login__main__section-form form input{
+    width: 70%;
+    background-color:var(--color-gris-claro);
+    border: none;
+    color: black;
+    padding: 3% 4%;
+    margin-top: 2%;
+}
+
+.usuario{
+    margin-bottom: 9%;
+}
+#nombre::placeholder {
+    color:black;
+    font-size: 20px;
+  }
+  #contraseña::placeholder {
+    color:black;
+    font-size: 20px;
+  }
+
+
+.login__main__section__form-button{
+    background-color: var(--color-gris-oscuro);
+    color: white;
+    font-weight: 400;
+    border: none;
+    font-size: 22px;
+    padding: 3% ;
+    width: 60%;
+  margin-top:8%;
+}
+
+.login__main__section__ul{
+    text-align: center;
+}
+.login__main__section__ul li{
+    margin-bottom: 10%;
+}
+
+@media (min-width:768px){
+    .login__main{
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding-bottom: 0%;
+    }
+    .login__main__section-bienvenidos{
+        width: 50%;
+        padding: 30% 5%;
+        padding-right: 10%;
+    }
+    .login__main__section-form{
+        width: 50%;
+        padding: 30% 3%;
+    }
+    .login__main__section-bienvenidos img{
+        width: 70%;
+       margin-bottom: 8%;
+       margin-top: -5%;
+    }
+    .login__main__section-bienvenidos h1 {
+        margin-top: 5%;
+        font-size: 50px;
+    }
+    .login__main__section-form h2{
+        font-size: 45px;
+        margin-bottom: 10%;
+    }
+    .login__main__section-form form input{
+        width: 90%;
+        padding: 5% 4%;
+        margin-top: 10%
+    }
+    .login__main__section__form-button{
+        margin-top: 15%;
+    }
+    #nombre::placeholder {
+        font-size: 24px;
+      }
+      #contraseña::placeholder {
+        font-size: 24px;
+      }
+      .login__main__section__ul li{
+        margin-top: 15%;
+      }
+    .login__main__section__ul li a{
+        font-size: 20px;
+    }
+}
+
+@media (min-width:1024px){
+    .login__main{
+        padding-bottom: 0%;
+    }
+    .login__main__section-bienvenidos{
+        width: 55%;
+    }
+    .login__main__section-form{
+        width: 45%;
+    }
+    .login__main__section-bienvenidos img{
+        width: 80%;
+        padding-right: 5%;
+    }
+    .login__main__section-bienvenidos h1 {
+        margin-top: 15%;
+        font-size: 65px;
+        margin-right: 4%;
+    }
+    .login__main__section-form h2 {
+        font-size: 62px;
+        font-weight: 600;
+        margin-bottom: 15%;
+    }
+    .login__main__section__form-button{
+        width: 75%;
+        padding: 5% 4%;
+    }
+    .login__main__section-form form input{
+        margin-top: 16%;
+        padding: 6% 4%;
+    }
+
+#nombre::placeholder {
+    font-size: 28px;
+  }
+  #contraseña::placeholder {
+    font-size: 28px;
+  }
+  .login__main__section__form-button{
+    font-size: 45px;
+    padding: 3% 4%;
+    transition: all 1s;
+  }
+  .login__main__section__form-button:hover{
+    background-color: var(--color-gris-claro);
+    color: black;
+    cursor: pointer;
+    box-shadow: 1px 1px 10px black;
+    width: 78%;
+  }
+  .login__main a:hover{
+    border-bottom: 1px solid black;
+  }
+  
+.login__main__section__ul li{
+    margin-top: 25%;
+  }
+  .login__main__section__ul li a{
+    font-size: 25px;
+}
+}

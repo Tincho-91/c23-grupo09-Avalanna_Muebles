@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="https://kit.fontawesome.com/fc9c9e5a32.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title><%=title %></title>
+</head>
+<body class="index__body">
+    <header class="header">
+
+        <div class="header__menu-desplegable">
+        <button class="header_boton"><i class="fa-solid fa-bars"></i></button>
+            <div class="header__contenido-desplegable">
+                <a href="/">Inicio</a>
+                <a href="/">Productos</a>
+                <a href="/">Colecciones</a>
+                <a href="/">Muebles personalizados</a>
+                <a href="/">Muestrario de telas</a>
+                <a href="/">Muestrario de mármol</a>
+            </div>
+            <div class="header__contenido-desplegable header__forms">
+                <a href="/users/ingresar">Ingresá</a>
+                <a href="/users/registrarme">Creá tu cuenta</a>
+            </div>
+        </div>
+        
+        <div class="header__div-form">
+            <form action="" class="input-container">
+                <input class="search" type="text" placeholder="Buscar..." id="search">
+                <i class="fa-solid fa-magnifying-glass lupa"></i>
+            </form>
+        </div>
+
+        <img src="/img/Imagotipo.png" alt="logo">
+        <div class="iconos">
+            <a href="/users/ingresar"><i class="fa-regular fa-user"></i></a>
+            <a href="/productCart"><i class="fa-solid fa-cart-shopping"></i></a>
+        </div>
+        
+    </header>
+    <main class="index__main">
+        
+        <a href="">
+            <div id="carouselExampleIndicators" class="carousel slide">
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="/img/carousel-home.png" class="d-block w-100" alt="muebles para exterior">
+                    <h2>ESENCIAL EXTERIOR</h2>
+            <p>Conocé nuestros productos más elegidos <br>
+                para el exterior</p>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="/img/carousel-home2.png" class="d-block w-100" alt="imagen de cama">
+                    <h2>NEW IN</h2>
+                    <p>No esperes más, presentamos nuestros<br>
+                       productos más recientes</p>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="/img/carousel-home3.png" class="d-block w-100" alt="imagen de sillon">
+                    <h2>COMFORT ZONE</h2>
+            <p>Productos pensados para <br>
+                tu comodidad</p>
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+        </a>
+
+        <section class="index__main__section__categorias">
+          <% categories.forEach(category => { %>
+            <a href="">
+              <article>
+                  <img src="/img/<%= category.image %>" alt="<%= category.alt %>">
+                  <h2 class="index__main__section__a__article__h2__living"><%= category.name %></h2>
+              </article>
+          </a>
+            <% }); %>
+            
+        </section>
+        <div class="index__main__div__frase">
+            <h4>Elegí decorar y amoblar tu hogar con Avalanna Muebles</h4>
+        </div>
+    </main>
+
+    <footer>
+        <section class="footer__section__1">
+        <nav>
+            <ul class="lista-footer"> 
+                <h4>Contacto</h4>
+                <li><a href=""><i class="fa-solid fa-map-location-dot"></i> Dr. Ignacio Pirovano 1864,<br>
+                     B1665 José C. Paz,<br>
+                      Provincia de Buenos Aires</a></li><br>
+                <li><a href=""><i class="fa-solid fa-phone"></i> 011 3076-1743</a></li><br>
+                <li><a href=""><i class="fa-brands fa-whatsapp"></i> 011 3076-1743</a></li>
+            </ul>
+        </nav>
+    
+        <nav>
+            <ul class="lista-footer"> 
+                <h4>Productos</h4>
+                <li><a href=""><i class="fa-solid fa-circle fa-2xs"></i>  Categorías</a></li><br>
+                <li><a href=""><i class="fa-solid fa-circle fa-2xs"></i>  Personalizado</a></li>
+            </ul>
+        </nav>
+    </section>
+    <section class="footer__section__2">
+        <nav>
+            <ul class="lista-footer"> 
+                <h4>Seguinos en las redes</h4>
+                <li><a href=""><i class="fa-brands fa-square-facebook"></i> Facebook</a></li>
+            </ul>
+        </nav>
+    
+        <nav>
+            <ul class="lista-footer"> 
+                <h4>Sobre nosotros</h4>
+                <li><a href=""><i class="fa-solid fa-circle fa-2xs"></i> Quienes somos</a></li>
+            </ul>
+        </nav>
+    
+        <nav>
+            <ul class="lista-footer"> 
+                <h4>Consultas frecuentes</h4>
+                <li><a href=""><i class="fa-solid fa-credit-card"></i> Métodos de pago</a></li><br>
+                <li><a href=""><i class="fa-solid fa-truck"></i> Métodos de envío</a></li>
+            </ul>
+        </nav>
+    </section>
+    
+       <div class="desplegable">
+        <button button-desplegable> Contacto <i class="fa-solid fa-caret-down"></i></button>
+        <div class="contenido-desplegable">
+        <a href=""><i class="fa-solid fa-map-location-dot"></i> Dr. Ignacio Pirovano 1864, B1665 José C. Paz, Provincia de Buenos Aires</a>
+        <a href=""><i class="fa-solid fa-phone"></i> 011 3076-1743</a>
+        <a href=""><i class="fa-brands fa-whatsapp"></i> 011 3076-1743</a>
+        </div>
+      </div>
+    
+      <div class="desplegable">
+        <button> Productos <i class="fa-solid fa-caret-down"></i></button>
+        <div class="contenido-desplegable">
+        <a href=""><i class="fa-solid fa-circle fa-2xs"></i>  Categorías</a>
+        <a href=""><i class="fa-solid fa-circle fa-2xs"></i>  Personalizado</a>
+        </div>
+      </div>
+    
+      <div class="desplegable">
+        <button > Seguinos en las redes <i class="fa-solid fa-caret-down"></i></button>
+        <div class="contenido-desplegable">
+        <a href=""><i class="fa-brands fa-square-facebook"></i> Facebook</a>
+        </div>
+      </div>
+    
+      <div class="desplegable">
+        <button> Sobre nosotros <i class="fa-solid fa-caret-down"></i></button>
+        <div class="contenido-desplegable">
+        <a href=""><i class="fa-solid fa-circle fa-2xs"></i>Quienes somos</a>
+        </div>
+      </div>
+    
+      <div class="desplegable">
+        <button class="button__preguntas"> Consultas frecuentes <i class="fa-solid fa-caret-down"></i></button>
+        <div class="contenido-desplegable">
+        <a href=""><i class="fa-solid fa-truck"></i> Métodos de pago</a>
+        <a href=""><i class="fa-solid fa-credit-card"></i> Métodos de envío</a>
+        </div>
+      </div>
+    
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
