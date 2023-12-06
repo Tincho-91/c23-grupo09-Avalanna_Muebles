@@ -334,9 +334,10 @@
  
 
     .producto-cantidad button {
-        height: 50px;
-        top: 37%;
+        height: 56px;
+        top: 39%;
         font-size: 29px;
+        left:70%;
     }
 
 

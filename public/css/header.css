@@ -89,6 +89,7 @@
     padding: 10% 2%;
     width: 100%;
     z-index: 15;
+    position:relative;
 }
 
 .header__menu-desplegable:hover .header__contenido-desplegable {
