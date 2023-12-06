@@ -103,7 +103,7 @@
     border: none;
     position: absolute;
     top: 25px;
- 
+
 
 }
 
@@ -203,16 +203,17 @@
 
     .producto-precio {
         right: 31%;
-        top:40%;
+        top: 40%;
         font-size: 26px;
     }
 
 
     .producto-cantidad button {
         width: 13%;
-        height: 38px;
-        top: 40%;
-        left: 73%;
+        height: 39px;
+        top: 50%;
+        left: 69%;
+        
 
     }
 
@@ -228,7 +229,8 @@
 
         right: 36%;
         top: 76%;
-    
+        font-size: 20px;
+
 
     }
 
@@ -287,7 +289,7 @@
     .carrito {
 
         font-size: 30px;
-        top:13%;
+        top: 13%;
 
     }
 
@@ -298,12 +300,24 @@
 
     }
 
+    .Cantidad {
+        display: block;
+        position: relative;
+        right: -24%;
+
+    }
+
+    .precio-sillon {
+        position: absolute;
+        right: 40%;
+    }
+
     .imagen-detalle {
         width: 45%;
         height: 250px;
-        top:30px;
+        top: 30px;
         right: -2%;
-      
+
     }
 
     .contenedor-detalle {
@@ -314,17 +328,20 @@
 
     .producto-precio {
         font-size: 30px;
-        right: -46%;
+        right: 40%;
     }
 
+ 
+
     .producto-cantidad button {
-        height: 51px;
-        top: 30%;
+        height: 50px;
+        top: 37%;
         font-size: 29px;
     }
 
+
     .producto-total {
-        top: 31%;
+        top: 40%;
         font-size: 30px;
 
 
@@ -360,7 +377,7 @@
     }
 
     .finalizar-compra button {
-        top: 87%;
+        top: 95%;
         right: 36%;
         font-size: 38px;
     }
