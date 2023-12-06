@@ -4,6 +4,10 @@ const productController = require("../controllers/productsController")
 
 
 /* GET home page. */
-router.get('/', productController.detail)
+
+router.get('/:id', productController.detail);
+/*
+router.get('/productCart', productController.cart)
+*/
 
 module.exports = router;
