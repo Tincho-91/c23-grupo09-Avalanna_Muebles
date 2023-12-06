@@ -1,27 +1,26 @@
 .titulo {
     font-size: 26px;
-    padding: 10px;
+    padding: 2px;
     position: relative;
 }
 
 .carrito {
     position: absolute;
     right: 20px;
-    top: 18px;
-    font-size: 19px;
+    top: 8%;
+    font-size: 17px;
 }
 
 .subtitulos {
     font-size: 10px;
     display: flex;
     justify-content: space-between;
-    padding: 13px;
+    padding: 10px;
 
 }
 
 .contenedor-detalle {
-    width: 30%px;
-    height: 340px;
+    height: 250px;
     background-color: #D1D1D1;
 }
 
@@ -30,20 +29,19 @@
 }
 
 .imagen-detalle {
-    width: 50%;
-    height: 90px;
+    width: 38%;
+    height: 75px;
     display: flex;
     position: relative;
-    top: 20px;
+    top: 10px;
     right: -8px;
 
 }
 
-.precio {
-    position: relative;
-    left: 15%;
+.precio-sillon {
+    position: absolute;
+    right: 33%;
 }
-
 
 
 .producto-cantidad button {
@@ -51,62 +49,70 @@
     padding: 3px;
     width: 95%;
     height: 33px;
-    top: 46%;
+    top: 38%;
     left: 2%;
+
 
 
 }
 
 
 .producto-precio {
-    position: relative;
-    right: -57%;
-    top: -22%;
+    position: absolute;
+    right: 30%;
+    top: 25%;
     border: 1px;
 }
 
 .producto-total {
     position: absolute;
     right: 3px;
-    top: 17.5%;
+    top: 25%;
 
 
 
 
 }
 
+.precios {
+    position: relative;
+}
+
 .texto-detalle {
     position: absolute;
-    top: 34%;
+    top: 32.5%;
     width: 60%;
-    right: 37%;
+    right: 38%;
     font-family: "Raleway", sans-serif;
+    font-size: 12px;
 }
 
 
 .actualizar_seguir {
     position: absolute;
     right: 88%;
-    top: 57%;
+    top: 47%;
+
 
 }
 
 .boton1 button {
-    padding: 3px 95px;
+    padding: 1px 95px;
     background-color: #000;
     color: white;
     border: none;
     position: absolute;
-    top: 30px;
+    top: 25px;
+ 
 
 }
 
 .boton2 button {
-    padding: 3px 97px;
+    padding: 1px 97px;
     background-color: #000;
     color: white;
     border: none;
-    margin-top: -18px;
+    margin-top: -15px;
     position: absolute;
 
 
@@ -115,8 +121,7 @@
 
 .subtotal_precio {
     position: relative;
-    top: 15px;
-
+    top: 10px;
 }
 
 .subtotal {
@@ -127,12 +132,11 @@
 .precio-total {
     position: absolute;
     right: 5px;
-    ;
 }
 
 .finalizar-compra button {
     position: absolute;
-    top: 85%;
+    top: 68%;
     right: 21%;
     padding: 5px;
     background-color: #000;
@@ -145,7 +149,7 @@
     height: 2px;
     max-width: 350px;
     padding: 0;
-    margin: 51px auto 0 auto;
+    margin: 35% auto 0 auto;
 
 
 }
@@ -158,59 +162,73 @@
 
     }
 
+    .carrito {
+        top: 88px;
+        font-size: 20px;
+    }
+
     .Cantidad {
         display: block;
         position: relative;
-        right: -8%;
+        right: -30%;
 
     }
 
     .subtitulos {
         position: relative;
-        font-size: 15px;
+        font-size: 20px;
         padding: 25px;
         top: 22px;
 
     }
 
+    .contenedor-detalle {
+        height: 350px;
+
+    }
+
     .imagen-detalle {
         width: 40%;
-        height: 50%;
+        height: 70%;
     }
 
     .texto-detalle {
-        top: 50%;
+        top: 57%;
         width: 40%;
         right: 58%;
+        font-size: 20px;
 
     }
 
 
     .producto-precio {
-        right: -47.5%;
+        right: 31%;
+        top:40%;
+        font-size: 26px;
     }
 
 
-
     .producto-cantidad button {
-        width: 15%;
+        width: 13%;
         height: 38px;
-        top: 29%;
-        left: 65.5%;
+        top: 40%;
+        left: 73%;
 
     }
 
     .producto-total {
-        right: 20px;
-        top: 31.2%;
+        right: 4px;
+        top: 40%;
+        font-size: 26px;
 
 
     }
 
     .actualizar_seguir {
 
-        right: 40%;
-        top: 63%;
+        right: 36%;
+        top: 76%;
+    
 
     }
 
@@ -220,7 +238,7 @@
         color: #000;
         position: absolute;
         top: 23px;
-        font-size: 23px;
+        font-size: 30px;
         right: -75%;
 
 
@@ -233,25 +251,25 @@
         color: #000;
         position: relative;
         top: 35px;
-        font-size: 24px;
+        font-size: 30px;
         right: 75%;
 
     }
 
     .subtotal_precio {
-        font-size: 21px;
+        font-size: 25px;
     }
 
 
     .linea {
         max-width: 100%;
-        margin: 60px auto 0 auto;
+        margin: 20% auto 0 auto;
 
 
     }
 
     .finalizar-compra button {
-        top: 90%;
+        top: 100%;
         right: 35%;
         font-size: 31px;
     }
@@ -261,37 +279,42 @@
 @media(min-width:1024px) {
 
     .titulo {
-        font-size: 40px;
+        font-size: 48px;
         text-align: center;
 
     }
 
     .carrito {
 
-        font-size: 27px;
+        font-size: 30px;
+        top:13%;
+
     }
 
 
 
     .subtitulos {
-        font-size: 25px;
+        font-size: 30px;
 
     }
 
     .imagen-detalle {
-        width: 43%;
-        height: 50%;
+        width: 45%;
+        height: 250px;
+        top:30px;
+        right: -2%;
+      
     }
 
     .contenedor-detalle {
 
-        height: 430px;
+        height: 450px;
 
     }
 
     .producto-precio {
         font-size: 30px;
-        right: -48%;
+        right: -46%;
     }
 
     .producto-cantidad button {
@@ -309,19 +332,19 @@
 
 
     .texto-detalle {
-       
+
         font-size: 25px;
-        top: 48%;
-      
+        top: 65%;
+
 
     }
 
     .boton1 button {
         font-size: 30px;
-        top:17px;
+        top: 17px;
     }
 
-    .boton2 button{
+    .boton2 button {
         font-size: 30px;
     }
 
@@ -330,8 +353,8 @@
     }
 
     .linea {
-    
-        margin: 77px auto 0 auto;
+
+        margin: 15% auto 0 auto;
 
 
     }
