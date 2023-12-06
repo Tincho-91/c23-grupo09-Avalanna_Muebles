@@ -137,7 +137,7 @@
 .finalizar-compra button {
     position: absolute;
     top: 68%;
-    right: 21%;
+    right: 20%;
     padding: 5px;
     background-color: #000;
     color: white;
@@ -170,7 +170,7 @@
     .Cantidad {
         display: block;
         position: relative;
-        right: -30%;
+        right: -28%;
 
     }
 
@@ -211,8 +211,8 @@
     .producto-cantidad button {
         width: 13%;
         height: 39px;
-        top: 50%;
-        left: 69%;
+        top: 39%;
+        left: 73%;
         
 
     }
