@@ -8,10 +8,16 @@
     padding: 0%;
 }
 .productDetail__main p {
-font-size: 8px;
-text-align: left;
-margin: 1% 2% 1% 5%;
-padding:0% 1% ;
+    font-size: 8px;
+<<<<<<< HEAD
+    padding: 0%;
+    text-align: left 100%;
+    margin: 0;
+=======
+   text-align: left;
+    margin: 1% 2% 1% 5%;
+    padding:0% 1% ;
+>>>>>>> 91402e751a25059381ff03668eee636b1226f4ed
 
 }
 .productDetail__main {
