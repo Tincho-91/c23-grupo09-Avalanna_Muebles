@@ -6,17 +6,21 @@
     --color-blanco: #FFFFFF;
 }
 
-*{
+
+* {
     padding: 0;
-    margin: 0; 
+    margin: 0;
     box-sizing: border-box;
+    font-family: "Raleway", sans-serif;
 }
 
 li {
     list-style-type: none;
 }
+
 a {
     text-decoration: none;
     color: black;
-    cursor:pointer;
+    cursor: pointer;
+
 }
