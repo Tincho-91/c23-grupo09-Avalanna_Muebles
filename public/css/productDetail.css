@@ -1,6 +1,5 @@
 
 
-
 .productDetail__body{
     width: 100vw;
     height: 100vh;
@@ -8,10 +7,10 @@
     padding: 0%;
 }
 .productDetail__main p {
-    font-size: 8px;
-   text-align: left;
-    margin: 1% 2% 1% 5%;
-    padding:0% 1% ;
+font-size: 8px;
+text-align: left;
+margin: 1% 2% 1% 5%;
+padding:0% 1% ;
 
 }
 .productDetail__main {
