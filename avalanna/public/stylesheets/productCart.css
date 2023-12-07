@@ -1,421 +1,494 @@
-.titulo {
-    font-size: 26px;
-    /* padding: 2px; */
-    /* position: absolute; */
-    top: -40%;
+body {
+    font-family: "Raleway", sans-serif;
 }
+
 
 .titulo-icon {
-    position: relative;
-    margin-bottom: 2%;
-}
-
-.carrito {
-    position: absolute;
-    right: 8%;
-    top: 25%;
-    font-size: 19px;
-}
-
-.subtitulos {
-    font-size: 10px;
     display: flex;
-    justify-content: space-between;
-    padding: 10px;
-
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
 }
 
-.contenedor-detalle {
-    height: 280px;
-    background-color: #D1D1D1;
-    position: relative;
-    padding-bottom: 4%;
+
+.titulo {
+    font-size: 28px;
+    text-align: center;
+    font-weight: 700;
 }
 
-.Cantidad {
-    display: none;
+.icon-cart {
+    position: absolute;
+    top: 25px;
+    right: 15px;
+
 }
 
 .imagen-detalle {
-    width: 38%;
-    height: 75px;
+    width: 70%;
+    height: 60%;
+    position: relative;
+    top: 10%;
+
+}
+
+.producto {
+    width: 45%;
+    text-align: center;
+}
+
+.precio {
+    width: 30%;
+    text-align: center;
+}
+
+.cantidad {
+    width: 30%;
+    text-align: center;
+}
+
+.total {
+    width: 30%;
+    text-align: center;
+
+
+}
+
+.subtitulos {
     display: flex;
-    position: relative;
-    top: 10px;
-    right: -8px;
-
+    align-items: center;
+    justify-content: center;
+    font-size: small;
 }
 
-.precio-sillon {
-    position: absolute;
-    right: 33%;
+.contenedor-detalle {
+    background-color: #D1D1D1;
+    display: flex;
+    width: 100%px;
+    height: 250px;
 }
 
-
-.producto-cantidad button {
-    position: absolute;
-    padding: 3px;
-    width: 95%;
-    height: 33px;
-    top: 50%;
-    left: 2%;
-
-
-
-}
-
-
-.producto-precio {
-    position: absolute;
-    right: 30%;
-    top: 15%;
-    border: 1px;
-}
-
-.producto-total {
-    position: absolute;
-    right: 3px;
-    top: 15%;
-
-
-
-
-}
-
-.precios {
-    position: relative;
+.producto-detalle {
+    width: 45%;
+    display: flex;
 }
 
 .texto-detalle {
-    position: absolute;
-    top: 35%;
-    width: 60%;
-    right: 38%;
-    font-family: "Raleway", sans-serif;
-    font-size: 12px;
+    padding: 16px;
+
+}
+
+.producto-precio {
+    width: 17%;
+    text-align: center;
+
+}
+
+.producto-cantidad button {
+
+    text-align: center;
+    padding: 10px;
+    width: 155%;
+
+
+}
+
+.uno {
+    font-size: 25px;
+    margin: 10px;
+    padding: 10px;
+}
+
+
+.producto-total {
+    width: 20%;
+    text-align: right;
 }
 
 
 .actualizar_seguir {
-    position: relative;
-    right: -4%;
-    top: 63%;
-    margin-bottom: 10%;
-    padding-bottom: 3%;
-
+    text-align: center;
 
 }
 
-.boton1 button {
-    padding: 10px 85px;
-    background-color: #000;
-    color: white;
+.actualizar_seguir button {
+    padding: 10px 20px;
+    background-color: transparent;
+    color: #000;
     border: none;
-    position: absolute;
-    top: -66%;
-
-
+    font-family: "Raleway", sans-serif;
+    font-size: 28px;
+    justify-content: end;
+    margin: 0px;
 }
 
-.boton2 button {
-    padding: 10px 90px;
-    background-color: #000;
-    color: white;
-    border: none;
-    /* margin-top: -20px; */
-    position: absolute;
-    top: -58px;
+.boton1 {
+    margin-right: 10px;
+    padding-right: 10px;
+    border-right: 2px solid #000;
+    height: 20px;
+}
 
-
-
+.boton2 {
+    margin-right: 0;
+    padding-right: 0;
+    border-right: none;
 }
 
 .subtotal_precio {
-    position: relative;
-    top: 10px;
+    text-align: center;
+    font-family: "Raleway", sans-serif;
+    display: flex;
+    font-size: 17px;
+
 }
 
 .subtotal {
-    position: absolute;
+    text-align: center;
 
 }
 
 .precio-total {
-    position: absolute;
-    right: 5px;
+    text-align: right;
+    width: 89%;
+
 }
 
 .finalizar-compra button {
-    position: absolute;
-    top: 20px;
-    right: 17%;
-    padding: 8px;
-    background-color: #000;
+    padding: 20px 35px;
+    background-color: #4D4D4D;
     color: white;
+    border-radius: 1px;
+    cursor: pointer;
+    font-family: "Raleway", sans-serif;
+    position: absolute;
+    top: 73%;
+    right: 37%;
     font-size: 25px;
-}
-
-.finalizar-compra {
-    position: relative;
-    margin-bottom: 25%;
-}
-
-.linea {
-    border-top: 1px solid black;
-    height: 2px;
-    max-width: 350px;
-    padding: 0;
-    margin: 16% auto 0 auto;
-
 
 }
-
 
 @media(min-width:768px) {
     .titulo {
-        font-size: 30px;
-        text-align: center;
-        padding: 13px;
-
-
-    }
-
-
-
-    .carrito {
-        top: 19px;
         font-size: 25px;
+        text-align: center;
+        font-weight: 100;
     }
 
-    .Cantidad {
-        display: block;
-        position: relative;
-        right: -27%;
-
-    }
-
-    .subtitulos {
-        position: relative;
-        font-size: 20px;
-        padding: 25px;
-        top: 22px;
-
+    .finalizar-compra button {
+        border-radius: 1px;
+        position: absolute;
+        top: 85%;
+        right: 34%;
     }
 
     .contenedor-detalle {
-        height: 350px;
+
+        width: 80%px;
+        height: 200px;
+    }
+
+    .texto-detalle {
+        padding: 4px;
+
+
+    }
+
+    .subtotal_precio {
+        text-align: center;
+        font-family: "Raleway", sans-serif;
+        display: flex;
+        font-size: 12px;
+
+    }
+
+
+}
+
+/*@media(min-width:320px) {
+    .titulo {
+        font-size: 20px;
+    }
+
+
+    .titulo-icon {
+        font-size: 22px;
+        top: 50px;
+    }
+
+    .subtitulos {
+        font-size: 10px;
+        padding: 0px;
+    }
+
+    .contenedor-detalle {
+        width: 30%px;
+        height: 340px;
+    }
+
+    .Cantidad {
+        display: none;
+    }
+
+    .producto-cantidad button {
+        position: absolute;
 
     }
 
     .imagen-detalle {
-        width: 50%;
-        height: 73%;
-    }
-
-    .texto-detalle {
-        top: 55%;
-        width: 40%;
-        right: 58%;
-        font-size: 20px;
+        width: 98%;
+        height: 30%;
+        top: 17px;
 
     }
-
 
     .producto-precio {
-        right: 31%;
-        top: 40%;
-        font-size: 26px;
-    }
-
-
-    .producto-cantidad button {
-        width: 13%;
-        height: 39px;
-        top: 39%;
-        left: 73%;
+        position: absolute;
+        left: 50%;
 
 
     }
 
     .producto-total {
-        right: 4px;
-        top: 40%;
-        font-size: 26px;
+        position: absolute;
+        left: 75%;
+    }
 
+    .texto-detalle {
+        position: absolute;
+        top: 37%;
+        width: 60%;
+        right: 31%;
+    }
+
+    .producto-cantidad button {
+        padding: 3px;
+        width: 90%;
+        top: 51.5%;
+        left: 2%;
 
     }
 
     .actualizar_seguir {
-
-        right: 34%;
-        top: 75%;
-        font-size: 20px;
         position: absolute;
+        top: 73%;
+        left: 15px;
+        
 
 
     }
 
     .boton1 button {
-        padding: 5px 5px;
-        background-color: transparent;
-        color: #000;
+        padding: 4px 2px;
+        background-color: #000;
+        color: white;
+        border: none;
         position: absolute;
-        top: 35px;
-        font-size: 30px;
-        right: -75%;
-
+        top: -180%;
+        left: 15%;
+        position: absolute;
+      
 
 
     }
 
     .boton2 button {
-        padding: 5px 5px;
-        background-color: transparent;
-        color: #000;
-        position: relative;
-        top: 35px;
-        font-size: 30px;
-        right: 75%;
-
+        padding: 4px 4px;
+        background-color: #000;
+        color: white;
+        border: none;
+        margin-top: -18px;
     }
 
     .subtotal_precio {
-        font-size: 25px;
-    }
 
-
-    .linea {
-        max-width: 100%;
-        margin: 9% auto 0 auto;
-
+        font-size: 11px;
 
     }
 
     .finalizar-compra button {
-        top: 1000%;
-        right: 35%;
-        font-size: 31px;
 
+        position: absolute;
+        top: 89%;
+        right: 18%;
+        padding: 5px;
     }
 
-    .finalizar-compra {
-        margin-bottom: 15%;
-    }
 
-}
+
+
+
+
+ }*/
 
 @media(min-width:1024px) {
+    body {
+        font-family: "Raleway", sans-serif;
+    }
+
+
+    .titulo-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 25px;
+    }
+
 
     .titulo {
-        font-size: 48px;
+        font-size: 28px;
         text-align: center;
-
+        font-weight: 700;
     }
 
-    .carrito {
-
-        font-size: 35px;
-        top: 35%;
-
-    }
-
-
-
-    .subtitulos {
-        font-size: 30px;
-
-    }
-
-    .Cantidad {
-        display: block;
-        position: relative;
-        right: -23%;
-
-    }
-
-    .precio-sillon {
+    .icon-cart {
         position: absolute;
-        right: 40%;
+        top: 25px;
+        right: 15px;
+
     }
 
     .imagen-detalle {
-        width: 45%;
-        height: 250px;
-        top: 30px;
-        right: -2%;
+        width: 70%;
+        height: 60%;
+        position: relative;
+        top: 10%;
 
     }
 
-    .contenedor-detalle {
+    .producto {
+        width: 45%;
+        text-align: center;
+    }
 
-        height: 450px;
+    .precio {
+        width: 30%;
+        text-align: center;
+    }
+
+    .cantidad {
+        width: 30%;
+        text-align: center;
+    }
+
+    .total {
+        width: 30%;
+        text-align: center;
+
+
+    }
+
+    .subtitulos {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: small;
+    }
+
+    .contenedor-detalle {
+        background-color: #D1D1D1;
+        display: flex;
+        width: 100%px;
+        height: 250px;
+    }
+
+    .producto-detalle {
+        width: 45%;
+        display: flex;
+    }
+
+    .texto-detalle {
+        padding: 16px;
 
     }
 
     .producto-precio {
-        font-size: 31px;
-        right: 39%;
-        top: 31%;
+        width: 17%;
+        text-align: center;
+
     }
 
-
-
     .producto-cantidad button {
-        height: 56px;
-        top: 30%;
-        font-size: 29px;
-        left: 69%;
+
+        text-align: center;
+        padding: 10px;
+        width: 155%;
+
+
+    }
+
+    .uno {
+        font-size: 25px;
+        margin: 10px;
+        padding: 10px;
     }
 
 
     .producto-total {
-        top: 31%;
-        font-size: 30px;
-
-
+        width: 20%;
+        text-align: right;
     }
 
 
-    .texto-detalle {
-
-        font-size: 25px;
-        top: 65%;
-
+    .actualizar_seguir {
+        text-align: center;
 
     }
 
-
-    .boton1 button {
-        font-size: 34px;
-        top: 55px;
+    .actualizar_seguir button {
+        padding: 10px 20px;
+        background-color: transparent;
+        color: #000;
+        border: none;
+        font-family: "Raleway", sans-serif;
+        font-size: 28px;
+        justify-content: end;
+        margin: 0px;
     }
 
-    .boton2 button {
-        font-size: 34px;
-        top: 55px;
+    .boton1 {
+        margin-right: 10px;
+        padding-right: 10px;
+        border-right: 2px solid #000;
+        height: 20px;
+    }
+
+    .boton2 {
+        margin-right: 0;
+        padding-right: 0;
+        border-right: none;
     }
 
     .subtotal_precio {
-        font-size: 26px;
+        text-align: center;
+        font-family: "Raleway", sans-serif;
+        display: flex;
+        font-size: 17px;
+
     }
 
-    .linea {
+    .subtotal {
+        text-align: center;
 
-        margin: 8% auto 0 auto;
+    }
 
+    .precio-total {
+        text-align: right;
+        width: 89%;
 
     }
 
     .finalizar-compra button {
-        top: 96%;
-        right: 33%;
-        font-size: 38px;
-       margin: 25px;
+        padding: 20px 35px;
+        background-color: #4D4D4D;
+        color: white;
+        border-radius: 1px;
+        cursor: pointer;
+        font-family: "Raleway", sans-serif;
+        position: absolute;
+        top: 73%;
+        right: 37%;
+        font-size: 25px;
+
     }
-
-    .finalizar-compra {
-        margin-bottom: 15%;
-    }
-
-
 }

@@ -1,3 +1,4 @@
+/*header*/
 .header {
     flex-wrap: wrap;
     width: 100%;
@@ -89,7 +90,6 @@
     padding: 10% 2%;
     width: 100%;
     z-index: 15;
-    position:relative;
 }
 
 .header__menu-desplegable:hover .header__contenido-desplegable {
@@ -175,12 +175,12 @@
     .lupa {
         top: 22px;
         font-size: 25px;
-        left: 229px;
+        left: 230px;
     }
 
     .header__menu-desplegable {
         top: 12%;
-        width: 25%;
+        width: 2%;
     }
 
 }
