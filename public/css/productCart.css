@@ -22,6 +22,7 @@
 .contenedor-detalle {
     height: 250px;
     background-color: #D1D1D1;
+    position:relative;
 }
 
 .Cantidad {
