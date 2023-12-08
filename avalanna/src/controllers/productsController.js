@@ -13,7 +13,6 @@ const productController = {
     cart:(req,res)=>{
         res.render("products/productCart", {title:"Carrito de compra"});
     }
-    
 }
 
 
