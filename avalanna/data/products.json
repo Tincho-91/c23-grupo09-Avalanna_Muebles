@@ -1,0 +1,15 @@
+[
+    {
+    "id":"1",
+    "image": "sillon3cuerpos.png",
+    "name": "Sillon de 3 cuerpos",
+    "price":"560.000",
+    "offer":"246.000",
+    "discount":"Ahorras un 40%",
+    "description": "Armados con madera maciza, cepillada y estacionada. No madera verde, ni madera de palets. Con terminaciones de primer nivel, con sus esquinas encoladas y bien escuadradas.",
+    "extraDescription":"Patas:forma piramidal recta macizas en madera de paraiso",
+    "height": "Alto 82cm",
+    "width": "Ancho 220cm",
+    "depth":"Profundidad 170cm"
+}
+]
