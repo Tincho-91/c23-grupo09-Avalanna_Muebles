@@ -6,7 +6,7 @@ const productController = require("../controllers/productsController")
 /* GET home page. */
 
 router.get('/detail/:id', productController.detail);
-router.get('/formulario', productController.formulario)
+router.get('/crear-formulario', productController.formulario)
 router.get('/productCart', productController.cart)
 
 
