@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/fc9c9e5a32.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <title>Carga de productos</title>
+</head>
+<body>
+
+  <header class="header header-vistas">
+
+    <div class="header__menu-desplegable">
+    <button class="header_boton header__boton-vistas"><i class="fa-solid fa-bars"></i></button>
+        <div class="header__contenido-desplegable">
+            <a href="/">Inicio</a>
+            <a href="/">Productos</a>
+            <a href="/">Colecciones</a>
+            <a href="/">Muebles personalizados</a>
+            <a href="/">Muestrario de telas</a>
+            <a href="/">Muestrario de mármol</a>
+        </div>
+        
+    </div>
+    
+    <div class="header__div-form">
+        <form action="" class="input-container input-Container-vistas">
+            <input class="search buscador" type="text" placeholder="Buscar..." id="search">
+            <i class="fa-solid fa-magnifying-glass lupa lupaIcon"></i>
+        </form>
+    </div>
+
+    <img src="/img/Imagotipo.png" alt="logo">
+    <div class="iconos iconos-vistas">
+        <a href="/ingresar"><i class="fa-regular fa-user"></i></a>
+        <a href="/productCart"><i class="fa-solid fa-cart-shopping"></i></a>
+    </div>
+    
+</header>
+
+ 
+  </nav>
+  <section class="register_main_section">
+    <h1>CARGAR PRODUCTOS</h1>
+    <form action="register" method="post" class="register_mainsection_form">
+        <div>
+            <label for="name">nombre del Producto</label><br>
+            <input type="text" name="nombre" id="name" required>
+        </div>
+    
+          <div>
+            <label for="email">Descripcion</label><br>
+            <input type="email" name="email" id="email" required>
+          </div>
+  
+          <div>
+            <label for="tel">Cargar imagen</label><br>
+            <input type="file" accept="png jpg">
+          </div>
+
+          <div>
+            <label for="contraseña">Categoria</label><br>
+            <input type="password" name="password" id="contraseña" required>
+          </div>
+  
+          <div>
+            <label for="confirm">Colores</label><br>
+            <input type="password" name="password" id="confirm" required>
+          </div>
+          <div>
+            <label for="confirm">Precio</label><br>
+            <input type="password" name="password" id="confirm" required>
+          </div>
+          
+            <button type="submit">Cargar producto</button>
+          
+    </form>
+    
+  </section>
+  
+   </main>
+   <footer>
+    <section class="footer_section_1">
+    <nav>
+        <ul class="lista-footer"> 
+            <h4>Contacto</h4>
+            <li><a href="https://maps.app.goo.gl/L9F3eao7vvRmiH7f6" target="_blank"><i class="fa-solid fa-map-location-dot"></i> Dr. Ignacio Pirovano 1864,<br>
+                 B1665 José C. Paz,<br>
+                  Provincia de Buenos Aires</a></li><br>
+            <li><a href="tel:1130761743"target="_blank"><i class="fa-solid fa-phone"></i> 011 3076-1743</a></li><br>
+            <li><a href="https://wa.me/1130761743" target="_blank"><i class="fa-brands fa-whatsapp"></i> 011 3076-1743</a></li>
+        </ul>
+    </nav>
+
+    <nav>
+        <ul class="lista-footer"> 
+            <h4>Productos</h4>
+            <li><a href=""><i class="fa-solid fa-circle fa-2xs"></i>  Categorías</a></li><br>
+            <li><a href=""><i class="fa-solid fa-circle fa-2xs"></i>  Personalizado</a></li>
+        </ul>
+    </nav>
+</section>
+<section class="footer_section_2">
+    <nav>
+        <ul class="lista-footer"> 
+            <h4>Seguinos en las redes</h4>
+            <li><a href="https://www.facebook.com/Avalannamuebles" target="_blank"><i class="fa-brands fa-square-facebook"></i> Facebook</a></li>
+        </ul>
+    </nav>
+
+    <nav>
+        <ul class="lista-footer"> 
+            <h4>Sobre nosotros</h4>
+            <li><a href=""><i class="fa-solid fa-circle fa-2xs"></i> Quienes somos</a></li>
+        </ul>
+    </nav>
+
+    <nav>
+        <ul class="lista-footer"> 
+            <h4>Consultas frecuentes</h4>
+            <li><a href=""><i class="fa-solid fa-credit-card"></i> Métodos de pago</a></li><br>
+            <li><a href=""><i class="fa-solid fa-truck"></i> Métodos de envío</a></li>
+        </ul>
+    </nav>
+</section>
+
+   <div class="desplegable">
+    <button button-desplegable> Contacto <i class="fa-solid fa-caret-down"></i></button>
+    <div class="contenido-desplegable">
+    <a href="https://maps.app.goo.gl/L9F3eao7vvRmiH7f6" target="_blank"><i class="fa-solid fa-map-location-dot"></i> Dr. Ignacio Pirovano 1864, B1665 José C. Paz, Provincia de Buenos Aires</a>
+    <a href="tel:1130761743" target="_blank"><i class="fa-solid fa-phone"></i> 011 3076-1743</a>
+    <a href="https://wa.me/1130761743"><i class="fa-brands fa-whatsapp" target="_blank"></i> 011 3076-1743</a>
+    </div>
+  </div>
+
+  <div class="desplegable">
+    <button> Productos <i class="fa-solid fa-caret-down"></i></button>
+    <div class="contenido-desplegable">
+    <a href=""><i class="fa-solid fa-circle fa-2xs"></i>  Categorías</a>
+    <a href=""><i class="fa-solid fa-circle fa-2xs"></i>  Personalizado</a>
+    </div>
+  </div>
+
+  <div class="desplegable">
+    <button > Seguinos en las redes <i class="fa-solid fa-caret-down"></i></button>
+    <div class="contenido-desplegable">
+    <a href="https://www.facebook.com/search/top?q=avalanna%20muebles
+    "><i class="fa-brands fa-square-facebook"></i> Facebook</a>
+    </div>
+  </div>
+
+  <div class="desplegable">
+    <button> Sobre nosotros <i class="fa-solid fa-caret-down"></i></button>
+    <div class="contenido-desplegable">
+    <a href=""><i class="fa-solid fa-circle fa-2xs"></i>Quienes somos</a>
+    </div>
+  </div>
+
+  <div class="desplegable">
+    <button class="button__preguntas"> Consultas frecuentes <i class="fa-solid fa-caret-down"></i></button>
+    <div class="contenido-desplegable">
+    <a href=""><i class="fa-solid fa-truck"></i> Métodos de pago</a>
+    <a href=""><i class="fa-solid fa-credit-card"></i> Métodos de envío</a>
+    </div>
+  </div>
+
+</footer>
+
+</body>
+</html>
