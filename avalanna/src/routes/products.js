@@ -9,5 +9,6 @@ router.get('/detail/:id', productController.detail);
 
 router.get('/productCart', productController.cart)
 
+router.get('/edform', productController.cart)
 
 module.exports = router;

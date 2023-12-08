@@ -1,0 +1,176 @@
+.register__main {
+    font-family: "Raleway", sans-serif;
+    box-shadow: 0 5px 10px -8px black;
+    z-index: 15;
+    position: relative;
+    padding-bottom: 2%;
+    padding-top: 2%;
+}
+
+.register_mainnav_ul {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 1%;
+}
+.register_mainnav_ul li {
+    margin: 2% 0%;
+    padding-right: 3%;
+    padding-left: 3%;
+}
+.li__home{
+    border-right: 1px solid rgba(0, 0, 0, 45%);
+}
+.li__miCuenta {
+    border-right: 1px solid rgba(0, 0, 0, 45%);
+}
+.register_mainnav_ul li a{
+    font-size: 12px;
+    color: rgba(0, 0, 0, 50%);
+}
+.register_main_section {
+    margin-top: 6%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.register_main_section h1 {
+    font-size: 30px;
+}
+.register_mainsection_form {
+    margin-top: 4%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.register_mainsection_form div {
+    width: 100%;
+    margin-left: 20%;
+    margin-bottom: 3%;
+
+}
+.register_mainsection_form div label{
+    color: rgba(0, 0, 0, 70%);
+    font-family: "Oxygen", sans-serif;
+}
+.register_mainsection_form div input {
+    background-color: var(--color-beige);
+    padding: 3%;
+    width: 70%;
+    
+}
+.register_mainsection_form button {
+    color: rgba(255, 255, 255, 90%);
+    background-color: var(--color-beige);
+    padding: 2% 15%;
+    margin-top: 11%;
+    font-size: 25px;
+}
+
+.register_mainsection_form--p-campos{
+    font-size: 12px;
+    color: rgba(0, 0, 0, 50%);
+    margin-top: -2%;
+    text-align: left;
+}
+
+.register_mainsection_form span{
+    width: 80%;
+}
+.register_mainsection_form--div-p{
+    margin-left: -20%;
+}
+
+.register_mainsection_form--p--cuenta{
+    font-size: 12px;
+    margin-top: 2%; 
+}
+
+.register_mainsection_form--p--cuenta a{
+    font-weight: 700;
+}
+
+@media (min-width:768px) {
+    .register__main {
+        padding-bottom: 10%;
+    }
+    .register_mainnav_ul li {
+        
+        padding-right: 1.5%;
+        padding-left: 1.5%;
+    }
+
+    .register_mainnav_ul li a{
+        font-size: 16px;
+    }
+    .register_main_section h1 {
+        font-size: 50px;
+    }
+    .register_mainsection_form {
+        margin-top: 5%;
+        padding-bottom: 1%;
+    }
+
+    
+    .register_mainsection_form div label{
+        font-size: 24px;
+    }
+    .register_mainsection_form--p-campos{
+        font-size: 15px;
+    }
+    .register_mainsection_form button {
+        font-size: 32px;
+        margin-top:8%;
+    }
+
+    .register_mainsection_form--p--cuenta{
+        font-size: 18px;
+    }
+}
+
+@media (min-width:1024px){
+    .register_mainnav_ul li {
+        padding-right: 1%;
+        padding-left: 1%;
+    }
+
+    .register_mainnav_ul li a{
+        font-size: 20px;
+    }
+    .register_mainnav_ul li a:hover{
+        color: black;
+        border-bottom: 1px solid black;
+    }
+    .register_main_section h1 {
+        font-size: 60px;
+    }
+    .register_mainsection_form {
+        margin-top: 4%;
+    }
+    .register_mainsection_form div input {
+        padding: 1.3%;
+    }
+    .register_mainsection_form div label{
+        font-size: 30px;
+    }
+    .register_mainsection_form--p-campos{
+        font-size: 20px;
+    }
+    .register_mainsection_form button {
+        font-size: 45px;
+        transition: all 1s;
+    }
+    .register_mainsection_form button:hover{
+        background-color: var(--color-gris-oscuro);
+        box-shadow: 2px 2px 10px black;
+        cursor: pointer;
+    }
+    .register_mainsection_form--p--cuenta{
+        font-size: 25px;
+    }
+    .register_mainsection_form--p--cuenta a:hover{
+        border-bottom: 1px solid black;
+    }
+
+}
