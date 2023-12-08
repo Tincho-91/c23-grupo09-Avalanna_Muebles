@@ -12,7 +12,7 @@ const productsController = {
     },
     formulario:(req,res) => {
         
-        res.render("formulario", {title:"formulario"})
+        res.render("products/formulario", {title:"formulario"})
     },
     cart:(req,res)=>{
         res.render("products/productCart", {title:"Carrito de compra"});
