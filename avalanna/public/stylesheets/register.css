@@ -27,6 +27,8 @@
 .register__main__nav__ul li a{
     font-size: 12px;
     color: rgba(0, 0, 0, 50%);
+    text-decoration: none;
+        color: black;
 }
 .register__main__section {
     margin-top: 6%;

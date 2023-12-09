@@ -3,7 +3,12 @@
 text-align: center;
 padding: 2%;
 font-size: 40px;
+font-weight: 700;
 }
+.dashboard__main {
+
+}
+
 .dashboard__main div{
     width: 100%;
    text-align: center;
@@ -30,18 +35,22 @@ font-size: 40px;
     font-weight: 600;
     padding: 2% 35% 2% 30%;
     transition: all 1s;
+    text-decoration: none;
+    color: black;
 }
 
 
 .dashboard__main__table {
     padding: 3%;
-    width: 100%;
+    width: 98%;
+    margin: 2% auto;
 }
 .dashboard__main__table th{
   border-top:1px solid rgba(0, 0, 0, 60%);
   border-left: 1px solid rgba(0, 0, 0, 60%);
   border-right: 1px solid rgba(0, 0, 0, 60%);
   font-size: 18px;
+  text-align: center;
 }
 .dashboard__main__table td{
     border: 1px solid rgba(0, 0, 0, 60%);
@@ -65,6 +74,11 @@ font-size: 40px;
     padding: 8%;
     transition: all 1s;
     font-size: 25px;
+}
+
+.dashboard__main__table__tbody__buttons a{
+    text-decoration: none;
+    color: black;
 }
 .dashboard__main__table__tbody__buttons i:hover{
     border: 1px solid black;
