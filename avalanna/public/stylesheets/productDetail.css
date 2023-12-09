@@ -11,7 +11,12 @@ font-size: 8px;
 text-align: left;
 margin: 1% 2% 1% 5%;
 padding:0% 1% ;
+color: black;
 
+}
+
+.productDetail__main a{
+    text-decoration: none;
 }
 .productDetail__main {
 background-color:var(--color-gris-claro);
