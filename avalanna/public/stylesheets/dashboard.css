@@ -5,9 +5,7 @@ padding: 2%;
 font-size: 40px;
 font-weight: 700;
 }
-.dashboard__main {
 
-}
 
 .dashboard__main div{
     width: 100%;
@@ -59,11 +57,7 @@ font-weight: 700;
     padding: 1%;
     font-size: 20px;
 }
-.dashboard__main__table__thead {
-}
-.dashboard__main__table__tbody {
-  
-}
+
 .dashboard__main__table__tbody__fila td img {
     width: 65%;
 }
@@ -83,10 +77,4 @@ font-weight: 700;
 .dashboard__main__table__tbody__buttons i:hover{
     border: 1px solid black;
     box-shadow: 2px 2px 10px black;
-}
-.fa-eye {
-}
-.fa-pen-to-square {
-}
-.fa-trash {
 }
