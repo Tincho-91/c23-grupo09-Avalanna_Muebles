@@ -1,0 +1,51 @@
+<%- include("../partials/head.ejs") %>
+<body>
+  <%- include("../partials/header.ejs") %>
+<body>
+  
+  
+
+  </nav>
+  <section class="form_main_section">
+    <h1>CARGAR PRODUCTOS</h1>
+    <form action="form" method="post" class="form_mainsection_form">
+      <div>
+        <label for="tel">Imagen</label><br>
+        <input type="file" accept="png jpg">
+      </div>
+        <div>
+            <label for="name">Nombre</label><br>
+            <input type="text" name="nombre" id="name" required>
+        </div>
+    
+          <div>
+            <label for="email">Precio</label><br>
+            <input type="email" name="email" id="email" required>
+          </div>
+  
+
+          <div>
+            <label for="contraseña">Descripción</label><br>
+            <input type="password" name="password" id="contraseña" required>
+          </div>
+  
+          <div>
+            <label for="confirm">Descripción Adicional</label><br>
+            <input type="password" name="password" id="confirm" required>
+          </div>
+          <div>
+            <label for="confirm">Medidas</label><br>
+            <input type="password" name="password" id="confirm" required>
+          </div>
+          
+          <button class="form-button--a"><a href="Cargar Producto">Cargar Producto</a></button> 
+          
+    </form>
+    
+  </section>
+  
+   </main>
+   <%- include("../partials/footer.ejs") %>
+
+</body>
+</html>
