@@ -4,7 +4,7 @@
 
 En nuestra primera retrospectiva llegamos a las siguientes conclusiones sobre nuestro primer sprint:
 
-![starfish retrospective](./public/img/starfishRetrospective.png)
+![starfish retrospective](./avalanna/public/img/starfishRetrospective.png)
 
 
 KEEP DOING: Consideramos que desde el primer momento tuvimos un gran respeto por la opinión del otro y siempre consultamos cada detalle del trabajo evitando futuros malentendidos.
@@ -25,7 +25,7 @@ LESS OF: No respetar lo establecido desde un principio siempre y cuando esta ins
 
 Segunda retrospectiva referida al sprint 2:
 
-![starfish retrospective](./public/img/starfishRetrospective2.png)
+![starfish retrospective](./avalanna/public/img/starfishRetrospective2.png)
 
 
 
