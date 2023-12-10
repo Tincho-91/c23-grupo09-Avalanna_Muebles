@@ -6,6 +6,9 @@
     padding-bottom: 2%;
     padding-top: 2%;
 }
+.form-main{
+    margin-bottom:15%;
+}
 
 .form_mainnav_ul {
     display: flex;
@@ -30,6 +33,7 @@
 .form-button--a a{
     color: black;
     text-decoration: none;
+   padding-bottom:9%;
  }
 
 .form_main_section {
