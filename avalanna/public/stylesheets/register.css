@@ -11,7 +11,7 @@
 .register__main__nav__ul {
     display: flex;
     flex-wrap: wrap;
-    margin-left: 1%;
+    margin-left: -4%;
 }
 .register__main__nav__ul li {
     margin: 2% 0%;
@@ -27,6 +27,7 @@
 .register__main__nav__ul li a{
     font-size: 12px;
     color: rgba(0, 0, 0, 50%);
+    text-decoration: none;
 }
 .register__main__section {
     margin-top: 6%;
@@ -91,6 +92,8 @@
 
 .register__main__section__form--p--cuenta a{
     font-weight: 700;
+    text-decoration: none;
+    color: black;
 }
 
 @media (min-width:768px) {
@@ -135,6 +138,10 @@
 }
 
 @media (min-width:1024px){
+    .register__main__nav__ul{
+        margin-left: 0;
+
+    }
     .register__main__nav__ul li {
         padding-right: 1%;
         padding-left: 1%;
