@@ -67,6 +67,11 @@ margin-top: 15px;
     font-weight: 700;
     font-family: "Raleway", sans-serif;
     }
+    .seccion__productos--titulo h1{
+        font-family: "Raleway", sans-serif;
+    font-weight: 700;
+    margin: 0;
+    }
     .color{
         margin-right:50%;
         margin-bottom: 5px;
@@ -82,11 +87,15 @@ display: block;
 border:none;
 margin-left: 2%;
 font-weight: 700;
+line-height: normal;
 }    
 
 .productDetail__main__section_div_buttons{
     text-align: left;
     margin-top:2%;
+}
+.productDetail-button-envios{
+    margin-bottom: -2%;
 }
 .productDetail-button_a_p{
 font-size: 5px;
@@ -98,6 +107,7 @@ padding: 1.5%;
 margin-left: 2%;
 margin-top:-15%;
 font-weight: 700;
+line-height: normal;
 }
 
 .productDetail-li{
@@ -115,9 +125,8 @@ margin-left: -4%;
     display: block;
     width: 40%;
     padding: 1%;
+    font-weight: 700;
     font-family: "Raleway", sans-serif;
-    font-weight: 600;
-    color: black;
     }
 .imagenes_relacionadas{
     display: flex;
@@ -136,7 +145,8 @@ font-family: "Raleway", sans-serif;
 .Descripción__detail{
 padding: 5%;
 text-align:left ;
-font-size: 20px;
+font-family: "Raleway",sans-serif;
+font-weight: 600;
 }  
 .Descripción__detail {
     font-weight: 700;
@@ -146,6 +156,11 @@ font-size: 20px;
 .productDetail-descripcion{
 font-size:12px ;
 margin-left: -5%;
+}
+.productDetail_descripcion-h6{
+    font-family: "Raleway", sans-serif;
+    font-weight: 600;
+    margin:0;
 }
 .seccion__productos{
 margin-left: 30px;
@@ -159,6 +174,7 @@ width: 30%;
 }
 .productDetail-li{
 font-size:8px ;
+margin-left: -10%;
 }
 
 .productDetail__uno {
@@ -234,11 +250,10 @@ padding: 1%;
             .productDetail-li{
                 font-size: 20px;
                 padding-top: 5%;
-                margin-left: -5%;
+                margin-left: -4%;
             }
             .Descripción__detail{
-                font-size: 30px;
-                margin-left: -6%;
+                font-size: 28px;
             }
 }
 
@@ -300,11 +315,17 @@ margin-left: 1px;
                 background-color:var(--color-gris-oscuro);
             color: var(--color-gris-claro);
             }
+            .Descripción__detail{
+                font-size: 35px;
+            }
             .imagenes_relacionadas{
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: left ;
                  width: 100%;
+         }
+         .productDetail_descripcion-h6{
+            margin-left: -1%;
          }
          .imagenes_relacionadas img{
         width: 25%;
