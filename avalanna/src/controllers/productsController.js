@@ -14,6 +14,11 @@ const productsController = {
         
         res.render("products/crear-formulario", {title:"formulario"})
     },
+
+    edform:(req,res) => {
+        
+        res.render("products/edform", {title:"edform"})
+    },
     cart:(req,res)=>{
         res.render("products/productCart", {title:"Carrito de compra"});
     }
