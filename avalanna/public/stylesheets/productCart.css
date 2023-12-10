@@ -59,11 +59,16 @@
     height: 33px;
     top: 50%;
     left: 2%;
-
-
-
 }
 
+main section div .texto-detalle{
+    font-size:12px;
+    position: absolute;
+    top: 35%;
+    width: 60%;
+    right: 38%;
+    font-family: "Raleway", sans-serif;
+}
 
 .producto-precio {
     position: absolute;
@@ -86,16 +91,6 @@
     position: relative;
 }
 
-.texto-detalle {
-    position: absolute;
-    top: 35%;
-    width: 60%;
-    right: 38%;
-    font-family: "Raleway", sans-serif;
-    font-size: 12px;
-}
-
-
 .actualizar_seguir {
     position: relative;
     right: -4%;
@@ -107,24 +102,26 @@
 }
 
 .boton1 button {
-    padding: 10px 85px;
+    padding: 10px 30px;
     background-color: #000;
     color: white;
     border: none;
     position: absolute;
     top: -66%;
+    margin-left: 50px;
 
 
 }
 
 .boton2 button {
-    padding: 10px 90px;
+    padding: 10px 37px;
     background-color: #000;
     color: white;
     border: none;
     /* margin-top: -20px; */
     position: absolute;
     top: -58px;
+    margin-left: 50px;
 
 
 
