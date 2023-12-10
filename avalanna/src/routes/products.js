@@ -9,5 +9,6 @@ router.get('/detail/:id', productController.detail);
 
 router.get('/productCart', productController.cart)
 
+router.get('/dashboard', productController.dashboard)
 
 module.exports = router;

@@ -12,8 +12,13 @@ const productController = {
     },
     cart:(req,res)=>{
         res.render("products/productCart", {title:"Carrito de compra"});
+    },
+    dashboard:(req,res) => {
+        const propiedades = ["id", "image", "name", "price"];
+        const productsJson = fs.readFileSync(json,"utf-8");
+        const products = JSON.parse(productsJson);
+        res.render("products/dashboard", {title: "Dashboard", products, propiedades})
     }
-    
 }
 
 
