@@ -93,7 +93,6 @@ main section div .texto-detalle{
 
 .actualizar_seguir {
     position: relative;
-    right: -4%;
     top: 63%;
     margin-bottom: 10%;
     padding-bottom: 3%;
@@ -108,7 +107,7 @@ main section div .texto-detalle{
     border: none;
     position: absolute;
     top: -66%;
-    margin-left: 50px;
+    margin-left: 60px;
 
 
 }
@@ -121,7 +120,7 @@ main section div .texto-detalle{
     /* margin-top: -20px; */
     position: absolute;
     top: -58px;
-    margin-left: 50px;
+    margin-left: 60px;
 
 
 
