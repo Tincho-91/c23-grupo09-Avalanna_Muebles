@@ -11,5 +11,45 @@
     "height": "Alto 82cm",
     "width": "Ancho 220cm",
     "depth":"Profundidad 170cm"
+},
+{
+    "id":"2",
+    "image": "roperoNordico.png",
+    "name":"Ropero Nórdico",
+    "price":"680.000",
+    "offer":"600.000",
+    "discount":"Ahorras $80.000",
+    "description":"Ropero de madera nórdica, elegante y funcional que puede agregar un toque de estilo a cualquier habitación. Madera de origen sostenible y se selecciona cuidadosamente para garantizar la mejor calidad posible.",
+    "extraDescription":"Los cajones en su interior cuentan con guias metalicas.",
+    "height":"Alto 230cm",
+    "width":"Ancho 220cm",
+    "depth":"Profundidad 80cm"
+},
+{
+    "id":"3",
+    "image": "mesaParaTe.png",
+    "name":"Mesa baja",
+    "price":"150.000",
+    "offer":"126.000",
+    "discount":"Ahorras un 16%",
+    "description":"Hecha de madera de alta calidad y cuenta con un acabado blanco suave que le da un aspecto elegante y sofisticado. La mesa es baja y espaciosa, lo que la hace ideal para colocar en el centro de una sala de estar.",
+    "extraDescription":"",
+    "height":"Alto 50cm",
+    "width":"Ancho 100cm",
+    "depth":""
+},
+{
+    "id":"4",
+    "image": "rackDeTV.png",
+    "name":"Rack de TV",
+    "price":"110.000",
+    "offer":"98.900",
+    "discount":"Ahorras un 10%",
+    "description":"Rack de TV de estilo escandinavo y elegante. De líneas simples, es una declaración al estilo limpio y contemporáneo que celebra la belleza de la madera moderna y minimalista.",
+    "extraDescription":"Cuenta con 8 patas de madera maciza.",
+    "height":"Alto 50cm",
+    "width":"Ancho 150cm",
+    "depth":"60cm"
 }
+
 ]

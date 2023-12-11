@@ -14,10 +14,20 @@ const productsController = {
         
         res.render("products/crear-formulario", {title:"formulario"})
     },
+
+    edform:(req,res) => {
+        
+        res.render("products/edform", {title:"edform"})
+    },
     cart:(req,res)=>{
         res.render("products/productCart", {title:"Carrito de compra"});
+    },
+    dashboard:(req,res) => {
+        const propiedades = ["id", "image", "name", "price"];
+        const productsJson = fs.readFileSync(json,"utf-8");
+        const products = JSON.parse(productsJson);
+        res.render("products/dashboard", {title: "Dashboard", products, propiedades})
     }
-    
 }
 
 

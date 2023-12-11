@@ -1,15 +1,15 @@
-<%- include("../partials/head.ejs") %>
 
+    <%- include("./partials/head.ejs") %>
 <body>
 
-  <%- include("../partials/header.ejs") %>
+    <%- include("./partials/header.ejs") %>
 
    <main class="register__main">
     <nav class="register__main__nav">
       <ul class="register__main__nav__ul">
           <li class="li__home"><a href="/">Home</a></li>
-          <li class="li__miCuenta"><a href="/login">Mi cuenta</a></li>
-          <li ><a href="/registrarme">Crear cuenta</a></li>
+          <li class="li__miCuenta"><a href="/users/ingresar">Mi cuenta</a></li>
+          <li ><a href="/users/registrarme">Crear cuenta</a></li>
       </ul>
   </nav>
   <section class="register__main__section">
@@ -46,12 +46,11 @@
             <button type="submit">Crear cuenta</button>
           
     </form>
-    <p class="register__main__section__form--p--cuenta">¿Ya tenés una cuenta? <a href="/users/ingresar" class="register__main__section__form__div__p__a">Iniciá sesión</a></p>
+    <p class="register__main__section__form--p--cuenta">¿Ya tenés una cuenta? <a href="/ingresar" class="register__main__section__form__div__p__a">Iniciá sesión</a></p>
   </section>
   
    </main>
-   
-   <%- include("../partials/footer.ejs") %>
+   <%- include("./partials/footer.ejs") %>
 
 </body>
 </html>

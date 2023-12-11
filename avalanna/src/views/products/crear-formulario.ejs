@@ -3,14 +3,13 @@
   <%- include("../partials/header.ejs") %>
 <body>
   
-  
-
+  <main class="form-main">
   </nav>
   <section class="form_main_section">
     <h1>CARGAR PRODUCTOS</h1>
     <form action="form" method="post" class="form_mainsection_form">
       <div>
-        <label for="tel">Imagen</label><br>
+        <label for="imagen">Imagen</label><br>
         <input type="file" accept="png jpg">
       </div>
         <div>
@@ -19,12 +18,18 @@
         </div>
     
           <div>
+
             <label for="precio">Precio</label><br>
             <input type="precio" name="precio" id=precio" required>
+
+            <label for="price">Precio</label><br>
+            <input type="price" name="price" id="price" required>
+
           </div>
   
 
           <div>
+
             <label for="descripcion">Descripción</label><br>
             <input type="descripcioin" name="descripcion" id="descripcion" required>
           </div>
@@ -36,9 +41,22 @@
           <div>
             <label for="medidias">Medidas</label><br>
             <input type="medidas" name="medidas" id="medidas" required>
+
+            <label for="description">Descripción</label><br>
+            <input type="description" name="description" id="description" required>
+          </div>
+  
+          <div>
+            <label for="descriptions a">Descripción Adicional</label><br>
+            <input type="descriptions a" name="descriptions a" id="descriptions a" required>
+          </div>
+          <div>
+            <label for="measures">Medidas</label><br>
+            <input type="measures" name="measures" id="measures" required>
+
           </div>
           
-          <button class="form-button--a"><a href="Cargar Producto">Cargar Producto</a></button> 
+          <button class="form-button--a"><a href="http://localhost:3000">Cargar Producto</a></button> 
           
     </form>
     
