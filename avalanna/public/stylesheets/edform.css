@@ -84,18 +84,16 @@
     position: relative;
     text-align: center;
     line-height: 225%;
-
+    width: 100%;
 
 }
 
 
 .botones_ed_borrar button {
     background-color: var(--color-beige);
-    width: 33%;
-    padding: 2px;
+    width:40%;
+    padding: 2% 10%;
     margin: 6px;
-
-
 
 }
 
@@ -160,6 +158,9 @@
     .edform_mainsection_form button {
         font-size: 32px;
         margin-top: 8%;
+
+
+
     }
 
     .edform_mainsection_form--p--cuenta {

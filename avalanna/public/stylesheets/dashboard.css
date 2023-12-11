@@ -1,0 +1,80 @@
+
+.dashboard__main h1 {
+text-align: center;
+padding: 2%;
+font-size: 40px;
+font-weight: 700;
+}
+
+
+.dashboard__main div{
+    width: 100%;
+   text-align: center;
+   margin-top: 1%;
+}
+.dashboard__main div button{
+    width: 80%;
+    padding: 1%;
+    font-size: 26px;
+    border: none;
+    transition: all 1s;
+    text-align: center;
+}
+.dashboard__main div button:hover{
+    box-shadow: 2px 2px 10px black;
+    background-color: var(--color-gris-oscuro);
+}
+.dashboard__main div button:hover a{
+    color: white;
+    font-size: 30px;
+}
+
+.dashboard__main div button a{
+    font-weight: 600;
+    padding: 2% 35% 2% 30%;
+    transition: all 1s;
+    text-decoration: none;
+    color: black;
+}
+
+
+.dashboard__main__table {
+    padding: 3%;
+    width: 98%;
+    margin: 2% auto;
+}
+.dashboard__main__table th{
+  border-top:1px solid rgba(0, 0, 0, 60%);
+  border-left: 1px solid rgba(0, 0, 0, 60%);
+  border-right: 1px solid rgba(0, 0, 0, 60%);
+  font-size: 18px;
+  text-align: center;
+}
+.dashboard__main__table td{
+    border: 1px solid rgba(0, 0, 0, 60%);
+    text-align: center;
+    background-color: var(--color-gris-claro);
+    padding: 1%;
+    font-size: 20px;
+}
+
+.dashboard__main__table__tbody__fila td img {
+    width: 65%;
+}
+.dashboard__main__table__tbody__fila td {
+    width: 20%;
+}
+.dashboard__main__table__tbody__buttons i{
+    padding: 8%;
+    transition: all 1s;
+    font-size: 25px;
+}
+
+.dashboard__main__table__tbody__buttons a{
+    text-decoration: none;
+    color: black;
+}
+.dashboard__main__table__tbody__buttons i:hover{
+    border: 1px solid black;
+    box-shadow: 2px 2px 10px black;
+}
