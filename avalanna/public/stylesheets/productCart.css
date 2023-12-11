@@ -59,11 +59,16 @@
     height: 33px;
     top: 50%;
     left: 2%;
-
-
-
 }
 
+main section div .texto-detalle{
+    font-size:12px;
+    position: absolute;
+    top: 35%;
+    width: 60%;
+    right: 38%;
+    font-family: "Raleway", sans-serif;
+}
 
 .producto-precio {
     position: absolute;
@@ -86,19 +91,8 @@
     position: relative;
 }
 
-.texto-detalle {
-    position: absolute;
-    top: 35%;
-    width: 60%;
-    right: 38%;
-    font-family: "Raleway", sans-serif;
-    font-size: 12px;
-}
-
-
 .actualizar_seguir {
     position: relative;
-    right: -4%;
     top: 63%;
     margin-bottom: 10%;
     padding-bottom: 3%;
@@ -107,24 +101,26 @@
 }
 
 .boton1 button {
-    padding: 10px 85px;
+    padding: 10px 30px;
     background-color: #000;
     color: white;
     border: none;
     position: absolute;
     top: -66%;
+    margin-left: 60px;
 
 
 }
 
 .boton2 button {
-    padding: 10px 90px;
+    padding: 10px 37px;
     background-color: #000;
     color: white;
     border: none;
     /* margin-top: -20px; */
     position: absolute;
     top: -58px;
+    margin-left: 60px;
 
 
 
@@ -165,7 +161,7 @@
     height: 2px;
     max-width: 350px;
     padding: 0;
-    margin: 16% auto 0 auto;
+    margin: 20% auto 0 auto;
 
 
 }
@@ -176,11 +172,7 @@
         font-size: 30px;
         text-align: center;
         padding: 13px;
-
-
     }
-
-
 
     .carrito {
         top: 19px;
@@ -194,16 +186,25 @@
 
     }
 
+    main section div .texto-detalle{
+        font-size:22px;
+        position: absolute;
+        top: 55%;
+        width: 60%;
+        right: 38%;
+        font-family: "Raleway", sans-serif;
+    }
+
     .subtitulos {
         position: relative;
         font-size: 20px;
         padding: 25px;
         top: 22px;
-
+        display:flexbox;
     }
 
     .contenedor-detalle {
-        height: 350px;
+        height: 360px;
 
     }
 
@@ -223,7 +224,7 @@
 
     .producto-precio {
         right: 31%;
-        top: 40%;
+        top: 21%;
         font-size: 26px;
     }
 
@@ -231,7 +232,7 @@
     .producto-cantidad button {
         width: 13%;
         height: 39px;
-        top: 39%;
+        top: 20%;
         left: 73%;
 
 
@@ -239,7 +240,7 @@
 
     .producto-total {
         right: 4px;
-        top: 40%;
+        top: 21%;
         font-size: 26px;
 
 
@@ -373,6 +374,15 @@
         font-size: 30px;
 
 
+    }
+
+    main section div .texto-detalle{
+        font-size:28px;
+        position: absolute;
+        top: 62%;
+        width: 60%;
+        right: 38%;
+        font-family: "Raleway", sans-serif;
     }
 
 
