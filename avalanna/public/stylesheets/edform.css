@@ -76,9 +76,9 @@
 }
 
 .edform_mainsection_form botton {
-    /* color: rgba(255, 255, 255, 90%);
-    /* background-color: var(--color-beige); */
-    padding: 2% 12%; */
+    /* color: rgba(255, 255, 255, 90%);*/
+     background-color: var(--color-beige);
+    /*padding: 2% 12%; */
     /* margin-top: 8%;
     font-size: 25px;
      */
@@ -95,12 +95,7 @@
    
 
 }
-.form-editar{
-   
-   background-color: blue;
-   
-margin-left: 599px;
-}
+
 
 
 
