@@ -76,6 +76,9 @@
     margin-top: 11%;
     font-size: 25px;
 }
+.form-button--a{
+    margin-left: -9%;
+}
 
 .form_mainsection_form--p-campos{
     font-size: 12px;
@@ -138,6 +141,9 @@
         font-size: 32px;
         margin-top:8%;
     }
+    .form-button--a{
+        margin-left: 4%;
+    }
 
     .form_mainsection_form--p--cuenta{
         font-size: 18px;
@@ -179,6 +185,9 @@
     .form_mainsection_form button {
         font-size: 45px;
         transition: all 1s;
+    }
+    .form-button--a{
+        margin-left: 8%;
     }
     .form_mainsection_form button:hover{
         background-color: var(--color-gris-oscuro);
