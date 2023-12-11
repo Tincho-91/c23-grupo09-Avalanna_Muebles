@@ -76,28 +76,33 @@
 }
 
 .edform_mainsection_form botton {
-    /* color: rgba(255, 255, 255, 90%);*/
-     background-color: var(--color-beige);
-    /*padding: 2% 12%; */
-    /* margin-top: 8%;
-    font-size: 25px;
-     */
+
+    padding: 2% 12%;
+    
 }
-  
+
 
 .botones_ed_borrar {
 
- 
-    font-size: 30px;
+    padding: 5%;
+    font-size: 19px;
     position: relative;
     text-align: center;
- border-bottom:30px ; 
-   
+    line-height: 225%;
+
 
 }
 
 
+.botones_ed_borrar button {
+    background-color: var(--color-beige);
+    width: 33%;
+    padding: 2px;
+    margin: 6px;
 
+
+
+}
 
 .edform_mainsection_form--p-campos {
     font-size: 12px;
@@ -168,6 +173,11 @@
     .edform_mainsection_form--p--cuenta {
         font-size: 18px;
     }
+
+    .botones_ed_borrar button {
+        padding: 10px;
+        font-size: 25px;
+    }
 }
 
 @media (min-width:1024px) {
@@ -224,4 +234,8 @@
         border-bottom: 1px solid black;
     }
 
+    .botones_ed_borrar button {
+        padding: 14px;
+        font-size: 30px;
+    }
 }
