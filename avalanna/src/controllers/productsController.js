@@ -27,6 +27,9 @@ const productsController = {
         const productsJson = fs.readFileSync(json,"utf-8");
         const products = JSON.parse(productsJson);
         res.render("products/dashboard", {title: "Dashboard", products, propiedades})
+    },
+    products:(req,res) =>{
+        
     }
 }
 
