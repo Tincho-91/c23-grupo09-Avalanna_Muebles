@@ -1,0 +1,431 @@
+.titulo {
+    font-size: 26px;
+    /* padding: 2px; */
+    /* position: absolute; */
+    top: -40%;
+}
+
+.titulo-icon {
+    position: relative;
+    margin-bottom: 2%;
+}
+
+.carrito {
+    position: absolute;
+    right: 8%;
+    top: 25%;
+    font-size: 19px;
+}
+
+.subtitulos {
+    font-size: 10px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+
+}
+
+.contenedor-detalle {
+    height: 280px;
+    background-color: #D1D1D1;
+    position: relative;
+    padding-bottom: 4%;
+}
+
+.Cantidad {
+    display: none;
+}
+
+.imagen-detalle {
+    width: 38%;
+    height: 75px;
+    display: flex;
+    position: relative;
+    top: 10px;
+    right: -8px;
+
+}
+
+.precio-sillon {
+    position: absolute;
+    right: 33%;
+}
+
+
+.producto-cantidad button {
+    position: absolute;
+    padding: 3px;
+    width: 95%;
+    height: 33px;
+    top: 50%;
+    left: 2%;
+}
+
+main section div .texto-detalle{
+    font-size:12px;
+    position: absolute;
+    top: 35%;
+    width: 60%;
+    right: 38%;
+    font-family: "Raleway", sans-serif;
+}
+
+.producto-precio {
+    position: absolute;
+    right: 30%;
+    top: 15%;
+    border: 1px;
+}
+
+.producto-total {
+    position: absolute;
+    right: 3px;
+    top: 15%;
+
+
+
+
+}
+
+.precios {
+    position: relative;
+}
+
+.actualizar_seguir {
+    position: relative;
+    top: 63%;
+    margin-bottom: 10%;
+    padding-bottom: 3%;
+
+
+}
+
+.boton1 button {
+    padding: 10px 30px;
+    background-color: #000;
+    color: white;
+    border: none;
+    position: absolute;
+    top: -66%;
+    margin-left: 60px;
+
+
+}
+
+.boton2 button {
+    padding: 10px 37px;
+    background-color: #000;
+    color: white;
+    border: none;
+    /* margin-top: -20px; */
+    position: absolute;
+    top: -58px;
+    margin-left: 60px;
+
+
+
+}
+
+.subtotal_precio {
+    position: relative;
+    top: 10px;
+}
+
+.subtotal {
+    position: absolute;
+
+}
+
+.precio-total {
+    position: absolute;
+    right: 5px;
+}
+
+.finalizar-compra button {
+    position: absolute;
+    top: 20px;
+    right: 17%;
+    padding: 8px;
+    background-color: #000;
+    color: white;
+    font-size: 25px;
+}
+
+.finalizar-compra {
+    position: relative;
+    margin-bottom: 25%;
+}
+
+.linea {
+    border-top: 1px solid black;
+    height: 2px;
+    max-width: 350px;
+    padding: 0;
+    margin: 20% auto 0 auto;
+
+
+}
+
+
+@media(min-width:768px) {
+    .titulo {
+        font-size: 30px;
+        text-align: center;
+        padding: 13px;
+    }
+
+    .carrito {
+        top: 19px;
+        font-size: 25px;
+    }
+
+    .Cantidad {
+        display: block;
+        position: relative;
+        right: -27%;
+
+    }
+
+    main section div .texto-detalle{
+        font-size:22px;
+        position: absolute;
+        top: 55%;
+        width: 60%;
+        right: 38%;
+        font-family: "Raleway", sans-serif;
+    }
+
+    .subtitulos {
+        position: relative;
+        font-size: 20px;
+        padding: 25px;
+        top: 22px;
+        display:flexbox;
+    }
+
+    .contenedor-detalle {
+        height: 360px;
+
+    }
+
+    .imagen-detalle {
+        width: 50%;
+        height: 73%;
+    }
+
+    .texto-detalle {
+        top: 55%;
+        width: 40%;
+        right: 58%;
+        font-size: 20px;
+
+    }
+
+
+    .producto-precio {
+        right: 31%;
+        top: 21%;
+        font-size: 26px;
+    }
+
+
+    .producto-cantidad button {
+        width: 13%;
+        height: 39px;
+        top: 20%;
+        left: 73%;
+
+
+    }
+
+    .producto-total {
+        right: 4px;
+        top: 21%;
+        font-size: 26px;
+
+
+    }
+
+    .actualizar_seguir {
+
+        right: 34%;
+        top: 75%;
+        font-size: 20px;
+        position: absolute;
+
+
+    }
+
+    .boton1 button {
+        padding: 5px 5px;
+        background-color: transparent;
+        color: #000;
+        position: absolute;
+        top: 35px;
+        font-size: 30px;
+        right: -75%;
+
+
+
+    }
+
+    .boton2 button {
+        padding: 5px 5px;
+        background-color: transparent;
+        color: #000;
+        position: relative;
+        top: 35px;
+        font-size: 30px;
+        right: 75%;
+
+    }
+
+    .subtotal_precio {
+        font-size: 25px;
+    }
+
+
+    .linea {
+        max-width: 100%;
+        margin: 9% auto 0 auto;
+
+
+    }
+
+    .finalizar-compra button {
+        top: 1000%;
+        right: 35%;
+        font-size: 31px;
+
+    }
+
+    .finalizar-compra {
+        margin-bottom: 15%;
+    }
+
+}
+
+@media(min-width:1024px) {
+
+    .titulo {
+        font-size: 48px;
+        text-align: center;
+
+    }
+
+    .carrito {
+
+        font-size: 35px;
+        top: 35%;
+
+    }
+
+
+
+    .subtitulos {
+        font-size: 30px;
+
+    }
+
+    .Cantidad {
+        display: block;
+        position: relative;
+        right: -23%;
+
+    }
+
+    .precio-sillon {
+        position: absolute;
+        right: 40%;
+    }
+
+    .imagen-detalle {
+        width: 45%;
+        height: 250px;
+        top: 30px;
+        right: -2%;
+
+    }
+
+    .contenedor-detalle {
+
+        height: 450px;
+
+    }
+
+    .producto-precio {
+        font-size: 31px;
+        right: 39%;
+        top: 31%;
+    }
+
+
+
+    .producto-cantidad button {
+        height: 56px;
+        top: 30%;
+        font-size: 29px;
+        left: 69%;
+    }
+
+
+    .producto-total {
+        top: 31%;
+        font-size: 30px;
+
+
+    }
+
+    main section div .texto-detalle{
+        font-size:28px;
+        position: absolute;
+        top: 62%;
+        width: 60%;
+        right: 38%;
+        font-family: "Raleway", sans-serif;
+    }
+
+
+    .texto-detalle {
+
+        font-size: 25px;
+        top: 65%;
+
+
+    }
+
+
+    .boton1 button {
+        font-size: 34px;
+        top: 55px;
+    }
+
+    .boton2 button {
+        font-size: 34px;
+        top: 55px;
+    }
+
+    .subtotal_precio {
+        font-size: 26px;
+    }
+
+    .linea {
+
+        margin: 8% auto 0 auto;
+
+
+    }
+
+    .finalizar-compra button {
+        top: 96%;
+        right: 33%;
+        font-size: 38px;
+       margin: 25px;
+    }
+
+    .finalizar-compra {
+        margin-bottom: 15%;
+    }
+
+
+}

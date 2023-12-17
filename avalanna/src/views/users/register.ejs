@@ -1,0 +1,56 @@
+
+    <%- include("../partials/head.ejs") %>
+<body>
+
+    <%- include("../partials/header.ejs") %>
+
+   <main class="register__main">
+    <nav class="register__main__nav">
+      <ul class="register__main__nav__ul">
+          <li class="li__home"><a href="/">Home</a></li>
+          <li class="li__miCuenta"><a href="/users/ingresar">Mi cuenta</a></li>
+          <li ><a href="/users/registrarme">Crear cuenta</a></li>
+      </ul>
+  </nav>
+  <section class="register__main__section">
+    <h1>Crear Cuenta</h1>
+    <form action="register" method="post" class="register__main__section__form">
+        <div>
+            <label for="name">Nombre y Apellido*</label><br>
+            <input type="text" name="nombre" id="name" required>
+        </div>
+    
+          <div>
+            <label for="email">Email*</label><br>
+            <input type="email" name="email" id="email" required>
+          </div>
+          
+          <div>
+            <label for="tel">Teléfono (Opcional)</label><br>
+            <input type="tel" name="tel" id="tel">
+          </div>
+  
+          <div>
+            <label for="contraseña">Contraseña*</label><br>
+            <input type="password" name="password" id="contraseña" required>
+          </div>
+  
+          <div>
+            <label for="confirm">Confirmar contraseña*</label><br>
+            <input type="password" name="password" id="confirm" required>
+          </div>
+          <span>
+            <p class="register__main__section__form--p-campos">*Campos obligatorios</p>
+          </span>
+          
+            <button type="submit">Crear cuenta</button>
+          
+    </form>
+    <p class="register__main__section__form--p--cuenta">¿Ya tenés una cuenta? <a href="/ingresar" class="register__main__section__form__div__p__a">Iniciá sesión</a></p>
+  </section>
+  
+   </main>
+   <%- include("../partials/footer.ejs") %>
+
+</body>
+</html>

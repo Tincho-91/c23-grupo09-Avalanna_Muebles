@@ -57,3 +57,15 @@ Flavia: Comenzó a realizar los medias queries de productDetail.
 Melany: Agregó estilos a register.
 Luana: Aplicó flexbox al header.
 Martin: Continua agregando estilos al footer.
+
+5/12/23
+Melany: refactorizó el código del trabajo utilizando express generator.
+Flavia: comenzó a hacer el formulario de carga de producto.
+Martin: iniciando con los archivos partials.
+Luana: terminando de corregir errores de vista de carrito.
+
+07/12/23
+Martin: terminando partials sin complicaciones mayores.
+Melany: refactorización terminada, comenzando dashboard.
+Flavia: trabajando con formularios de css, solucionando un bloqueo.
+Luana: se ausentó por la clase de apoyo.

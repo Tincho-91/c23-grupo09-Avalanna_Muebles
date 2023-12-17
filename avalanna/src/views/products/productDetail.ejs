@@ -1,0 +1,55 @@
+<%- include("../partials/head.ejs") %>
+
+<body class="productDetail__body">
+
+<%- include("../partials/header.ejs") %>
+
+ <main class="productDetail__main">
+            
+        <section class="seccion__productos">
+            <img class="detalles img" src="/img/<%=product.image%>" alt="<%= product.name %>">  
+            <div class="precios">
+                <div class="seccion__productos--titulo">  
+            <h1 class="seccion__productos--titulo"><%= product.name %></h1>
+            <p class="tachado">$<%= product.price %></p>
+            <p class="color"><%= product.offer %></p>
+            <p class="color"><%= product.discount %></b></p>
+            <div class="productDetail__main__section_div_buttons">
+                <button class="productDetail-button">COMPRAR AHORA</button>
+               <button class="productDetail-button">AGREGAR AL CARRITO</button>
+              <button class="productDetail-button productDetail-button-envios">Envios a domicilio  <i class="fa-solid fa-truck-fast" style="color: #000000;"></i></button> <br>
+               <button type="submit" class="productDetail-button_a_p"><a href="/"><p>Ver mas</p></a></button><b>
+            </div>
+            </div>
+        </div>
+      
+            <article  class="productDetail-descripcion">
+                <h4 class="Descripción__detail">Descripción</h4>
+                <h6 class="productDetail_descripcion-h6"><%= product.description %> </h6>
+                <h6 class="productDetail_descripcion-h6"> <%= product.extraDescription %></h6>
+                    <ul class="productDetail-li">
+                   <li>Medidas:</li>     
+                <li><%= product.height %></li>
+                 <li><%= product.width %></li> 
+                <li><%= product.depth %></li></b>
+        </ul>
+      </article>
+    </section>
+    
+    <div class="productDetail__uno">    
+        <h3 class="productDetail_relacionados">Productos relacionados</h3>
+<article class="imagenes_relacionadas">
+     <img class="img1" src="/img/sillon1.png" alt="" width="600px">
+    <img class="img1" src="/img/sillon.png" alt="">
+    <img class="img1" src="/img/juego.png" alt="">
+    <img class="img1" src="/img/sillon2.png" alt="">
+    <img class="img1" src="/img/juego sillon.png" alt="">
+    <img class="img1" src="/img/divan.png" alt="">
+</article>   
+</div>  
+</main> 
+
+<%- include("../partials/footer.ejs") %>
+
+</body>
+</html>
