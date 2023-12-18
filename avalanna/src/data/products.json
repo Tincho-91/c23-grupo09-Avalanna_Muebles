@@ -9,19 +9,21 @@
     "extraDescription":"Patas:forma piramidal recta macizas en madera de paraiso",
     "height": "82cm",
     "width": "220cm",
-    "depth":"170cm"
+    "depth":"170cm",
+    "category":"living"
 },
 {
     "id":"2",
     "image": "roperoNordico.png",
     "name":"Ropero Nórdico",
-    "price":680.000,
+    "price":680000,
     "discount":10,
     "description":"Ropero de madera nórdica, elegante y funcional que puede agregar un toque de estilo a cualquier habitación. Madera de origen sostenible y se selecciona cuidadosamente para garantizar la mejor calidad posible.",
     "extraDescription":"Los cajones en su interior cuentan con guias metalicas.",
     "height":"230cm",
     "width":"220cm",
-    "depth":"80cm"
+    "depth":"80cm",
+    "category":"dormitorio"
 },
 {
     "id":"3",
@@ -33,19 +35,21 @@
     "extraDescription":"",
     "height":"50cm",
     "width":"100cm",
-    "depth":""
+    "depth":"",
+    "category":"living"
 },
 {
     "id":"4",
     "image": "rackDeTV.png",
     "name":"Rack de TV",
-    "price":110.000,
+    "price":110000,
     "discount":10,
     "description":"Rack de TV de estilo escandinavo y elegante. De líneas simples, es una declaración al estilo limpio y contemporáneo que celebra la belleza de la madera moderna y minimalista.",
     "extraDescription":"Cuenta con 8 patas de madera maciza.",
     "height":"50cm",
     "width":"150cm",
-    "depth":"60cm"
+    "depth":"60cm",
+    "category":"living"
 }
 
 ]
