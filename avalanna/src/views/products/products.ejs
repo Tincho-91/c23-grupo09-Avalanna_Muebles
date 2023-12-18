@@ -6,18 +6,20 @@
 
 <main class="products__main">
 
-<section>
+<section class="products__main__section">
+    <h1>Nuestros productos</h1>
     <% products.forEach(product => { %>
-        <article>
-            <a href="/products/detail/<%=product.id %>">
+        <article class="products__main__section__article">
+            <a href="/products/detail/<%=product.id %>" class="products__main__section__article__a">
                 <img src="/img/<%= product.image %>" alt="">
-                <div>
+                <div class="products__main__section__div">
                     <h3><%= product.name %></h3>
                     <% if (product.discount > 0){ %>
-                        <p><%= product.discount %>%</p>
+                        <p class="tachado products__main__descuento-p">$<%= product.price %></p>
+                        <p class="products__main__descuento-p">-<%= product.discount %>%</p>
                         <p>$<%= product.price - ((product.price * product.discount) / 100) %></p>
                   <%  } else {%>
-                    <p>$<%= product.price %></p>
+                    <p class="products__main__precio-total">$<%= product.price %></p>
                     <% } %>
                 </div>
             </a>

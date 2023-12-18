@@ -25,11 +25,12 @@ const productsController = {
     },
     dashboard:(req,res) => {
         const propiedades = ["id", "image", "name", "price"];
-        const products = getJson("products.json")
+        const products = getJson("products.json");
         res.render("products/dashboard", {title: "Dashboard", products, propiedades})
     },
     products:(req,res) =>{
-        
+        const products = getJson("products.json");
+        res.render("products/products", {title: "Todos los productos", products});
     }
 }
 
