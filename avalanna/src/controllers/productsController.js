@@ -8,7 +8,8 @@ const productsController = {
         const id = req.params.id;        
         const products = getJson("products.json")
         const product = products.find(elemento => elemento.id == id);
-        res.render("products/productDetail", {title: product.name, product})
+        const calc = product.price - ((product.price * product.discount) / 100)
+        res.render("products/productDetail", {title: product.name, product, calc})
     },
     formulario:(req,res) => {
         
