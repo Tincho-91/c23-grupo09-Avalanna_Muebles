@@ -6,7 +6,9 @@
 .products__main__section {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    gap: 3%;
+    padding: 1% 2%;
+    
 }
 .products__main__section h1{
     margin-bottom: 5%;
@@ -15,8 +17,8 @@
     width: 100%;
 }
 .products__main__section__article {
-    width: 48%;
-    margin: 2% 1%;
+    width: 48.5%;
+    margin:2% 0 2% 0;
 }
 .products__main__section__article__a{
     display: flex;
@@ -60,8 +62,11 @@
     margin: 0;
 }
 @media(min-width:768px){
+    .products__main__section {
+        gap: 2%;
+    }
     .products__main__section__article {
-        width: 31%;
+        width: 30%;
         margin: 2% 1%;
     }
     .products__main__section__article a img{
@@ -86,7 +91,7 @@
 }
 @media(min-width:1024px){ 
     .products__main__section__article {
-        width: 23%;
+        width: 23.5%;
         margin: 2% 0%;
     }
     .products__main__section__article a img{

@@ -46,7 +46,7 @@
 
         <section class="index__main__section__categorias">
           <% categories.forEach(category => { %>
-            <a href="">
+            <a href="/products/<%= category.name %>">
               <article>
                   <img src="/img/<%= category.image %>" alt="<%= category.alt %>">
                   <h2 class="index__main__section__a__article__h2__living"><%= category.name %></h2>
