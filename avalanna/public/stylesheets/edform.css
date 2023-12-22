@@ -6,6 +6,11 @@
     padding-bottom: 2%;
     padding-top: 2%;
 }
+.main_formEdit{
+    margin-bottom:15%;
+   
+    }
+    
 
 .edform_mainnav_ul {
     display: flex;
