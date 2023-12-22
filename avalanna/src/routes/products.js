@@ -12,4 +12,6 @@ router.get('/formEdit', productController.edform)
 
 router.get('/dashboard', productController.dashboard)
 
+router.post('/formCreate', productController.store)
+
 module.exports = router;

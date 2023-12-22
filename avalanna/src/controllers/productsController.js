@@ -15,6 +15,20 @@ const productsController = {
         res.render("products/crear-formulario", {title:"formulario"})
     },
 
+    store:(req,res) =>{
+    	const producto = req.body;
+		producto.id = Date.now();
+		const products = getjson();
+		products.push(producto)
+		
+
+		const json= JSON.stringify(products);
+		fs.writeFileSync(productsFilePath,json, "utf-8");
+		res.redirect(`/`);
+
+    },
+
+
     edform:(req,res) => {
         
         res.render("products/edform", {title:"edform"})
