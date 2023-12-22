@@ -1,0 +1,37 @@
+<%- include("../partials/head.ejs") %>
+
+<body class="products__body">
+
+<%- include("../partials/header.ejs") %>
+
+<main class="products__main">
+
+<section class="products__main__section">
+    <h1>Nuestros productos</h1>
+    <% products.forEach(product => { %>
+        <article class="products__main__section__article">
+            <a href="/products/detail/<%=product.id %>" class="products__main__section__article__a">
+                <img src="/img/<%= product.image %>" alt="">
+                <div class="products__main__section__div">
+                    <h3><%= product.name %></h3>
+                    <% if (product.discount > 0){ %>
+                        <p class="tachado products__main__descuento-p">$<%= product.price %></p>
+                        <p class="products__main__descuento-p">-<%= product.discount %>%</p>
+                        <p>$<%= product.price - ((product.price * product.discount) / 100) %></p>
+                  <%  } else {%>
+                    <p class="products__main__precio-total">$<%= product.price %></p>
+                    <% } %>
+                </div>
+            </a>
+        </article>
+    <%  }); %>
+    
+</section>
+
+</main>
+
+
+<%- include("../partials/footer.ejs") %>
+
+</body>
+</html>
