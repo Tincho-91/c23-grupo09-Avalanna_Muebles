@@ -12,4 +12,6 @@ router.get('/formEdit', productController.edform)
 
 router.get('/dashboard', productController.dashboard)
 
+router.delete('/delete/:id',productController.delete)
+
 module.exports = router;
