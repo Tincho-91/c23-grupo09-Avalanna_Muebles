@@ -8,8 +8,8 @@ const productController = require("../controllers/productsController")
 router.get('/detail/:id', productController.detail);
 router.get('/formCreate', productController.formulario)
 router.get('/productCart', productController.cart)
-router.get('/formEdit', productController.edform)
-router.put('/formEdit', productController.update)
+router.get('/formEdit/:id', productController.edform)
+router.put('/formEdit/:id', productController.update)
 
 router.get('/dashboard', productController.dashboard)
 

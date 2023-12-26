@@ -7,8 +7,9 @@
     <main class="main_formEdit">
       </nav>
       <section class="edform_main_section">
-        <h1>Editar Producto</h1>
-        <form action="/products/edit/<%= product.id %>?__method=PUT" method="post" class="edform_mainsection_form">
+        <h1>Editar Producto<i><%= product.name%></i></h1>
+        <form action="/products/formEdit/<%= product.id %>?_method=PUT" method="post" class="edform_mainsection_form">
+          
           <div>
             <label for="tel">Imagen</label><br>
             <input type="file" accept="png jpg">
@@ -20,7 +21,7 @@
 
           <div>
             <label for="price">Precio</label><br>
-            <input type="text" name="price" id="price" value="<%= product.price %>" required>
+            <input type="number" name="price" id="price" value="<%= product.price %>" required>
           </div>
 
 
@@ -46,15 +47,13 @@
             <label for="depth">Profundidad</label><br>
             <input type="text" name="depth" id="depth" required>
           </div>
-          <!-- <article class="botones_ed_borrar">
-            <button type="editar">Editar</button>
-            <button type="borrar">Borrar</button>
-          </article> -->
-
-        </form>
+        
         <article class="botones_ed_borrar">
           <button type="submit">Editar</button>
-          <button type="reset">Borrar</button>
+        </form>
+        <form action="/products/delete/<%= product.id %>?_method=delete" method="post">
+          <button type="submit">Borrar</button>
+        </form>
         </article>
 
 
