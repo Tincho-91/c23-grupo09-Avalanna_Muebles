@@ -34,12 +34,12 @@ const productsController = {
         const productos=getJson("products.json");
         const nuevaLista=productos.filter(elemento => elemento.id != id);
         setJson(nuevaLista, "products.json");
-        res.redirect("/products/dashboard")
+        res.redirect("/products/dashboard");
     },
 
     destroy:(req,res)=>{
         const {id}=req.params;
-        const products=getJson();
+        const products=getJson("products.json");
         const product=products.find(producto => producto.id != id);
         const nuevoArray=products.filter(producto => producto.id != id );
         const json=JSON.stringify(nuevoArray);
@@ -52,7 +52,7 @@ const productsController = {
             if(err) throw err;
             console.log(`archivo ${product.image}`);
         })
-        fs.writeFileSync(productsFilePath,json,"utf-8");
+        // fs.writeFileSync(productsFilePath,json,"utf-8");
         res.redirect(`/products`);
 
     }
