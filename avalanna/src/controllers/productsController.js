@@ -52,7 +52,7 @@ const productsController = {
             if(err) throw err;
             console.log(`archivo ${product.image}`);
         })
-        // fs.writeFileSync(productsFilePath,json,"utf-8");
+        fs.writeFileSync(setJson,"utf-8");
         res.redirect(`/products`);
 
     }
