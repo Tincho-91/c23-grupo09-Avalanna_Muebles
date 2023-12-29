@@ -27,7 +27,7 @@ Segunda retrospectiva referida al sprint 2:
 
 
 
-SIGUIR HACIENDO: En el primer sprint decidimos encender las cámaras en cada uno de los encuentros que tenemos y creemos que hay que seguir haciendolo ya que es algo fundamental para la comucación y demuestra el interés en el trabajo de cada uno.
+SEGUIR HACIENDO: En el primer sprint decidimos encender las cámaras en cada uno de los encuentros que tenemos y creemos que hay que seguir haciendolo ya que es algo fundamental para la comucación y demuestra el interés en el trabajo de cada uno.
 Hacer una daily diaria de lunes a viernes que es algo que nos mantiene comunicados y al tanto del progreso de los compañeros.
 
 HACER MÁS: Debemos mejorar en el prestar mas atención al progreso del trabajo, saber en que estado esta y actualizar el jira, tambien debemos mejorar la comunicación por whatsapp.
