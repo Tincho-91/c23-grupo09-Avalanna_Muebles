@@ -19,8 +19,6 @@ LESS OF: No respetar lo establecido desde un principio siempre y cuando esta ins
 
 
 
-# RETROSPECTIVAS
-
 ## Retrospectiva, SPRINT 2
 
 Segunda retrospectiva referida al sprint 2:
