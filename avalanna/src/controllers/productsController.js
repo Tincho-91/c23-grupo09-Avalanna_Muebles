@@ -40,21 +40,17 @@ const productsController = {
     destroy:(req,res)=>{
         const {id}=req.params;
         const products=getJson("products.json");
-        const product=products.find(producto => producto.id != id);
+        const product=products.find(producto => producto.id == id);
         const nuevoArray=products.filter(producto => producto.id != id );
-        const json=JSON.stringify(nuevoArray);
-        // fs.unlink(`../../public/images/products/${product.image}`); borra una sola imagen
-        // product.images.forEach(imagen =>{
-        //     fs.unlink(`../../public/images/products/${imagen}`)
-        // })
         console.log("imagen:",product.image);
-        fs.unlink(path.join(__dirname,`../../public/images/products/${product.image}`),(err)=>{
+        fs.unlink(path.join(__dirname,`../../public/img/${product.image}`),(err)=>{
             if(err) throw err;
             console.log(`archivo ${product.image}`);
         })
-        fs.writeFileSync(setJson,"utf-8");
+        setJson(nuevoArray,"products.json")
         res.redirect(`/products`);
 
+        
     }
 
 
