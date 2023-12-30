@@ -50,7 +50,19 @@ const productsController = {
         setJson(nuevoArray,"products.json")
         res.redirect(`/products`);
 
-        
+       
+    },
+    products:(req,res) =>{
+        const products = getJson("products.json");
+        res.render("products/products", {title: "Todos los productos", products});
+    },
+    categories:(req,res)=>{
+        const {category} = req.params;
+        const products = getJson("products.json");
+        const productsCategorized = products.filter(product=>{
+            return product.category == category.toLowerCase()
+        });
+        res.render("products/categories", {title: category, productsCategorized, category})
     }
 
 
