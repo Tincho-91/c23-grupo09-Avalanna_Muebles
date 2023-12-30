@@ -7,7 +7,7 @@
  <main class="productDetail__main">
             
         <section class="seccion__productos">
-            <img class="detalles img" src="/img/<%=product.image%>" alt="<%= product.name %>">  
+            <img class="detalles img" src="/img/<%= product.image ? product.image : "default.jpg"%>" alt="<%= product.name %>">  
             <div class="precios">
                 <div class="seccion__productos--titulo">  
             <h1 class="seccion__productos--titulo"><%= product.name %></h1>

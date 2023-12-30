@@ -11,7 +11,7 @@
     <% products.forEach(product => { %>
         <article class="products__main__section__article">
             <a href="/products/detail/<%=product.id %>" class="products__main__section__article__a">
-                <img src="/img/<%= product.image %>" alt="">
+                <img src="/img/<%= product.image ? product.image : "default.jpg"%>" alt="">
                 <div class="products__main__section__div">
                     <h3><%= product.name %></h3>
                     <% if (product.discount > 0){ %>

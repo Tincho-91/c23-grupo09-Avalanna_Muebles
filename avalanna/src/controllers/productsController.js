@@ -1,6 +1,13 @@
 const fs = require("fs");
 const path = require("path");
 const {getJson, setJson} = require("../utility/jsonMethod")
+const productsFilePath = path.join(__dirname, '../data/products.json');
+
+const getjson = () => {
+	const productsFilePath = path.join(__dirname, '../data/products.json');
+	const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+	return products
+}
 
 
 const productsController = {
@@ -15,6 +22,21 @@ const productsController = {
         
         res.render("products/crear-formulario", {title:"formulario"})
     },
+
+    store:(req,res) =>{
+    	const producto = req.body;
+		producto.id = Date.now();
+        producto.image = req.file.filename;
+		const products = getjson();
+		products.push(producto)
+		
+
+		const json= JSON.stringify(products);
+		fs.writeFileSync(productsFilePath,json, "utf-8");
+		res.redirect(`/products`);
+
+    },
+
 
     edform:(req,res) => {
         
