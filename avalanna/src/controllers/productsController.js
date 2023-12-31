@@ -17,6 +17,21 @@ const productsController = {
         res.render("products/crear-formulario", {title:"formulario"})
     },
 
+    store:(req,res) =>{
+    	const producto = req.body;
+		producto.id = Date.now();
+        producto.image = req.file.filename;
+		const products = getjson();
+		products.push(producto)
+		
+
+		const json= JSON.stringify(products);
+		fs.writeFileSync(productsFilePath,json, "utf-8");
+		res.redirect(`/products`);
+
+    },
+
+
     edform:(req,res) => {
         const {id}= req.params;
         console.log("mostrar id edform",id)
@@ -61,8 +76,20 @@ const productsController = {
     },
     dashboard:(req,res) => {
         const propiedades = ["id", "image", "name", "price"];
-        const products = getJson("products.json")
+        const products = getJson("products.json");
         res.render("products/dashboard", {title: "Dashboard", products, propiedades})
+    },
+    products:(req,res) =>{
+        const products = getJson("products.json");
+        res.render("products/products", {title: "Todos los productos", products});
+    },
+    categories:(req,res)=>{
+        const {category} = req.params;
+        const products = getJson("products.json");
+        const productsCategorized = products.filter(product=>{
+            return product.category == category.toLowerCase()
+        });
+        res.render("products/categories", {title: category, productsCategorized, category})
     }
 }
 
