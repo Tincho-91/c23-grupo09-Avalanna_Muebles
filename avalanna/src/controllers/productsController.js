@@ -21,7 +21,7 @@ const productsController = {
     	const producto = req.body;
 		producto.id = Date.now();
         producto.image = req.file.filename;
-		const products = getjson();
+		const products = getJson("products.json")
 		products.push(producto)
 		
 
@@ -40,7 +40,7 @@ const productsController = {
         res.render("products/edform", {title:"edform", product})
     },
     update:(req,res) =>{
-        console.log("files:",req.files); 
+        console.log("file:",req.file); 
         const images = [];
         if(req.files){
          files.forEach (element => {
@@ -57,12 +57,12 @@ const productsController = {
             if (product.id == id) {
                 return{
                     id,
-                    image: images.length > 0 ? images : product.image,
-                    name:name,
+                    image: req.file? req.file.filename:product.image,
+                    name,
                     price:+price,
                     discount:+discount,
-                    description:description,
-                    extraDescription:extraDescription,
+                    description,
+                    extraDescription,
                     height,
                     width,
                     depth,
