@@ -40,7 +40,14 @@ const productsController = {
         res.render("products/edform", {title:"edform", product})
     },
     update:(req,res) =>{
-        console.log("hola...")
+        console.log("files:",req.files); 
+        const images = [];
+        if(req.files){
+         files.forEach (element => {
+    images.push(element.filename);
+            }); 
+        }
+    
         const {id}=req.params;
         console.log("mostrar id",id)
         const {image, name, price, discount, description, extraDescription, height, width, depth, category} = req.body;
@@ -50,7 +57,7 @@ const productsController = {
             if (product.id == id) {
                 return{
                     id,
-                    image: image ? image : product.image,
+                    image: images.length > 0 ? images : product.image,
                     name:name,
                     price:+price,
                     discount:+discount,

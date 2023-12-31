@@ -29,7 +29,7 @@ router.post('/formCreate',upload.single("image"), productController.store)
 router.get('/productCart', productController.cart)
 
 router.get('/formEdit/:id', productController.edform)
-router.put('/formEdit/:id', productController.update)
+router.put('/formEdit/:id',upload.single("image"), productController.update)
 
 router.get('/dashboard', productController.dashboard)
 
