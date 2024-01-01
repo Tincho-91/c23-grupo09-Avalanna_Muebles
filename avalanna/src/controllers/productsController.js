@@ -1,13 +1,7 @@
 const fs = require("fs");
 const path = require("path");
-const {getJson, setJson} = require("../utility/jsonMethod")
-const productsFilePath = path.join(__dirname, '../data/products.json');
-
-const getjson = () => {
-	const productsFilePath = path.join(__dirname, '../data/products.json');
-	const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-	return products
-}
+const {getJson, setJson} = require("../utility/jsonMethod");
+const { Console } = require("console");
 
 
 const productsController = {
@@ -27,7 +21,7 @@ const productsController = {
     	const producto = req.body;
 		producto.id = Date.now();
         producto.image = req.file.filename;
-		const products = getjson();
+		const products = getJson("products.json")
 		products.push(producto)
 		
 
@@ -39,8 +33,50 @@ const productsController = {
 
 
     edform:(req,res) => {
+        const {id}= req.params;
+        console.log("mostrar id edform",id)
+        const products = getJson("products.json")
+        const product = products.find(elemento => elemento.id == id);
+        res.render("products/edform", {title:"edform", product})
+    },
+    update:(req,res) =>{
+        console.log("file:",req.file); 
+        const images = [];
+        if(req.files){
+         files.forEach (element => {
+    images.push(element.filename);
+            }); 
+        }
+    
+        const {id}=req.params;
+        console.log("mostrar id",id)
+        const {image, name, price, discount, description, extraDescription, height, width, depth, category} = req.body;
+        const products = getJson("products.json")
+        console.log("products...",products)
+        const newArray = products.map(product=>{
+            if (product.id == id) {
+                return{
+                    id,
+                    image: req.file? req.file.filename:product.image,
+                    name,
+                    price:+price,
+                    discount:+discount,
+                    description,
+                    extraDescription,
+                    height,
+                    width,
+                    depth,
+                    category,
+                }
+            }
+            return product
+        });
+        console.log("ESTO es newArray",newArray)
+        setJson(newArray, "products.json");
+        res.redirect(`/products/detail/${id}`)
+
+
         
-        res.render("products/edform", {title:"edform"})
     },
     cart:(req,res)=>{
         res.render("products/productCart", {title:"Carrito de compra"});

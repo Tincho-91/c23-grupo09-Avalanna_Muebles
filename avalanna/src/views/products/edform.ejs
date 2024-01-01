@@ -7,45 +7,54 @@
     <main class="main_formEdit">
       </nav>
       <section class="edform_main_section">
-        <h1>Editar Producto</h1>
-        <form action="edform" method="post" class="edform_mainsection_form">
+        <h1>Editar Producto<i><%= product.name%></i></h1>
+        <form action="/products/formEdit/<%= product.id %>?_method=PUT" method="post"enctype="multipart/form-data" class="edform_mainsection_form">
+          
           <div>
             <label for="tel">Imagen</label><br>
-            <input type="file" accept="png jpg">
+            <input type="file" name="image" id="image" accept="*image/*" >
           </div>
           <div>
             <label for="name">Nombre</label><br>
-            <input type="text" name="nombre" id="name" required>
+            <input type="text" name="name" id="name" value="<%= product.name %>" required>
           </div>
 
           <div>
             <label for="price">Precio</label><br>
-            <input type="price" name="price" id="price" required>
+            <input type="number" name="price" id="price" value="<%= product.price %>" required>
           </div>
 
-
+          <div>
+            <label for="description">Descuento</label><br>
+            <input type="text" name="discount" id="discount" required>
+          </div>
           <div>
             <label for="description">Descripción</label><br>
-            <input type="description" name="description" id="description" required>
+            <input type="text" name="description" id="description" value="<%= product.description %>" required>
           </div>
 
           <div>
-            <label for="descriptions a">Descripción Adicional</label><br>
-            <input type="descriptions a" name="descriptions a" id="descriptions a" required>
+            <label for="extraDescription">Descripción Adicional</label><br>
+            <input type="text" name="extraDescription" id="extraDescription" value="<%= product.extraDescription %>" required>
           </div>
           <div>
-            <label for="measures">Medidas</label><br>
-            <input type="measures" name="measures" id="measures" required>
+            <label for="category">Categoria</label><br>
+            <input type="category" name="category" id="category" required>
           </div>
-          <!-- <article class="botones_ed_borrar">
-            <button type="editar">Editar</button>
-            <button type="borrar">Borrar</button>
-          </article> -->
-
-        </form>
+         
+          <div>
+            <label for="Medidas">Medidas</label><br>
+            <input type="height" name="height" id="height" placeholder="Alto..." required><br><br><br>
+            <input type="width" name="width" id="width" placeholder="Ancho..." required><br><br><br>
+            <input type="depth" name="depth" id="depth" placeholder="Profundidad.." required>
+          </div>
+        
         <article class="botones_ed_borrar">
-          <button type="editar">Editar</button>
-          <button type="borrar">Borrar</button>
+          <button type="submit">Editar</button>
+        </form>
+
+          <button type="submit">Borrar</button>
+        </form>
         </article>
 
 
