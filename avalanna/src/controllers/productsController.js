@@ -1,6 +1,7 @@
 const fs = require("fs");
 const path = require("path");
-const { getJson, setJson } = require("../utility/jsonMethod");
+const {getJson, setJson} = require("../utility/jsonMethod");
+const { Console } = require("console");
 
 
 const productsController = {
