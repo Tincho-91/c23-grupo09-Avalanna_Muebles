@@ -20,8 +20,11 @@ const upload = multer({ storage });
 
 /* GET home page. */
 router.get('/', productController.products);
+
 router.get('/detail/:id', productController.detail);
+
 router.get('/section/:category', productController.categories);
+
 router.get('/formCreate', productController.formulario)
 router.post('/formCreate',upload.single("image"), productController.store)
 
