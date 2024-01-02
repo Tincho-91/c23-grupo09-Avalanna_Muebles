@@ -5,16 +5,16 @@ const { Console } = require("console");
 
 
 const productsController = {
-    detail:(req,res) => {
-        const id = req.params.id;        
+    detail: (req, res) => {
+        const id = req.params.id;
         const products = getJson("products.json")
         const product = products.find(elemento => elemento.id == id);
         const calc = product.price - ((product.price * product.discount) / 100)
-        res.render("products/productDetail", {title: product.name, product, calc})
+        res.render("products/productDetail", { title: product.name, product, calc })
     },
-    formulario:(req,res) => {
-        
-        res.render("products/crear-formulario", {title:"formulario"})
+    formulario: (req, res) => {
+
+        res.render("products/crear-formulario", { title: "formulario" })
     },
 
     store:(req,res) =>{
@@ -78,13 +78,37 @@ const productsController = {
 
         
     },
-    cart:(req,res)=>{
-        res.render("products/productCart", {title:"Carrito de compra"});
+    cart: (req, res) => {
+        res.render("products/productCart", { title: "Carrito de compra" });
     },
-    dashboard:(req,res) => {
+    dashboard: (req, res) => {
         const propiedades = ["id", "image", "name", "price"];
-        const products = getJson("products.json");
-        res.render("products/dashboard", {title: "Dashboard", products, propiedades})
+        const products = getJson("products.json")
+        res.render("products/dashboard", { title: "Dashboard", products, propiedades })
+    },
+
+    delete:(req,res)=>{
+        const {id}=req.params;
+        const productos=getJson("products.json");
+        const nuevaLista=productos.filter(elemento => elemento.id != id);
+        setJson(nuevaLista, "products.json");
+        res.redirect("/products/dashboard");
+    },
+
+    destroy:(req,res)=>{
+        const {id}=req.params;
+        const products=getJson("products.json");
+        const product=products.find(producto => producto.id == id);
+        const nuevoArray=products.filter(producto => producto.id != id );
+        console.log("imagen:",product.image);
+        fs.unlink(path.join(__dirname,`../../public/img/${product.image}`),(err)=>{
+            if(err) throw err;
+            console.log(`archivo ${product.image}`);
+        })
+        setJson(nuevoArray,"products.json")
+        res.redirect(`/products`);
+
+       
     },
     products:(req,res) =>{
         const products = getJson("products.json");
@@ -98,7 +122,10 @@ const productsController = {
         });
         res.render("products/categories", {title: category, productsCategorized, category})
     }
+
+
+
 }
 
 
-module.exports = productsController
+module.exports = ( productsController )
