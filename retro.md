@@ -51,7 +51,7 @@ En nuestra tercera retrospectiva llegamos a las siguientes conclusiones sobre nu
 ![starfish retrospective](./avalanna/public/img/starfishRetrospective3.png)
 
 
-KEEP DOING: Estar atentos a los detalles que no necesariamente sean obligatorios en el sprint pero que puedan ayudar a mejorar el proyecto en algún aspecto. Consideramos que deberíamos hcaer de este punto una costumbre para que el trabajo que realicemos sea más genuino.
+KEEP DOING: Estar atentos a los detalles que no necesariamente sean obligatorios en el sprint pero que puedan ayudar a mejorar el proyecto en algún aspecto. Consideramos que deberíamos hacer de este punto una costumbre para que el trabajo que realicemos sea más genuino.
 
 MORE OF: Es muy importante ser responsable para respetar el tiempo y el esfuerzo de cada integrante, por eso insistimos en reforzar este punto para mantener un ambiente ordenado y cooperativo.
 
