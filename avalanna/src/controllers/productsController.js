@@ -41,13 +41,14 @@ const productsController = {
     },
     update:(req,res) =>{
         console.log("file:",req.file); 
+        /* Para multiples imagenes:
         const images = [];
         if(req.files){
          files.forEach (element => {
     images.push(element.filename);
             }); 
         }
-    
+    */
         const {id}=req.params;
         console.log("mostrar id",id)
         const {image, name, price, discount, description, extraDescription, height, width, depth, category} = req.body;
@@ -57,7 +58,7 @@ const productsController = {
             if (product.id == id) {
                 return{
                     id,
-                    image: req.file? req.file.filename:product.image,
+                    image: req.file ? req.file.filename : product.image,
                     name,
                     price:+price,
                     discount:+discount,
