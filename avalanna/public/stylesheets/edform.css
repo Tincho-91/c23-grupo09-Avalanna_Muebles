@@ -74,6 +74,12 @@
     margin-bottom: 3%;
 
 }
+.edform_mainsection_form div label{
+    width: 100%;
+}
+.edform_mainsection_form-div-medidas{
+    margin-bottom: 3%;
+}
 
 .edform_mainsection_form div label {
     color: rgba(0, 0, 0, 70%);
@@ -87,11 +93,6 @@
 
 }
 
-.edform_mainsection_form botton {
-
-    padding: 2% 12%;
-    
-}
 
 
 .botones_ed_borrar {
