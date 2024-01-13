@@ -25,8 +25,8 @@
           </div>
 
           <div>
-            <label for="description">Descuento</label><br>
-            <input type="text" name="discount" id="discount" required>
+            <label for="discount">Descuento</label><br>
+            <input type="text" name="discount" id="discount" value="<%= product.discount %>" required>
           </div>
           <div>
             <label for="description">Descripción</label><br>
@@ -38,15 +38,36 @@
             <input type="text" name="extraDescription" id="extraDescription" value="<%= product.extraDescription %>" required>
           </div>
           <div>
+
             <label for="category">Categoria</label><br>
-            <input type="category" name="category" id="category" required>
+
+            <select class="categoria-edith"   type="category" name="category" id="category" required>
+
+              <option value="Living">Living</option>
+
+              <option value="Cocina">Cocina</option>
+
+              <option value="Dormitorio">Dormitorio</option>
+
+              <option value="Exterior">Exterior</option>
+
+              <option value="Combos">Combos</option>
+
+              <option value="New in">New in</option>
+
+ 
+
+            </select>
+
+            
+
           </div>
          
           <div>
             <label for="Medidas">Medidas</label><br>
-            <input type="height" name="height" id="height" placeholder="Alto..." required><br><br><br>
-            <input type="width" name="width" id="width" placeholder="Ancho..." required><br><br><br>
-            <input type="depth" name="depth" id="depth" placeholder="Profundidad.." required>
+            <input type="height" name="height" id="height" placeholder="Alto..." value="<%= product.height %>"required>  
+            <input type="width" name="width" id="width" placeholder="Ancho..." value="<%= product.width %>" required>
+            <input type="depth" name="depth" id="depth" placeholder="Profundidad.." value="<%= product.depth %>" required>
           </div>
         
         <article class="botones_ed_borrar">

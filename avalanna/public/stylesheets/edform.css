@@ -1,3 +1,4 @@
+
 .edform__main {
     font-family: "Raleway", sans-serif;
     box-shadow: 0 5px 10px -8px black;
@@ -32,6 +33,17 @@
     border-right: 1px solid rgba(0, 0, 0, 45%);
 }
 
+.categoria-edith{
+
+    background-color: var(--color-beige);
+
+    padding: 3%;
+
+    width: 70%;
+
+    font-size: 120%;
+
+}
 .edform_mainnav_ul li a {
     font-size: 12px;
     color: rgba(0, 0, 0, 50%);
@@ -209,6 +221,16 @@
         font-size: 30px;
     }
 
+    .categoria-edith{
+
+        background-color: var(--color-beige);
+    
+        padding: 1.5%;
+    
+        width: 70%;
+    
+    
+    }
     .edform_mainsection_form--p-campos {
         font-size: 20px;
     }
