@@ -9,40 +9,40 @@
     <h1>CARGAR PRODUCTOS</h1>
     <form action="/products/formCreate" method="POST" enctype="multipart/form-data" class="form_mainsection_form">
       <div>
-        <label for="image">Imagen</label><br>
+        <label for="image">Imagen</label>
         <input type="file" name="image" id="image" accept="png jpg">
       </div>
         <div>
-            <label for="name">Nombre</label><br>
+            <label for="name">Nombre</label>
             <input type="name" name="name" id="name" required>
         </div>
     
           <div>
 
-            <label for="price">Precio</label><br>
+            <label for="price">Precio</label>
             <input type="price" name="price" id="price" required>
 
           </div>
 
         <div>
-          <label for="discount">Descuento</label><br>
+          <label for="discount">Descuento</label>
           <input type="text" name="discount" id="discount" required>
       </div>
   
 
           <div>
 
-            <label for="descripcion">Descripción</label><br>
+            <label for="descripcion">Descripción</label>
             <input type="descripcioin" name="description" id="descripcion" required>
           </div>
   
           <div>
-            <label for="adicional">Descripción Adicional</label><br>
+            <label for="adicional">Descripción Adicional</label>
             <input type="adicional" name="extraDescription" id="adicional" required>
           </div>
 
           <div>
-            <label for="category">Categoria</label><br>
+            <label for="category">Categoria</label>
             <select type="category" name="category" id="category" required>
               <option value="Living">Living</option>
               <option value="Cocina">Cocina</option>
@@ -56,10 +56,10 @@
           </div>
 
           <div>
-            <label for="medidias">Medidas</label><br>
-            <input type="height" name="height" id="height" placeholder="Alto..." required><br><br><br>
-            <input type="width" name="width" id="width" placeholder="Ancho..." required><br><br><br>
-            <input type="depth" name="depth" id="depth" placeholder="Profundidad..." required>
+            <label for="medidias">Medidas</label>
+            <input type="height" name="height" class="form_mainsection_form-div-medidas" id="height" placeholder="Alto..." required>
+            <input type="width" name="width" class="form_mainsection_form-div-medidas" id="width" placeholder="Ancho..." required>
+            <input type="depth" name="depth" class="form_mainsection_form-div-medidas" id="depth" placeholder="Profundidad..." required>
 
 
           
