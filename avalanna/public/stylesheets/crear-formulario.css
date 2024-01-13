@@ -30,10 +30,12 @@
     font-size: 12px;
     color: rgba(0, 0, 0, 50%);
 }
+
 .form-button--a a{
     color: black;
     text-decoration: none;
    padding-bottom:9%;
+   
  }
 
 .form_main_section {
@@ -77,7 +79,7 @@
     width: 70%;
 }
 .form_mainsection_form button {
-    color: rgba(255, 255, 255, 90%);
+    color: black;
     background-color: var(--color-beige);
     padding: 2% 15%;
     margin-top: 11%;
@@ -189,7 +191,6 @@
     }
     .form_mainsection_form button {
         transition: all 1s;
-        color: rgba(255, 255, 255, 90%);
         background-color: var(--color-beige);
         padding: 2% 15%;
         margin-top: 4%;
