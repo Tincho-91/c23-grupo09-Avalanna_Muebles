@@ -7,41 +7,63 @@
   </nav>
   <section class="form_main_section">
     <h1>CARGAR PRODUCTOS</h1>
-    <form action="form" method="post" class="form_mainsection_form">
+    <form action="/products/formCreate" method="POST" enctype="multipart/form-data" class="form_mainsection_form">
       <div>
-        <label for="imagen">Imagen</label><br>
-        <input type="file" accept="png jpg">
+        <label for="image">Imagen</label>
+        <input type="file" name="image" id="image" accept="png jpg">
       </div>
         <div>
-            <label for="name">Nombre</label><br>
-            <input type="text" name="nombre" id="name" required>
+            <label for="name">Nombre</label>
+            <input type="name" name="name" id="name" required>
         </div>
     
           <div>
 
-            <label for="price">Precio</label><br>
+            <label for="price">Precio</label>
             <input type="price" name="price" id="price" required>
 
           </div>
+
+        <div>
+          <label for="discount">Descuento</label>
+          <input type="text" name="discount" id="discount" required>
+      </div>
   
 
           <div>
 
-            <label for="descripcion">Descripción</label><br>
-            <input type="descripcioin" name="descripcion" id="descripcion" required>
+            <label for="descripcion">Descripción</label>
+            <input type="descripcioin" name="description" id="descripcion" required>
           </div>
   
           <div>
-            <label for="adicional">Descripción Adicional</label><br>
-            <input type="adicional" name="adicional" id="adicional" required>
+            <label for="adicional">Descripción Adicional</label>
+            <input type="adicional" name="extraDescription" id="adicional" required>
           </div>
+
           <div>
-            <label for="medidias">Medidas</label><br>
-            <input type="medidas" name="medidas" id="medidas" required>
+            <label for="category">Categoria</label>
+            <select type="category" name="category" id="category" required>
+              <option value="Living">Living</option>
+              <option value="Cocina">Cocina</option>
+              <option value="Dormitorio">Dormitorio</option>
+              <option value="Exterior">Exterior</option>
+              <option value="Combos">Combos</option>
+              <option value="New in">New in</option>
+
+            </select>
+            
+          </div>
+
+          <div>
+            <label for="medidias">Medidas</label>
+            <input type="height" name="height" class="form_mainsection_form-div-medidas" id="height" placeholder="Alto..." required>
+            <input type="width" name="width" class="form_mainsection_form-div-medidas" id="width" placeholder="Ancho..." required>
+            <input type="depth" name="depth" class="form_mainsection_form-div-medidas" id="depth" placeholder="Profundidad..." required>
 
 
           
-          <button class="form-button--a a"><a href="http://localhost:3000">Cargar Producto</a></button> 
+          <button type="submit">Cargar Producto</button> 
           
     </form>
     

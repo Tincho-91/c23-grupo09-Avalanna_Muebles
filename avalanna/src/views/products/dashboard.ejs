@@ -1,48 +1,59 @@
 <%- include("../partials/head.ejs") %>
-<body>
+
+  <body>
     <%- include("../partials/header.ejs") %>
 
-    <main class="dashboard__main">
+      <main class="dashboard__main">
         <h1>LISTADO DE PRODUCTOS</h1>
         <div>
-            <button><a href="/products/formCreate">Crear producto</a></button>
+          <button><a href="/products/formCreate">Crear producto</a></button>
         </div>
-        
 
-    <table class="dashboard__main__table">
-        <thead class="dashboard__main__table__thead">
-          <tr>
-            <% propiedades.forEach(propiedad => { %>
-                <th><%= propiedad.toUpperCase() %></th>
-           <%  }); %>
-            <th> ACCIONES </th>
-          </tr>
-        </thead>
-        <tbody class="dashboard__main__table__tbody">
-            <% products.forEach(obj => { %>
-          <tr class="dashboard__main__table__tbody__fila">
-            <% propiedades.forEach(prop => { %>
-              <% if (prop == "id" ){ %>
-                    <td> <%= obj.id %> </td>
-                <% } else if (prop == "image") { %>
-                    <td> <img src="/img/<%= obj.image %>" alt="<%= obj.image %>"> </td>
-                    <% } else { %>
-                        <td><%= obj[prop]%> </td>
-                <% } %>
-                <%  }); %>
-                
-            <td class="dashboard__main__table__tbody__buttons">
-                <a href="/products/detail/<%= obj.id %>"><i class="fa-solid fa-eye"></i></a>
-                <a href="/products/formEdit"><i class="fa-solid fa-pen-to-square"></i></a>
-                <a href="/products/delete/<%= obj.id %>"><i class="fa-solid fa-trash"></i></a>
-                </td>
-          </tr>
-          <%}); %>
-        </tbody>
-      </table>
+        <table class="dashboard__main__table">
+          <thead class="dashboard__main__table__thead">
+            <tr>
+              <% propiedades.forEach(propiedad=> { %>
+                <th>
+                  <%= propiedad.toUpperCase() %>
+                </th>
+                <% }); %>
+                  <th> ACCIONES </th>
+            </tr>
+          </thead>
+          <tbody class="dashboard__main__table__tbody">
+            <% products.forEach(obj=> { %>
+              <tr class="dashboard__main__table__tbody__fila">
+                <% propiedades.forEach(prop=> { %>
+                  <% if (prop=="id" ){ %>
+                    <td>
+                      <%= obj.id %>
+                    </td>
+                    <% } else if (prop=="image" ) { %>
+                      <td> <img src="/img/<%= obj.image %>" alt="<%= obj.image %>"> </td>
+                      <% } else { %>
+                        <td>
+                          <%= obj[prop]%>
+                        </td>
+                        <% } %>
+                          <% }); %>
 
-    </main>
-    <%- include("../partials/footer.ejs") %>
-    
-</body>
-</html>
+                            <td class="dashboard__main__table__tbody__buttons">
+                              <a href="/products/detail/<%= obj.id %>"><i class="fa-solid fa-eye"></i></a>
+                              <a href="/products/formEdit/<%= obj.id %>"><i class="fa-solid fa-pen-to-square"></i></a>
+                              <form action="/products/delete/<%= obj.id %>?_method=DELETE" method="POST">
+                                <button type="submit" class="eliminar"><i class="fa-solid fa-trash"></i>
+                                </button>
+                              </form>
+
+                            </td>
+              </tr>
+              <%}); %>
+          </tbody>
+        </table>
+
+      </main>
+      <%- include("../partials/footer.ejs") %>
+
+  </body>
+
+  </html>

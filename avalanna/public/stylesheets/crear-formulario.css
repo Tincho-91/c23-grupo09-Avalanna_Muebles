@@ -30,10 +30,12 @@
     font-size: 12px;
     color: rgba(0, 0, 0, 50%);
 }
+
 .form-button--a a{
     color: black;
     text-decoration: none;
    padding-bottom:9%;
+   
  }
 
 .form_main_section {
@@ -62,21 +64,31 @@
 .form_mainsection_form div label{
     color: rgba(0, 0, 0, 70%);
     font-family: "Oxygen", sans-serif;
+    width: 100%;
 }
+
+.form_mainsection_form div select{
+    background-color: var(--color-beige);
+    padding: 3%;
+    width: 70%;
+    font-size: 120%;
+}
+
 .form_mainsection_form div input {
     background-color: var(--color-beige);
     padding: 3%;
     width: 70%;
-    
 }
 .form_mainsection_form button {
-    color: rgba(255, 255, 255, 90%);
+    color: black;
     background-color: var(--color-beige);
     padding: 2% 15%;
     margin-top: 11%;
    
 }
-
+.form_mainsection_form-div-medidas{
+    margin-bottom: 3%;
+}
 
 .form_mainsection_form--p-campos{
     font-size: 12px;
@@ -137,7 +149,7 @@
         font-size: 15px;
     }
     .form_mainsection_form button {
-        font-size: 32px;
+        font-size: 33px;
         margin-top:8%;
         margin:25px;
     }
@@ -181,8 +193,11 @@
         font-size: 20px;
     }
     .form_mainsection_form button {
-        font-size: 45px;
         transition: all 1s;
+        background-color: var(--color-beige);
+        padding: 2% 15%;
+        margin-top: 4%;
+        margin-left: 7%;
     }
     .form-button--a{
    padding: 9%;
@@ -195,6 +210,13 @@
     .form_mainsection_form--p--cuenta{
         font-size: 25px;
     }
+
+    .form_mainsection_form div select{
+        background-color: var(--color-beige);
+        padding: 1.5%;
+        width: 70%;
+    }
+  
     .form_mainsection_form--p--cuenta a:hover{
         border-bottom: 1px solid black;
     }
@@ -204,4 +226,5 @@
         margin: 12px 0px 0px 12px;
      }
  }
+
 

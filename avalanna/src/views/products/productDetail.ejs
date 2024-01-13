@@ -7,13 +7,17 @@
  <main class="productDetail__main">
             
         <section class="seccion__productos">
-            <img class="detalles img" src="/img/<%=product.image%>" alt="<%= product.name %>">  
+            <img class="detalles img" src="/img/<%= product.image ? product.image : "default.jpg"%>" alt="<%= product.name %>">  
             <div class="precios">
                 <div class="seccion__productos--titulo">  
             <h1 class="seccion__productos--titulo"><%= product.name %></h1>
+            <% if (product.discount > 0) { %>
             <p class="tachado">$<%= product.price %></p>
-            <p class="color"><%= product.offer %></p>
-            <p class="color"><%= product.discount %></b></p>
+            <p class="color">$<%= calc %></p>
+            <p class="color">Ahorras un <%= product.discount %>%</b></p>
+           <% } else { %>
+            <p class="color productDetail__main__section__div__precioUnico">$<%= product.price %></p>
+           <% } %>
             <div class="productDetail__main__section_div_buttons">
                 <button class="productDetail-button">COMPRAR AHORA</button>
                <button class="productDetail-button">AGREGAR AL CARRITO</button>
@@ -29,9 +33,9 @@
                 <h6 class="productDetail_descripcion-h6"> <%= product.extraDescription %></h6>
                     <ul class="productDetail-li">
                    <li>Medidas:</li>     
-                <li><%= product.height %></li>
-                 <li><%= product.width %></li> 
-                <li><%= product.depth %></li></b>
+                <li>Alto: <%= product.height %></li>
+                 <li>Ancho: <%= product.width %></li> 
+                <li>Profundidad: <%= product.depth %></li></b>
         </ul>
       </article>
     </section>
