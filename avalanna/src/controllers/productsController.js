@@ -1,27 +1,34 @@
 const fs = require("fs");
 const path = require("path");
 const {getJson, setJson} = require("../utility/jsonMethod");
+const productsFilePath = path.join(__dirname, '../data/products.json');
 const { Console } = require("console");
+
+const getjson = () => {
+	const productsFilePath = path.join(__dirname, '../data/products.json');
+	const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+	return products
+}
 
 
 const productsController = {
-    detail:(req,res) => {
-        const id = req.params.id;        
+    detail: (req, res) => {
+        const id = req.params.id;
         const products = getJson("products.json")
         const product = products.find(elemento => elemento.id == id);
         const calc = product.price - ((product.price * product.discount) / 100)
-        res.render("products/productDetail", {title: product.name, product, calc})
+        res.render("products/productDetail", { title: product.name, product, calc })
     },
-    formulario:(req,res) => {
-        
-        res.render("products/crear-formulario", {title:"formulario"})
+    formulario: (req, res) => {
+
+        res.render("products/crear-formulario", { title: "formulario" })
     },
 
     store:(req,res) =>{
     	const producto = req.body;
 		producto.id = Date.now();
         producto.image = req.file.filename;
-		const products = getJson("products.json")
+		const products = getjson()
 		products.push(producto)
 		
 
@@ -41,13 +48,14 @@ const productsController = {
     },
     update:(req,res) =>{
         console.log("file:",req.file); 
+        /* Para multiples imagenes:
         const images = [];
         if(req.files){
          files.forEach (element => {
     images.push(element.filename);
             }); 
         }
-    
+    */
         const {id}=req.params;
         console.log("mostrar id",id)
         const {image, name, price, discount, description, extraDescription, height, width, depth, category} = req.body;
@@ -57,7 +65,7 @@ const productsController = {
             if (product.id == id) {
                 return{
                     id,
-                    image: req.file? req.file.filename:product.image,
+                    image: req.file ? req.file.filename : product.image,
                     name,
                     price:+price,
                     discount:+discount,
@@ -78,13 +86,37 @@ const productsController = {
 
         
     },
-    cart:(req,res)=>{
-        res.render("products/productCart", {title:"Carrito de compra"});
+    cart: (req, res) => {
+        res.render("products/productCart", { title: "Carrito de compra" });
     },
-    dashboard:(req,res) => {
+    dashboard: (req, res) => {
         const propiedades = ["id", "image", "name", "price"];
-        const products = getJson("products.json");
-        res.render("products/dashboard", {title: "Dashboard", products, propiedades})
+        const products = getJson("products.json")
+        res.render("products/dashboard", { title: "Dashboard", products, propiedades })
+    },
+
+    delete:(req,res)=>{
+        const {id}=req.params;
+        const productos=getJson("products.json");
+        const nuevaLista=productos.filter(elemento => elemento.id != id);
+        setJson(nuevaLista, "products.json");
+        res.redirect("/products/dashboard");
+    },
+
+    destroy:(req,res)=>{
+        const {id}=req.params;
+        const products=getJson("products.json");
+        const product=products.find(producto => producto.id == id);
+        const nuevoArray=products.filter(producto => producto.id != id );
+        console.log("imagen:",product.image);
+        fs.unlink(path.join(__dirname,`../../public/img/${product.image}`),(err)=>{
+            if(err) throw err;
+            console.log(`archivo ${product.image}`);
+        })
+        setJson(nuevoArray,"products.json")
+        res.redirect(`/products`);
+
+       
     },
     products:(req,res) =>{
         const products = getJson("products.json");
@@ -98,7 +130,10 @@ const productsController = {
         });
         res.render("products/categories", {title: category, productsCategorized, category})
     }
+
+
+
 }
 
 
-module.exports = productsController
+module.exports = ( productsController )
