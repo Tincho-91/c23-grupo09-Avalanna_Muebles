@@ -69,3 +69,11 @@ Martin: terminando partials sin complicaciones mayores.
 Melany: refactorización terminada, comenzando dashboard.
 Flavia: trabajando con formularios de css, solucionando un bloqueo.
 Luana: se ausentó por la clase de apoyo.
+
+* Sprint 5
+
+15/01/24
+Martin: Creando las ramas de tareas, haciendo vista de cactualizar datos de usuario.
+Melany: Creo tareas de jira, empezando con middleware de validar el perfil de usuario.
+Flavia: Repasando clases de los temas(poniendose al día).
+Luana: Comenzando tarea de implementar logín.
