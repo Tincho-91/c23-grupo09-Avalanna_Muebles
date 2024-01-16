@@ -77,3 +77,9 @@ Martin: Creando las ramas de tareas, haciendo vista de cactualizar datos de usua
 Melany: Creo tareas de jira, empezando con middleware de validar el perfil de usuario.
 Flavia: Repasando clases de los temas(poniendose al día).
 Luana: Comenzando tarea de implementar logín.
+
+16/01/24
+Martin: sigue trabajando en vista de actualizar datos de usuario.
+Melany: continúa organizando middleware.
+Flavia: comenzó a trabajan en las rutas de registro y logín.
+Luana: continúa trabajando con implementar logín.
