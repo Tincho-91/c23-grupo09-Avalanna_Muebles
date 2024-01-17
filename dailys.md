@@ -83,3 +83,9 @@ Martin: sigue trabajando en vista de actualizar datos de usuario.
 Melany: continúa organizando middleware.
 Flavia: comenzó a trabajan en las rutas de registro y logín.
 Luana: continúa trabajando con implementar logín.
+
+17/01/2024
+Martin: Continua con tarea actualización de usurio.
+Melany: Casi terminado, falta tarea implementar login para probar código.
+Flavia: Termino de hacer rutas de registro y logín.
+Luana: Ausente.
