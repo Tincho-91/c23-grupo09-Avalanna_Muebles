@@ -11,49 +11,49 @@
         <form action="/products/formEdit/<%= product.id %>?_method=PUT" method="post"enctype="multipart/form-data" class="edform_mainsection_form">
           
           <div>
-            <label for="tel">Imagen</label><br>
+            <label for="tel">Imagen</label>
             <input type="file" name="image" id="image" accept="*image/*" >
           </div>
           <div>
-            <label for="name">Nombre</label><br>
+            <label for="name">Nombre</label>
             <input type="text" name="name" id="name" value="<%= product.name %>" required>
           </div>
 
           <div>
-            <label for="price">Precio</label><br>
+            <label for="price">Precio</label>
             <input type="number" name="price" id="price" value="<%= product.price %>" required>
           </div>
 
           <div>
-            <label for="discount">Descuento</label><br>
+            <label for="discount">Descuento</label>
             <input type="text" name="discount" id="discount" value="<%= product.discount %>" required>
           </div>
           <div>
-            <label for="description">Descripción</label><br>
+            <label for="description">Descripción</label>
             <input type="text" name="description" id="description" value="<%= product.description %>" required>
           </div>
 
           <div>
-            <label for="extraDescription">Descripción Adicional</label><br>
+            <label for="extraDescription">Descripción Adicional</label>
             <input type="text" name="extraDescription" id="extraDescription" value="<%= product.extraDescription %>" required>
           </div>
           <div>
 
-            <label for="category">Categoria</label><br>
+            <label for="category">Categoria</label>
 
             <select class="categoria-edith"   type="category" name="category" id="category" required>
 
-              <option value="Living">Living</option>
+              <option value="Living" <%= product.category == "living" ? "selected" : null;%>>Living</option>
 
-              <option value="Cocina">Cocina</option>
+              <option value="Cocina" <%= product.category == "cocina" ? "selected" : null;%>>Cocina</option>
 
-              <option value="Dormitorio">Dormitorio</option>
+              <option value="Dormitorio" <%= product.category == "dormitorio" ? "selected" : null;%>>Dormitorio</option>
 
-              <option value="Exterior">Exterior</option>
+              <option value="Exterior" <%= product.category == "exterior" ? "selected" : null;%>>Exterior</option>
 
-              <option value="Combos">Combos</option>
+              <option value="Combos" <%= product.category == "combos" ? "selected" : null;%>>Combos</option>
 
-              <option value="New in">New in</option>
+              <option value="New in" <%= product.category == "new in" ? "selected" : null;%>>New in</option>
 
  
 
@@ -64,10 +64,10 @@
           </div>
          
           <div>
-            <label for="Medidas">Medidas</label><br>
-            <input type="height" name="height" id="height" placeholder="Alto..." value="<%= product.height %>"required>  
-            <input type="width" name="width" id="width" placeholder="Ancho..." value="<%= product.width %>" required>
-            <input type="depth" name="depth" id="depth" placeholder="Profundidad.." value="<%= product.depth %>" required>
+            <label for="Medidas">Medidas</label>
+            <input type="height" name="height" class="edform_mainsection_form-div-medidas" id="height" placeholder="Alto..." value="<%= product.height %>"required>  
+            <input type="width" name="width" class="edform_mainsection_form-div-medidas" id="width" placeholder="Ancho..." value="<%= product.width %>" required>
+            <input type="depth" name="depth" class="edform_mainsection_form-div-medidas" id="depth" placeholder="Profundidad.." value="<%= product.depth %>" required>
           </div>
         
         <article class="botones_ed_borrar">

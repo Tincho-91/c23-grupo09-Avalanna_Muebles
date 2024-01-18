@@ -64,6 +64,7 @@
 .form_mainsection_form div label{
     color: rgba(0, 0, 0, 70%);
     font-family: "Oxygen", sans-serif;
+    width: 100%;
 }
 
 .form_mainsection_form div select{
@@ -85,7 +86,9 @@
     margin-top: 11%;
    
 }
-
+.form_mainsection_form-div-medidas{
+    margin-bottom: 3%;
+}
 
 .form_mainsection_form--p-campos{
     font-size: 12px;
