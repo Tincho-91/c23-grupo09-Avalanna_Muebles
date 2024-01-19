@@ -3,7 +3,7 @@ const { v4: uuidv4 } = require('uuid');
 const bcrypt = require('bcryptjs');
 const {validationResult} = require('express-validator');
 
-const userController = {
+const usersController = {
     login: (req,res)=>{
         res.render("users/login", {title:"Ingresar"});
     },
