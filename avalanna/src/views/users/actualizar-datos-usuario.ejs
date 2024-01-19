@@ -1,0 +1,34 @@
+<%- include("../partials/head.ejs") %>
+
+<body> 
+    
+    <%- include("../partials/header.ejs") %>
+
+    <main class="login__main">
+        <section class="login__main__section-bienvenidos">
+        <img src="img/logo-circular.png" alt="">
+        <h1>Bienvenidos</h1>
+        </section>
+    
+        <section class="login__main__section-form">
+            <h2>Acceso <i class="fa-solid fa-user"></i></h2>
+            <form action="login" method="post" class="login__main__section__form">
+                
+                <input type="text" name="nombre" id="nombre" class="usuario" placeholder="Usuario">
+                
+                <input type="password" name="password" id="contraseña" placeholder="Contraseña">
+
+                <button type="submit" class="login__main__section__form-button">Entrar</button>
+
+            </form>
+            <ul type="none" class="login__main__section__ul">
+                <li ><a href="/users/registrarme">Registrarme </a></li>
+                <li ><a href="/">Olvidé mi contraseña </a></li>
+            </ul>
+        </section>
+    </main> 
+    
+    <%- include("../partials/footer.ejs") %>
+
+</body>
+</html>
