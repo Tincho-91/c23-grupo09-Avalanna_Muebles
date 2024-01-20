@@ -1,4 +1,4 @@
-/*const {setJson,getJson} = require("../utility/jsonMethod");
+const {setJson,getJson} = require("../utility/jsonMethod");
 const { v4: uuidv4 } = require('uuid');
 const bcrypt = require('bcryptjs');
 const {validationResult} = require('express-validator');
@@ -55,4 +55,4 @@ const usersController = {
 }
 
 
-module.exports = usersController;*/
+module.exports = usersController;
