@@ -10,11 +10,11 @@ const productsController = {
         const products = getJson("products.json")
         const product = products.find(elemento => elemento.id == id);
         const calc = product.price - ((product.price * product.discount) / 100)
-        res.render("products/productDetail", { title: product.name, product, calc })
+        res.render("products/productDetail", { title: product.name, product, calc, user: req.session.user})
     },
     formulario: (req, res) => {
 
-        res.render("products/crear-formulario", { title: "formulario" })
+        res.render("products/crear-formulario", { title: "formulario", user: req.session.user })
     },
 
     store:(req,res) =>{
@@ -36,7 +36,7 @@ const productsController = {
         console.log("mostrar id edform",id)
         const products = getJson("products.json")
         const product = products.find(elemento => elemento.id == id);
-        res.render("products/edform", {title:"edform", product})
+        res.render("products/edform", {title:"edform", product, user: req.session.user})
     },
     update:(req,res) =>{
         console.log("file:",req.file); 
@@ -79,12 +79,12 @@ const productsController = {
         
     },
     cart: (req, res) => {
-        res.render("products/productCart", { title: "Carrito de compra" });
+        res.render("products/productCart", { title: "Carrito de compra", user: req.session.user });
     },
     dashboard: (req, res) => {
         const propiedades = ["id", "image", "name", "price"];
         const products = getJson("products.json")
-        res.render("products/dashboard", { title: "Dashboard", products, propiedades })
+        res.render("products/dashboard", { title: "Dashboard", products, propiedades, user: req.session.user })
     },
 
     delete:(req,res)=>{
@@ -112,7 +112,7 @@ const productsController = {
     },
     products:(req,res) =>{
         const products = getJson("products.json");
-        res.render("products/products", {title: "Todos los productos", products});
+        res.render("products/products", {title: "Todos los productos", products, user: req.session.user});
     },
     categories:(req,res)=>{
         const {category} = req.params;
@@ -120,7 +120,7 @@ const productsController = {
         const productsCategorized = products.filter(product=>{
             return product.category == category.toLowerCase()
         });
-        res.render("products/categories", {title: category, productsCategorized, category})
+        res.render("products/categories", {title: category, productsCategorized, category, user: req.session.user})
     }
 
 

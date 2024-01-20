@@ -5,6 +5,8 @@ const path = require("path");
 const productController = require("../controllers/productsController");
 const { group } = require('console');
 
+const adminValidation = require("../middlewares/adminValidation");
+
 const storage = multer.diskStorage({
     destination: (req, file, cb) =>{
         cb(null,path.join(__dirname, "../../public/img") )
@@ -25,15 +27,15 @@ router.get('/detail/:id', productController.detail);
 
 router.get('/section/:category', productController.categories);
 
-router.get('/formCreate', productController.formulario)
+router.get('/formCreate', adminValidation, productController.formulario)
 router.post('/formCreate',upload.single("image"), productController.store)
 
 router.get('/productCart', productController.cart)
 
-router.get('/formEdit/:id', productController.edform)
+router.get('/formEdit/:id', adminValidation, productController.edform)
 router.put('/formEdit/:id',upload.single("image"), productController.update)
 
-router.get('/dashboard', productController.dashboard)
+router.get('/dashboard', adminValidation, productController.dashboard)
 
 router.delete('/delete/:id',productController.destroy)
 
