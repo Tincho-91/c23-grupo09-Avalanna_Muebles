@@ -2,6 +2,7 @@ var express = require('express');
 const userController = require('../controllers/usersController');
 var router = express.Router();
 const adminValidation = require("../middlewares/adminValidation");
+const sessionValidate = require("../middlewares/sessionValidate");
 
 /* GET users listing. */
 router.get('/ingresar', userController.login);

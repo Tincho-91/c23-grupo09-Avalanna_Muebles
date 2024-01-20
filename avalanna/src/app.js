@@ -8,7 +8,7 @@ const methodOverride = require('method-override');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 const productsRouter = require('./routes/products');
-
+const session = require("express-session");
 
 var app = express();
 
@@ -25,6 +25,11 @@ app.use(express.static(path.join(__dirname, '../public')));
 
 
 app.use(methodOverride('_method'));
+app.use(session({
+  secret:"login",
+  resave: false,
+  saveUninitialized: true,
+}))
 
 app.use('/', indexRouter);
 app.use('/products', productsRouter);

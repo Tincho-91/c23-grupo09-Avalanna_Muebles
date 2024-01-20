@@ -27,7 +27,14 @@
     position: absolute;
     top: 2px;
 }
-
+.iconos .header__div__iconos-user-session{
+    font-size: 8px;
+    margin:2% -8% 2% 15%;
+    border: 1px solid rgba(0, 0, 0, 50%);
+    border-radius: 30%;
+    padding: 5% 2% 0% 10%;
+    width: 55%;
+    }
 .iconos a {
     margin: 9px;
     font-size: 18px;
@@ -169,9 +176,13 @@
     }
     .iconos a {
         font-size: 35px;
-        margin: 11px;
+        margin: 15px 11px 11px 11px;
     }
-
+    .iconos .header__div__iconos-user-session{
+        font-size: 18px;
+        margin:5% -5% 0 5%;
+        padding: 2% 10%;
+        }
     .lupa {
         top: 22px;
         font-size: 25px;
@@ -233,6 +244,12 @@
         font-size: 40px;
         margin: 18px;
     }
+    .iconos .header__div__iconos-user-session{
+        font-size: 20px;
+        margin:1% -5% 0 5%;
+        padding: 6% 0 0 12%;
+        border-radius: 40%;
+        }
     .header__contenido-desplegable a {
         font-size: 26px;
     }

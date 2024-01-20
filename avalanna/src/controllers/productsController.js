@@ -10,7 +10,7 @@ const productsController = {
         const products = getJson("products.json")
         const product = products.find(elemento => elemento.id == id);
         const calc = product.price - ((product.price * product.discount) / 100)
-        res.render("products/productDetail", { title: product.name, product, calc, user: req.session.user})
+        res.render("products/productDetail", { title: product.name, product, calc, user: req.session.user })
     },
     formulario: (req, res) => {
 
