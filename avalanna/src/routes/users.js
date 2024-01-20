@@ -3,9 +3,10 @@ const userController = require('../controllers/usersController');
 var router = express.Router();
 const adminValidation = require("../middlewares/adminValidation");
 const sessionValidate = require("../middlewares/sessionValidate");
+const authValidate = require("../middlewares/authValidate");
 
 /* GET users listing. */
-router.get('/ingresar', userController.login);
-router.get('/registrarme', userController.register);
+router.get('/ingresar', authValidate, userController.login);
+router.get('/registrarme', authValidate, userController.register);
 
 module.exports = router;

@@ -33,10 +33,7 @@ const categories = [
 
 const indexController = {
     home: (req,res)=>{
-        req.session.user = {
-            name: "mel",
-            rol:"admin"
-        }
+        
         res.render("index", {title:"Avalanna Muebles", categories, user: req.session.user});
     },
 }

@@ -10,11 +10,16 @@
             <a href="/">Muestrario de telas</a>
             <a href="/">Muestrario de mármol</a>
         </div>
-
+        <% if (!locals.user) { %>
         <div class="header__contenido-desplegable header__forms">
             <a href="/users/ingresar">Ingresá</a>
             <a href="/users/registrarme">Creá tu cuenta</a>
         </div>
+        <%  } else{ %>
+            <div class="header__contenido-desplegable header__forms">
+                <a href="/users/profile/<%=user.id%>">Mi cuenta</a>
+            </div>
+                <%  } %>
     </div>
     
     <div class="header__div-form">

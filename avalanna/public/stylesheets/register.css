@@ -55,6 +55,7 @@
 .register__main__section__form div label{
     color: rgba(0, 0, 0, 70%);
     font-family: "Oxygen", sans-serif;
+    width: 100%;
 }
 .register__main__section__form div input {
     background-color: var(--color-beige);

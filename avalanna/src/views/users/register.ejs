@@ -16,27 +16,33 @@
     <h1>Crear Cuenta</h1>
     <form action="register" method="post" class="register__main__section__form">
         <div>
-            <label for="name">Nombre y Apellido*</label><br>
+            <label for="name">Nombre y Apellido*</label>
             <input type="text" name="nombre" id="name" required>
         </div>
     
           <div>
-            <label for="email">Email*</label><br>
+            <label for="email">Email*</label>
             <input type="email" name="email" id="email" required>
           </div>
           
+            <% if (locals.user && user.rol == admin) { %>
+              <div>
+                <label for="rol">Rol*</label>
+                <input type="text" name="rol" id="rol" required>
+              </div>
+              <% } %>
           <div>
-            <label for="tel">Teléfono (Opcional)</label><br>
+            <label for="tel">Teléfono (Opcional)</label>
             <input type="tel" name="tel" id="tel">
           </div>
   
           <div>
-            <label for="contraseña">Contraseña*</label><br>
+            <label for="contraseña">Contraseña*</label>
             <input type="password" name="password" id="contraseña" required>
           </div>
   
           <div>
-            <label for="confirm">Confirmar contraseña*</label><br>
+            <label for="confirm">Confirmar contraseña*</label>
             <input type="password" name="password" id="confirm" required>
           </div>
           <span>
