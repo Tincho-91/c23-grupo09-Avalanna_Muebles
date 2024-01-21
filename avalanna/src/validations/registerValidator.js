@@ -1,4 +1,4 @@
-/*const {body} = require('express-validator');
+const {body} = require('express-validator');
 const {getJson} = require("../utility/jsonMethod");
 const users= getJson('users')
 
@@ -21,4 +21,4 @@ module.exports = [
         console.log("value2",req.body.password2);
         return value == req.body.password2;   
     }).withMessage("los password no coinciden")
-];*/
+];
