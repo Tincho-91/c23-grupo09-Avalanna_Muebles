@@ -22,7 +22,7 @@ const usersController = {
         }
       },
     register: (req, res) => {
-        res.render('./users/register', { title: 'avalanna' });
+        res.render('./users/register', {title: 'avalanna'});
 
       },
       createUser: (req, res) => {
