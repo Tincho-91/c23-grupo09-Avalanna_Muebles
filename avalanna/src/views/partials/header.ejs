@@ -30,13 +30,32 @@
     </div>
 
     <img src="/img/Imagotipo.png" alt="logo">
-    <div class="iconos">
-        <% if (locals.user) { %>
-            <a href="/" class="header__div__iconos-user-session" ><%= locals.user.name %></a>
-            <% } else { %>
-        <a href="/users/ingresar"><i class="fa-regular fa-user"></i></a>
-        <%  } %>
-        <a href="/products/productCart"><i class="fa-solid fa-cart-shopping"></i></a>
-    </div>
+
     
+    
+    <% if (locals.user) { %>
+        <div class="iconos-profile" id="iconos">
+        <div class="header__menu-desplegable" id="header__contenido-desplegable-profile" >
+            <button class="header_boton"><%= locals.user.name %></button>
+                <div class="header__contenido-desplegable" id="header__contenido-desplegable-profile-div">
+                    <a href="/" class="header__div__iconos-user-session">Mi cuenta</a>
+                    <a href="/" class="header__div__iconos-user-session">Cerrar sesión</a>
+                </div>
+                </div>
+                <div class="iconos-profile-without-session" id="iconos-profile-carrito-div">
+                    <a href="/products/productCart"><i class="fa-solid fa-cart-shopping"></i></a>
+                </div>
+                    <% } else { %>
+                        <div class="iconos-profile-without-session-user" >
+                            <a href="/users/ingresar"><i class="fa-regular fa-user"></i></a>
+                        </div>
+                        <div class="iconos-profile-without-session-cart">
+                            <a href="/products/productCart"><i class="fa-solid fa-cart-shopping"></i></a>
+                        </div>
+                        <%  } %>
+                        
+                     
+                </div>
+            
+        
 </header>
