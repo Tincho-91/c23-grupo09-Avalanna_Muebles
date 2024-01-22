@@ -1,4 +1,4 @@
-/*const {getJson} = require("../utility/jsonMethod");
+const {getJson} = require("../utility/jsonMethod");
 
 const sessionValidate = (req,res,next) =>{
     console.log("Estas son las cookies",req.cookies)
@@ -10,4 +10,4 @@ const sessionValidate = (req,res,next) =>{
         next();
     }
 
-module.exports = sessionValidate;*/
+module.exports = sessionValidate;

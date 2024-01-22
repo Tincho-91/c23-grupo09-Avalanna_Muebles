@@ -45,7 +45,8 @@ const usersController = {
           surname:surname,
           email:email,
           phoneNumber:phoneNumber,
-          password: bcrypt.hashSync(password1,10)
+          password: bcrypt.hashSync(password1,10),
+          rol: rol ? rol : "user"
         }
         console.log(user);
         users.push(user);

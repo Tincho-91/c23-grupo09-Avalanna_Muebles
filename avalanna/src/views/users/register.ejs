@@ -28,7 +28,7 @@
           </div>
           
           <div>
-            <label for=" phoneNumber">Teléfono (Opcional)</label><br>
+            <label for=" phoneNumber">Teléfono*</label><br>
             <input type=" tel" name="phoneNumber" id="phoneNumber" value= "<%= locals.old && old.phoneNumber ? old.phoneNumber : null %>">
             <p class="register__main__section__form__p"><%= locals.errores && errores.phoneNumber ? errores.phoneNumber.msg : null%> </p>
           </div>
