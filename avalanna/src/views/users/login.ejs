@@ -12,14 +12,16 @@
     
         <section class="login__main__section-form">
             <h2>Acceso <i class="fa-solid fa-user"></i></h2>
-            <form action="/users/login" method="post" class="login__main__section__form">
+            <form action="/users/ingresar" method="post" class="login__main__section__form">
                 
-                <input type="text" name="nombre" id="nombre" class="usuario" placeholder="Usuario">
+                <input type="email" name="email" id="email" class="usuario" placeholder="email">
                 
                 <input type="password" name="password" id="contraseña" placeholder="Contraseña">
 
                 <button type="submit" class="login__main__section__form-button">Entrar</button>
-
+                <% if (locals.error) { %>
+                    <p> <%= error %> </p> 
+               <% } %>
             </form>
             <ul type="none" class="login__main__section__ul">
                 <li ><a href="/users/registrarme">Registrarme </a></li>

@@ -6,19 +6,25 @@ const {validationResult} = require('express-validator');
 const usersController = {
     login: (req, res) => {
         res.render('users/login', { title: 'avalanna' });
+      
       },
       
       processlogin: (req, res) => {
+        
         const {email} = req.body;
+        
         const users = getJson("users");
         const user = users.find(usuario => usuario.email == email);
+        
         if(user){
           req.session.user = user;
           res.cookie('userEmail',user.email,{maxAge: 1000 * 60 * 15 });
           res.cookie('rememberMe',"true", {maxAge: 1000 * 60 * 15 });
           res.redirect('/');
+          
         }else{
           res.render("/users/login",{error:"No se encontro el usuario", title:"avalanna"});
+          
         }
       },
     register: (req, res) => {
