@@ -21,6 +21,7 @@ const usersController = {
           res.render("/users/login",{error:"No se encontro el usuario", title:"avalanna"});
         }
       },
+   
     register: (req, res) => {
         res.render('./users/register', { title: 'avalanna' });
 
