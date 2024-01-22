@@ -1,44 +1,45 @@
 [
-   {
-    "id" : "1",
-   "NameAndSurname" : "Martin Baryuk",
-   "email" : "martin_baryuk@outlook.com",
-   "tel" : "1161232375",
-   "password" : "tincho123"
-
-   },
-
-   {
-    "id" : "2",
-   "NameAndSurname" : "Melany Strack",
-   "email" : "melany.strack@gmail.com",
-   "tel" : "1132884470",
-   "password" : "mela123"
-   },
-
-   {
-    "id" : "3",
-   "NameAndSurname" : "Luana Ampuero",
-   "email" : "ampueroluana@gmail.com",
-   "tel" : "1122510314",
-   "password" : "lua123"
-   },
-
-   {
-    "id" : "4",
-   "NameAndSurname" : "Flavia Fernández",
-   "email" : "milhouse.mb@gmail.com",
-   "tel" : "1125002595",
-   "password" : "fla123"
-   },
-
-   {
-    "id" : "5",
-    "NameAndSurname" : "para prueba",
-    "email" : "prueba@gmail.com",
-    "tel" : "1234567890",
-    "password" : "prueba123"
+    {
+        "id": "1",
+        "NameAndSurname": "Martin Baryuk",
+        "email": "martin_baryuk@outlook.com",
+        "tel": "1161232375",
+        "age": "32",
+        "date": "2024-01-04",
+        "image": "perrito-1705878273625-bdc3554a-6bd9-4f7e-be8f-74e55c13d697.jpg",
+        "password": "tincho123",
+        "rol": "user"
+    },
+    {
+        "id": "2",
+        "NameAndSurname": "Melany Strack",
+        "email": "melany.strack@gmail.com",
+        "tel": "1132884470",
+        "password": "mela123"
+    },
+    {
+        "id": "3",
+        "NameAndSurname": "Luana Ampuero",
+        "email": "ampueroluana@gmail.com",
+        "tel": "1122510314",
+        "password": "lua123"
+    },
+    {
+        "id": "4",
+        "NameAndSurname": "Flavia Fernández",
+        "email": "milhouse.mb@gmail.com",
+        "tel": "1125002595",
+        "password": "fla123"
+    },
+    {
+        "id": "5",
+        "NameAndSurname": "para prueba",
+        "email": "prueba.mb@gmail.com",
+        "age": "32",
+        "date": "1991-1-11-16",
+        "image": "group-perrito.jpg",
+        "tel": "123456789",
+        "password": "prueba123",
+        "rol": "user"
     }
-
-
 ]
