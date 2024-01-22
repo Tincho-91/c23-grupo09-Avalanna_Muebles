@@ -9,4 +9,6 @@ const authValidate = require("../middlewares/authValidate");
 router.get('/ingresar', authValidate, userController.login);
 router.get('/registrarme', authValidate, userController.register);
 
+router.get("/logout", usersController.logout);
+
 module.exports = router;
