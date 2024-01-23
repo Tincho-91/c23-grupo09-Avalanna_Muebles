@@ -1,7 +1,7 @@
 const {body} = require('express-validator');
 const {getJson} = require("../utility/jsonMethod");
 const bcrypt = require('bcryptjs');
-const users= getJson('users')
+const users= getJson('users.json')
 
 module.exports = [
     body('email').notEmpty().withMessage('el campo no puede estar vacio').bail()

@@ -8,7 +8,7 @@ const userController = {
     },
     processlogin: (req, res) => {
       const {email} = req.body;
-      const users = getJson("users");
+      const users = getJson("users.json");
       const user = users.find(usuario => usuario.email == email);
       if(user){
         req.session.user = user;
@@ -33,7 +33,7 @@ const userController = {
         res.render("users/register",{errores:errores.mapped(),old:req.body,title:"registro"})
       }
       else{ 
-      const users = getJson("users");
+      const users = getJson("users.json");
       const {name,surname,email,phoneNumber,password1} = req.body;
       const id = uuidv4();
       const user = {
@@ -47,7 +47,7 @@ const userController = {
       }
       console.log(user);
       users.push(user);
-      setJson(users,"users");
+      setJson(users,"users.json");
       res.redirect('/users/ingresar');
     }
 },

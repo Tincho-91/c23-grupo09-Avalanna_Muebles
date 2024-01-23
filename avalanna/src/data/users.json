@@ -33,12 +33,12 @@
     },
     {
         "id": "5",
-        "NameAndSurname": "para prueba",
-        "email": "prueba.mb@gmail.com",
-        "age": "32",
-        "date": "1991-1-11-16",
-        "image": "group-perrito.jpg",
-        "tel": "123456789",
+        "NameAndSurname": "hola mundo",
+        "email": "prueba3.mb@gmail.com",
+        "tel": "123456888",
+        "age": "40",
+        "date": "2024-01-13",
+        "image": "perrito-1705974700656-5343e22f-fbc9-49b1-97ad-ce367e8ce651.jpg",
         "password": "prueba123",
         "rol": "user"
     }
