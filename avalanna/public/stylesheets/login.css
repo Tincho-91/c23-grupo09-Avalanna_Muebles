@@ -109,6 +109,7 @@
     display: flex;
     width: 100%;
     margin-bottom: 20%;
+    margin-top: 10%;
 }
 
 .login__main__section__form-label{
