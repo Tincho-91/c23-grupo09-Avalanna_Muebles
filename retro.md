@@ -60,3 +60,23 @@ START DOING: Creemos que debemos respetar la división de tareas pactada desde u
 STOP DOING: Acumular inquietudes y no comunicarlas. Para evitar situaciones limites, donde los conflictos pueden pesar más de lo que deberían, entendemos que es sumamente necesario expresarnos, escuchar y ser escuchados.
 
 LESS OF: Procrastinar y, con ello, comprometer el proyecto y al resto del equipo. También queremos evitar que cualquier integrante se ausente en momentos decisivos del sprint tales como reuniones organizativas o entregas.
+
+
+
+
+
+## Retrospectiva, SPRINT 5
+
+En nuestra quinta retrospectiva, basados en nuestro último sprint y nuevas ideas, decidimos:
+
+![starfish retrospective](./avalanna/public/img/starfishRetrospective5.png)
+
+KEEP DOING: Mantendremos el enfoque en la división de tareas acordadas, asegurando las responsabilidades asignadas. Esta práctica se reflejará en el tablero del Jira, donde solo aquellos miembros que hayan completado tareas serán designados como responsables.Continuaremos con la misma práctica de comunicación y reuniones, ya que son elementos fundamentales para la resolución de problemas y la revisión de los avances del proyecto.
+
+MORE OF: Buscar mantenernos informados acerca del sprint. Fomentar la búsqueda de soluciones, priorizar el bienestar individual y grupal apoyándonos mutuamente en situaciones de presión. Enfrentar imprevistos sin comprometer la calidad del trabajo.
+
+START DOING: Establecer las tareas especificadas y alcanzables al plazo justo de entrega. Explorar e implementar herramientas para mejorar el seguimiento de tareas y optimizar el tiempo de las reuniones para maximizar su eficiencia.
+
+STOP DOING: Utilizar etiquetas de estilo en el HTML; aplicar estilos únicamente desde el CSS. Intentar no reducir la comunicación virtual, a menos que algún miembro del grupo tenga complicaciones graves.
+
+LESS OF: Postergar tareas sin implementar estrategias para abordar la procrastinación y sin tener un ritmo constante de trabajo. Esto abarca, por ejemplo, olvidarse de mover las tareas en el Jira.
