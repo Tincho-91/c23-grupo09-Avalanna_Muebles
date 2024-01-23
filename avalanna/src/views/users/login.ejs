@@ -16,11 +16,16 @@
         
             <form action="/users/ingresar" method="post" class="login__main__section__form">
                 
-                <input type="email" name="email" id="email" value= "<%= locals.old && old.email ? old.email : null %>">
+                <input type="email" name="email" id="email" value= "<%= locals.old && old.email ? old.email : null %>" placeholder="Email">
                 <p class="register__main__section__form__p" ><%= locals.errors && errors.email ? errors.email.msg : null%> </p>
                 <input type="password" name="password1" id="contraseña" placeholder="Contraseña">
                 <p class="register__main__section__form__p"><%= locals.errors && errors.password1 ? errors.password1.msg : null%></p>
                 <button type="submit" class="login__main__section__form-button">Entrar</button>
+
+                <div>
+                    <label class="login__main__section__form-label" for="">Recordar mi cuenta</label>
+                    <input class="" type="checkbox">
+                </div>
 
             </form>
             <ul type="none" class="login__main__section__ul">

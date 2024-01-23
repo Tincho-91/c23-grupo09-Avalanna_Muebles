@@ -9,6 +9,7 @@ const registerValidator = require("../validations/registerValidator");
 const upload = require('../validations/uploadUser');
 
 
+
 /* GET users listing. */
 
 router.get('/ingresar', authValidate, login)

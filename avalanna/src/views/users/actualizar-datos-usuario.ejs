@@ -53,7 +53,10 @@
 
                 <div class="actualizar__main__section-form form input">
                     <label for="image" class="actualizar__main__section__form div img">Foto de perfil</label><br>
-                    <img src="/img/users/<%= user.image %>" alt="profile image">
+                <% if(user.image){%>
+                   <img src="/img/users/<%= user.image %>" alt="profile image">
+                <%} %>
+                    
                     <input type="file" id="inputGroupFile02" name="image">
                     <p><%= locals.errores && errores.image ? errores.image.msg : null %> </p>
                 </div>
