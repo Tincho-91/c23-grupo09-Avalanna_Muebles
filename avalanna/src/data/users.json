@@ -41,5 +41,13 @@
         "image": "perrito-1705974700656-5343e22f-fbc9-49b1-97ad-ce367e8ce651.jpg",
         "password": "prueba123",
         "rol": "user"
+    },
+    {
+        "id": "d116ebe3-fd91-4cc6-8973-088588a3ec08",
+        "NameAndSurname": "pancho doto",
+        "email": "pancho@outlook.com",
+        "phoneNumber": "1234567894",
+        "password": "$2a$10$wpJ4oN/x.wDbWDMzxgMMNen0JRBckOHdLjJrhIfcz4kg9ZEvjTN/i",
+        "rol": "user"
     }
 ]

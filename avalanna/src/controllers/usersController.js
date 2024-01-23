@@ -8,18 +8,24 @@ const usersController = {
         res.render("users/login", {title:"Ingresar"});
     },
     processlogin: (req, res) => {
+      const errors = validationResult(req);
+      if(!errors.isEmpty()){
+        console.log(errors)
+        res.render("users/login",{errors: errors.mapped(), title:"avalanna" , old:req.body});
+      }
       const {email} = req.body;
       const users = getJson("users.json");
       const user = users.find(usuario => usuario.email == email);
-      if(user){
-        req.session.user = user;
+     
+      req.session.user = user;
+      delete user.password1;
+
         res.cookie('userEmail',user.email,{maxAge: 1000 * 60 * 15 });
         res.cookie('rememberMe',"true", {maxAge: 1000 * 60 * 15 });
         res.redirect('/');
-      }else{
-        res.render("users/login",{error:"No se encontro el usuario", title:"avalanna"});
-      }
     },
+      
+    
  
     register:(req,res)=>{
         res.render("users/register", {title:"Registrarme"});
@@ -35,12 +41,11 @@ const usersController = {
       }
       else{ 
       const users = getJson("users.json");
-      const {name,surname,email,phoneNumber,password1} = req.body;
+      const {NameAndSurname,email,phoneNumber,password1,rol} = req.body;
       const id = uuidv4();
       const user = {
         id,
-        name: name,
-        surname:surname,
+        NameAndSurname:NameAndSurname,
         email:email,
         phoneNumber:phoneNumber,
         password: bcrypt.hashSync(password1,10),
@@ -89,4 +94,4 @@ const usersController = {
         res.send(req.session.user)
       }
   }
-module.exports = userController;
+module.exports = usersController;
