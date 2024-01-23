@@ -1,6 +1,6 @@
 const {body} = require('express-validator');
 const {getJson} = require("../utility/jsonMethod");
-const users= getJson('users')
+const users= getJson('users.json')
 
 module.exports = [
     body('name').notEmpty().withMessage('el campo no puede estar vacio').bail()
