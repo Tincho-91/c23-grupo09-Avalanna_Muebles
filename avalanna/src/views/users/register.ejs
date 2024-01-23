@@ -27,6 +27,12 @@
             <p class="register__main__section__form__p" ><%= locals.errores && errores.email ? errores.email.msg : null%> </p>
           </div>
           
+            <% if (locals.user && user.rol == "admin") { %>
+              <div>
+                <label for="rol">Rol*</label>
+                <input type="text" name="rol" id="rol" required>
+              </div>
+              <% } %>
           <div>
             <label for=" phoneNumber">Teléfono*</label><br>
             <input type=" tel" name="phoneNumber" id="phoneNumber" value= "<%= locals.old && old.phoneNumber ? old.phoneNumber : null %>">

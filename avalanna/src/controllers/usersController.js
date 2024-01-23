@@ -19,16 +19,17 @@ const usersController = {
      
       req.session.user = user;
       delete user.password1;
-
-        res.cookie('userEmail',user.email,{maxAge: 1000 * 60 * 15 });
-        res.cookie('rememberMe',"true", {maxAge: 1000 * 60 * 15 });
+        if (req.body.rememberMe) {
+          res.cookie('userEmail',user.email,{maxAge: 1000 * 60 * 15 });
+          res.cookie('rememberMe',"true", {maxAge: 1000 * 60 * 15 });
+        }
         res.redirect('/');
     },
       
     
  
     register:(req,res)=>{
-        res.render("users/register", {title:"Registrarme"});
+        res.render("users/register", {title:"Registrarme", user: req.session.user});
     },
     createUser: (req, res) => {
       const errores = validationResult(req);
@@ -65,7 +66,7 @@ const usersController = {
       },
       update:(req,res)=>{
         const {id} = req.params;
-        const {NameAndSurname,email,age,tel,date,rol} = req.body;
+        const {NameAndSurname,email,age,phoneNumber,date,rol} = req.body;
         const users = getJson("users.json");
         const usuarios = users.map(element => {
           if (element.id == id) {
@@ -73,7 +74,7 @@ const usersController = {
               id,
               NameAndSurname,
               email,
-              tel,
+              phoneNumber,
               age,
               date,
               image: req.file ? req.file.filename : element.image, 
@@ -87,11 +88,21 @@ const usersController = {
         const userUpdate = usuarios.find(elemento => elemento.id == id);
         req.session.user = userUpdate;
         delete userUpdate.password
-        res.cookie('user',(userUpdate))
+        res.cookie('user',userUpdate)
         res.redirect(`/users/editar/${id}`);
       },
       dashboard:(req,res)=>{
         res.send(req.session.user)
-      }
+      },
+      logout:(req,res) =>{
+        req.session.destroy();
+        console.log("estas son las cookies", req.cookies);
+        if (req.cookies) {
+          res.clearCookie('user');
+          res.clearCookie("userEmail")
+          res.clearCookie('rememberMe');
+        }
+        res.redirect('/');
+}
   }
 module.exports = usersController;

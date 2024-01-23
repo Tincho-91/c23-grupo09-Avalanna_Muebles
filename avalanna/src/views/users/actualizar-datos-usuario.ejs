@@ -26,7 +26,7 @@
 
                 <div class="actualizar__main__section-form form input">
                     <label for="tel">Tel</label>
-                    <input type="text" id="tel" name="tel" value="<%= locals.user ? user.tel : locals.old && old.tel ? old.tel : null %>">
+                    <input type="text" id="tel" name="phoneNumber" value="<%= locals.user ? user.phoneNumber : locals.old && old.phoneNumber ? old.phoneNumber : null %>">
                     <p> <%= locals.errores && errores.tel ? errores.tel.msg : null %> </p>
                 </div>
 
