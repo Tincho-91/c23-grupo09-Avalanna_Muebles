@@ -48,6 +48,6 @@
         "email": "pancho@outlook.com",
         "phoneNumber": "1234567894",
         "password": "$2a$10$wpJ4oN/x.wDbWDMzxgMMNen0JRBckOHdLjJrhIfcz4kg9ZEvjTN/i",
-        "rol": "user"
+        "rol": "admin"
     }
 ]

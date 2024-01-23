@@ -32,7 +32,7 @@ app.use(session({
   saveUninitialized: true,
 }))
 
-//app.use(rememberValidate);
+app.use(rememberValidate);
 
 app.use('/', indexRouter);
 app.use('/products', productsRouter);
