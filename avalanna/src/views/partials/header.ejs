@@ -17,7 +17,7 @@
         </div>
         <%  } else{ %>
             <div class="header__contenido-desplegable header__forms">
-                <a href="/users/profile/<%=user.id%>">Mi cuenta</a>
+                <a href="/users/editar/<%=user.id%>">Mi cuenta</a>
             </div>
                 <%  } %>
     </div>
@@ -36,9 +36,9 @@
     <% if (locals.user) { %>
         <div class="iconos-profile" id="iconos">
         <div class="header__menu-desplegable" id="header__contenido-desplegable-profile" >
-            <button class="header_boton"><%= locals.user.name %></button>
+            <button class="header_boton"><%= locals.user.NameAndSurname %></button>
                 <div class="header__contenido-desplegable" id="header__contenido-desplegable-profile-div">
-                    <a href="/" class="header__div__iconos-user-session">Mi cuenta</a>
+                    <a href="/users/editar/<%= locals.user.id %>" class="header__div__iconos-user-session">Mi cuenta</a>
                     <a href="/users/logout" class="header__div__iconos-user-session">Cerrar sesión</a>
                 </div>
                 </div>
