@@ -14,30 +14,35 @@
   </nav>
   <section class="register__main__section">
     <h1>Crear Cuenta</h1>
-    <form action="register" method="post" class="register__main__section__form">
+    <form action="/users/registrarme" method="post" class="register__main__section__form">
         <div>
             <label for="name">Nombre y Apellido*</label><br>
-            <input type="text" name="nombre" id="name" required>
+            <input type="text" name="name" id="name" value= "<%= locals.old && old.name ? old.name : null %>">
+            <p class="register__main__section__form__p"><%= locals.errores && errores.name ? errores.name.msg : null%> </p>
         </div>
     
           <div>
             <label for="email">Email*</label><br>
-            <input type="email" name="email" id="email" required>
+            <input type="email" name="email" id="email" value= "<%= locals.old && old.email ? old.email : null %>">
+            <p class="register__main__section__form__p" ><%= locals.errores && errores.email ? errores.email.msg : null%> </p>
           </div>
           
           <div>
-            <label for="tel">Teléfono (Opcional)</label><br>
-            <input type="tel" name="tel" id="tel">
+            <label for=" phoneNumber">Teléfono*</label><br>
+            <input type=" tel" name="phoneNumber" id="phoneNumber" value= "<%= locals.old && old.phoneNumber ? old.phoneNumber : null %>">
+            <p class="register__main__section__form__p"><%= locals.errores && errores.phoneNumber ? errores.phoneNumber.msg : null%> </p>
           </div>
   
           <div>
             <label for="contraseña">Contraseña*</label><br>
-            <input type="password" name="password" id="contraseña" required>
+            <input type="password" name="password1" id="contraseña">
+            <p class="register__main__section__form__p"><%= locals.errores && errores.password ? errores.password1.msg : null%> </p>
           </div>
   
           <div>
             <label for="confirm">Confirmar contraseña*</label><br>
-            <input type="password" name="password" id="confirm" required>
+            <input type="password" name="password2" id="confirm" >
+            <p class="register__main__section__form__p"><%= locals.errores && errores.password ? errores.password.msg : null%> </p>
           </div>
           <span>
             <p class="register__main__section__form--p-campos">*Campos obligatorios</p>
