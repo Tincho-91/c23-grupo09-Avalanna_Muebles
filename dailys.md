@@ -77,3 +77,27 @@ Martin: Creando las ramas de tareas, haciendo vista de cactualizar datos de usua
 Melany: Creo tareas de jira, empezando con middleware de validar el perfil de usuario.
 Flavia: Repasando clases de los temas(poniendose al día).
 Luana: Comenzando tarea de implementar logín.
+
+16/01/24
+Martin: sigue trabajando en vista de actualizar datos de usuario.
+Melany: continúa organizando middleware.
+Flavia: comenzó a trabajan en las rutas de registro y logín.
+Luana: continúa trabajando con implementar logín.
+
+17/01/2024
+Martin: Continua con tarea actualización de usurio.
+Melany: Casi terminado, falta tarea implementar login para probar código.
+Flavia: Termino de hacer rutas de registro y logín.
+Luana: Ausente.
+
+18/01/2024
+Martin: Continua con tarea actualización de usurio.
+Melany: Finaliza la validación del usuario, necesita comprobar funcionalidad.
+Flavia: Resolvió un bloqueo y ahora intenta guardar los usuarios en el json.
+Luana: Finalizó la retro y continua con la implementación de login.
+
+19/01/2024
+Martin: Creando vista y lógica de actualización de usuario.
+Melany: Tarea bloqueada por tarea de login.
+Flavia: Tarea finalizada falta probar.
+Luana: Ausente.
