@@ -72,7 +72,7 @@
 .usuario{
     margin-bottom: 9%;
 }
-#nombre::placeholder {
+#email::placeholder {
     color:black;
     font-size: 20px;
   }
@@ -163,7 +163,7 @@ width: 10%;
     .login__main__section__form-button{
         margin-top: 15%;
     }
-    #nombre::placeholder {
+    #email::placeholder {
         font-size: 24px;
       }
       #contraseña::placeholder {
@@ -222,7 +222,7 @@ width: 10%;
         padding: 6% 4%;
     }
 
-#nombre::placeholder {
+#email::placeholder {
     font-size: 28px;
   }
   #contraseña::placeholder {
