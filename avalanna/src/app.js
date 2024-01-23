@@ -4,12 +4,13 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const methodOverride = require('method-override');
-const session = require('express-session');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const productsRouter = require('./routes/products');
-const sessionValidate = require('./middleware/sessionValidate');
+const session = require("express-session");
+const rememberValidate = require("./middlewares/rememberValidate")
+
 var app = express();
 
 // view engine setup
@@ -31,7 +32,7 @@ app.use(session({
   saveUninitialized: true,
 }))
 
-app.use(sessionValidate);
+//app.use(rememberValidate);
 
 app.use('/', indexRouter);
 app.use('/products', productsRouter);

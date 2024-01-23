@@ -10,6 +10,7 @@
             <a href="/">Muestrario de telas</a>
             <a href="/">Muestrario de mármol</a>
         </div>
+
         <div class="header__contenido-desplegable header__forms">
             <a href="/users/ingresar">Ingresá</a>
             <a href="/users/registrarme">Creá tu cuenta</a>
@@ -25,7 +26,11 @@
 
     <img src="/img/Imagotipo.png" alt="logo">
     <div class="iconos">
+        <% if (locals.user) { %>
+            <a href="/" class="header__div__iconos-user-session" ><%= locals.user.name %></a>
+            <% } else { %>
         <a href="/users/ingresar"><i class="fa-regular fa-user"></i></a>
+        <%  } %>
         <a href="/products/productCart"><i class="fa-solid fa-cart-shopping"></i></a>
     </div>
     
