@@ -22,6 +22,7 @@ const usersController = {
         if (req.body.rememberMe) {
           res.cookie('userEmail',user.email,{maxAge: 1000 * 60 * 15 });
           res.cookie('rememberMe',"true", {maxAge: 1000 * 60 * 15 });
+          console.log(req.cookies, "estas son las cookies");
         }
         res.redirect('/');
     },
