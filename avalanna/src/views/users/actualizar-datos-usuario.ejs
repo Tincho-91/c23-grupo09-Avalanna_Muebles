@@ -13,21 +13,21 @@
                 <div class="actualizar__main__section-form form input">
                     <div class="actualizar__main__section-form form input">
                         <label for="NameAndSurname">Nombre y Apellido</label>
-                        <input  type="text" id="NameAndSurname" name="NameAndSurname" value="<%= locals.user ? user.NameAndSurname : locals.old && old.NameAndSurname ? old.NameAndSurname : null %>" >
-                        <p><%= locals.errores && errores.NameAndSurname ? errores.NameAndSurname.msg : null %> </p>
+                        <input  type="text" id="name" name="NameAndSurname" value="<%= locals.user ? user.NameAndSurname : locals.old && old.NameAndSurname ? old.NameAndSurname : null %>" >
+                        <p class="erroresForm"><%= locals.errores && errores.NameAndSurname ? errores.NameAndSurname.msg : null %> </p>
                     </div>
                 </div>
 
                 <div class="actualizar__main__section-form form input">
                     <label for="email">Email</label>
                     <input type="text" id="email" name="email" value="<%= locals.user ? user.email : locals.old && old.email ? old.email : null %>">
-                    <p> <%= locals.errores && errores.email ? errores.email.msg : null %> </p>
+                    <p class="erroresForm"> <%= locals.errores && errores.email ? errores.email.msg : null %> </p>
                 </div>
 
                 <div class="actualizar__main__section-form form input">
                     <label for="tel">Tel</label>
                     <input type="text" id="tel" name="phoneNumber" value="<%= locals.user ? user.phoneNumber : locals.old && old.phoneNumber ? old.phoneNumber : null %>">
-                    <p> <%= locals.errores && errores.tel ? errores.tel.msg : null %> </p>
+                    <p class="erroresForm"> <%= locals.errores && errores.tel ? errores.tel.msg : null %> </p>
                 </div>
 
 
@@ -35,20 +35,20 @@
                     <div class="actualizar__main__section-form form input">
                         <label for="rol">Rol</label>
                         <input type="text" id="rol" name="rol" value="<%= locals.user ? user.rol : locals.old && old.rol ? old.rol : null %>">
-                        <p> <%= locals.errores && errores.rol ? errores.rol.msg : null %> </p>
+                        <p class="erroresForm"> <%= locals.errores && errores.rol ? errores.rol.msg : null %> </p>
                     </div>    
                 <% } %>
 
                 <div class="actualizar__main__section-form form input">
                     <label for="age">Edad</label>
                     <input type="number" name="age" id="age" value="<%= locals.user ? user.age : locals.old && old.age ? old.age : null %>">
-                    <p><%= locals.errores && errores.age ? errores.age.msg : null %> </p>
+                    <p class="erroresForm"><%= locals.errores && errores.age ? errores.age.msg : null %> </p>
                 </div>
 
                 <div class="actualizar__main__section-form form input">
                     <label for="date">Fecha de Nacimiento</label>
                     <input type="date" name="date" id="date" value="<%= locals.user ? user.date : locals.old && old.date ? old.date : null %>">
-                    <p><%= locals.errores && errores.date ? errores.date.msg : null %> </p>
+                    <p class="erroresForm"><%= locals.errores && errores.date ? errores.date.msg : null %> </p>
                 </div>
 
                 <div class="actualizar__main__section-form form input">

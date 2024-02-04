@@ -6,7 +6,9 @@ const sessionValidate = require("../middlewares/sessionValidate");
 const authValidate = require("../middlewares/authValidate");
 const loginValidator = require("../validations/loginValidator");
 const registerValidator = require("../validations/registerValidator");
+const editUserValidator = require("../validations/editUserValidator");
 const upload = require('../validations/uploadUser');
+
 
 
 
@@ -19,7 +21,7 @@ router.get('/registrarme', register)
 router.post('/registrarme', registerValidator, createUser)
 
 router.get('/editar/:id',sessionValidate, edform)
-router.put('/editar/:id',upload.single('image'), update)
+router.put('/editar/:id',upload.single('image'), editUserValidator, update)
 
 router.get("/logout", logout);
 
