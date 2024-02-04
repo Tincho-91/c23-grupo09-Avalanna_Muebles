@@ -66,6 +66,18 @@ const usersController = {
         res.render('users/actualizar-datos-usuario', { title: 'Editar', user, usuario:req.session.user});
       },
       update:(req,res)=>{
+        const errores = validationResult(req);
+      console.log("errores:", errores);
+      console.log("body:",req.body);
+
+      if(!errores.isEmpty()){
+        console.log("ingrese en errores");
+        const {id} = req.params;
+        const users = getJson("users.json");
+        const user = users.find(elemento => elemento.id == id);
+        res.render("users/actualizar-datos-usuario",{errores:errores.mapped(),old:req.body,title:"editar",usuario:req.session.user, user})
+      }
+      else{ 
         const {id} = req.params;
         const {NameAndSurname,email,age,phoneNumber,date,rol} = req.body;
         const users = getJson("users.json");
@@ -91,7 +103,8 @@ const usersController = {
         delete userUpdate.password
         res.cookie('user',userUpdate)
         res.redirect(`/users/editar/${id}`);
-      },
+      }},
+
       dashboard:(req,res)=>{
         res.send(req.session.user)
       },
