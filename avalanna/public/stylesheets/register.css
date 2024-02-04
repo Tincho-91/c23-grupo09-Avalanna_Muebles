@@ -7,6 +7,10 @@
     padding-top: 2%;
     
 }
+.register__main__section__form__p{
+    font-size: 8px;
+    color: red;
+}
 
 .register__main__nav__ul {
     display: flex;
@@ -55,6 +59,7 @@
 .register__main__section__form div label{
     color: rgba(0, 0, 0, 70%);
     font-family: "Oxygen", sans-serif;
+    width: 100%;
 }
 .register__main__section__form div input {
     background-color: var(--color-beige);
@@ -76,6 +81,7 @@
     color: rgba(0, 0, 0, 50%);
     margin-top: -2%;
     text-align: left;
+    color: rgb(11, 11, 11);
 }
 
 .register__main__section__form span{
@@ -88,6 +94,7 @@
 .register__main__section__form--p--cuenta{
     font-size: 12px;
     margin-top: 2%; 
+  
 }
 
 .register__main__section__form--p--cuenta a{
@@ -135,6 +142,9 @@
     .register__main__section__form--p--cuenta{
         font-size: 18px;
     }
+    .register__main__section__form__p{
+        font-size: 15px;
+        }
 }
 
 @media (min-width:1024px){
@@ -184,5 +194,7 @@
     .register__main__section__form--p--cuenta a:hover{
         border-bottom: 1px solid black;
     }
-
+    .register__main__section__form__p{
+        font-size: 18px;
+    }
 }
