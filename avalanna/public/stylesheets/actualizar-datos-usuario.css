@@ -57,6 +57,8 @@ margin-bottom: 20px;
 width: 35%;
 }
 
+
+
 @media (min-width:768px){
     .actualizar__main{
         flex-direction: row;
