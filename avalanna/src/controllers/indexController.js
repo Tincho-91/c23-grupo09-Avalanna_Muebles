@@ -1,3 +1,4 @@
+const db = require("../database/models");
 const categories = [
     {
         image: "living-home.png",
