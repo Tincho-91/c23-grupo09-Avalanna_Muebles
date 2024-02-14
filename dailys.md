@@ -101,3 +101,16 @@ Martin: Creando vista y lógica de actualización de usuario.
 Melany: Tarea bloqueada por tarea de login.
 Flavia: Tarea finalizada falta probar.
 Luana: Ausente.
+
+* Sprint 6
+10/02/2024
+Realizamos la retrospectiva, el diagrama de entidades y relaciones y distribuimos las tareas del Sprint.
+
+12/02/2024
+Refactorizamos el proyecto instalando sequelize y creando estructura de carpetas. También, organizamos nuestras tareas.
+
+14/02/2024
+Martin: Corrigiendo retrospectiva.
+Luana: Repasando temas.
+Flavia: Trabajando en detalles finales del diagrama.
+Melany: Realizó la refactorización de creación de productos.
