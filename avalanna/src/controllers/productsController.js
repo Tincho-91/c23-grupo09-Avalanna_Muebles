@@ -20,14 +20,18 @@ const productsController = {
 
     store:(req,res) =>{
     	const producto = req.body;
-		producto.id = Date.now();
+		// producto.id = Date.now();
         producto.image = req.file.filename;
-		const products = getJson("products.json")
-		products.push(producto)
-		
+        db.Product.create(producto)
+        .then((product)=>{
+            res.redirect(`/products`);
+        })
+        .catch(err=> console.log(err))
+	//	const products = getJson("products.json")
+	//	products.push(producto)
 
-	   setJson(products,"products.json")
-		res.redirect(`/products`);
+	//   setJson(products,"products.json")
+		
 
     },
 
