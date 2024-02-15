@@ -114,3 +114,9 @@ Martin: Corrigiendo retrospectiva.
 Luana: Repasando temas.
 Flavia: Trabajando en detalles finales del diagrama.
 Melany: Realizó la refactorización de creación de productos.
+
+15/02/2024
+Flavia: Comenzó la refactorización de registro, login y corrigió diagrama.
+Luana: Comenzó la refactorización de actualización de usuario
+Martin: Poniendose al día y repasando diagrama.
+Melany: Corrección de diagrama.
