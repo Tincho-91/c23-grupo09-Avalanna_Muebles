@@ -98,16 +98,23 @@ const productsController = {
 
     destroy:(req,res)=>{
         const {id}=req.params;
-        const products=getJson("products.json");
-        const product=products.find(producto => producto.id == id);
-        const nuevoArray=products.filter(producto => producto.id != id );
-        console.log("imagen:",product.image);
+       // const products=getJson("products.json");
+       // const product=products.find(producto => producto.id == id);
+       // const nuevoArray=products.filter(producto => producto.id != id );
+       // console.log("imagen:",product.image);
+       db.Product.destroy({
+        where:{
+            id,
+        }
+       }).then((response)=>{
         fs.unlink(path.join(__dirname,`../../public/img/${product.image}`),(err)=>{
             if(err) throw err;
             console.log(`archivo ${product.image}`);
+            res.redirect(`/products`);
         })
-        setJson(nuevoArray,"products.json")
-        res.redirect(`/products`);
+       }).catch(err=>console.log(err))
+        
+       // setJson(nuevoArray,"products.json")
 
        
     },
