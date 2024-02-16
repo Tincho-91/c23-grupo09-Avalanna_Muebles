@@ -120,3 +120,9 @@ Flavia: Comenzó la refactorización de registro, login y corrigió diagrama.
 Luana: Comenzó la refactorización de actualización de usuario
 Martin: Poniendose al día y repasando diagrama.
 Melany: Corrección de diagrama.
+
+16/02/2024
+Martin: Comenzó a realizar los modelos.
+Flavia: Comenzó la refactorización de todas las vistas.
+Luana: Realizó la refactorización del update de users.
+Melany: Realizó la refactorización de eliminación de productos.
