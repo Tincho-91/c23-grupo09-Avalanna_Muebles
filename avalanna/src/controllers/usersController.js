@@ -1,8 +1,8 @@
 const db = require("../database/models");
-const {setJson,getJson} = require("../utility/jsonMethod");
-const { v4: uuidv4 } = require('uuid');
+const { op }= require("sequelize")
 const bcrypt = require('bcryptjs');
 const {validationResult} = require('express-validator');
+
 
 const usersController = {
     login: (req,res)=>{
@@ -15,18 +15,26 @@ const usersController = {
         res.render("users/login",{errors: errors.mapped(), title:"avalanna" , old:req.body});
       }
       const {email} = req.body;
-      const users = getJson("users.json");
-      const user = users.find(usuario => usuario.email == email);
+     db.User.findOne({
+      attributes: { exclude: ["password1"] },
+      where: {
+        email,
+      },
+     })
+     .then((user) => {
+      req.session.user = user.dataValues;
      
-      req.session.user = user;
-      delete user.password1;
-        if (req.body.rememberMe) {
+     if (req.body.rememberMe) {
           res.cookie('userEmail',user.email,{maxAge: 1000 * 60 * 15 });
           res.cookie('rememberMe',"true", {maxAge: 1000 * 60 * 15 });
           console.log(req.cookies, "estas son las cookies");
         }
         res.redirect('/');
-    },
+    })
+        .catch((err) => {
+          console.log(err);
+        });
+      },
       
     
  
@@ -43,23 +51,28 @@ const usersController = {
         res.render("users/register",{errores:errores.mapped(),old:req.body,title:"registro"})
       }
       else{ 
-      const users = getJson("users.json");
+  
       const {NameAndSurname,email,phoneNumber,password1,rol} = req.body;
-      const id = uuidv4();
+      
       const user = {
         id,
         NameAndSurname:NameAndSurname,
         email:email,
         phoneNumber:phoneNumber,
         password: bcrypt.hashSync(password1,10),
-        rol: rol ? rol : "user"
-      }
-      console.log(user);
-      users.push(user);
-      setJson(users,"users.json");
-      res.redirect('/users/ingresar');
+        rol: rol ? rol : "user",
+      };
     }
-},
+      db.User.create(user)
+      .then((user) => {
+        res.redirect('/users/ingresar');
+      })
+      
+        .catch((err) =>{
+          console.log(err);
+        });
+       },
+      
     edform:(req,res)=>{
         const {id} = req.params;
         const users = getJson("users.json");
