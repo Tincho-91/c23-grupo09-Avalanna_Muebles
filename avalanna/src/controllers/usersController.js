@@ -29,13 +29,12 @@ const usersController = {
       } else {
         const { email } = req.body;
         db.User.findOne({
-          attributes: { exclude: ["password"] },
+          attributes: { exclude: ["password1"] },
           where: {
             email,
           },
         })
           .then((user) => {
-            console.log("user info:", user);
             req.session.user = user.dataValues;
   
             if (req.body.remember == "true") {
@@ -72,17 +71,13 @@ const usersController = {
         phoneNumber:phoneNumber,
         password: bcrypt.hashSync(password1,10),
         rol: rol ? rol : "user",
-        gender: "male",
-        birthday: date,
-        about: "Hola soy ${name} ${surname}",
-        roleId: null,
+        
       };
       }
       
-      //users.push(user);
       db.User.create(user)
         .then((user) => {
-          res.redirect("/users/login");
+          res.redirect("/users/ingresar");
         })
         .catch((err) => {
           console.log(err);

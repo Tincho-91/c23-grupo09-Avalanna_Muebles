@@ -1,15 +1,15 @@
 const db = require("../database/models");
+const { op } =require("sequelize");
 const fs = require("fs");
 const path = require("path");
-const {getJson, setJson} = require("../utility/jsonMethod");
 const { Console } = require("console");
 
 
 const productsController = {
     detail: (req, res) => {
         const id = req.params.id;
-        const products = getJson("products.json")
-        const product = products.find(elemento => elemento.id == id);
+        
+        const product = products.findOne(elemento => elemento.id == id);
         const calc = product.price - ((product.price * product.discount) / 100)
         res.render("products/productDetail", { title: product.name, product, calc, user: req.session.user })
     },
