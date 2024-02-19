@@ -106,9 +106,16 @@ const usersController = {
         res.redirect(`/users/editar/${id}`);
       }},
 
-      dashboard:(req,res)=>{
-        res.send(req.session.user)
-      },
+      dashboard: (req, res) => {
+        const propiedades = ["id", "nameAndSurname", "email", "phoneNumber"];
+        const products = getJson("products.json")
+        db.User.findAll()
+        .then((users)=>{
+          res.render("users/dashboard", { title: "Dashboard", users, propiedades, user: req.session.user })
+        })
+        .catch(err=>console.log(err))
+        
+    },
       logout:(req,res) =>{
         req.session.destroy();
         console.log("estas son las cookies", req.cookies);
@@ -118,6 +125,9 @@ const usersController = {
           res.clearCookie('rememberMe');
         }
         res.redirect('/');
-}
+},
+      destroy:(req,res)=>{
+        const {id} = req.params
+      }
   }
 module.exports = usersController;
