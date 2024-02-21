@@ -127,7 +127,14 @@ const usersController = {
         res.redirect('/');
 },
       destroy:(req,res)=>{
-        const {id} = req.params
+        const {id} = req.params;
+        db.User.destroy({
+          where:{
+            id,
+          }
+        }).then((response)=>{
+          res.redirect("/");
+        }).catch(err=>console.log(err))
       }
   }
 module.exports = usersController;
