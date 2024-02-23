@@ -144,3 +144,6 @@ Flavia: Finalizó las refactorizaciones
 Martin: Repasando migraciones
 Luana: Trabajando en refactorización de update de productos
 Melany: Repasando seeders.
+
+23/02/2024
+Organizamos un encuentro para el 24/02, para rehacer la base de datos desde cero con sequelize.
