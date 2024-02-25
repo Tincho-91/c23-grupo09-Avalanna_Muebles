@@ -1,0 +1,64 @@
+[
+    {
+        "id": "1",
+        "NameAndSurname": "Martin Baryuk",
+        "email": "martin_baryuk@outlook.com",
+        "tel": "1161232375",
+        "age": "32",
+        "date": "2024-01-04",
+        "image": "perrito-1705878273625-bdc3554a-6bd9-4f7e-be8f-74e55c13d697.jpg",
+        "password": "tincho123",
+        "rol": "user"
+    },
+    {
+        "id": "2",
+        "NameAndSurname": "Melany Strack",
+        "email": "melany.strack@gmail.com",
+        "tel": "1132884470",
+        "password": "mela123"
+    },
+    {
+        "id": "3",
+        "NameAndSurname": "Luana Ampuero",
+        "email": "ampueroluana@gmail.com",
+        "tel": "1122510314",
+        "password": "lua123"
+    },
+    {
+        "id": "4",
+        "NameAndSurname": "Flavia Fernández",
+        "email": "milhouse.mb@gmail.com",
+        "tel": "1125002595",
+        "password": "fla123"
+    },
+    {
+        "id": "5",
+        "NameAndSurname": "hola mundo",
+        "email": "prueba3.mb@gmail.com",
+        "tel": "123456888",
+        "age": "40",
+        "date": "2024-01-13",
+        "image": "perrito-1705974700656-5343e22f-fbc9-49b1-97ad-ce367e8ce651.jpg",
+        "password": "prueba123",
+        "rol": "user"
+    },
+    {
+        "id": "d116ebe3-fd91-4cc6-8973-088588a3ec08",
+        "NameAndSurname": "pancho doto",
+        "email": "pancho@outlook.com",
+        "phoneNumber": "1234567894",
+        "password": "$2a$10$wpJ4oN/x.wDbWDMzxgMMNen0JRBckOHdLjJrhIfcz4kg9ZEvjTN/i",
+        "rol": "admin"
+    },
+    {
+        "id": "b350e745-b15f-4d8d-b4f6-8fab6171103e",
+        "NameAndSurname": "patricio estrella",
+        "email": "patricio@outlook.com",
+        "phoneNumber": "321654987",
+        "age": "21",
+        "date": "2024-01-19",
+        "image": "perrito-1705987952930-2529b9f2-f34a-4482-ac17-5657e47aaeee.jpg",
+        "password": "$2a$10$2yh5tE9dvBwHxZTBDqzU4.jYryrV5l55fVcG3T5ntBfGHkgAkG78a",
+        "rol": "user"
+    }
+]
