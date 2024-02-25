@@ -1,6 +1,5 @@
 [
   {
-    "id": "1",
     "image": "sillon3cuerpos.png",
     "name": "Sillon de 3 cuerpos",
     "price": 560000,
@@ -10,10 +9,9 @@
     "height": "82cm",
     "width": "220cm",
     "depth": "170cm",
-    "category": "living"
+    "categoryId": 1
   },
   {
-    "id": "2",
     "image": "roperoNordico.png",
     "name": "Ropero Nórdico",
     "price": 680000,
@@ -23,10 +21,9 @@
     "height": "230cm",
     "width": "220cm",
     "depth": "80cm",
-    "category": "dormitorio"
+    "categoryId": 3
   },
   {
-    "id": "3",
     "image": "mesaParaTe.png",
     "name": "Mesa baja",
     "price": 150000,
@@ -36,10 +33,9 @@
     "height": "50cm",
     "width": "100cm",
     "depth": "",
-    "category": "living"
+    "categoryId": 1
   },
   {
-    "id": "4",
     "image": "rackDeTV.png",
     "name": "Rack de TV",
     "price": 110000,
@@ -49,11 +45,9 @@
     "height": "50cm",
     "width": "150cm",
     "depth": "60cm",
-    "category": "living"
+    "categoryId": 1
   },
-  {
-    "id": 5,
-    "image": "sillonRosa.png",
+  {   "image": "sillonRosa.png",
     "name": "Sillon esquinero",
     "price": 125800,
     "discount": 5,
@@ -62,11 +56,9 @@
     "height": "210cm",
     "width": "160cm",
     "depth": "50cm",
-    "category": "living"
+    "categoryId": 1
   },
-  {
-    "id": 6,
-    "image": "sillonVerdeEsquinero.png",
+  {   "image": "sillonVerdeEsquinero.png",
     "name": "Sillon esquinero",
     "price": 124800,
     "discount": 6,
@@ -75,11 +67,9 @@
     "height": "210cm",
     "width": "160cm",
     "depth": "50cm",
-    "category": "living"
+    "categoryId": 1
   },
-  {
-    "id": 7,
-    "image": "mesitaDeLuz-1.png",
+  {   "image": "mesitaDeLuz-1.png",
     "name": "Mesita de luz",
     "price": 68000,
     "discount": 8,
@@ -88,11 +78,9 @@
     "height": "33cm",
     "width": "44cm",
     "depth": "54cm",
-    "category": "dormitorio"
+    "categoryId": 3
   },
-  {
-    "id": 8,
-    "image": "sillonNegro.png",
+  {   "image": "sillonNegro.png",
     "name": "Sillon de 4 cuerpos",
     "price": 657000,
     "discount": 10,
@@ -101,11 +89,9 @@
     "height": "240cm",
     "width": "160cm",
     "depth": "100cm",
-    "category": "living"
+    "categoryId": 1
   },
-  {
-    "id": 9,
-    "image": "respaldoGris1.png",
+  {   "image": "respaldoGris1.png",
     "name": "Respaldo de ecocuero",
     "price": 67000,
     "discount": 10,
@@ -114,11 +100,9 @@
     "height": "120cm",
     "width": "160cm",
     "depth": "20cm",
-    "category": "dormitorio"
+    "categoryId": 3
   },
-  {
-    "id": 10,
-    "image": "placard2.png",
+  {    "image": "placard2.png",
     "name": "Ropero con corredera",
     "price": 407000,
     "discount": 10,
@@ -127,11 +111,9 @@
     "height": "200cm",
     "width": "150cm",
     "depth": "35cm",
-    "category": "dormitorio"
+    "categoryId": 3
   },
-  {
-    "id": 11,
-    "image": "mesaRatona2.png",
+  {    "image": "mesaRatona2.png",
     "name": "Mesa ratona",
     "price": 407000,
     "discount": 10,
@@ -140,11 +122,9 @@
     "height": "60cm",
     "width": "100cm",
     "depth": "2cm",
-    "category": "living"
+    "categoryId": 1
   },
-  {
-    "id": 12,
-    "image": "sillaExterior.png",
+  {    "image": "sillaExterior.png",
     "name": "Silla de PVC",
     "price": 77000,
     "discount": 15,
@@ -153,11 +133,9 @@
     "height": "100cm",
     "width": "60cm",
     "depth": "60cm",
-    "category": "exterior"
+    "categoryId": 4
   },
-  {
-    "id": 13,
-    "image": "despenseroCocina.png",
+  {    "image": "despenseroCocina.png",
     "name": "Organizador",
     "price": 187000,
     "discount": 25,
@@ -166,11 +144,9 @@
     "height": "150cm",
     "width": "40cm",
     "depth": "30cm",
-    "category": "cocina"
+    "categoryId": 2
   },
-  {
-    "id":14,
-    "image":"alacenas.png",
+  {   "image":"alacenas.png",
     "name":"Alacenas",
     "price":110000,
     "discount":15,
@@ -179,11 +155,9 @@
     "height":"60cm",
     "width":"100cm",
     "depth":"35cm",
-    "category":"cocina"
+    "categoryId": 2
 },
-{
-    "id":15,
-    "image":"desayunador.png",
+{   "image":"desayunador.png",
     "name":"Desayunador",
     "price":377000,
     "discount":30,
@@ -192,6 +166,6 @@
     "height":"110cm",
     "width":"130cm",
     "depth":"50cm",
-    "category":"cocina"
+    "categoryId": 2
 }
 ]
