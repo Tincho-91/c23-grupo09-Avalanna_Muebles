@@ -138,3 +138,9 @@ Flavia: Finalizó refactorización de vistas
 Martin: Continúa trabajando en modelos y migraciones.
 Luana: Trabajando en refactorización update productos.
 Melany: Repasando asociaciones.
+
+22/02/2024
+Flavia: Finalizó las refactorizaciones
+Martin: Repasando migraciones
+Luana: Trabajando en refactorización de update de productos
+Melany: Repasando seeders.
