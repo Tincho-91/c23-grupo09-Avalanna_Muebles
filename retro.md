@@ -65,11 +65,11 @@ LESS OF: Procrastinar y, con ello, comprometer el proyecto y al resto del equipo
 
 
 
-## Retrospectiva, SPRINT 5
+## Retrospectiva, SPRINT 4
 
-En nuestra quinta retrospectiva, basados en nuestro último sprint y nuevas ideas, decidimos:
+En nuestra cuarta retrospectiva, basados en nuestro último sprint y nuevas ideas, decidimos:
 
-![starfish retrospective](./avalanna/public/img/starfishRetrospective5.png)
+![starfish retrospective](./avalanna/public/img/starfishRetrospective4.png)
 
 KEEP DOING: Mantendremos el enfoque en la división de tareas acordadas, asegurando las responsabilidades asignadas. Esta práctica se reflejará en el tablero del Jira, donde solo aquellos miembros que hayan completado tareas serán designados como responsables.Continuaremos con la misma práctica de comunicación y reuniones, ya que son elementos fundamentales para la resolución de problemas y la revisión de los avances del proyecto.
 
@@ -80,3 +80,23 @@ START DOING: Establecer las tareas especificadas y alcanzables al plazo justo de
 STOP DOING: Utilizar etiquetas de estilo en el HTML; aplicar estilos únicamente desde el CSS. Intentar no reducir la comunicación virtual, a menos que algún miembro del grupo tenga complicaciones graves.
 
 LESS OF: Postergar tareas sin implementar estrategias para abordar la procrastinación y sin tener un ritmo constante de trabajo. Esto abarca, por ejemplo, olvidarse de mover las tareas en el Jira.
+
+
+
+
+## Retrospectiva, SPRINT 5
+
+![starfish retrospective](./avalanna/public/img/starfishRetrospective5.png)
+
+Quinta retrospectiva referida al sprint 5:
+
+SEGUIR HACIENDO: Tener un seguimiento de tareas más ordenado en el Jira. Optimizar el tiempo de reuniones para tener más eficiencia, comunicar si tenemos trabas en alguna tarea.
+
+HACER MÁS: Tener buena comunicación en las nuestras reuniones, ya que son momentos fundamentales para encarar y resolver problemas, y de esa manera avanzar en el proyecto sin tener complicaciones futuras.
+
+HACER MENOS: El posponer correcciones que son sencillas, y por ese motivo se les quita importancia es un motivo de futuros errores mayores que podrían atrasar el proyecto de manera más significativa.
+
+EMPEZAR A HACER: organizar las tareas en función de su importancia, para darle prioridad a las que van primero, también el poner fechas límites a algunas tareas dentro del sprint para poder desbloquear otras.
+Tomar más en serio al rol del líder del sprint.
+
+DEJAR DE HACER: Darle poca importancia a los errores cometidos en los otros sprints, los cuales ya fueron mencionados en las retro anteriores. 
