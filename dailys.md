@@ -126,3 +126,21 @@ Martin: Comenzó a realizar los modelos.
 Flavia: Comenzó la refactorización de todas las vistas.
 Luana: Realizó la refactorización del update de users.
 Melany: Realizó la refactorización de eliminación de productos.
+
+19/02/2024
+Flavia: Refactorizando todas las vistas.
+Martin: Bloqueo con migraciones, faltan despejar dudas con los profes.
+Luana: Comenzó la refactorización de edición de productos.
+Melany: Realizó el dashboard de users junto con el controller de eliminación de usuarios.
+
+20/02/2024
+Flavia: Finalizó refactorización de vistas
+Martin: Continúa trabajando en modelos y migraciones.
+Luana: Trabajando en refactorización update productos.
+Melany: Repasando asociaciones.
+
+22/02/2024
+Flavia: Finalizó las refactorizaciones
+Martin: Repasando migraciones
+Luana: Trabajando en refactorización de update de productos
+Melany: Repasando seeders.
