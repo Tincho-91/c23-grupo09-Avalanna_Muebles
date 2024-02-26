@@ -12,8 +12,8 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       this.belongsTo(models.Rol,{as:'rols',onDelete: 'cascade'}),
     this.hasMany(models.Address,{as:'addresses',onDelete: 'cascade'}),
-    this.belongsToMany(models.Products,{
-      trough:"purchases",
+    this.belongsToMany(models.Product,{
+      through:"purchases",
       as:'products',
       onDelete: 'cascade',
     })
