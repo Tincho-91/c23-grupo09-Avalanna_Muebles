@@ -103,11 +103,7 @@ const productsController = {
         
     },
 
-         db.product.findAll();
-        
-        res.render("products/dashboard", { title: "Dashboard", products, propiedades, user: req.session.user })
     
-    },
     delete:(req,res)=>{
         const {id}=req.params;
         const productos=getJson("products.json");
