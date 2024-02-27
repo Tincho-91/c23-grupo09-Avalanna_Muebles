@@ -14,21 +14,24 @@ const productsController = {
         res.render("products/productDetail", { title: product.name, product, calc, user: req.session.user })
     },
     formulario: (req, res) => {
-
-        res.render("products/crear-formulario", { title: "formulario", user: req.session.user })
+        db.Category.findAll()
+        .then((categories)=>{
+            res.render("products/crear-formulario", { title: "formulario", categories:categories, user: req.session.user })
+        })
+        .catch(err=>console.log(err))
+       
     },
 
     store:(req,res) =>{
     	const producto = req.body;
-		producto.id = Date.now();
+
         producto.image = req.file.filename;
-		const products = getJson("products.json")
-		products.push(producto)
-		
 
-	   setJson(products,"products.json")
-		res.redirect(`/products`);
-
+        db.Product.create(producto)
+        .then((product)=>{
+            res.redirect(`/products`);
+        })
+        .catch(err=> console.log(err))
     },
 
 
@@ -84,8 +87,12 @@ const productsController = {
     },
     dashboard: (req, res) => {
         const propiedades = ["id", "image", "name", "price"];
-        const products = getJson("products.json")
-        res.render("products/dashboard", { title: "Dashboard", products, propiedades, user: req.session.user })
+        
+        db.Product.findAll()
+        .then((products)=>{
+            res.render("products/dashboard", { title: "Dashboard", products, propiedades, user: req.session.user })
+        })
+        
     },
 
     delete:(req,res)=>{
@@ -98,17 +105,24 @@ const productsController = {
 
     destroy:(req,res)=>{
         const {id}=req.params;
-        const products=getJson("products.json");
-        const product=products.find(producto => producto.id == id);
-        const nuevoArray=products.filter(producto => producto.id != id );
-        console.log("imagen:",product.image);
-        fs.unlink(path.join(__dirname,`../../public/img/${product.image}`),(err)=>{
+       db.Product.destroy({
+        where:{
+            id,
+        }
+       })
+       db.Product.findOne({
+        where:{
+            id
+        }
+       }).then((resp)=>{
+        fs.unlink(path.join(__dirname,`../../public/img/${resp.dataValues.image}`),(err)=>{
+            console.log(`archivo antes del err ${resp.dataValues.image}`);
             if(err) throw err;
-            console.log(`archivo ${product.image}`);
-        })
-        setJson(nuevoArray,"products.json")
-        res.redirect(`/products`);
-
+            console.log(`archivo ${resp.dataValues.image}`);
+            res.redirect(`/`);
+       })
+    }
+       ).catch(err=>console.log(err))
        
     },
     products:(req,res) =>{
