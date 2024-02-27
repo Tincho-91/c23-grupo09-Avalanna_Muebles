@@ -122,9 +122,10 @@ const usersController = {
       dashboard:(req,res)=>{
         res.send(req.session.user)
       },
+      
       logout:(req,res) =>{
         req.session.destroy();
-        console.log("estas son las cookies", req.cookies);
+      
         if (req.cookies) {
           res.clearCookie('user');
           res.clearCookie("userEmail")

@@ -1,4 +1,4 @@
-const fs=require("fs");
+/*const fs=require("fs");
 const path = require("path")
 
 const getJson = (fileName) =>{
@@ -13,4 +13,4 @@ const setJson = (array, fileName) =>{
 
 }
 
-module.exports = { getJson, setJson };
+module.exports = { getJson, setJson };*/
