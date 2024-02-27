@@ -14,15 +14,15 @@ const upload = require('../validations/uploadUser');
 
 /* GET users listing. */
 
-router.get('/ingresar', authValidate, login)
-router.post('/ingresar', loginValidator,processlogin)
+//router.get('/ingresar', authValidate, login)
+//router.post('/ingresar', loginValidator,processlogin)
 
-router.get('/registrarme', register)
-router.post('/registrarme', registerValidator, createUser)
+//router.get('/registrarme', register)
+//router.post('/registrarme', registerValidator, createUser)
 
-router.get('/editar/:id',sessionValidate, edform)
-router.put('/editar/:id',upload.single('image'), editUserValidator, update)
+//router.get('/editar/:id',sessionValidate, edform)
+//router.put('/editar/:id',upload.single('image'), editUserValidator, update)
 
-router.get("/logout", logout);
+//router.get("/logout", logout);
 
 module.exports = router;

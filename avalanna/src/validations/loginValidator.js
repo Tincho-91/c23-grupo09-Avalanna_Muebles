@@ -1,3 +1,4 @@
+/*
 const {body} = require('express-validator');
 const {getJson} = require("../utility/jsonMethod");
 const bcrypt = require('bcryptjs');
@@ -16,3 +17,4 @@ module.exports = [
         return bcrypt.compareSync(value, user.password);
     }).withMessage("La contraseña no es correcta")
 ]
+*/

@@ -1,0 +1,50 @@
+[
+    {
+        "nameAndSurname": "Martin Baryuk",
+        "email": "martin_baryuk@outlook.com",
+        "profileImage":"martin.png",
+        "phoneNumber": 1161232375,
+        "password": "tincho123",
+        "rolId": 1
+    },
+    {  
+        "nameAndSurname": "Melany Strack",
+        "email": "melany.strack@gmail.com",
+        "profileImage":"melany.png",
+        "phoneNumber": 1132884470,
+        "password": "mela123",
+        "rolId": 1
+    },
+    {
+        "nameAndSurname": "Luana Ampuero",
+        "email": "ampueroluana@gmail.com",
+        "profileImage":"luana.png",
+        "phoneNumber": 1122510314,
+        "password": "lua123",
+        "rolId": 2
+    },
+    {
+        "nameAndSurname": "Flavia Fernández",
+        "email": "milhouse.mb@gmail.com",
+        "profileImage":"flavia.png",
+        "phoneNumber": 1125002595,
+        "password": "fla123",
+        "rolId": 2
+    },
+    {
+        "nameAndSurname": "pancho doto",
+        "email": "pancho@outlook.com",
+        "profileImage":"pancho.png",
+        "phoneNumber": 1234567894,
+        "password": "pancho",
+        "rolId": 1
+    },
+    {
+        "nameAndSurname": "patricio estrella",
+        "email": "patricio@outlook.com",
+        "profileImage":"patricio estrella.png",
+        "phoneNumber": 321654987,
+        "password": "patricio",
+        "rolId": 2
+    }
+]

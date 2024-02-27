@@ -1,8 +1,10 @@
 const sessionValidator = (req, res, next)=>{
     if(!req.session.user){
         res.redirect("/users/ingresar");
+    }else {
+        next()
     }
-    next()
+   
 }
 
 module.exports = sessionValidator;

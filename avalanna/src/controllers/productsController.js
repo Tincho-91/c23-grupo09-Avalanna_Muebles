@@ -14,21 +14,23 @@ const productsController = {
         res.render("products/productDetail", { title: product.name, product, calc, user: req.session.user })
     },
     formulario: (req, res) => {
-
-        res.render("products/crear-formulario", { title: "formulario", user: req.session.user })
+        db.Category.findAll()
+        .then((categories)=>{
+            res.render("products/crear-formulario", { title: "formulario", categories:categories, user: req.session.user })
+        })
+       
     },
 
     store:(req,res) =>{
     	const producto = req.body;
-		producto.id = Date.now();
+
         producto.image = req.file.filename;
-		const products = getJson("products.json")
-		products.push(producto)
-		
 
-	   setJson(products,"products.json")
-		res.redirect(`/products`);
-
+        db.Product.create(producto)
+        .then((product)=>{
+            res.redirect(`/products`);
+        })
+        .catch(err=> console.log(err))
     },
 
 
