@@ -1,12 +1,12 @@
-/*
+
 const db = require("../database/models");
-const {setJson,getJson} = require("../utility/jsonMethod");
+//const {setJson,getJson} = require("../utility/jsonMethod");
 const { v4: uuidv4 } = require('uuid');
 const bcrypt = require('bcryptjs');
 const {validationResult} = require('express-validator');
 
 const usersController = {
-    login: (req,res)=>{
+ /*   login: (req,res)=>{
         res.render("users/login", {title:"Ingresar"});
     },
     processlogin: (req, res) => {
@@ -107,9 +107,18 @@ const usersController = {
         res.redirect(`/users/editar/${id}`);
       }},
 
-      dashboard:(req,res)=>{
-        res.send(req.session.user)
-      },
+ */     dashboard: (req, res) => {
+        const propiedades = ["id", "nameAndSurname", "email", "phoneNumber"];
+        
+        db.User.findAll()
+        .then((users)=>{
+          
+          res.render("users/dashboard", { title: "Dashboard", users, propiedades, user: req.session.user })
+        })
+        .catch(err=>console.log(err))
+        
+    },
+    /*
       logout:(req,res) =>{
         req.session.destroy();
         console.log("estas son las cookies", req.cookies);
@@ -119,8 +128,19 @@ const usersController = {
           res.clearCookie('rememberMe');
         }
         res.redirect('/');
-}
+},
+*/
+      destroy:(req,res)=>{
+        const {id} = req.params;
+        db.User.destroy({
+          where:{
+            id,
+          }
+        }).then((resp)=>{
+          res.redirect("/");
+        })
+        .catch(err=>console.log(err))
+      }
   }
 module.exports = usersController;
 
-*/
