@@ -1,6 +1,6 @@
 /*const fs=require("fs");
 const path = require("path")
-
+/*
 const getJson = (fileName) =>{
     const file = fs.readFileSync(path.join(__dirname, `../`, `/data/${fileName}`), "utf-8");
     const json = JSON.parse(file);
@@ -13,4 +13,5 @@ const setJson = (array, fileName) =>{
 
 }
 
-module.exports = { getJson, setJson };*/
+module.exports = { getJson, setJson };
+*/

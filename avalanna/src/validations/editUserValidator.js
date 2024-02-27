@@ -1,3 +1,4 @@
+/*
 const {body} = require('express-validator');
 const { sequelize } = require('../database/models');
 const db =require(database);
@@ -19,3 +20,4 @@ module.exports = [
    
    
 ];
+*/
