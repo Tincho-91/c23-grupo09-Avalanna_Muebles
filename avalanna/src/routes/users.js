@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-const {login,register,createUser,processlogin,update,edform, logout, dashboard} = require("../controllers/usersController");
+const {login,register,createUser,processlogin,update,edform, logout, dashboard, destroy} = require("../controllers/usersController");
 const adminValidation = require("../middlewares/adminValidation");
 const sessionValidate = require("../middlewares/sessionValidate");
 const authValidate = require("../middlewares/authValidate");
@@ -25,6 +25,8 @@ const upload = require('../validations/uploadUser');
 
 //router.get("/logout", logout);
 
-//router.get('/dashboard', adminValidation, dashboard)
+router.delete("/delete/:id", destroy)
+
+router.get('/dashboard',  dashboard)
 
 module.exports = router;

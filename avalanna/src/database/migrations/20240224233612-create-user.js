@@ -36,6 +36,7 @@ module.exports = {
           },
           key: "id"
       },
+      onDelete: 'CASCADE'
       },
       birthday: {
         type: DataTypes.DATE

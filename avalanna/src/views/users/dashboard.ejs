@@ -26,10 +26,10 @@
                 <% propiedades.forEach(prop=> { %>
                   <% if (prop=="id" ){ %>
                     <td>
-                      <%= obj.id %>
+                      <%= obj.dataValues.id %>
                     </td>
                     <% } else if (prop=="image" ) { %>
-                      <td> <img src="/img/<%= obj.image %>" alt="<%= obj.image %>"> </td>
+                      <td> <img src="/img/<%= obj.dataValues.image %>" alt="<%= obj.dataValues.image %>"> </td>
                       <% } else { %>
                         <td>
                           <%= obj[prop]%>
@@ -38,9 +38,9 @@
                           <% }); %>
 
                             <td class="dashboard__main__table__tbody__buttons">
-                              <a href="/users/detail/<%= obj.id %>"><i class="fa-solid fa-eye"></i></a>
-                              <a href="/users/editar/<%= obj.id %>"><i class="fa-solid fa-pen-to-square"></i></a>
-                              <form action="/users/delete/<%= obj.id %>?_method=DELETE" method="POST">
+                              <a href="/users/detail/<%= obj.dataValues.id %>"><i class="fa-solid fa-eye"></i></a>
+                              <a href="/users/editar/<%= obj.dataValues.id %>"><i class="fa-solid fa-pen-to-square"></i></a>
+                              <form action="/users/delete/<%= obj.dataValues.id %>?_method=DELETE" method="POST">
                                 <button type="submit" class="eliminar"><i class="fa-solid fa-trash"></i>
                                 </button>
                               </form>

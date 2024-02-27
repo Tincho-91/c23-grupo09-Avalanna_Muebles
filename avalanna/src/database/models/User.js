@@ -10,12 +10,12 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      this.belongsTo(models.Rol,{as:'rols',onDelete: 'cascade'}),
-    this.hasMany(models.Address,{as:'addresses',onDelete: 'cascade'}),
+      this.hasMany(models.Address,{as:'addresses',onDelete: 'CASCADE'}),
+      this.belongsTo(models.Rol,{as:'rol',onDelete: 'CASCADE'}),
     this.belongsToMany(models.Product,{
       through:"purchases",
       as:'products',
-      onDelete: 'cascade',
+      onDelete: 'CASCADE',
     })
   }
   }
