@@ -25,6 +25,6 @@ const upload = require('../validations/uploadUser');
 
 //router.get("/logout", logout);
 
-router.get('/dashboard', adminValidation, dashboard)
+//router.get('/dashboard', adminValidation, dashboard)
 
 module.exports = router;

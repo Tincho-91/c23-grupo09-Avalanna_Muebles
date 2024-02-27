@@ -86,8 +86,12 @@ const productsController = {
     },
     dashboard: (req, res) => {
         const propiedades = ["id", "image", "name", "price"];
-        const products = getJson("products.json")
-        res.render("products/dashboard", { title: "Dashboard", products, propiedades, user: req.session.user })
+        //const products = getJson("products.json")
+        db.Product.findAll()
+        .then((products)=>{
+            res.render("products/dashboard", { title: "Dashboard", products, propiedades, user: req.session.user })
+        })
+        
     },
 
     delete:(req,res)=>{
@@ -100,24 +104,24 @@ const productsController = {
 
     destroy:(req,res)=>{
         const {id}=req.params;
-       // const products=getJson("products.json");
-       // const product=products.find(producto => producto.id == id);
-       // const nuevoArray=products.filter(producto => producto.id != id );
-       // console.log("imagen:",product.image);
        db.Product.destroy({
         where:{
             id,
         }
-       }).then((response)=>{
-        fs.unlink(path.join(__dirname,`../../public/img/${product.image}`),(err)=>{
+       })
+       db.Product.findOne({
+        where:{
+            id
+        }
+       }).then((resp)=>{
+        fs.unlink(path.join(__dirname,`../../public/img/${resp.dataValues.image}`),(err)=>{
+            console.log(`archivo antes del err ${resp.dataValues.image}`);
             if(err) throw err;
-            console.log(`archivo ${product.image}`);
-            res.redirect(`/products`);
-        })
-       }).catch(err=>console.log(err))
-        
-       // setJson(nuevoArray,"products.json")
-
+            console.log(`archivo ${resp.dataValues.image}`);
+            res.redirect(`/`);
+       })
+    }
+       ).catch(err=>console.log(err))
        
     },
     products:(req,res) =>{
