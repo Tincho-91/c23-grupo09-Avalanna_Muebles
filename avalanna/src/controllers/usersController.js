@@ -1,3 +1,4 @@
+/*
 const db = require("../database/models");
 const {setJson,getJson} = require("../utility/jsonMethod");
 const { v4: uuidv4 } = require('uuid');
@@ -138,3 +139,5 @@ const usersController = {
       }
   }
 module.exports = usersController;
+
+*/

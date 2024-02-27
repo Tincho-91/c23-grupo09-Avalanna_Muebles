@@ -14,13 +14,13 @@
       </div>
         <div>
             <label for="name">Nombre</label>
-            <input type="name" name="name" id="name" required>
+            <input type="text" name="name" id="name" required>
         </div>
     
           <div>
 
             <label for="price">Precio</label>
-            <input type="price" name="price" id="price" required>
+            <input type="text" name="price" id="price" required>
 
           </div>
 
@@ -33,33 +33,29 @@
           <div>
 
             <label for="descripcion">Descripción</label>
-            <input type="descripcioin" name="description" id="descripcion" required>
+            <input type="text" name="description" id="descripcion" required>
           </div>
   
           <div>
             <label for="adicional">Descripción Adicional</label>
-            <input type="adicional" name="extraDescription" id="adicional" required>
+            <input type="text" name="extraDescription" id="adicional" required>
           </div>
 
           <div>
             <label for="category">Categoria</label>
-            <select type="category" name="category" id="category" required>
-              <option value="Living">Living</option>
-              <option value="Cocina">Cocina</option>
-              <option value="Dormitorio">Dormitorio</option>
-              <option value="Exterior">Exterior</option>
-              <option value="Combos">Combos</option>
-              <option value="New in">New in</option>
-
+            <select name="categoryId" id="category" required>
+            <% categories.forEach(category => { %>
+               <option value="<%= category.id %>"><%= category.name %></option>
+               <% }) %>
             </select>
             
           </div>
 
           <div>
             <label for="medidias">Medidas</label>
-            <input type="height" name="height" class="form_mainsection_form-div-medidas" id="height" placeholder="Alto..." required>
-            <input type="width" name="width" class="form_mainsection_form-div-medidas" id="width" placeholder="Ancho..." required>
-            <input type="depth" name="depth" class="form_mainsection_form-div-medidas" id="depth" placeholder="Profundidad..." required>
+            <input type="text" name="height" class="form_mainsection_form-div-medidas" id="height" placeholder="Alto..." required>
+            <input type="text" name="width" class="form_mainsection_form-div-medidas" id="width" placeholder="Ancho..." required>
+            <input type="text" name="depth" class="form_mainsection_form-div-medidas" id="depth" placeholder="Profundidad..." required>
 
 
           
