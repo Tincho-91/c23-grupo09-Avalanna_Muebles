@@ -11,7 +11,9 @@ module.exports = {
         streetName: "9 De Julio",
         postalCode: 3214,
         locality: "Lanus",
-        userId: 1
+        userId: 1,
+        createdAt: new Date,
+        updatedAt: new Date
       },
       {
         country: "Argentina",
@@ -20,7 +22,9 @@ module.exports = {
         streetName: "Corrientes",
         postalCode: 1824,
         locality: "Lomas de Zamora",
-        userId: 2
+        userId: 2,
+        createdAt: new Date,
+        updatedAt: new Date
       },
       {
         country: "Argentina",
@@ -30,6 +34,8 @@ module.exports = {
         postalCode: 1245,
         locality: "Lanus",
         userId: 3,
+        createdAt: new Date,
+        updatedAt: new Date
       },
       {
         country: "Argentina",
@@ -39,6 +45,8 @@ module.exports = {
         postalCode: 1822,
         locality: "Lanus",
         userId: 4,
+        createdAt: new Date,
+        updatedAt: new Date
       },
       {
         country: "Argentina",
@@ -48,6 +56,8 @@ module.exports = {
         postalCode: 3214,
         locality: "Avellaneda",
         userId: 5,
+        createdAt: new Date,
+        updatedAt: new Date
       },
       {
         country: "Argentina",
@@ -57,6 +67,8 @@ module.exports = {
         postalCode: 4532,
         locality: "Florencio Varela",
         userId: 6,
+        createdAt: new Date,
+        updatedAt: new Date
       },
       ], {}); 
   },
