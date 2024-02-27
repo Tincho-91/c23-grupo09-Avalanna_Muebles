@@ -136,8 +136,10 @@ const usersController = {
           where:{
             id,
           }
+        }).then((resp)=>{
+          res.redirect("/");
         })
-        res.redirect("/");
+        .catch(err=>console.log(err))
       }
   }
 module.exports = usersController;

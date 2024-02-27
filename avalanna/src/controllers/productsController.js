@@ -18,6 +18,7 @@ const productsController = {
         .then((categories)=>{
             res.render("products/crear-formulario", { title: "formulario", categories:categories, user: req.session.user })
         })
+        .catch(err=>console.log(err))
        
     },
 
@@ -86,7 +87,7 @@ const productsController = {
     },
     dashboard: (req, res) => {
         const propiedades = ["id", "image", "name", "price"];
-        //const products = getJson("products.json")
+        
         db.Product.findAll()
         .then((products)=>{
             res.render("products/dashboard", { title: "Dashboard", products, propiedades, user: req.session.user })
