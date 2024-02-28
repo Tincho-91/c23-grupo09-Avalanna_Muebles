@@ -8,16 +8,11 @@ const { Console } = require("console");
 const productsController = {
     detail: (req, res) => {
         const id = req.params.id;
-       
-         db.products.findByPk(id)
-         .then((product) => {
-            const calc = product.price - ((product.price * product.discount) / 100)
-            res.render("products/productDetail", { title: product.name, product, calc, user: req.session.user })
-         })
-         .catch((err) =>{
-            console.log(err);
-          });
-      }, 
+        
+        const product = products.findOne(elemento => elemento.id == id);
+        const calc = product.price - ((product.price * product.discount) / 100)
+        res.render("products/productDetail", { title: product.name, product, calc, user: req.session.user })
+    },
     
 
     formulario: (req, res) => {
