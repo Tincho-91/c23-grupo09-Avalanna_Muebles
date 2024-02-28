@@ -101,3 +101,67 @@ Martin: Creando vista y lógica de actualización de usuario.
 Melany: Tarea bloqueada por tarea de login.
 Flavia: Tarea finalizada falta probar.
 Luana: Ausente.
+
+* Sprint 6
+10/02/2024
+Realizamos la retrospectiva, el diagrama de entidades y relaciones y distribuimos las tareas del Sprint.
+
+12/02/2024
+Refactorizamos el proyecto instalando sequelize y creando estructura de carpetas. También, organizamos nuestras tareas.
+
+14/02/2024
+Martin: Corrigiendo retrospectiva.
+Luana: Repasando temas.
+Flavia: Trabajando en detalles finales del diagrama.
+Melany: Realizó la refactorización de creación de productos.
+
+15/02/2024
+Flavia: Comenzó la refactorización de registro, login y corrigió diagrama.
+Luana: Comenzó la refactorización de actualización de usuario
+Martin: Poniendose al día y repasando diagrama.
+Melany: Corrección de diagrama.
+
+16/02/2024
+Martin: Comenzó a realizar los modelos.
+Flavia: Comenzó la refactorización de todas las vistas.
+Luana: Realizó la refactorización del update de users.
+Melany: Realizó la refactorización de eliminación de productos.
+
+19/02/2024
+Flavia: Refactorizando todas las vistas.
+Martin: Bloqueo con migraciones, faltan despejar dudas con los profes.
+Luana: Comenzó la refactorización de edición de productos.
+Melany: Realizó el dashboard de users junto con el controller de eliminación de usuarios.
+
+20/02/2024
+Flavia: Finalizó refactorización de vistas
+Martin: Continúa trabajando en modelos y migraciones.
+Luana: Trabajando en refactorización update productos.
+Melany: Repasando asociaciones.
+
+22/02/2024
+Flavia: Finalizó las refactorizaciones
+Martin: Repasando migraciones
+Luana: Trabajando en refactorización de update de productos
+Melany: Repasando seeders.
+
+23/02/2024
+Organizamos un encuentro para el 24/02, para rehacer la base de datos desde cero con sequelize.
+
+24/02/2024
+Nos reunimos a hacer base de datos desde cero con migraciones y seeds.
+
+25/02/2024
+Nos reunimos a hacer base de datos desde cero con migraciones y seeds.
+
+26/02/2024
+Flavia: Ausenete por problema de salud.
+Martin: Finalizando migraciondes y seeders.
+Luana: Trabajando en refactorización de perfil de usuarios.
+Melany: Terminando refactorización de create y corrigiendo errores de seeders.
+
+27/02/2024
+Flavia: Resolviendo conflictos y actualizando cambios de sequelize.
+Martin: finalizado.
+Luana: Trabajando en refactorización de perfil de usuarios.
+Melany: Terminando refactorización de eliminación de productos y usuarios.
