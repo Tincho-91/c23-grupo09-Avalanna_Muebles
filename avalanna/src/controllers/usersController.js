@@ -66,45 +66,84 @@ const usersController = {
     const user = users.find(elemento => elemento.id == id);
     res.render('users/actualizar-datos-usuario', { title: 'Editar', user, usuario: req.session.user });
   },
-  update: (req, res) => {
-    const errores = validationResult(req);
-    console.log("errores:", errores);
-    console.log("body:", req.body);
+  // update: (req, res) => {
+  //   // const errores = validationResult(req);
+  //   // console.log("errores:", errores);
+  //   // console.log("body:", req.body);
 
-    if (!errores.isEmpty()) {
-      console.log("ingrese en errores");
-      const { id } = req.params;
-      const users = getJson("users.json");
-      const user = users.find(elemento => elemento.id == id);
-      res.render("users/actualizar-datos-usuario", { errores: errores.mapped(), old: req.body, title: "editar", usuario: req.session.user, user })
-    }
-    else {
-      const { id } = req.params;
-      const { NameAndSurname, email, age, phoneNumber, date, rol } = req.body;
-      const users = getJson("users.json");
-      const usuarios = users.map(element => {
-        if (element.id == id) {
-          return {
-            id,
-            NameAndSurname,
-            email,
-            phoneNumber,
-            age,
-            date,
-            image: req.file ? req.file.filename : element.image,
-            password: element.password,
-            rol: rol ? rol : "user"
-          }
-        }
-        return element
-      });
-      setJson(usuarios, "users.json");
-      const userUpdate = usuarios.find(elemento => elemento.id == id);
-      req.session.user = userUpdate;
-      delete userUpdate.password
-      res.cookie('user', userUpdate)
-      res.redirect(`/users/editar/${id}`);
-    }
+  //   // if (!errores.isEmpty()) {
+  //   //   console.log("ingrese en errores");
+  //   //   const { id } = req.params;
+  //   //   const users = getJson("users.json");
+  //   //   const user = users.find(elemento => elemento.id == id);
+  //   //   res.render("users/actualizar-datos-usuario", { errores: errores.mapped(), old: req.body, title: "editar", usuario: req.session.user, user })
+  //   // }
+  //   // else {
+  //   //   const { id } = req.params;
+  //     const { NameAndSurname, email, age, phoneNumber, date, rol } = req.body;
+  //     // const users = getJson("users.json");
+  //     // const usuarios = users.map(element => {
+  //     //   if (element.id == id) {
+  //     //     return {
+  //           id,
+  //           NameAndSurname,
+  //           email,
+  //           phoneNumber,
+  //           age,
+  //           date,
+  //           image: req.file ? req.file.filename : element.image,
+  //           password: element.password,
+  //           rol: rol ? rol : "user"
+  //         }
+
+  //   //     return element
+  //   //   });
+  //   //   setJson(usuarios, "users.json");
+  //   //   const userUpdate = usuarios.find(elemento => elemento.id == id);
+  //   //   req.session.user = userUpdate;
+  //   //   delete userUpdate.password
+  //   //   res.cookie('user', userUpdate)
+  //   //   res.redirect(`/users/editar/${id}`);
+  //   // }
+  // },
+
+  update: (req, res) => {
+    const { id } = req.params;
+    const { nameAndSurname, email, phoneNumber, password, rol, birthday, image, country, province, number, streetName, postalCode, locality } = req.body;
+    db.User.update(
+      {
+        nameAndSurname: nameAndSurname,
+        email: email,
+        phoneNumber: phoneNumber,
+        password: password,
+        rol: rol,
+        birthday: birthday,
+        profileImage: image,
+      },
+      {
+        where: {
+          id,
+        },
+      }
+    )
+      .then((resp) => {
+        db.Adress.create({
+          country,
+          province,
+          number,
+          streetName,
+          postalCode,
+          locality,
+          userId: id
+        })
+          .then((resp) => {
+            res.redirect("/users/editar/${id}");
+
+          }).catch((err) => console.log(err));
+      })
+      .catch((err) => console.log(err));
+   
+
   },
 
   dashboard: (req, res) => {
@@ -121,29 +160,7 @@ const usersController = {
     res.redirect('/');
   },
 
-  processUpdate: (req, res) => {
-    const { id } = req.params;
-    const {name, price, description,extradescription, discount, image} = req.body;
-    db.products.update(
-      {
-        name: name,
-        price: price ,
-        description: description ,
-        extradescripcion: extradescription ,
-        discount: discount ,
-        imagen: image 
-      },
-      {
-        where: {
-          id,
-        },
-      }
-    )
-      .then((resp) => {
-        res.redirect("/products/detail/${id}");
-      })
-      .catch((err) => console.log(err));
-  }
+  // update:
 
 
 }

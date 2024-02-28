@@ -124,44 +124,31 @@ const productsController = {
         res.render("products/categories", { title: category, productsCategorized, category, user: req.session.user })
     },
 
-    // create:(req, res) => {
-    //     const producto = req.body;
-    //     producto.id = uuidv4();
-    //     const products = getJson("products");
-    //     products.push(producto);
-    //     setJson(products,"products");
-    //     res.redirect("/products/dashboard");
-
-
-    update: (req, res) => {
-        const { text, category, height, width, depth, imagen, sticker } = req.body;
-        db.User.update(
-
-
-            productsModify = products.map(producto => {
-                if (producto.id == id) {
-                    return {
-                        id,
-                        name: text,
-                        precio: text,
-                        descuento: text,
-                        descripcion: text,
-                        extraDescripcion: text,
-                        categoria: category,
-                        medidas: height, width, depth,
-                        imagen: (imagen ? imagen : producto.imagen),
-                        sticker
-                    }
-                }
-                return producto
-           
-            }))
-
-        setJson(productsModify, "products");
-
-        res.redirect(`/products/detail/${id}`);
-    },
+    processUpdate: (req, res) => {
+        const { id } = req.params;
+        const {name, price, description,extradescription, discount, image} = req.body;
+        db.products.update(
+          {
+            name: name,
+            price: price ,
+            description: description ,
+            extradescripcion: extradescription ,
+            discount: discount ,
+            imagen: image 
+          },
+          {
+            where: {
+              id,
+            },
+          }
+        )
+          .then((resp) => {
+            res.redirect("/products/detail/${id}");
+          })
+          .catch((err) => console.log(err));
  
+}
+
 }
 
 
