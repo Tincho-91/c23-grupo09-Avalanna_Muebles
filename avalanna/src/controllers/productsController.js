@@ -1,15 +1,14 @@
 const db = require("../database/models");
 const fs = require("fs");
 const path = require("path");
-const {getJson, setJson} = require("../utility/jsonMethod");
+
 const { Console } = require("console");
 
 
 const productsController = {
     detail: (req, res) => {
         const id = req.params.id;
-        const products = getJson("products.json")
-        const product = products.find(elemento => elemento.id == id);
+       
         const calc = product.price - ((product.price * product.discount) / 100)
         res.render("products/productDetail", { title: product.name, product, calc, user: req.session.user })
     },
@@ -95,14 +94,6 @@ const productsController = {
         
     },
 
-    delete:(req,res)=>{
-        const {id}=req.params;
-        const productos=getJson("products.json");
-        const nuevaLista=productos.filter(elemento => elemento.id != id);
-        setJson(nuevaLista, "products.json");
-        res.redirect("/products/dashboard");
-    },
-
     destroy:(req,res)=>{
         const {id}=req.params;
        db.Product.destroy({
@@ -116,9 +107,9 @@ const productsController = {
         }
        }).then((resp)=>{
         fs.unlink(path.join(__dirname,`../../public/img/${resp.dataValues.image}`),(err)=>{
-            console.log(`archivo antes del err ${resp.dataValues.image}`);
+            
             if(err) throw err;
-            console.log(`archivo ${resp.dataValues.image}`);
+           
             res.redirect(`/`);
        })
     }
