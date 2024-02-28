@@ -20,8 +20,8 @@ const upload = require('../validations/uploadUser');
 //router.get('/registrarme', register)
 //router.post('/registrarme', registerValidator, createUser)
 
-//router.get('/editar/:id',sessionValidate, edform)
-//router.put('/editar/:id',upload.single('image'), editUserValidator, update)
+router.get('/editar/:id', edform)
+router.put('/editar/:id',upload.single('image'), update)
 
 //router.get("/logout", logout);
 

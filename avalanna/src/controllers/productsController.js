@@ -149,6 +149,7 @@ const productsController = {
             extradescripcion: extradescription ,
             discount: discount ,
             imagen: image 
+        
           },
           {
             where: {

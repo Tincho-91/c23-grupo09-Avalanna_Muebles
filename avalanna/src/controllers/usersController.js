@@ -81,12 +81,13 @@ const usersController = {
       res.redirect('/users/ingresar');
     }
   },
-  edform: (req, res) => {
+*/  edform: (req, res) => {
     const { id } = req.params;
-    const users = getJson("users.json");
-    const user = users.find(elemento => elemento.id == id);
-    res.render('users/actualizar-datos-usuario', { title: 'Editar', user, usuario: req.session.user });
-  },
+    db.User.findByPk(id)
+    .then((resp)=>{
+      res.render('users/actualizar-datos-usuario', { title: 'Editar', user: resp.dataValues, usuario: req.session.user });
+    })
+  }, /*
   // update: (req, res) => {
   //   // const errores = validationResult(req);
   //   // console.log("errores:", errores);
@@ -135,9 +136,9 @@ const usersController = {
       {
         nameAndSurname: nameAndSurname,
         email: email,
-        phoneNumber: phoneNumber,
+        phoneNumber: +phoneNumber,
         password: password,
-        rol: rol,
+        rolId: rol ? +rol : 1,
         birthday: birthday,
         profileImage: image,
       },
