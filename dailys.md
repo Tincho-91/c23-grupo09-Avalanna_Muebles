@@ -165,3 +165,9 @@ Flavia: Resolviendo conflictos y actualizando cambios de sequelize.
 Martin: finalizado.
 Luana: Trabajando en refactorización de perfil de usuarios.
 Melany: Terminando refactorización de eliminación de productos y usuarios.
+
+28/02/2024
+Flavia: Finalizado falta probar función.
+Martin: Finalizado.
+Luana: Trabajando en refactorización productos.
+Melany: Finalizado.
