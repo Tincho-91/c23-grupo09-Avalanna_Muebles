@@ -1,17 +1,20 @@
 const db = require("../database/models");
+const { op } =require("sequelize");
 const fs = require("fs");
 const path = require("path");
-
 const { Console } = require("console");
 
 
 const productsController = {
     detail: (req, res) => {
         const id = req.params.id;
-       
+        
+        const product = products.findOne(elemento => elemento.id == id);
         const calc = product.price - ((product.price * product.discount) / 100)
         res.render("products/productDetail", { title: product.name, product, calc, user: req.session.user })
     },
+    
+
     formulario: (req, res) => {
         db.Category.findAll()
         .then((categories)=>{
@@ -76,11 +79,12 @@ const productsController = {
         });
         console.log("ESTO es newArray",newArray)
         setJson(newArray, "products.json");
-        res.redirect(`/products/detail/${id}`)
+        res.redirect("/products/detail/${id}")
 
 
         
     },
+       
     cart: (req, res) => {
         res.render("products/productCart", { title: "Carrito de compra", user: req.session.user });
     },
@@ -92,6 +96,15 @@ const productsController = {
             res.render("products/dashboard", { title: "Dashboard", products, propiedades, user: req.session.user })
         })
         
+    },
+
+    
+    delete:(req,res)=>{
+        const {id}=req.params;
+        const productos=getJson("products.json");
+        const nuevaLista=productos.filter(elemento => elemento.id != id);
+        setJson(nuevaLista, "products.json");
+        res.redirect("/products/dashboard");
     },
 
     destroy:(req,res)=>{
@@ -122,16 +135,20 @@ const productsController = {
     },
     categories:(req,res)=>{
         const {category} = req.params;
-        const products = getJson("products.json");
         const productsCategorized = products.filter(product=>{
+        db.products.findAll ({
+         })
+         .catch((err) =>{
+            console.log(err);
+          });
+        
             return product.category == category.toLowerCase()
         });
         res.render("products/categories", {title: category, productsCategorized, category, user: req.session.user})
     }
 
+    }
 
-
-}
 
 
 module.exports = ( productsController )
