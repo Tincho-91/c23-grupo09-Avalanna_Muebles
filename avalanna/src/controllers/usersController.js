@@ -83,10 +83,19 @@ const usersController = {
   },
 */  edform: (req, res) => {
     const { id } = req.params;
-    db.User.findByPk(id)
+    db.User.findByPk(id, {include:[
+      { association: "addresses" },
+    ]})
     .then((resp)=>{
-      res.render('users/actualizar-datos-usuario', { title: 'Editar', user: resp.dataValues, usuario: req.session.user });
-    })
+      console.log("direccion aca:",resp.dataValues.addresses[0].dataValues);
+      const direcciones = []
+      resp.dataValues.addresses.forEach(address => {
+        direcciones.push(address.dataValues)
+        
+      });     
+      
+      res.render('users/actualizar-datos-usuario', { title: 'Editar', user: resp.dataValues, addresses:direcciones, usuario: req.session.user });
+    }).catch(err=>console.log(err))
   }, /*
   // update: (req, res) => {
   //   // const errores = validationResult(req);
@@ -131,7 +140,16 @@ const usersController = {
 
   */update: (req, res) => {
     const { id } = req.params;
-    const { nameAndSurname, email, phoneNumber, password, rol, birthday, image, country, province, number, streetName, postalCode, locality } = req.body;
+    const { nameAndSurname, email, phoneNumber, password, rol, birthday, country, province, number, streetName, postalCode, locality } = req.body;
+    const avatar = ""
+    db.User.findByPk(id)
+    .then((resp)=>{
+      if (resp.dataValues.profileImage) {
+        avatar = resp.dataValues.profileImage
+      }else{
+        avatar = "default.webp"
+      }
+    }).catch(err=>console.log(err));
     db.User.update(
       {
         nameAndSurname: nameAndSurname,
@@ -140,7 +158,7 @@ const usersController = {
         password: password,
         rolId: rol ? +rol : 1,
         birthday: birthday,
-        profileImage: image,
+        profileImage: req.file ? req.file.filename : avatar,
       },
       {
         where: {
@@ -149,17 +167,30 @@ const usersController = {
       }
     )
       .then((resp) => {
-        db.Adress.create({
+        console.log("este es el resp con usuario actualizado",resp[0]);
+        
+       db.Address.upsert({
+          userId: resp[0],
           country,
           province,
-          number,
+          number:+number,
           streetName,
           postalCode,
           locality,
-          userId: id
-        })
-          .then((resp) => {
-            res.redirect("/users/editar/${id}");
+       })
+          .then((response) => {
+            db.User.findByPk(id, {include:[
+              { association: "addresses" },
+            ]})
+            .then((resp)=>{
+              const direcciones = []
+              resp.dataValues.addresses.forEach(address => {
+                direcciones.push(address.dataValues)
+                
+              });     
+              
+              res.render('users/actualizar-datos-usuario', { title: 'Editar', user: resp.dataValues, addresses:direcciones, usuario: req.session.user });
+            }).catch(err=>console.log(err))
 
           }).catch((err) => console.log(err));
       })
