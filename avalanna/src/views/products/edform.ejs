@@ -41,19 +41,19 @@
 
             <label for="category">Categoria</label>
 
-            <select class="categoria-edith"   type="category" name="category" id="category" required>
+            <select class="categoria-edith"   type="category" name="categoryId" id="category" required>
 
-              <option value="Living" <%= product.category == "living" ? "selected" : null;%>>Living</option>
+              <option value="1" <%= product.categoryId == "living" ? "selected" : null;%>>Living</option>
 
-              <option value="Cocina" <%= product.category == "cocina" ? "selected" : null;%>>Cocina</option>
+              <option value="2" <%= product.categoryId == "cocina" ? "selected" : null;%>>Cocina</option>
 
-              <option value="Dormitorio" <%= product.category == "dormitorio" ? "selected" : null;%>>Dormitorio</option>
+              <option value="3" <%= product.categoryId == "dormitorio" ? "selected" : null;%>>Dormitorio</option>
 
-              <option value="Exterior" <%= product.category == "exterior" ? "selected" : null;%>>Exterior</option>
+              <option value="4" <%= product.categoryId == "exterior" ? "selected" : null;%>>Exterior</option>
 
-              <option value="Combos" <%= product.category == "combos" ? "selected" : null;%>>Combos</option>
+              <option value="5" <%= product.categoryId == "combos" ? "selected" : null;%>>Combos</option>
 
-              <option value="New in" <%= product.category == "new in" ? "selected" : null;%>>New in</option>
+              <option value="6" <%= product.categoryId == "new in" ? "selected" : null;%>>New in</option>
 
  
 

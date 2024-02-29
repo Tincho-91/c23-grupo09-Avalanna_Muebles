@@ -33,8 +33,8 @@ router.post('/formCreate',upload.single("image"), productController.store)
 
 //router.get('/productCart', sessionValidate, productController.cart)
 
-//router.get('/formEdit/:id', adminValidation, productController.edform)
-//router.put('/formEdit/:id',upload.single("image"), productController.update)
+router.get('/formEdit/:id', productController.edform)
+router.put('/formEdit/:id',upload.single("image"), productController.processUpdate)
 
 router.get('/dashboard', productController.dashboard)
 
