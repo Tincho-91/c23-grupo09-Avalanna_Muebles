@@ -4,7 +4,7 @@ const db = require("../database/models");
 const { v4: uuidv4 } = require('uuid');
 const bcrypt = require('bcryptjs');
 const { validationResult } = require('express-validator');
-
+const {format} = require("@formkit/tempo")
 const usersController = {
  /*   login: (req,res)=>{
         res.render("users/login", {title:"Ingresar"});
@@ -145,10 +145,11 @@ const usersController = {
 
   */update: async (req, res) => {
     const { id } = req.params;
-    const { nameAndSurname, email, phoneNumber, password, rol, birthday, country, province, number, streetName, postalCode, locality } = req.body;
+    const { nameAndSurname, email, phoneNumber, password, rol, birthday } = req.body;
     let avatar = ""
     await db.User.findByPk(id).then(user=> user.dataValues.profileImage ? avatar = user.dataValues.profileImage : avatar = "default.jpg")
-   
+    const date = format(birthday, { date: "full", time: "medium" })
+    console.log("date: ",date);
     db.User.update(
       {
         nameAndSurname: nameAndSurname,
@@ -156,7 +157,7 @@ const usersController = {
         phoneNumber: +phoneNumber,
         password: password,
         rolId: rol ? +rol : 1,
-        birthday: birthday,
+        birthday: date,
         profileImage: req.file ? req.file.filename : avatar,
       },
       {

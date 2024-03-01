@@ -39,7 +39,7 @@ module.exports = {
       onDelete: 'CASCADE'
       },
       birthday: {
-        type: DataTypes.DATE
+        type: DataTypes.DATEONLY
       },
       profileImage: {
         type: DataTypes.STRING
