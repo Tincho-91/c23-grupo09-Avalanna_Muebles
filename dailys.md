@@ -171,3 +171,9 @@ Flavia: Finalizado falta probar función.
 Martin: Finalizado.
 Luana: Trabajando en refactorización productos.
 Melany: Finalizado.
+
+29/02/2024
+Flavia: Terminando refactorización de registro y login de usuario.
+Martin: Finalizado.
+Luana: Terminando refactorización productos.
+Melany: Finalizado.
