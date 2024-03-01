@@ -1,0 +1,89 @@
+<%- include("../partials/head.ejs") %>
+
+    <body>
+
+        <%- include("../partials/header.ejs") %>
+
+            <main class="actualizar__main">
+
+                <section class="actualizar__main__section-form">
+                    <h2 class="actualizar__main__section__actualizar"> Registrar domicilio <i class="fa-solid fa-user"></i>
+                    </h2>
+                    <form action="/users/editar/<%= user.id %>/registrarDomicilio" method="POST"
+                        class="actualizar__main__section__form">
+    
+                                <div class="actualizar__main__section-form form input">
+                                    <label for="country">País</label>
+                                    <input type="text" name="country" id="country"
+                                        value="<%= locals.old && old.country ? old.country : null %>">
+                                    <p class="erroresForm">
+                                        <%= locals.errores && errores.country ? errores.country.msg : null %>
+                                    </p>
+                                </div>
+
+                                <div class="actualizar__main__section-form form input">
+                                    <label for="province">Provincia</label>
+                                    <input type="text" name="province" id="province"
+                                        value="<%= locals.old && old.province ? old.province: null %>">
+                                    <p class="erroresForm">
+                                        <%= locals.errores && errores.province ? errores.province.msg : null %>
+                                    </p>
+                                </div>
+
+                                <div class="actualizar__main__section-form form input">
+                                    <label for="locality">Localidad</label>
+                                    <input type="text" name="locality" id="locality"
+                                        value="<%= locals.old && old.locality ? old.locality : null %>">
+                                    <p class="erroresForm">
+                                        <%= locals.errores && errores.locality ? errores.locality.msg : null %>
+                                    </p>
+                                </div>
+
+                                <div class="actualizar__main__section-form form input">
+                                    <label for="streetName">Nombre de la calle</label>
+                                    <input type="text" name="streetName" id="streetName"
+                                        value="<%= locals.old && old.streetName ? old.streetName : null %>">
+                                    <p class="erroresForm">
+                                        <%= locals.errores && errores.streetName ? errores.streetName.msg : null %>
+                                    </p>
+                                </div>
+                                
+                                <div class="actualizar__main__section-form form input">
+                                    <label for="number">Número</label>
+                                    <input type="number" name="number" id="number"
+                                        value="<%= locals.old && old.number ? old.number : null %>">
+                                    <p class="erroresForm">
+                                        <%= locals.errores && errores.number ? errores.number.msg : null %>
+                                    </p>
+                                </div>
+
+
+                                <div class="actualizar__main__section-form form input">
+                                    <label for="postalCode">Código postal</label>
+                                    <input type="number" name="postalCode" id="postalCode"
+                                        value="<%= locals.old && old.postalCode ? old.postalCode : null %>">
+                                    <p class="erroresForm">
+                                        <%= locals.errores && errores.postalCode ? errores.postalCode.msg : null %>
+                                    </p>
+                                </div>
+
+
+                            
+
+                                <div class="actualizar__main__section-form-div-booton">
+                                    <button class="actualizar__main__section__form-button"
+                                        type="submit">Registrar</button>
+                                </div>
+
+
+
+                    </form>
+
+                </section>
+            </main>
+
+            <%- include("../partials/footer.ejs") %>
+
+    </body>
+
+    </html>

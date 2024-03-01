@@ -57,6 +57,48 @@ margin-bottom: 20px;
 width: 35%;
 }
 
+.actualizar__main__section-form-div-domicilio{
+    border: 1px solid rgb(0, 0, 0, 30%);
+    box-shadow: 1px 1px 5px black;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 2% 0 5% 0;
+    padding: 2%;
+    background-color: var(--color-gris-claro);
+}
+.actualizar__main__section-form-div-domicilio p{
+    width: 100%;
+    padding-top: 1%;
+    border-bottom: 1px solid rgb(0, 0, 0, 50%);
+    text-align: left;
+    padding-left: 3%;
+    
+}
+.actualizar__main__section-form-div-domicilio a{
+    text-align: center;
+    margin: 4% auto;
+    width: 40%;
+    padding: 5%;
+    background-color: var(--color-gris-oscuro);
+    color: white;
+    border: none;
+    text-decoration: none;
+}
+
+
+.actualizar__main__section-form-domicilio-h3{
+    margin-top: 3%;
+}
+.actualizar__main__section-form-domicilio-a{
+
+    width: 90%;
+    padding: 2%;
+    border: none;
+    background-color: var(--color-gris-oscuro);
+    color: white;
+    margin: 2% 0;
+    text-decoration: none;
+}
 
 
 @media (min-width:768px){
@@ -87,7 +129,23 @@ width: 35%;
     .actualizar__main__section__form-button{
         margin-top: 15%;
     }
-    
+    .actualizar__main__section-form-div-domicilio{
+        width: 68%;
+        margin: 2% 0 6% 0;
+    }
+    .actualizar__main__section-form-div-domicilio p{
+        font-size: 20px;
+    }
+    .actualizar__main__section-form-div-domicilio a{
+        margin-top: 3%;
+        font-size: 24px;
+        padding: 2%;
+    }
+    .actualizar__main__section-form-domicilio-a{
+        width: 68%;
+        font-size: 22px;
+    }
+  
 }
 
 @media (min-width:1024px){
@@ -102,8 +160,6 @@ width: 35%;
     .actualizar__main__section-form form input{
         font-size: 20px;
         width: 500px;
-        
-    
     }
   .actualizar__main__section__form-button{
     font-size: 45px;
@@ -119,5 +175,26 @@ width: 35%;
     box-shadow: 1px 1px 10px black;
     width: 78%;
   }
- 
+  .actualizar__main__section-form-div-domicilio {
+    width: 50%;
+    margin: 2% 0 3% 0;
+  }
+  .actualizar__main__section-form-div-domicilio p{
+    font-size: 22px;
+
+  }
+  .actualizar__main__section-form-div-domicilio a{
+    width: 50%;
+  }
+  .actualizar__main__section-form-div-domicilio a button{
+    font-size: 26px;
+}
+.actualizar__main__section-form-domicilio-a button{
+    width: 52%;
+    font-size: 22px;
+}
+.actualizar__main__section-form-domicilio-a{
+    width: 50%;
+
+}
 }
