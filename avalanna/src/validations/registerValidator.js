@@ -1,7 +1,7 @@
-/*
+
 const {body} = require('express-validator');
 const {getJson} = require("../utility/jsonMethod");
-const users= getJson('users.json')
+const users= getJson('../data-json/users.json')
 
 module.exports = [
     body('NameAndSurname').notEmpty().withMessage('El campo no puede estar vacío').bail()
@@ -24,4 +24,3 @@ module.exports = [
         return value == req.body.password2;   
     }).withMessage("Las contraseñas no coinciden")
 ];
-*/

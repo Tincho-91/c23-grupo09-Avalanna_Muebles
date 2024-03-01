@@ -8,11 +8,16 @@ const { Console } = require("console");
 const productsController = {
     detail: (req, res) => {
         const id = req.params.id;
-        
-        const product = products.findOne(elemento => elemento.id == id);
-        const calc = product.price - ((product.price * product.discount) / 100)
-        res.render("products/productDetail", { title: product.name, product, calc, user: req.session.user })
-    },
+       
+         db.products.findByPk(id)
+         .then((product) => {
+            const calc = product.price - ((product.price * product.discount) / 100)
+            res.render("products/productDetail", { title: product.name, product, calc, user: req.session.user })
+         })
+         .catch((err) =>{
+            console.log(err);
+          });
+      },
     
 
     formulario: (req, res) => {
@@ -130,13 +135,18 @@ const productsController = {
        
     },
     products:(req,res) =>{
-        const products = getJson("products.json");
-        res.render("products/products", {title: "Todos los productos", products, user: req.session.user});
-    },
-    categories:(req,res)=>{
+        db.Product.findAll()
+        .then((products) =>{
+            res.render("products/products", {title: "Todos los productos", products, user: req.session.user});
+        } )
+       
+        .catch(err=>console.log(err))
+     },
+   /* categories:(req,res)=>{
         const {category} = req.params;
         const productsCategorized = products.filter(product=>{
         db.products.findAll ({
+            .then
          })
          .catch((err) =>{
             console.log(err);
@@ -145,7 +155,7 @@ const productsController = {
             return product.category == category.toLowerCase()
         });
         res.render("products/categories", {title: category, productsCategorized, category, user: req.session.user})
-    }
+    }*/
 
     }
 

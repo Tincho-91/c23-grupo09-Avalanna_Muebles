@@ -5,7 +5,7 @@ const bcrypt = require('bcryptjs');
 const {validationResult} = require('express-validator');
 
 
- /* const usersController = {
+  const usersController = {
   login: (req,res)=>{
         res.render("users/login", {title:"Ingresar"});
     },
@@ -24,7 +24,7 @@ const {validationResult} = require('express-validator');
       if (!errores.isEmpty()) {
         console.log("errores:", errores.mapped());
         res.render("./users/login", {
-          errores: errores.errors,
+          errores: errores.mapped(),
           title: "avalanna",
           usuario: req.session.user,
         });
@@ -67,32 +67,40 @@ const {validationResult} = require('express-validator');
       const {NameAndSurname,email,phoneNumber,password1,rol} = req.body;
       
       const user = {
-        id,
-        NameAndSurname:NameAndSurname,
+        
+        nameAndSurname:NameAndSurname,
         email:email,
         phoneNumber:phoneNumber,
         password: bcrypt.hashSync(password1,10),
         rol: rol ? rol : "user",
         
       };
+      db.User.create ({ 
+       nameAndSurname:NameAndSurname,
+        email:email,
+        phoneNumber:phoneNumber,
+        password: bcrypt.hashSync(password1,10),
+        rolId: rol ? rol : 1,
+      })
+
+      .then((user) => {
+        res.redirect("/users/ingresar");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
       }
       
-      db.User.create(user)
-        .then((user) => {
-          res.redirect("/users/ingresar");
-        })
-        .catch((err) => {
-          console.log(err);
-        });
+
     },
   
  
-    edform:(req,res)=>{
+   /* edform:(req,res)=>{
         const {id} = req.params;
         const users = getJson("users.json");
         const user = users.find(elemento => elemento.id == id);
         res.render('users/actualizar-datos-usuario', { title: 'Editar', user, usuario:req.session.user});
-      },
+      },*/
       update:(req,res)=>{
         const errores = validationResult(req);
       console.log("errores:", errores);
@@ -133,9 +141,9 @@ const {validationResult} = require('express-validator');
         res.redirect(`/users/editar/${id}`);
       }},
 
-      dashboard:(req,res)=>{
+      /*dashboard:(req,res)=>{
         res.send(req.session.user)
-      },
+      },*/
 
   }
-module.exports = usersController;*/
+module.exports = usersController;
