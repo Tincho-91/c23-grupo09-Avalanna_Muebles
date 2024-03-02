@@ -18,7 +18,7 @@ router.get('/ingresar', authValidate, login)
 router.post('/ingresar',processlogin)
 
 router.get('/registrarme', register)
-router.post('/registrarme', registerValidator, createUser)
+router.post('/registrarme',  createUser)
 
 //router.get('/editar/:id',sessionValidate, edform)
 router.put('/editar/:id',upload.single('image'), editUserValidator, update)

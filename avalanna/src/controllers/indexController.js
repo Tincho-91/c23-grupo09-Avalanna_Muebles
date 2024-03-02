@@ -34,9 +34,20 @@ const categories = [
 
 const indexController = {
     home: (req,res)=>{
-       
-        res.render("index", {title:"Avalanna Muebles", categories, user: req.session.user});
+        db.Category.findAll({
+            
+            include: [{ model: db.Product,as:'products' }],
+          })
+          .then((category) => {
+            res.render("index", {title:"Avalanna Muebles",category, categories, user: req.session.user});
+            });
+        
+        
+          /*.catch((err) => {
+            console.log(err);
+          }); */
+        
     },
-}
 
+}
 module.exports = indexController

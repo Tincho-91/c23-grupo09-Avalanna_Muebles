@@ -9,7 +9,7 @@ const productsController = {
     detail: (req, res) => {
         const id = req.params.id;
        
-         db.products.findByPk(id)
+         db.Product.findByPk(id)
          .then((product) => {
             const calc = product.price - ((product.price * product.discount) / 100)
             res.render("products/productDetail", { title: product.name, product, calc, user: req.session.user })
@@ -142,22 +142,27 @@ const productsController = {
        
         .catch(err=>console.log(err))
      },
-   /* categories:(req,res)=>{
+    categories:(req,res)=>{
         const {category} = req.params;
-        const productsCategorized = products.filter(product=>{
-        db.products.findAll ({
-            .then
-         })
-         .catch((err) =>{
+       
+        db.Product.findAll({
+            
+            include: [{ model: db.Category,as:'categories' }],
+          })
+          .then((products) => {
+            res.render("products/categories", {
+              title: `Productos de la categoría `,
+              products,
+              //category: categoryId,
+              user: req.session.user,
+            });
+          })
+          .catch((err) => {
             console.log(err);
           });
-        
-            return product.category == category.toLowerCase()
-        });
-        res.render("products/categories", {title: category, productsCategorized, category, user: req.session.user})
-    }*/
-
     }
+}
+    
 
 
 
