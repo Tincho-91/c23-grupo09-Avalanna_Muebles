@@ -42,15 +42,15 @@ const productsController = {
     },
 
 
-    edform:(req,res) => {
-        const {id}= req.params;
-        console.log("mostrar id edform",id)
+    edform: (req, res) => {
+        const { id } = req.params;
+        console.log("mostrar id edform", id)
         const products = getJson("products.json")
         const product = products.find(elemento => elemento.id == id);
-        res.render("products/edform", {title:"edform", product, user: req.session.user})
+        res.render("products/edform", { title: "edform", product, user: req.session.user })
     },
-    update:(req,res) =>{
-        console.log("file:",req.file); 
+    update: (req, res) => {
+        console.log("file:", req.file);
         /* Para multiples imagenes:
         const images = [];
         if(req.files){
@@ -59,19 +59,19 @@ const productsController = {
             }); 
         }
     */
-        const {id}=req.params;
-        console.log("mostrar id",id)
-        const {image, name, price, discount, description, extraDescription, height, width, depth, category} = req.body;
+        const { id } = req.params;
+        console.log("mostrar id", id)
+        const { image, name, price, discount, description, extraDescription, height, width, depth, category } = req.body;
         const products = getJson("products.json")
-        console.log("products...",products)
-        const newArray = products.map(product=>{
+        console.log("products...", products)
+        const newArray = products.map(product => {
             if (product.id == id) {
-                return{
+                return {
                     id,
                     image: req.file ? req.file.filename : product.image,
                     name,
-                    price:+price,
-                    discount:+discount,
+                    price: +price,
+                    discount: +discount,
                     description,
                     extraDescription,
                     height,
@@ -82,12 +82,12 @@ const productsController = {
             }
             return product
         });
-        console.log("ESTO es newArray",newArray)
+        console.log("ESTO es newArray", newArray)
         setJson(newArray, "products.json");
         res.redirect("/products/detail/${id}")
 
 
-        
+
     },
        
     cart: (req, res) => {
@@ -103,11 +103,10 @@ const productsController = {
         
     },
 
-    
-    delete:(req,res)=>{
-        const {id}=req.params;
-        const productos=getJson("products.json");
-        const nuevaLista=productos.filter(elemento => elemento.id != id);
+    delete: (req, res) => {
+        const { id } = req.params;
+        const productos = getJson("products.json");
+        const nuevaLista = productos.filter(elemento => elemento.id != id);
         setJson(nuevaLista, "products.json");
         res.redirect("/products/dashboard");
     },
@@ -167,10 +166,37 @@ const productsController = {
             console.log(err);
           });
         
-    }
+    },
+    processUpdate: (req, res) => {
+        const { id } = req.params;
+        const {name, price, description,extradescription, discount, image} = req.body;
+        db.products.update(
+          {
+            name: name,
+            price: price ,
+            description: description ,
+            extradescripcion: extradescription ,
+            discount: discount ,
+            imagen: image 
+        
+          },
+          {
+            where: {
+              id,
+            },
+          }
+        )
+          .then((resp) => {
+            res.redirect("/products/detail/${id}");
+          })
+          .catch((err) => console.log(err));
+ 
+}
+
 }
     
 
 
 
-module.exports = ( productsController )
+
+module.exports = (productsController)
