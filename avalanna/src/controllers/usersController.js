@@ -101,56 +101,39 @@ const usersController = {
       }   
       
     }).catch(err=>console.log(err))
-  }, /*
-  // update: (req, res) => {
-  //   // const errores = validationResult(req);
-  //   // console.log("errores:", errores);
-  //   // console.log("body:", req.body);
+  }, 
 
-  //   // if (!errores.isEmpty()) {
-  //   //   console.log("ingrese en errores");
-  //   //   const { id } = req.params;
-  //   //   const users = getJson("users.json");
-  //   //   const user = users.find(elemento => elemento.id == id);
-  //   //   res.render("users/actualizar-datos-usuario", { errores: errores.mapped(), old: req.body, title: "editar", usuario: req.session.user, user })
-  //   // }
-  //   // else {
-  //   //   const { id } = req.params;
-  //     const { NameAndSurname, email, age, phoneNumber, date, rol } = req.body;
-  //     // const users = getJson("users.json");
-  //     // const usuarios = users.map(element => {
-  //     //   if (element.id == id) {
-  //     //     return {
-  //           id,
-  //           NameAndSurname,
-  //           email,
-  //           phoneNumber,
-  //           age,
-  //           date,
-  //           image: req.file ? req.file.filename : element.image,
-  //           password: element.password,
-  //           rol: rol ? rol : "user"
-  //         }
-
-  //   //     return element
-  //   //   });
-  //   //   setJson(usuarios, "users.json");
-  //   //   const userUpdate = usuarios.find(elemento => elemento.id == id);
-  //   //   req.session.user = userUpdate;
-  //   //   delete userUpdate.password
-  //   //   res.cookie('user', userUpdate)
-  //   //   res.redirect(`/users/editar/${id}`);
-  //   // }
-  // },
-
-  */update: async (req, res) => {
+  update: async (req, res) => {
+    const errors = validationResult(req);
     const { id } = req.params;
+if (!errors.isEmpty()) {
+  db.User.findByPk(id, {include:[
+    { association: "addresses" },
+  ]})
+  .then((resp)=>{
+    if (resp.dataValues.addresses) {
+      const direcciones = []
+      resp.dataValues.addresses.forEach(address => {
+        direcciones.push(address.dataValues)
+        
+      });     
+      
+      res.render('users/actualizar-datos-usuario', { title: 'Editar', user: resp.dataValues, addresses:direcciones, usuario: req.session.user, old:req.body, errores:errors.mapped() });
+    }else {
+      direcciones = null
+      res.render('users/actualizar-datos-usuario', { title: 'Editar', user: resp.dataValues, addresses:direcciones, usuario: req.session.user, old:req.body, errores:errors.mapped()  });
+    }   
+    
+  }).catch(err=>console.log(err))
+}else {
     const { nameAndSurname, email, phoneNumber, password, rol, birthday } = req.body;
     let avatar = ""
 
     await db.User.findByPk(id).then(user=> user.dataValues.profileImage ? avatar = user.dataValues.profileImage : avatar = "default.jpg")
   
     db.User.update(
+
+
       {
         nameAndSurname: nameAndSurname,
         email: email,
@@ -167,6 +150,7 @@ const usersController = {
       }
     )
       .then((resp) => {
+        const {id} = req.params
           db.User.findByPk(id, {include:[
             { association: "addresses" },
           ]})
@@ -179,7 +163,7 @@ const usersController = {
           res.render("users/actualizar-datos-usuario", {title: "Editar", user:resp.dataValues, addresses:resp.dataValues.addresses, usuario: req.session.user});
           
           })}).catch(err=>console.log(err))
-
+        }
   },
   /*
 
@@ -248,16 +232,14 @@ const usersController = {
       address:(req,res)=>{
         const id = req.params.id;
         const addressId = req.params.address;
-        console.log("este es el Id:",id);
-        console.log("este es el addressid",addressId);
-        console.log("esta es la query ",req.params);
+        
       const findUser =db.User.findByPk(id).catch(err=>console.log(err))
       const findAddress = db.Address.findByPk(addressId).catch(err=>console.log(err))
 
       Promise.all([findUser, findAddress])
         .then(([findUser, findAddress])=>{
-          console.log("findUser", findUser.dataValues);
-          console.log("findAddress", findAddress.dataValues);
+          console.log("findUser:", findUser.dataValues);
+          console.log("findAddress:", findAddress);
           res.render("users/addressDetail",{title:"Domicilio", user:findUser.dataValues, addresses:findAddress.dataValues})
 
         }).catch(err=>console.log(err));
@@ -297,8 +279,24 @@ const usersController = {
             id:address
           }
         }).then(resp=>{
-          console.log("este es el resp");
-          res.redirect("/")
+          db.User.findByPk(id, {include:[
+            { association: "addresses" },
+          ]})
+          .then((resp)=>{
+            if (resp.dataValues.addresses) {
+              const direcciones = []
+              resp.dataValues.addresses.forEach(address => {
+                direcciones.push(address.dataValues)
+                
+              });     
+              
+              res.render('users/actualizar-datos-usuario', { title: 'Editar', user: resp.dataValues, addresses:direcciones, usuario: req.session.user });
+            }else {
+              direcciones = null
+              res.render('users/actualizar-datos-usuario', { title: 'Editar', user: resp.dataValues, addresses:direcciones, usuario: req.session.user });
+            }   
+            
+          }).catch(err=>console.log(err))
         }).catch(err=>console.log(err))
       }
       },
@@ -336,10 +334,52 @@ const usersController = {
           locality,
           userId:id
         }).then(resp=>{
-          console.log("este es el country", country);
-          res.redirect("/")
+          db.User.findByPk(id, {include:[
+            { association: "addresses" },
+          ]})
+          .then((resp)=>{
+            if (resp.dataValues.addresses) {
+              const direcciones = []
+              resp.dataValues.addresses.forEach(address => {
+                direcciones.push(address.dataValues)
+                
+              });     
+              
+              res.render('users/actualizar-datos-usuario', { title: 'Editar', user: resp.dataValues, addresses:direcciones, usuario: req.session.user });
+            }else {
+              direcciones = null
+              res.render('users/actualizar-datos-usuario', { title: 'Editar', user: resp.dataValues, addresses:direcciones, usuario: req.session.user });
+            }   
+            
+          }).catch(err=>console.log(err))
         }).catch(err=>console.log(err))
       }
+    },
+
+    destroyAddress:(req,res)=>{
+      const {address, id} = req.params
+      db.Address.destroy({where:{
+        id:address
+      }}).then(resp=>{
+        db.User.findByPk(id, {include:[
+          { association: "addresses" },
+        ]})
+        .then((resp)=>{
+          if (resp.dataValues.addresses) {
+            const direcciones = []
+            resp.dataValues.addresses.forEach(address => {
+              direcciones.push(address.dataValues)
+              
+            });     
+            
+            res.render('users/actualizar-datos-usuario', { title: 'Editar', user: resp.dataValues, addresses:direcciones, usuario: req.session.user });
+          }else {
+            direcciones = null
+            res.render('users/actualizar-datos-usuario', { title: 'Editar', user: resp.dataValues, addresses:direcciones, usuario: req.session.user });
+          }   
+          
+        }).catch(err=>console.log(err))
+      }).catch(err=>console.log(err))
     }
 
   }

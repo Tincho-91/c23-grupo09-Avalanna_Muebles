@@ -100,6 +100,16 @@ width: 35%;
     text-decoration: none;
 }
 
+.addressDetail_main_section_form_delete-button {
+    background-color: var(--color-gris-oscuro);
+    color: white;
+    font-weight: 400;
+    border: none;
+    font-size: 22px;
+    padding: 1% ;
+    width: 70%;
+    margin-top: -10%
+}
 
 @media (min-width:768px){
     .actualizar__main{
@@ -145,7 +155,13 @@ width: 35%;
         width: 68%;
         font-size: 22px;
     }
-  
+    .addressDetail_main_section_form_delete-button {
+        font-size: 30px;
+        padding: 1% ;
+        width: 40%;
+        margin-top: -2%
+    }
+
 }
 
 @media (min-width:1024px){
@@ -196,5 +212,9 @@ width: 35%;
 .actualizar__main__section-form-domicilio-a{
     width: 50%;
 
+}
+
+.addressDetail_main_section_form_delete-button{
+    font-size: 35px;
 }
 }

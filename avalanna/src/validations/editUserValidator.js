@@ -2,7 +2,7 @@
 const {body} = require('express-validator');
 
 module.exports = [
-    body('NameAndSurname').notEmpty().withMessage('El campo no puede estar vacío').bail()
+    body('nameAndSurname').notEmpty().withMessage('El campo no puede estar vacío').bail()
     .isLength({min:3,max:50}).withMessage('El valor ingresado debe tener al menos 3 caracteres y maximo 30').bail(),
 
     body('email').notEmpty().withMessage('El campo no puede estar vacío').bail()
@@ -13,7 +13,9 @@ module.exports = [
     .isInt().withMessage("El valor ingresado debe ser un número").bail()
     .isLength({min:8,max:12}).withMessage('El valor ingresado debe tener al menos 8 caracteres y maximo 12').bail(),
 
-    body("age").isInt().withMessage(`Debe escribir una edad en números`)
+    body("age").isInt().withMessage(`Debe escribir una edad en números`),
+
+    body("birthday").notEmpty().withMessage("El campo no puede estar vacío").bail(),
    
    
 ];

@@ -56,9 +56,9 @@
                                 <div class="actualizar__main__section-form form input">
                                     <label for="date">Fecha de Nacimiento</label>
                                     <input type="date" name="birthday" id="date"
-                                        value="<%= locals.user ? user.date : locals.old && old.date ? old.date : null %>">
+                                        value="<%= locals.user ? user.birthday : locals.old && old.birthday ? old.birthday : null %>">
                                     <p class="erroresForm">
-                                        <%= locals.errores && errores.date ? errores.date.msg : null %>
+                                        <%= locals.errores && errores.birthday  ? errores.birthday .msg : null %>
                                     </p>
                                 </div>
 

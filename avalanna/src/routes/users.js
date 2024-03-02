@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-const {login,register,createUser,processlogin,update,edform, logout, dashboard, destroy, address, updateAddress, formAddress, registerAddress} = require("../controllers/usersController");
+const {login,register,createUser,processlogin,update,edform, logout, dashboard, destroy, address, updateAddress, formAddress, registerAddress, destroyAddress} = require("../controllers/usersController");
 const adminValidation = require("../middlewares/adminValidation");
 const sessionValidate = require("../middlewares/sessionValidate");
 const authValidate = require("../middlewares/authValidate");
@@ -29,6 +29,8 @@ router.put("/editar/:id/address/:address", addressValidator, updateAddress)
 
 router.get("/editar/:id/registrarDomicilio", formAddress)
 router.post("/editar/:id/registrarDomicilio", addressValidator, registerAddress)
+
+router.delete("/editar/:id/address/:address", destroyAddress)
 
 //router.get("/logout", logout);
 
