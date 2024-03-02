@@ -42,7 +42,7 @@
                         </div>
 
 
-                        <% if (locals.usuario && usuario.rol=='2' ) {%>
+                        <% if (locals.usuario && usuario.rolId=='2' ) {%>
                             <div class="actualizar__main__section-form form input">
                                 <label for="rol">Rol</label>
                                 <select name="rolId">
@@ -55,72 +55,38 @@
 
                                 <div class="actualizar__main__section-form form input">
                                     <label for="date">Fecha de Nacimiento</label>
-                                    <input type="date" name="date" id="date"
-                                        value="<%= locals.user ? user.date : locals.old && old.date ? old.date : null %>">
+                                    <input type="date" name="birthday" id="date"
+                                        value="<%= locals.user ? user.birthday : locals.old && old.birthday ? old.birthday : null %>">
                                     <p class="erroresForm">
-                                        <%= locals.errores && errores.date ? errores.date.msg : null %>
+                                        <%= locals.errores && errores.birthday  ? errores.birthday .msg : null %>
                                     </p>
                                 </div>
 
-                                <div class="actualizar__main__section-form form input">
-                                    <label for="country">País</label>
-                                    <input type="text" name="country" id="country"
-                                        value="<%= locals.country ? user.country : locals.old && old.country ? old.date : null %>">
-                                    <p class="erroresForm">
-                                        <%= locals.errores && errores.country ? errores.country.msg : null %>
-                                    </p>
-                                </div>
+                                <% if (locals.addresses[0]) {%>
+                                    <h3 class="actualizar__main__section-form-domicilio-h3">Domicilios registrados</h3>
+                                <% addresses.forEach(address => { %>
 
-                                <div class="actualizar__main__section-form form input">
-                                    <label for="province">Provincia</label>
-                                    <input type="text" name="province" id="province"
-                                        value="<%= locals.province ? user.province : locals.old && old.province ? old.date : null %>">
-                                    <p class="erroresForm">
-                                        <%= locals.errores && errores.province ? errores.province.msg : null %>
-                                    </p>
-                                </div>
+                                    <div class="actualizar__main__section-form-div-domicilio">
+                                        <p>País: <%= address.country %></p>
+                                        <p>Provincia: <%= address.province %></p>
+                                        <p>Localidad: <%= address.locality %></p>
+                                        <p>Calle: <%= address.streetName %></p>
+                                        <p>Número: <%= address.number %></p>
+                                        <p>Código postal: <%= address.postalCode %></p>
 
-                                <div class="actualizar__main__section-form form input">
-                                    <label for="number">Número</label>
-                                    <input type="number" name="number" id="number"
-                                        value="<%= locals.number ? user.number : locals.old && old.number ? old.date : null %>">
-                                    <p class="erroresForm">
-                                        <%= locals.errores && errores.number ? errores.numbermsg : null %>
-                                    </p>
-                                </div>
+                                        <a href="/users/editar/<%= user.id %>/address/<%= address.id %>">Editar</a>
+                                    </div>
+                                    <% }) %>
+                                    <% } %>
+                                            <a href="/users/editar/<%= user.id %>/registrarDomicilio" class="actualizar__main__section-form-domicilio-a">Agregar domicilio</a>
+                                      
 
-                                <div class="actualizar__main__section-form form input">
-                                    <label for="streetName">Nombre de la calle</label>
-                                    <input type="text" name="streetName" id="streetName"
-                                        value="<%= locals.streetName ? user.streetName : locals.old && old.streetName ? old.date : null %>">
-                                    <p class="erroresForm">
-                                        <%= locals.errores && errores.streetName ? errores.streetName.msg : null %>
-                                    </p>
-                                </div>
-
-                                <div class="actualizar__main__section-form form input">
-                                    <label for="postalCode">Código postal</label>
-                                    <input type="number" name="postalCode" id="postalCode"
-                                        value="<%= locals.postalCode ? user.postalCode : locals.old && old.postalCode ? old.date : null %>">
-                                    <p class="erroresForm">
-                                        <%= locals.errores && errores.postalCode ? errores.postalCode.msg : null %>
-                                    </p>
-                                </div>
-
-                                <div class="actualizar__main__section-form form input">
-                                    <label for="locality">Localidad</label>
-                                    <input type="text" name="locality" id="locality"
-                                        value="<%= locals.locality ? user.locality : locals.old && old.locality ? old.date : null %>">
-                                    <p class="erroresForm">
-                                        <%= locals.errores && errores.locality ? errores.locality.msg : null %>
-                                    </p>
-                                </div>
 
                                 <div class="actualizar__main__section-form form input">
                                     <label for="image" class="actualizar__main__section__form div img">Foto de
                                         perfil</label><br>
-                                    <% if(user.image){%>
-                                        <img src="/img/users/<%= user.image %>" alt="profile image">
+                                    <% if(user.profileImage){%>
+                                        <img src="/img/users/<%= user.profileImage %>" alt="profile image">
                                         <%} %>
 
                                             <input type="file" id="inputGroupFile02" name="image">
