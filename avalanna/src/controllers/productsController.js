@@ -44,52 +44,13 @@ const productsController = {
 
     edform: (req, res) => {
         const { id } = req.params;
-        console.log("mostrar id edform", id)
-        const products = getJson("products.json")
-        const product = products.find(elemento => elemento.id == id);
-        res.render("products/edform", { title: "edform", product, user: req.session.user })
+        db.Product.findByPk(id)
+        .then((resp)=>{
+          res.render('products/edform', { title: 'Editar', product: resp.dataValues});
+        })
+
+        
     },
-    update: (req, res) => {
-        console.log("file:", req.file);
-        /* Para multiples imagenes:
-        const images = [];
-        if(req.files){
-         files.forEach (element => {
-    images.push(element.filename);
-            }); 
-        }
-    */
-        const { id } = req.params;
-        console.log("mostrar id", id)
-        const { image, name, price, discount, description, extraDescription, height, width, depth, category } = req.body;
-        const products = getJson("products.json")
-        console.log("products...", products)
-        const newArray = products.map(product => {
-            if (product.id == id) {
-                return {
-                    id,
-                    image: req.file ? req.file.filename : product.image,
-                    name,
-                    price: +price,
-                    discount: +discount,
-                    description,
-                    extraDescription,
-                    height,
-                    width,
-                    depth,
-                    category,
-                }
-            }
-            return product
-        });
-        console.log("ESTO es newArray", newArray)
-        setJson(newArray, "products.json");
-        res.redirect("/products/detail/${id}")
-
-
-
-    },
-       
     cart: (req, res) => {
         res.render("products/productCart", { title: "Carrito de compra", user: req.session.user });
     },
@@ -167,27 +128,34 @@ const productsController = {
           });
         
     },
-    processUpdate: (req, res) => {
+    processUpdate:async (req, res) => {
         const { id } = req.params;
-        const {name, price, description,extradescription, discount, image} = req.body;
-        db.products.update(
+        let avatar = ""
+        await db.Product.findByPk(id).then(resp =>{
+            if(resp.dataValues.image){
+            avatar = resp.dataValues.image
+        } else {avatar = "default.jpg"}
+        })
+        const {name, price, description,extradescription, discount} = req.body;
+        db.Product.update(
           {
             name: name,
-            price: price ,
+            price: +price ,
             description: description ,
             extradescripcion: extradescription ,
-            discount: discount ,
-            imagen: image 
+            discount: +discount ,
+            image: req.file ? req.file.filename : avatar
         
           },
           {
             where: {
               id,
             },
+            
           }
         )
           .then((resp) => {
-            res.redirect("/products/detail/${id}");
+            res.redirect(`/products/detail/${id}`);
           })
           .catch((err) => console.log(err));
  
