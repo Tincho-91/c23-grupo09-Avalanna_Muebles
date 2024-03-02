@@ -3,7 +3,6 @@ const router = express.Router();
 const multer = require("multer");
 const path = require("path");
 const productController = require("../controllers/productsController");
-const { group } = require('console');
 const sessionValidate = require("../middlewares/sessionValidate");
 
 const adminValidation = require("../middlewares/adminValidation");
@@ -22,19 +21,19 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 /* GET home page. */
-//router.get('/', productController.products);
+router.get('/', productController.products);
 
-//router.get('/detail/:id', productController.detail);
+router.get('/detail/:id', productController.detail);
 
-//router.get('/section/:category', productController.categories);
+router.get('/section/:category', productController.categories);
 
 router.get('/formCreate', adminValidation, productController.formulario)
 router.post('/formCreate',upload.single("image"), productController.store)
 
-//router.get('/productCart', sessionValidate, productController.cart)
+router.get('/productCart', sessionValidate, productController.cart)
 
-//router.get('/formEdit/:id', adminValidation, productController.edform)
-//router.put('/formEdit/:id',upload.single("image"), productController.update)
+router.get('/formEdit/:id', adminValidation, productController.edform)
+router.put('/formEdit/:id',upload.single("image"), productController.update)
 
 router.get('/dashboard', productController.dashboard)
 

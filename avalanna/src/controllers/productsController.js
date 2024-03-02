@@ -1,18 +1,25 @@
 const db = require("../database/models");
+const { op } =require("sequelize");
 const fs = require("fs");
 const path = require("path");
-const { getJson, setJson } = require("../utility/jsonMethod");
 const { Console } = require("console");
 
 
 const productsController = {
     detail: (req, res) => {
         const id = req.params.id;
-        const products = getJson("products.json")
-        const product = products.find(elemento => elemento.id == id);
-        const calc = product.price - ((product.price * product.discount) / 100)
-        res.render("products/productDetail", { title: product.name, product, calc, user: req.session.user })
-    },
+       
+         db.Product.findByPk(id)
+         .then((product) => {
+            const calc = product.price - ((product.price * product.discount) / 100)
+            res.render("products/productDetail", { title: product.name, product, calc, user: req.session.user })
+         })
+         .catch((err) =>{
+            console.log(err);
+          });
+      },
+    
+
     formulario: (req, res) => {
         db.Category.findAll()
         .then((categories)=>{
@@ -77,11 +84,12 @@ const productsController = {
         });
         console.log("ESTO es newArray", newArray)
         setJson(newArray, "products.json");
-        res.redirect(`/products/detail/${id}`)
+        res.redirect("/products/detail/${id}")
 
 
 
     },
+       
     cart: (req, res) => {
         res.render("products/productCart", { title: "Carrito de compra", user: req.session.user });
     },
@@ -116,28 +124,49 @@ const productsController = {
         }
        }).then((resp)=>{
         fs.unlink(path.join(__dirname,`../../public/img/${resp.dataValues.image}`),(err)=>{
-            console.log(`archivo antes del err ${resp.dataValues.image}`);
+            
             if(err) throw err;
-            console.log(`archivo ${resp.dataValues.image}`);
+           
             res.redirect(`/`);
        })
     }
        ).catch(err=>console.log(err))
        
     },
-    products: (req, res) => {
-        const products = getJson("products.json");
-        res.render("products/products", { title: "Todos los productos", products, user: req.session.user });
+    products:(req,res) =>{
+        db.Product.findAll()
+        .then((products) =>{
+            res.render("products/products", {title: "Todos los productos", products, user: req.session.user});
+        } )
+       
+        .catch(err=>console.log(err))
+     },
+    categories:(req,res)=>{
+        const {category} = req.params;
+       console.log("ES ESTE",category)
+       console.log("REQQQQ",req)
+        db.Category.findByPk(category)
+        .then(resp => {
+            const categories = resp.dataValues
+            db.Product.findAll({ where:{categoryId:category} })
+        
+            .then((products) => {
+              console.log("PRODUCTOSSSSSSSSSSSSS", products)
+              res.render("products/categories", {
+                categories,
+                title: `Productos de la categoría `,
+                productsCategorized:products,
+                user: req.session.user,
+              });
+            })
+            .catch((err) => {
+              console.log(err);
+            });
+        }).catch((err) => {
+            console.log(err);
+          });
+        
     },
-    categories: (req, res) => {
-        const { category } = req.params;
-        const products = getJson("products.json");
-        const productsCategorized = products.filter(product => {
-            return product.category == category.toLowerCase()
-        });
-        res.render("products/categories", { title: category, productsCategorized, category, user: req.session.user })
-    },
-
     processUpdate: (req, res) => {
         const { id } = req.params;
         const {name, price, description,extradescription, discount, image} = req.body;
@@ -165,6 +194,8 @@ const productsController = {
 }
 
 }
+    
+
 
 
 

@@ -1,5 +1,11 @@
 
 const {body} = require('express-validator');
+<<<<<<< HEAD
+//const { sequelize } = require('../database/models');
+//const db =require("../database/models");
+//const {op}=require(sequelize);
+=======
+>>>>>>> 94a577553e16938b5d17acdda5054ba74d8bee83
 
 module.exports = [
     body('nameAndSurname').notEmpty().withMessage('El campo no puede estar vacío').bail()

@@ -1,7 +1,6 @@
 
 const db = require("../database/models");
-//const {setJson,getJson} = require("../utility/jsonMethod");
-const { v4: uuidv4 } = require('uuid');
+const { op } =require("sequelize");
 const bcrypt = require('bcryptjs');
 const { validationResult } = require('express-validator');
 const {parse} = require("@formkit/tempo")
@@ -9,29 +8,50 @@ const usersController = {
  /*   login: (req,res)=>{
         res.render("users/login", {title:"Ingresar"});
     },
-    processlogin: (req, res) => {
-      const errors = validationResult(req);
-      if(!errors.isEmpty()){
-        console.log(errors)
-        res.render("users/login",{errors: errors.mapped(), title:"avalanna" , old:req.body});
+    logout:(req,res) =>{
+      req.session.destroy();
+       if (req.cookies) {
+        res.clearCookie('user');
+        res.clearCookie("userEmail")
+        res.clearCookie('rememberMe');
       }
-      const {email} = req.body;
-      const users = getJson("users.json");
-      const user = users.find(usuario => usuario.email == email);
-     
-      req.session.user = user;
-      delete user.password1;
-        if (req.body.rememberMe) {
-          res.cookie('userEmail',user.email,{maxAge: 1000 * 60 * 15 });
-          res.cookie('rememberMe',"true", {maxAge: 1000 * 60 * 15 });
-          console.log(req.cookies, "estas son las cookies");
-        }
-        res.redirect('/');
-    },
+      res.redirect('/');
+},
+    processlogin: (req, res) => {
+      const errores = validationResult(req);
+  
+      if (!errores.isEmpty()) {
+        console.log("errores:", errores.mapped());
+        res.render("./users/login", {
+          errores: errores.mapped(),
+          title: "avalanna",
+          usuario: req.session.user,
+        });
+      } else {
+        const { email } = req.body;
+        db.User.findOne({
+          attributes: { exclude: ["password1"] },
+          where: {
+            email,
+          },
+        })
+          .then((user) => {
+            req.session.user = user.dataValues;
+  
+            if (req.body.remember == "true") {
+              res.cookie("user", user.dataValues, { maxAge: 1000 * 60 * 15 });
+              res.cookie("rememberMe", "true", { maxAge: 1000 * 60 * 15 });
+            }
+  
+            res.redirect("/");
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      }
+},
       
-    
- 
-    register:(req,res)=>{
+     register:(req,res)=>{
         res.render("users/register", {title:"Registrarme", user: req.session.user});
     },
     createUser: (req, res) => {
@@ -384,4 +404,3 @@ if (!errors.isEmpty()) {
 
   }
 module.exports = usersController;
-
