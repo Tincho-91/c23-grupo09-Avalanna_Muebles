@@ -19,15 +19,15 @@ router.get('/ingresar', authValidate, login)
 router.post('/ingresar',loginValidator,processlogin)
 
 router.get('/registrarme', register)
-router.post('/registrarme',  createUser)
+router.post('/registrarme',registerValidator, createUser)
 
-router.get('/editar/:id', edform)
+router.get('/editar/:id',sessionValidate, edform)
 router.put('/editar/:id',upload.single('image'), editUserValidator, update)
 
-router.get("/editar/:id/address/:address", address)
+router.get("/editar/:id/address/:address",sessionValidate, address)
 router.put("/editar/:id/address/:address", addressValidator, updateAddress)
 
-router.get("/editar/:id/registrarDomicilio", formAddress)
+router.get("/editar/:id/registrarDomicilio",sessionValidate, formAddress)
 router.post("/editar/:id/registrarDomicilio", addressValidator, registerAddress)
 
 router.delete("/editar/:id/address/:address", destroyAddress)
@@ -36,6 +36,6 @@ router.get("/logout", logout);
 
 router.delete("/delete/:id", destroy)
 
-router.get('/dashboard',  dashboard)
+router.get('/dashboard',adminValidation,  dashboard)
 
 module.exports = router;

@@ -3,6 +3,7 @@ const db = require("../database/models");
 const { op } =require("sequelize");
 const bcrypt = require('bcryptjs');
 const { validationResult } = require('express-validator');
+const { v4: uuidv4 } = require('uuid');
 const {parse} = require("@formkit/tempo")
 const usersController = {
     login: (req,res)=>{
@@ -50,57 +51,46 @@ const usersController = {
           });
       }
 },
+createUser: (req, res) => {
+  const errores = validationResult(req);
+  
+  if(!errores.isEmpty()){
+    console.log("ingrese en errores");
+    res.render("users/register",{errores:errores.mapped(),old:req.body,title:"registro"})
+  }
+  else{ 
+  
+  const {NameAndSurname,email,phoneNumber,password1,rol} = req.body;
+  
+  const user = {
+    nameAndSurname:NameAndSurname,
+    email:email,
+    phoneNumber:phoneNumber,
+    password: bcrypt.hashSync(password1,10),
+    rolId: rol ? rol : 1,
+    
+  };
+  db.User.create(user)
+  .then((user) => {
+    res.redirect("/users/ingresar");
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+  }
+  
+  
+},
       
      register:(req,res)=>{
         res.render("users/register", {title:"Registrarme", user: req.session.user});
     },
-    createUser: (req, res) => {
-      const errores = validationResult(req);
-      console.log("errores:", errores);
-      console.log("body:",req.body);
-
-    req.session.user = user;
-    delete user.password1;
-    if (req.body.rememberMe) {
-      res.cookie('userEmail', user.email, { maxAge: 1000 * 60 * 15 });
-      res.cookie('rememberMe', "true", { maxAge: 1000 * 60 * 15 });
-      console.log(req.cookies, "estas son las cookies");
-    }
-    res.redirect('/');
-  },
-
-
+  
 
   register: (req, res) => {
     res.render("users/register", { title: "Registrarme", user: req.session.user });
   },
-  createUser: (req, res) => {
-    const errores = validationResult(req);
-    console.log("errores:", errores);
-    console.log("body:", req.body);
-
-    if (!errores.isEmpty()) {
-      console.log("ingrese en errores");
-      res.render("users/register", { errores: errores.mapped(), old: req.body, title: "registro" })
-    }
-    else {
-      const users = getJson("users.json");
-      const { NameAndSurname, email, phoneNumber, password1, rol } = req.body;
-      const id = uuidv4();
-      const user = {
-        id,
-        NameAndSurname: NameAndSurname,
-        email: email,
-        phoneNumber: phoneNumber,
-        password: bcrypt.hashSync(password1, 10),
-        rol: rol ? rol : "user"
-      }
-      console.log(user);
-      users.push(user);
-      setJson(users, "users.json");
-      res.redirect('/users/ingresar');
-    }
-  },
+ 
   edform: (req, res) => {
     const { id } = req.params;
     db.User.findByPk(id, {include:[

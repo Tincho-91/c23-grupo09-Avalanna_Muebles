@@ -32,10 +32,10 @@ router.post('/formCreate',upload.single("image"), productController.store)
 
 router.get('/productCart', sessionValidate, productController.cart)
 
-router.get('/formEdit/:id', productController.edform)
+router.get('/formEdit/:id',adminValidation, productController.edform)
 router.put('/formEdit/:id',upload.single("image"), productController.processUpdate)
 
-router.get('/dashboard', productController.dashboard)
+router.get('/dashboard',adminValidation, productController.dashboard)
 
 router.delete('/delete/:id', productController.destroy)
 
