@@ -36,7 +36,7 @@
     <% if (locals.user) { %>
         <div class="iconos-profile" id="iconos">
         <div class="header__menu-desplegable" id="header__contenido-desplegable-profile" >
-            <button class="header_boton"><%= locals.user.NameAndSurname %></button>
+            <button class="header_boton"><%= locals.user.nameAndSurname %></button>
                 <div class="header__contenido-desplegable" id="header__contenido-desplegable-profile-div">
                     <a href="/users/editar/<%= locals.user.id %>" class="header__div__iconos-user-session">Mi cuenta</a>
                     <a href="/users/logout" class="header__div__iconos-user-session">Cerrar sesión</a>
