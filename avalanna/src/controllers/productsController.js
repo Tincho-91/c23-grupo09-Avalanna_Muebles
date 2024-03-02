@@ -144,22 +144,29 @@ const productsController = {
      },
     categories:(req,res)=>{
         const {category} = req.params;
-       
-        db.Product.findAll({
-            
-            include: [{ model: db.Category,as:'categories' }],
-          })
-          .then((products) => {
-            res.render("products/categories", {
-              title: `Productos de la categoría `,
-              products,
-              //category: categoryId,
-              user: req.session.user,
+       console.log("ES ESTE",category)
+       console.log("REQQQQ",req)
+        db.Category.findByPk(category)
+        .then(resp => {
+            const categories = resp.dataValues
+            db.Product.findAll({ where:{categoryId:category} })
+        
+            .then((products) => {
+              console.log("PRODUCTOSSSSSSSSSSSSS", products)
+              res.render("products/categories", {
+                categories,
+                title: `Productos de la categoría `,
+                productsCategorized:products,
+                user: req.session.user,
+              });
+            })
+            .catch((err) => {
+              console.log(err);
             });
-          })
-          .catch((err) => {
+        }).catch((err) => {
             console.log(err);
           });
+        
     }
 }
     
