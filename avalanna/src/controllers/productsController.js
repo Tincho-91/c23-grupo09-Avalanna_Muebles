@@ -42,13 +42,6 @@ const productsController = {
     },
 
 
-    // edform: (req, res) => {
-    //     const { id } = req.params;
-    //     console.log("mostrar id edform", id)
-    //     const products = getJson("products.json")
-    //     const product = products.find(elemento => elemento.id == id);
-    //     res.render("products/edform", { title: "edform", product, user: req.session.user })
-
     edform: (req, res) => {
         const { id } = req.params;
         db.Product.findByPk(id)
@@ -135,8 +128,14 @@ const productsController = {
           });
         
     },
-    processUpdate: (req, res) => {
+    processUpdate:async (req, res) => {
         const { id } = req.params;
+        let avatar = ""
+        await db.Product.findByPk(id).then(resp =>{
+            if(resp.dataValues.image){
+            avatar = resp.dataValues.image
+        } else {avatar = "default.jpg"}
+        })
         const {name, price, description,extradescription, discount} = req.body;
         db.Product.update(
           {
@@ -145,7 +144,7 @@ const productsController = {
             description: description ,
             extradescripcion: extradescription ,
             discount: +discount ,
-            imagen: req.file ? req.file.filename : "default.webp"
+            image: req.file ? req.file.filename : avatar
         
           },
           {

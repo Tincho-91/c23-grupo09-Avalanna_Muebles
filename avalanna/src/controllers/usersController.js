@@ -5,7 +5,7 @@ const bcrypt = require('bcryptjs');
 const { validationResult } = require('express-validator');
 const {parse} = require("@formkit/tempo")
 const usersController = {
- /*   login: (req,res)=>{
+    login: (req,res)=>{
         res.render("users/login", {title:"Ingresar"});
     },
     logout:(req,res) =>{
@@ -22,10 +22,10 @@ const usersController = {
   
       if (!errores.isEmpty()) {
         console.log("errores:", errores.mapped());
-        res.render("./users/login", {
+        res.render("users/login", {
           errores: errores.mapped(),
           title: "avalanna",
-          usuario: req.session.user,
+          usuario: req.session.user,old:req.body,errors:errores.mapped()
         });
       } else {
         const { email } = req.body;
@@ -101,7 +101,7 @@ const usersController = {
       res.redirect('/users/ingresar');
     }
   },
-*/  edform: (req, res) => {
+  edform: (req, res) => {
     const { id } = req.params;
     db.User.findByPk(id, {include:[
       { association: "addresses" },
@@ -148,7 +148,7 @@ if (!errors.isEmpty()) {
 }else {
     const { nameAndSurname, email, phoneNumber, password, rol, birthday } = req.body;
     let avatar = ""
-
+    
     await db.User.findByPk(id).then(user=> user.dataValues.profileImage ? avatar = user.dataValues.profileImage : avatar = "default.jpg")
   
     db.User.update(
@@ -185,7 +185,7 @@ if (!errors.isEmpty()) {
           })}).catch(err=>console.log(err))
         }
   },
-  /*
+  
 
   logout: (req, res) => {
     req.session.destroy();
@@ -201,7 +201,7 @@ if (!errors.isEmpty()) {
  
 
 
- */     dashboard: (req, res) => {
+      dashboard: (req, res) => {
         const propiedades = ["id", "nameAndSurname", "email", "phoneNumber"];
         
         db.User.findAll()
@@ -212,18 +212,7 @@ if (!errors.isEmpty()) {
         .catch(err=>console.log(err))
         
     },
-    /*
-      logout:(req,res) =>{
-        req.session.destroy();
-        console.log("estas son las cookies", req.cookies);
-        if (req.cookies) {
-          res.clearCookie('user');
-          res.clearCookie("userEmail")
-          res.clearCookie('rememberMe');
-        }
-        res.redirect('/');
-},
-*/
+
       destroy:(req,res)=>{
         const {id} = req.params;
         db.User.destroy({

@@ -3,7 +3,6 @@ var router = express.Router();
 const {login,register,createUser,processlogin,update,edform, logout, dashboard, destroy, address, updateAddress, formAddress, registerAddress, destroyAddress} = require("../controllers/usersController");
 const adminValidation = require("../middlewares/adminValidation");
 const sessionValidate = require("../middlewares/sessionValidate");
-const adminValidation = require("../middlewares/adminValidation");
 const authValidate = require("../middlewares/authValidate");
 const loginValidator = require("../validations/loginValidator");
 const registerValidator = require("../validations/registerValidator");
@@ -17,7 +16,7 @@ const addressValidator = require("../validations/addressValidator");
 /* GET users listing. */
 
 router.get('/ingresar', authValidate, login)
-router.post('/ingresar',processlogin)
+router.post('/ingresar',loginValidator,processlogin)
 
 router.get('/registrarme', register)
 router.post('/registrarme',  createUser)
@@ -35,8 +34,8 @@ router.delete("/editar/:id/address/:address", destroyAddress)
 
 router.get("/logout", logout);
 
-//router.delete("/delete/:id", destroy)
+router.delete("/delete/:id", destroy)
 
-//router.get('/dashboard',  dashboard)
+router.get('/dashboard',  dashboard)
 
 module.exports = router;
