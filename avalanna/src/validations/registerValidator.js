@@ -1,4 +1,4 @@
-/*
+
 const {body} = require('express-validator');
 const {getJson} = require("../utility/jsonMethod");
 const users= getJson('users.json')
@@ -24,4 +24,3 @@ module.exports = [
         return value == req.body.password2;   
     }).withMessage("Las contraseñas no coinciden")
 ];
-*/
