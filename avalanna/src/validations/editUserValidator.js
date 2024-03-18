@@ -13,8 +13,6 @@ module.exports = [
     .isInt().withMessage("El valor ingresado debe ser un número").bail()
     .isLength({min:8,max:12}).withMessage('El valor ingresado debe tener al menos 8 caracteres y maximo 12').bail(),
 
-    body("age").isInt().withMessage(`Debe escribir una edad en números`),
-
     body("birthday").notEmpty().withMessage("El campo no puede estar vacío").bail(),
    
    

@@ -1,7 +1,6 @@
 
 const {body} = require('express-validator');
-const {getJson} = require("../utility/jsonMethod");
-const users= getJson('users.json')
+const db = require("../database/models")
 
 module.exports = [
     body('NameAndSurname').notEmpty().withMessage('El campo no puede estar vacío').bail()
@@ -12,9 +11,13 @@ module.exports = [
     .isLength({min:8,max:12}).withMessage('El valor ingresado debe tener al menos 8 caracteres y maximo 12').bail(),
     body('email').notEmpty().withMessage('El campo no puede estar vacío').bail()
     .isEmail().withMessage("Debe ser un correo con formato válido").bail()
-    .custom(value => { 
+    .custom(async(value) => { 
         console.log("value:",value);
-        const user = users.find(elemento => elemento.email == value);
+        let user = ""
+        await db.User.findAll({where:{email:value}}).then(resp =>{
+            if (resp[0]){let user = resp.dataValues}else{ let user = null} 
+           console.log(resp[0])
+        })
         return user ? false : true
     }).withMessage("El usuario ya existe, utilice otro correo electronico"),
     body("password1").notEmpty().withMessage("El campo no puede estar vacío").bail()

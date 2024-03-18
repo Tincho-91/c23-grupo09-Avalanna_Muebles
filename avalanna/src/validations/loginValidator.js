@@ -1,20 +1,41 @@
-/*
+
 const {body} = require('express-validator');
-const {getJson} = require("../utility/jsonMethod");
 const bcrypt = require('bcryptjs');
-const users= getJson('users.json')
+const db = require("../database/models")
 
 module.exports = [
     body('email').notEmpty().withMessage('El campo no puede estar vacío').bail()
     .isEmail().withMessage('El valor ingresado debe tener el formato de un correo electrónico').bail()
     .custom(value => { 
-        const user = users.find(elemento => elemento.email == value);
-        return user ? true : false
-    }).withMessage("El usuario no existe"),
+        return db.User.findOne({
+            where: {
+                email: value
+            }
+        })
+        .then(user => {
+            if (!user) {
+                return Promise.reject('El mail no se encuentra registrado')
+            }
+        })
+        .catch(() => {
+            return Promise.reject('El mail no se encuentra registrado')
+        })
+}),
     body("password1").notEmpty().withMessage("El campo no puede estar vacío").bail()
     .custom((value,{req})=>{
-        const user = users.find(elemento => elemento.email == req.body.email)
-        return bcrypt.compareSync(value, user.password);
-    }).withMessage("La contraseña no es correcta")
-]
-*/
+        return db.User.findOne({
+            where: {
+                email: req.body.email
+            }
+        })
+        .then(user => {
+            if (!bcrypt.compareSync(value, user.dataValues.password)) { //si no machea la contraseña
+                return Promise.reject('Estas mal')
+            }
+        })
+        .catch(() => {
+            return Promise.reject('Contraseña incorrecta')
+        })
+    
+})
+];
