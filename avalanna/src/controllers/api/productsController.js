@@ -18,17 +18,17 @@ module.exports = {
             if (!product) {
                 throw new Error (`Producto inexistente`);
             }
-
+            const {name, price, description, extraDescription, categoryId, discount, height, width,depth} = req.body;
                 await product.update({
-                  name: req.body.name,
-                  price: req.body.price,
-                  description: req.body.description,
-                  extraDescription: req.body.extraDescription,
-                  categoryId: req.body.categoryId,
-                  discount: req.body.discount,
-                  height: req.body.height,
-                  width: req.body.width,
-                  depth: req.body.depth,
+                  name,
+                  price,
+                  description,
+                  extraDescription,
+                  categoryId,
+                  discount,
+                  height,
+                  width,
+                  depth,
                   image: product.image ? product.image : "default.jpg"
                 })
 
