@@ -46,8 +46,8 @@
                             <div class="actualizar__main__section-form form input">
                                 <label for="rol">Rol</label>
                                 <select name="rolId">
-                                    <option value="1">User</option>
-                                    <option value="2">Admin</option>
+                                    <option value="1" <%= usuario.rolId == "1" ? "selected" : null %> > User</option>
+                                    <option value="2" <%= usuario.rolId == "2" ? "selected" : null %>> Admin</option>
                                 </select>
 
                             </div>
