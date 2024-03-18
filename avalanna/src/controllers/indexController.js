@@ -1,41 +1,21 @@
-const categories = [
-    {
-        image: "living-home.png",
-        alt: "muebles para living",
-        name: "LIVING" ,
-    },
-    {
-        image: "cocina-home.png" ,
-        alt: "muebles para cocina" ,
-        name:"COCINA" ,
-    },
-    {
-        image: "dormitorio-home.png",
-        alt: "muebles para dormitorio" ,
-        name:"DORMITORIO" ,
-    },
-    {
-        image: "exterior-home.png",
-        alt: "muebles para exterior" ,
-        name:"EXTERIOR" ,
-    },
-    {
-        image: "combos-home.png",
-        alt: "muebles rojos" ,
-        name: "COMBOS",
-    },
-    {
-        image: "newIn-home.png",
-        alt: "sillas y desayunador" ,
-        name: "NEW IN",
-    },
-]
+const db = require("../database/models");
 
 const indexController = {
     home: (req,res)=>{
-       
-        res.render("index", {title:"Avalanna Muebles", categories, user: req.session.user});
-    },
-}
+        db.Category.findAll(
+            
 
+          )
+          .then((categories) => {
+            res.render("index", {title:"Avalanna Muebles",categories:categories, user: req.session.user});
+            })
+        
+        
+          .catch((err) => {
+            console.log(err);
+          }); 
+        
+    },
+
+}
 module.exports = indexController

@@ -1,78 +1,114 @@
 <%- include("../partials/head.ejs") %>
 
-<body> 
-    
-    <%- include("../partials/header.ejs") %>
+    <body>
 
-    <main class="actualizar__main">
-    
-        <section class="actualizar__main__section-form">
-            <h2 class="actualizar__main__section__actualizar" > Actualizar datos  <i class="fa-solid fa-user"></i></h2>
-            <form action="/users/editar/<%=user.id%>?_method=PUT" method="post" class="actualizar__main__section__form" enctype="multipart/form-data">
+        <%- include("../partials/header.ejs") %>
 
-                <div class="actualizar__main__section-form form input">
-                    <div class="actualizar__main__section-form form input">
-                        <label for="NameAndSurname">Nombre y Apellido</label>
-                        <input  type="text" id="name" name="NameAndSurname" value="<%= locals.user ? user.NameAndSurname : locals.old && old.NameAndSurname ? old.NameAndSurname : null %>" >
-                        <p class="erroresForm"><%= locals.errores && errores.NameAndSurname ? errores.NameAndSurname.msg : null %> </p>
-                    </div>
-                </div>
+            <main class="actualizar__main">
 
-                <div class="actualizar__main__section-form form input">
-                    <label for="email">Email</label>
-                    <input type="text" id="email" name="email" value="<%= locals.user ? user.email : locals.old && old.email ? old.email : null %>">
-                    <p class="erroresForm"> <%= locals.errores && errores.email ? errores.email.msg : null %> </p>
-                </div>
+                <section class="actualizar__main__section-form">
+                    <h2 class="actualizar__main__section__actualizar"> Actualizar datos <i class="fa-solid fa-user"></i>
+                    </h2>
+                    <form action="/users/editar/<%=user.id%>?_method=PUT" method="post"
+                        class="actualizar__main__section__form" enctype="multipart/form-data">
 
-                <div class="actualizar__main__section-form form input">
-                    <label for="phoneNumber">Tel</label>
-                    <input type="text" id="phoneNumber" name="phoneNumber" value="<%= locals.user ? user.phoneNumber : locals.old && old.phoneNumber ? old.phoneNumber : null %>">
-                    <p class="erroresForm"> <%= locals.errores && errores.phoneNumber ? errores.phoneNumber.msg : null %> </p>
-                </div>
+                        <div class="actualizar__main__section-form form input">
+                            <div class="actualizar__main__section-form form input">
+                                <label for="nameAndSurname">Nombre y Apellido</label>
+                                <input type="text" id="name" name="nameAndSurname"
+                                    value="<%= locals.user ? user.nameAndSurname : locals.old && old.NameAndSurname ? old.NameAndSurname : null %>">
+                                <p class="erroresForm">
+                                    <%= locals.errores && errores.nameAndSurname ? errores.nameAndSurname.msg : null %>
+                                </p>
+                            </div>
+                        </div>
 
+                        <div class="actualizar__main__section-form form input">
+                            <label for="email">Email</label>
+                            <input type="text" id="email" name="email"
+                                value="<%= locals.user ? user.email : locals.old && old.email ? old.email : null %>">
+                            <p class="erroresForm">
+                                <%= locals.errores && errores.email ? errores.email.msg : null %>
+                            </p>
+                        </div>
 
-                <% if (locals.usuario && usuario.rol == 'admin') {%>
-                    <div class="actualizar__main__section-form form input">
-                        <label for="rol">Rol</label>
-                        <input type="text" id="rol" name="rol" value="<%= locals.user ? user.rol : locals.old && old.rol ? old.rol : null %>">
-                        <p class="erroresForm"> <%= locals.errores && errores.rol ? errores.rol.msg : null %> </p>
-                    </div>    
-                <% } %>
-
-                <div class="actualizar__main__section-form form input">
-                    <label for="age">Edad</label>
-                    <input type="number" name="age" id="age" value="<%= locals.user ? user.age : locals.old && old.age ? old.age : null %>">
-                    <p class="erroresForm"><%= locals.errores && errores.age ? errores.age.msg : null %> </p>
-                </div>
-
-                <div class="actualizar__main__section-form form input">
-                    <label for="date">Fecha de Nacimiento</label>
-                    <input type="date" name="date" id="date" value="<%= locals.user ? user.date : locals.old && old.date ? old.date : null %>">
-                    <p class="erroresForm"><%= locals.errores && errores.date ? errores.date.msg : null %> </p>
-                </div>
-
-                <div class="actualizar__main__section-form form input">
-                    <label for="image" class="actualizar__main__section__form div img">Foto de perfil</label><br>
-                <% if(user.image){%>
-                   <img src="/img/users/<%= user.image %>" alt="profile image">
-                <%} %>
-                    
-                    <input type="file" id="inputGroupFile02" name="image">
-                    <p><%= locals.errores && errores.image ? errores.image.msg : null %> </p>
-                </div>
-
-                <div class="actualizar__main__section-form-div-booton" >
-                    <button class="actualizar__main__section__form-button" type="submit">Actualizar</button>
-                </div>
-                
+                        <div class="actualizar__main__section-form form input">
+                            <label for="phoneNumber">Tel</label>
+                            <input type="text" id="phoneNumber" name="phoneNumber"
+                                value="<%= locals.user ? user.phoneNumber : locals.old && old.phoneNumber ? old.phoneNumber : null %>">
+                            <p class="erroresForm">
+                                <%= locals.errores && errores.phoneNumber ? errores.phoneNumber.msg : null %>
+                            </p>
+                        </div>
 
 
-            </form>
-          
-        </section>
-    </main> 
-    
-    <%- include("../partials/footer.ejs") %>
+                        <% if (locals.usuario && usuario.rolId=='2' ) {%>
+                            <div class="actualizar__main__section-form form input">
+                                <label for="rol">Rol</label>
+                                <select name="rolId">
+                                    <option value="1" <%= usuario.rolId == "1" ? "selected" : null %> > User</option>
+                                    <option value="2" <%= usuario.rolId == "2" ? "selected" : null %>> Admin</option>
+                                </select>
 
-</body>
-</html>
+                            </div>
+                            <% } %>
+
+                                <div class="actualizar__main__section-form form input">
+                                    <label for="date">Fecha de Nacimiento</label>
+                                    <input type="date" name="birthday" id="date"
+                                        value="<%= locals.user ? user.birthday : locals.old && old.birthday ? old.birthday : null %>">
+                                    <p class="erroresForm">
+                                        <%= locals.errores && errores.birthday  ? errores.birthday .msg : null %>
+                                    </p>
+                                </div>
+
+                                <% if (locals.addresses[0]) {%>
+                                    <h3 class="actualizar__main__section-form-domicilio-h3">Domicilios registrados</h3>
+                                <% addresses.forEach(address => { %>
+
+                                    <div class="actualizar__main__section-form-div-domicilio">
+                                        <p>País: <%= address.country %></p>
+                                        <p>Provincia: <%= address.province %></p>
+                                        <p>Localidad: <%= address.locality %></p>
+                                        <p>Calle: <%= address.streetName %></p>
+                                        <p>Número: <%= address.number %></p>
+                                        <p>Código postal: <%= address.postalCode %></p>
+
+                                        <a href="/users/editar/<%= user.id %>/address/<%= address.id %>">Editar</a>
+                                    </div>
+                                    <% }) %>
+                                    <% } %>
+                                            <a href="/users/editar/<%= user.id %>/registrarDomicilio" class="actualizar__main__section-form-domicilio-a">Agregar domicilio</a>
+                                      
+
+
+                                <div class="actualizar__main__section-form form input">
+                                    <label for="image" class="actualizar__main__section__form div img">Foto de
+                                        perfil</label><br>
+                                    <% if(user.profileImage){%>
+                                        <img src="/img/users/<%= user.profileImage %>" alt="profile image">
+                                        <%} %>
+
+                                            <input type="file" id="inputGroupFile02" name="image">
+                                            <p>
+                                                <%= locals.errores && errores.image ? errores.image.msg : null %>
+                                            </p>
+                                </div>
+
+                                <div class="actualizar__main__section-form-div-booton">
+                                    <button class="actualizar__main__section__form-button"
+                                        type="submit">Actualizar</button>
+                                </div>
+
+
+
+                    </form>
+
+                </section>
+            </main>
+
+            <%- include("../partials/footer.ejs") %>
+
+    </body>
+
+    </html>
