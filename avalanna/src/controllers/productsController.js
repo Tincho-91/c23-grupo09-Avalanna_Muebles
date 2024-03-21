@@ -12,7 +12,7 @@ const productsController = {
          db.Product.findByPk(id)
          .then((product) => {
             const calc = product.price - ((product.price * product.discount) / 100)
-            res.render("products/productDetail", { title: product.name, product, calc, user: req.session.user })
+            res.render("products/productDetail", { title: product.name, product, calc, usuario: req.session.user })
          })
          .catch((err) =>{
             console.log(err);
@@ -23,7 +23,7 @@ const productsController = {
     formulario: (req, res) => {
         db.Category.findAll()
         .then((categories)=>{
-            res.render("products/crear-formulario", { title: "formulario", categories:categories, user: req.session.user })
+            res.render("products/crear-formulario", { title: "formulario", categories:categories, usuario: req.session.user })
         })
         .catch(err=>console.log(err))
        
@@ -52,14 +52,14 @@ const productsController = {
         
     },
     cart: (req, res) => {
-        res.render("products/productCart", { title: "Carrito de compra", user: req.session.user });
+        res.render("products/productCart", { title: "Carrito de compra", usuario: req.session.user });
     },
     dashboard: (req, res) => {
         const propiedades = ["id", "image", "name", "price"];
         
         db.Product.findAll()
         .then((products)=>{
-            res.render("products/dashboard", { title: "Dashboard", products, propiedades, user: req.session.user })
+            res.render("products/dashboard", { title: "Dashboard", products, propiedades, usuario: req.session.user })
         })
         
     },
@@ -97,7 +97,7 @@ const productsController = {
     products:(req,res) =>{
         db.Product.findAll()
         .then((products) =>{
-            res.render("products/products", {title: "Todos los productos", products, user: req.session.user});
+            res.render("products/products", {title: "Todos los productos", products, usuario: req.session.user});
         } )
        
         .catch(err=>console.log(err))
@@ -117,7 +117,7 @@ const productsController = {
                 categories,
                 title: `Productos de la categoría `,
                 productsCategorized:products,
-                user: req.session.user,
+                usuario: req.session.user,
               });
             })
             .catch((err) => {
