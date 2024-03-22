@@ -18,7 +18,7 @@ const addressValidator = require("../validations/addressValidator");
 router.get('/ingresar', authValidate, login)
 router.post('/ingresar',loginValidator,processlogin)
 
-router.get('/registrarme', register)
+router.get('/registrarme',authValidate, register)
 router.post('/registrarme',registerValidator, createUser)
 
 router.get('/editar/:id',sessionValidate, edform)

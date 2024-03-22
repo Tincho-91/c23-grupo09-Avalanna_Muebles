@@ -7,7 +7,8 @@ const indexController = {
 
           )
           .then((categories) => {
-            res.render("index", {title:"Avalanna Muebles",categories:categories, user: req.session.user});
+            console.log("SESSION", req.session.user);
+            res.render("index", {title:"Avalanna Muebles",categories:categories, usuario: req.session.user});
             })
         
         
