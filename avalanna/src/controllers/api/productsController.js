@@ -9,7 +9,7 @@ module.exports = {
         try {
             const id = parseInt(req.params.id);
             if (!Number.isInteger(id)) {
-                throw new Error (`"${id}" no es un término válido, debe ingresar un número entero`)
+                throw new Error (`${req.params.id} no es un término válido, debe ingresar un número entero`)
             }
 
             const product = await db.Product.findByPk(id);

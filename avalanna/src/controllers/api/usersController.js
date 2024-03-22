@@ -11,7 +11,7 @@ module.exports = {
                 const errors = validationResult(req);
                 const id = parseInt(req.params.id);
                 if (!Number.isInteger(id)) {
-                    throw new Error (`"${id}" no es un término válido, debe ingresar un número entero`)
+                    throw new Error (`${req.params.id} no es un término válido, debe ingresar un número entero`)
                 }
 
                 if (errors.isEmpty()) {
@@ -40,11 +40,14 @@ module.exports = {
                         delete errorsMapped[key].path;
                     }
 
-                    throw new Error (errorsMapped)
+                    const errorsJson = JSON.stringify(errorsMapped)
+           
+                    throw new Error (errorsJson);
                 }
 
             } catch (error) {
-                return res.status(400).json(error.message);
+                
+                return res.status(400).send(error.message);
             }
         }
     }
