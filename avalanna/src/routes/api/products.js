@@ -1,7 +1,15 @@
 const express = require('express');
 const router = express.Router();
-const productsController = require("../../controllers/api/productsController")
+const {list, detail, update, store, destroy} = require("../../controllers/api/productsController")
 
-router.put("/formEdit/:id", productsController.update);
+router.get('/', list);
+
+router.get('/detail/:id', detail);
+
+router.put("/formEdit/:id", update);
+
+router.post('/create', store)
+
+router.delete('/delete/:id', destroy);
 
 module.exports = router;

@@ -15,7 +15,6 @@ module.exports = (sequelize, DataTypes) => {
         as:'users',
         through:"purchases",
         onDelete: 'cascade',
-        
       })
     }
   }

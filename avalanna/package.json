@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon ./src/bin/www"
+    "start": "nodemon ./src/bin/www",
+    "db": "sequelize db:drop & sequelize db:create & sequelize db:migrate & sequelize db:seed:all"
   },
   "dependencies": {
     "@formkit/tempo": "^0.0.13",
