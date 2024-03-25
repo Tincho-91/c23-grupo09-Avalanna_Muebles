@@ -177,3 +177,10 @@ Flavia: Terminando refactorización de registro y login de usuario.
 Martin: Finalizado.
 Luana: Terminando refactorización productos.
 Melany: Finalizado.
+
+* Sprint 7
+25/03/2024
+Flavia: Finalizando apis de create user y product.
+Martin: Trabajando en api de delete user
+Melany: Finalizó apis de update user y product, realizó validaciones de backend de create product y comenzó con validaciones del frontend.
+Luana: Ausente.
