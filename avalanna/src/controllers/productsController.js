@@ -3,6 +3,7 @@ const { op } =require("sequelize");
 const fs = require("fs");
 const path = require("path");
 const { Console } = require("console");
+const { validationResult } = require("express-validator");
 
 
 const productsController = {
@@ -30,15 +31,30 @@ const productsController = {
     },
 
     store:(req,res) =>{
-    	const producto = req.body;
+      const errors = validationResult(req);
 
-        producto.image = req.file.filename;
-
+      if (!errors.isEmpty()) {
+        console.log("req.body", req.body);
+        db.Category.findAll()
+        .then((categories)=>{
+            res.render("products/crear-formulario", { title: "formulario", categories:categories, usuario: req.session.user, old: req.body, errores : errors.mapped() })
+        })
+        .catch(err=>console.log(err))
+      }else{
+        const producto = req.body;
+        if (req.file) {
+          producto.image = req.file.filename;
+        }else{
+          producto.image = "default.jpg"
+        }
+          
         db.Product.create(producto)
         .then((product)=>{
             res.redirect(`/products`);
         })
         .catch(err=> console.log(err))
+      }
+
     },
 
 

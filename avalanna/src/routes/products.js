@@ -7,6 +7,9 @@ const sessionValidate = require("../middlewares/sessionValidate");
 
 const adminValidation = require("../middlewares/adminValidation");
 
+const createProductValidator = require("../validations/createProductsValidator");
+const { create } = require('domain');
+
 const storage = multer.diskStorage({
     destination: (req, file, cb) =>{
         cb(null,path.join(__dirname, "../../public/img") )
@@ -28,7 +31,7 @@ router.get('/detail/:id', productController.detail);
 router.get('/section/:category', productController.categories);
 
 router.get('/formCreate', adminValidation, productController.formulario)
-router.post('/formCreate',upload.single("image"), productController.store)
+router.post('/formCreate',upload.single("image"), createProductValidator, productController.store)
 
 router.get('/productCart', sessionValidate, productController.cart)
 
