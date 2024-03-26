@@ -184,3 +184,9 @@ Flavia: Finalizando apis de create user y product.
 Martin: Trabajando en api de delete user
 Melany: Finalizó apis de update user y product, realizó validaciones de backend de create product y comenzó con validaciones del frontend.
 Luana: Ausente.
+
+26/03/2024
+Flavia: Finalizando apis de create user y product.
+Martin: Repasando temas.
+Melany: Continúa trabajando en validaciones del frontend en create product
+Luana: Ya está al tanto de sus tareas, a su vez comenzará a crear la api para leer todos los usuarios.
