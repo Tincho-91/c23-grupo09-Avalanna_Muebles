@@ -69,25 +69,25 @@
           </div>
 
           <h3>Medidas</h3>
-          <div>
+          <div class="form_main_section-div-height">
             <label for="height">Alto</label>
-            <input type="text" name="height" class="form_mainsection_form-div-medidas" id="height" placeholder="Alto..." required value= "<%= locals.old && old.height ? old.height : null %>" >
+            <input type="text" name="height" id="height" placeholder="Alto..." required value= "<%= locals.old && old.height ? old.height : null %>" >
             <p class="erroresForm">
               <%= locals.errores && errores.height ? errores.height.msg : null %>
           </p>
         </div>
 
-          <div>
+          <div class="form_main_section-div-width">
             <label for="width">Ancho</label>
-            <input type="text" name="width" class="form_mainsection_form-div-medidas" id="width" placeholder="Ancho..." required value= "<%= locals.old && old.width ? old.width : null %>" >
+            <input type="text" name="width"  id="width" placeholder="Ancho..." required value= "<%= locals.old && old.width ? old.width : null %>" >
             <p class="erroresForm">
               <%= locals.errores && errores.width ? errores.width.msg : null %>
           </p>
         </div>
 
-        <div>
+        <div class="form_main_section-div-depth">
           <label for="depth">Profundidad</label>
-            <input type="text" name="depth" class="form_mainsection_form-div-medidas" id="depth" placeholder="Profundidad..." required value= "<%= locals.old && old.depth ? old.depth : null %>" >
+            <input type="text" name="depth"  id="depth" placeholder="Profundidad..." required value= "<%= locals.old && old.depth ? old.depth : null %>" >
             <p class="erroresForm">
               <%= locals.errores && errores.depth ? errores.depth.msg : null %>
           </p>
