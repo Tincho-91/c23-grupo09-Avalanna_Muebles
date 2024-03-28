@@ -11,7 +11,7 @@ window.addEventListener("load", function () {
         errorP.classList.add(`error-${element.name}`)
         errorP.classList.add("erroresForm")
         const labelContent = document.querySelector(`.form_main_section-div-${element.name} label`).textContent
-        errorP.innerText=`${labelContent.toUpperCase()} no puede estar vacío`
+        errorP.innerText=`"${labelContent.toUpperCase()}" no puede estar vacío`
         divs.forEach(div=>{
             const oldErrorP= document.querySelector(`.error-${element.name}`)
             const rightDiv = document.querySelector(`.form_main_section-div-${element.name}`)
@@ -46,8 +46,7 @@ window.addEventListener("load", function () {
                 console.log("ACA",min(element.value, 5));
                 addErrorP(element)
                 const labelContent = document.querySelector(`.form_main_section-div-${element.name} label`).textContent
-                document.querySelector(`.error-${element.name}`).innerText = `${labelContent.toUpperCase()} debe tener un mínimo de 5 caracteres`
-            console.log("hola??",document.querySelector(`.error-${element.name}`));
+                document.querySelector(`.error-${element.name}`).innerText = `"${labelContent.toUpperCase()}" debe tener un mínimo de 5 caracteres`
             }else{
                 deleteError(element)
             }
@@ -57,7 +56,7 @@ window.addEventListener("load", function () {
             if (!min(element.value, 20)) {
                 addErrorP(element)
                 const labelContent = document.querySelector(`.form_main_section-div-${element.name} label`).textContent
-                document.querySelector(`.error-${element.name}`).innerText = `${labelContent.toUpperCase()} debe tener un mínimo de 20 caracteres`
+                document.querySelector(`.error-${element.name}`).innerText = `"${labelContent.toUpperCase()}" debe tener un mínimo de 20 caracteres`
             }else if (element.value == "") {
                 addErrorP(element)
             }else{
@@ -69,7 +68,7 @@ window.addEventListener("load", function () {
             if (!min(element.value, 10)) {
                 addErrorP(element)
                 const labelContent = document.querySelector(`.form_main_section-div-${element.name} label`).textContent
-                document.querySelector(`.error-${element.name}`).innerText = `${labelContent.toUpperCase()} debe tener un mínimo de 10 caracteres`
+                document.querySelector(`.error-${element.name}`).innerText = `"${labelContent.toUpperCase()}" debe tener un mínimo de 10 caracteres`
             }else if (element.value == "") {
                 addErrorP(element)
             }else{
@@ -78,9 +77,7 @@ window.addEventListener("load", function () {
         }
 
         if (element.name == "image") {
-            console.log("IMAGEN",element.value);
             const extPermitted = ["png", "jpg", "jpeg"]
-            console.log(element.value.includes("png"));
             if (element.value == ""){
                 addErrorP(element)
             } else if ((element.value.includes("png") || element.value.includes("jpg" || element.value.includes("jpeg"))) == false ){
@@ -93,14 +90,23 @@ window.addEventListener("load", function () {
 
         if (element.name == "discount" || element.name == "price") {
             if (!Number.isInteger(parseInt(element.value))) {
-                console.log("hola: ",!Number.isInteger(+element.value) );
                 addErrorP(element)
                 const labelContent = document.querySelector(`.form_main_section-div-${element.name} label`).textContent
-                    document.querySelector(`.error-${element.name}`).innerText = `${labelContent.toUpperCase()} debe ser un número`
+                document.querySelector(`.error-${element.name}`).innerText = `"${labelContent.toUpperCase()}" debe ser un número`
             }else{
                 deleteError(element)
             }
            
+        }
+
+        if (element.name == "height" || element.name =="width" || element.name == "depth") {
+            if (!min(element.value, 3)) {
+                addErrorP(element)
+                const labelContent = document.querySelector(`.form_main_section-div-${element.name} label`).textContent
+                document.querySelector(`.error-${element.name}`).innerText = `"${labelContent.toUpperCase()}" debe tener un mínimo de 3 caracteres`
+            }else{
+                deleteError(element)
+            }
         }
 
     }
