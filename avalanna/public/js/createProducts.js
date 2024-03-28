@@ -4,6 +4,7 @@ window.addEventListener("load", function () {
     const form = document.querySelector("form")
     const pErrors = document.querySelectorAll(".erroresForm");
     const divs = document.querySelectorAll("div")
+    const select = document.querySelector("select")
     
 
     const addErrorP = function(element){
@@ -33,7 +34,7 @@ window.addEventListener("load", function () {
         return value.length >= num
     }
 
-    const validation = function(element, e){
+    const validation = function(element){
         if (element.value == "") {
             console.log("element", element.value);
             addErrorP(element)
@@ -113,9 +114,13 @@ window.addEventListener("load", function () {
 
     inputs.forEach(input => {
         input.addEventListener("blur", function(e){
-            validation(this,e)
+            validation(this)
         })
     });
-
+    
+    select.addEventListener("blur", function(e){
+        validation(select)
+    })
+   
 
 })

@@ -57,7 +57,8 @@
 }
 
 .edform_main_section h1 {
-    font-size: 30px;
+    font-size: 22px;
+    text-align: center;
 }
 
 .edform_mainsection_form {
@@ -66,6 +67,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+.edform_mainsection_form h3{
+    font-size: 20px;
+    margin-top: 5%;
+    margin-right: 43%;
 }
 
 .edform_mainsection_form div {
@@ -90,7 +96,6 @@
     background-color: var(--color-beige);
     padding: 3%;
     width: 70%;
-
 }
 
 
@@ -138,6 +143,10 @@
 .edform_mainsection_form--p--cuenta a {
     font-weight: 700;
 }
+.erroresForm{
+    font-size: 10px;
+    width: 70%;
+}
 
 @media (min-width:768px) {
     .edform__main {
@@ -163,7 +172,11 @@
         margin-top: 5%;
         padding-bottom: 1%;
     }
-
+    .edform_mainsection_form h3{
+        font-size: 32px;
+        margin-top: 2%;
+        margin-right: 51%;
+    }
 
     .edform_mainsection_form div label {
         font-size: 24px;
@@ -177,8 +190,6 @@
         font-size: 32px;
         margin-top: 8%;
 
-
-
     }
 
     .edform_mainsection_form--p--cuenta {
@@ -188,6 +199,10 @@
     .botones_ed_borrar button {
         padding: 10px;
         font-size: 25px;
+    }
+    .erroresForm{
+        font-size: 15px;
+        width: 70%;
     }
 }
 
@@ -208,6 +223,12 @@
 
     .edform_main_section h1 {
         font-size: 60px;
+    }
+
+    .edform_mainsection_form h3{
+        font-size: 42px;
+        margin-top: 2%;
+        margin-right: 52%;
     }
 
     .edform_mainsection_form {
@@ -258,5 +279,9 @@
     .botones_ed_borrar button {
         padding: 14px;
         font-size: 30px;
+    }
+    .erroresForm{
+        font-size: 20px;
+        width: 70%;
     }
 }
