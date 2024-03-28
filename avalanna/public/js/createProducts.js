@@ -4,7 +4,7 @@ window.addEventListener("load", function () {
     const form = document.querySelector("form")
     const pErrors = document.querySelectorAll(".erroresForm");
     const divs = document.querySelectorAll("div")
-    
+    const select = document.querySelector("select")
 
     const addErrorP = function(element){
         const errorP = document.createElement("p");
@@ -116,6 +116,8 @@ window.addEventListener("load", function () {
             validation(this,e)
         })
     });
-
+    select.addEventListener("blur", function(e){
+        validation(select)
+    })
 
 })
