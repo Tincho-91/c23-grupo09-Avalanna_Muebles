@@ -68,7 +68,16 @@ font-weight: 700;
     padding: 8%;
     transition: all 1s;
     font-size: 25px;
+
 }
+
+.eliminar i{
+    padding: 80%;
+    transition: all 1s;
+    font-size: 25px;
+    margin-left:-30% ;
+}
+
 
 .dashboard__main__table__tbody__buttons a{
     text-decoration: none;
@@ -81,13 +90,10 @@ font-weight: 700;
 
 .dashboard__main__table__tbody__buttons form{
     display: inline;
-    padding-left: 8%;
-   
 
 }
 
 .eliminar{
     border: none;
     background-color: var(--color-gris-claro);
-    
 }
