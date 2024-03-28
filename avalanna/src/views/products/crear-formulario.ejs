@@ -11,6 +11,9 @@
       <div class="form_main_section-div-image">
         <label for="image">Imagen</label>
         <input type="file" name="image" id="image" accept="png jpg">
+        <p class="erroresForm">
+          <%= locals.errores && errores.image ? errores.image.msg : null %>
+      </p>
       </div>
         <div class="form_main_section-div-name">
             <label for="name">Nombre</label>

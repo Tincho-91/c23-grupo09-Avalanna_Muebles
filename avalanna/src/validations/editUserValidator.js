@@ -15,5 +15,11 @@ module.exports = [
 
     body("birthday").notEmpty().withMessage("El campo no puede estar vacío").bail(),
    
-   
+    body('image').custom((value, { req }) => {
+        if (req.errorValidationImage) {
+            return false;
+        };
+        return true;
+    }).withMessage("Debe ingresar un formato de imagen válido")
+
 ];
