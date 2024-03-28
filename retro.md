@@ -100,3 +100,24 @@ EMPEZAR A HACER: organizar las tareas en función de su importancia, para darle 
 Tomar más en serio al rol del líder del sprint.
 
 DEJAR DE HACER: Darle poca importancia a los errores cometidos en los otros sprints, los cuales ya fueron mencionados en las retro anteriores. 
+
+
+## Retrospectiva, SPRINT 6
+
+![starfish retrospective](./avalanna/public/img/starfishRetrospective6.png)
+
+Sexta retrospectiva referida al sprint 6:
+
+SEGUIR HACIENDO:Establecer fechas límite para ciertas tareas para una gestión más efectiva del tiempo.
+    Aunque una tarea esté bloqueada por otra, buscar activamente formas de avanzar en el trabajo y no desaprovechar el tiempo.
+
+HACER MÁS: Seguir optimizando el tiempo de las reuniones para aumentar la eficiencia.
+    Comunicar de manera proactiva cualquier obstáculo que surja en las tareas.
+    Priorizar las tareas más críticas o aquellas que estén bloqueando el progreso de otras actividades
+
+HACER MENOS: Reducir la  posibilidad de retrasos en el sprint al fomentar  un mayor compromiso por parte del equipo,
+priorizando la organizacion pactada al inicio del sprint y respetando el tiempo del resto del equipo. 
+
+EMPEZAR A HACER: Implementar medidas para garantizar que los bloqueos se resuelvan en un plazo máximo de dos días, con el fin de evitar retrasos en el trabajo del equipo y fomentar una mayor productividad.
+
+DEJAR DE HACER: Mergear múltiples ramas el día antes de entregar el sprint con el fin de disponer de más tiempo para verificar que todo esté funcionando correctamente .
