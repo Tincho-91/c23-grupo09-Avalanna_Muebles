@@ -108,12 +108,11 @@ DEJAR DE HACER: Darle poca importancia a los errores cometidos en los otros spri
 
 Sexta retrospectiva referida al sprint 6:
 
-SEGUIR HACIENDO:Establecer fechas límite para ciertas tareas para una gestión más efectiva del tiempo.
-    Aunque una tarea esté bloqueada por otra, buscar activamente formas de avanzar en el trabajo y no desaprovechar el tiempo.
+SEGUIR HACIENDO:Establecer fechas límite para ciertas tareas para una gestión más efectiva del tiempo.Tambien intentar que aunque una tarea esté bloqueada por otra se busque la forma de avanzar en el trabajo y no desaprovechar el tiempo.
 
 HACER MÁS: Seguir optimizando el tiempo de las reuniones para aumentar la eficiencia.
-    Comunicar de manera proactiva cualquier obstáculo que surja en las tareas.
-    Priorizar las tareas más críticas o aquellas que estén bloqueando el progreso de otras actividades
+    *Comunicar de manera proactiva cualquier obstáculo que surja en las tareas.
+    *Priorizar las tareas más críticas o aquellas que estén bloqueando el progreso de otras actividades
 
 HACER MENOS: Reducir la  posibilidad de retrasos en el sprint al fomentar  un mayor compromiso por parte del equipo,
 priorizando la organizacion pactada al inicio del sprint y respetando el tiempo del resto del equipo. 
