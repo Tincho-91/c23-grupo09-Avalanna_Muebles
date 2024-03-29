@@ -106,7 +106,7 @@ DEJAR DE HACER: Darle poca importancia a los errores cometidos en los otros spri
 
 ![starfish retrospective](./avalanna/public/img/starfishRetrospective6.png)
 
-Sexta retrospectiva referida al sprint 6:
+Sexta retrospectiva referida al sprint 6: 
 
 SEGUIR HACIENDO:Establecer fechas límite para ciertas tareas para una gestión más efectiva del tiempo.Tambien intentar que aunque una tarea esté bloqueada por otra se busque la forma de avanzar en el trabajo y no desaprovechar el tiempo.
 
