@@ -51,6 +51,9 @@ margin-bottom: 20px;
 
 .actualizar__main__section__form div label{
     font-size: 18px;
+    text-align: left;
+    width: 100%;
+    margin-left: 3%;
 }
 
 .actualizar__main__section-form-div-booton{
@@ -121,6 +124,12 @@ width: 35%;
     .actualizar__main__section-form{
         width: 100%;
     }
+    
+.actualizar__main__section__form div label{
+    font-size: 22px;
+    width: 70%;
+    margin-left: 3%;
+}
 
     .actualizar__main__section__form-button{
     font-size: 45px;
@@ -129,12 +138,13 @@ width: 35%;
     width: 100%;
   
     }
+    .actualizar__main__section-form div{
+
+    }
     
     .actualizar__main__section-form form input{
         font-size: 20px;
         width: 500px;
-        
-       
     }
     .actualizar__main__section__form-button{
         margin-top: 15%;
@@ -171,6 +181,10 @@ width: 35%;
    
     .actualizar__main__section-form{
         width: 100%;
+    }
+    .actualizar__main__section__form div label{
+        font-size: 25px;
+        width: 53%;
     }
     
     .actualizar__main__section-form form input{
