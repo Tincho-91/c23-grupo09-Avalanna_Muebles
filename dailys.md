@@ -190,3 +190,16 @@ Flavia: Finalizando apis de create user y product.
 Martin: Repasando temas.
 Melany: Continúa trabajando en validaciones del frontend en create product
 Luana: Ya está al tanto de sus tareas, a su vez comenzará a crear la api para leer todos los usuarios.
+
+27/03/2024
+Realizamos la retrospectiva del Sprint 6
+Flavia: Corrección de apis de create user y product.
+Martin: Repasando temas.
+Melany: Estuvo sin luz la mayor parte del día, continúa trabajando en validaciones.
+Luana: Ausente.
+
+28/03/2024
+Flavia: Comenzó a realizar las validaciones del frontend del formulario de update user.
+Martin: Comenzó a realizar las validaciones del frontend del formulario de registro.
+Melany: Finalizó las validaciones del frontend y backend del formulario de creación y edición de productos, realizó correcciones en controladores, vistas y rutas.
+Luana: Ausente. 

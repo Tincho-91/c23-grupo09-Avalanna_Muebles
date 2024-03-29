@@ -117,10 +117,8 @@ window.addEventListener("load", function () {
             validation(this)
         })
     });
-    
     select.addEventListener("blur", function(e){
         validation(select)
     })
-   
 
 })

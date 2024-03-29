@@ -58,9 +58,10 @@
           </p>
           </div>
 
-          <div class="form_main_section-div-category">
+          <div class="form_main_section-div-categoryId">
             <label for="category">Categoria</label>
             <select name="categoryId" id="category" required>
+              <option value="" disabled selected> Seleccione una categoría </option>
             <% categories.forEach(category => { %>
                <option value="<%= category.id %>" <%= locals.old && old.categoryId ? "selected": null %> ><%= category.name %></option>
                <% }) %>
