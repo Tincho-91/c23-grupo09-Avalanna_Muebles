@@ -39,6 +39,7 @@
     width: 100%;
   margin-top:8%;
   margin-bottom: 40px;
+  text-align: center;
 }
 
 .actualizar__main__section__actualizar{
@@ -60,7 +61,8 @@ margin-bottom: 20px;
 }
 
 .actualizar__main__section-form-div-booton{
-width: 35%;
+    width: 35%;
+    text-align: center;
 }
 
 .actualizar__main__section-form-div-domicilio{
