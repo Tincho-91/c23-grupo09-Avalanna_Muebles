@@ -13,7 +13,7 @@
                         class="actualizar__main__section__form" >
 
         
-                                <div class="actualizar__main__section-form form input">
+                                <div class="actualizar__main__section-form-div form_main_section-div-country">
                                     <label for="country">País</label>
                                     <input type="text" name="country" id="country"
                                         value="<%= locals.addresses ? addresses.country : locals.old && old.country ? old.country : null %>">
@@ -22,7 +22,7 @@
                                     </p>
                                 </div>
 
-                                <div class="actualizar__main__section-form form input">
+                                <div class="actualizar__main__section-form-div form_main_section-div-province">
                                     <label for="province">Provincia</label>
                                     <input type="text" name="province" id="province"
                                         value="<%= locals.addresses ? addresses.province : locals.old && old.province ? old.province : null %>">
@@ -31,7 +31,7 @@
                                     </p>
                                 </div>
 
-                                <div class="actualizar__main__section-form form input">
+                                <div class="actualizar__main__section-form-div form_main_section-div-locality">
                                     <label for="locality">Localidad</label>
                                     <input type="text" name="locality" id="locality"
                                         value="<%= locals.addresses ? addresses.locality : locals.old && old.locality ? old.locality : null %>">
@@ -41,7 +41,7 @@
                                 </div>
 
 
-                                <div class="actualizar__main__section-form form input">
+                                <div class="actualizar__main__section-form-div form_main_section-div-streetName">
                                     <label for="streetName">Nombre de la calle</label>
                                     <input type="text" name="streetName" id="streetName"
                                         value="<%= locals.addresses ? addresses.streetName : locals.old && old.streetName ? old.streetName : null %>">
@@ -50,7 +50,7 @@
                                     </p>
                                 </div>
 
-                                <div class="actualizar__main__section-form form input">
+                                <div class="actualizar__main__section-form-div form_main_section-div-number">
                                     <label for="number">Número</label>
                                     <input type="number" name="number" id="number"
                                         value="<%= locals.addresses ? addresses.number : locals.old && old.number ? old.number : null %>">
@@ -59,7 +59,7 @@
                                     </p>
                                 </div>
 
-                                <div class="actualizar__main__section-form form input">
+                                <div class="actualizar__main__section-form-div form_main_section-div-postalCode">
                                     <label for="postalCode">Código postal</label>
                                     <input type="number" name="postalCode" id="postalCode"
                                         value="<%= locals.addresses ? addresses.postalCode : locals.old && old.postalCode ? old.postalCode : null %>">
@@ -89,6 +89,7 @@
 
             <%- include("../partials/footer.ejs") %>
 
+            <script src="/js/address.js"></script>
     </body>
 
     </html>

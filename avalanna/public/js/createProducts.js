@@ -5,6 +5,7 @@ window.addEventListener("load", function () {
     const pErrors = document.querySelectorAll(".erroresForm");
     const divs = document.querySelectorAll("div")
     const select = document.querySelector("select")
+    
 
     const addErrorP = function(element){
         const errorP = document.createElement("p");
@@ -33,7 +34,7 @@ window.addEventListener("load", function () {
         return value.length >= num
     }
 
-    const validation = function(element, e){
+    const validation = function(element){
         if (element.value == "") {
             console.log("element", element.value);
             addErrorP(element)
@@ -42,7 +43,9 @@ window.addEventListener("load", function () {
         }
         
         if (element.name == "name") {
-            if (!min(element.value, 5)) {
+            if (element.value == ""){
+                addErrorP(element)
+            } else if (!min(element.value, 5)) {
                 console.log("ACA",min(element.value, 5));
                 addErrorP(element)
                 const labelContent = document.querySelector(`.form_main_section-div-${element.name} label`).textContent
@@ -53,24 +56,24 @@ window.addEventListener("load", function () {
         }
 
         if (element.name == "description") {
-            if (!min(element.value, 20)) {
+            if (element.value == ""){
+                addErrorP(element)
+            } else if (!min(element.value, 20)) {
                 addErrorP(element)
                 const labelContent = document.querySelector(`.form_main_section-div-${element.name} label`).textContent
                 document.querySelector(`.error-${element.name}`).innerText = `"${labelContent.toUpperCase()}" debe tener un mínimo de 20 caracteres`
-            }else if (element.value == "") {
-                addErrorP(element)
-            }else{
+            } else {
                 deleteError(element)
             }
         }
 
         if (element.name == "extraDescription") {
-            if (!min(element.value, 10)) {
+            if (element.value == ""){
+                addErrorP(element)
+            } else if (!min(element.value, 10)) {
                 addErrorP(element)
                 const labelContent = document.querySelector(`.form_main_section-div-${element.name} label`).textContent
                 document.querySelector(`.error-${element.name}`).innerText = `"${labelContent.toUpperCase()}" debe tener un mínimo de 10 caracteres`
-            }else if (element.value == "") {
-                addErrorP(element)
             }else{
                 deleteError(element)
             }
@@ -89,7 +92,9 @@ window.addEventListener("load", function () {
         }
 
         if (element.name == "discount" || element.name == "price") {
-            if (!Number.isInteger(parseInt(element.value))) {
+            if (element.value == ""){
+                addErrorP(element)
+            } else if (!Number.isInteger(parseInt(element.value))) {
                 addErrorP(element)
                 const labelContent = document.querySelector(`.form_main_section-div-${element.name} label`).textContent
                 document.querySelector(`.error-${element.name}`).innerText = `"${labelContent.toUpperCase()}" debe ser un número`
@@ -100,7 +105,9 @@ window.addEventListener("load", function () {
         }
 
         if (element.name == "height" || element.name =="width" || element.name == "depth") {
-            if (!min(element.value, 3)) {
+            if (element.value == ""){
+                addErrorP(element)
+            } else if (!min(element.value, 3)) {
                 addErrorP(element)
                 const labelContent = document.querySelector(`.form_main_section-div-${element.name} label`).textContent
                 document.querySelector(`.error-${element.name}`).innerText = `"${labelContent.toUpperCase()}" debe tener un mínimo de 3 caracteres`
@@ -113,7 +120,7 @@ window.addEventListener("load", function () {
 
     inputs.forEach(input => {
         input.addEventListener("blur", function(e){
-            validation(this,e)
+            validation(this)
         })
     });
     select.addEventListener("blur", function(e){

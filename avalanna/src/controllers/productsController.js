@@ -87,26 +87,28 @@ const productsController = {
         res.redirect("/products/dashboard");
     },
 
-    destroy:(req,res)=>{
+    destroy: async (req,res)=>{
         const {id}=req.params;
-       db.Product.destroy({
+
+        const productFound = await db.Product.findOne({
+          where:{
+              id
+          }
+         }).catch(err=>console.log(err))
+
+         fs.unlink(path.join(__dirname,`../../public/img/${productFound.image}`),(err)=>{
+            
+          if(err) throw err;
+         
+     })
+
+     await  db.Product.destroy({
         where:{
             id,
         }
-       })
-       db.Product.findOne({
-        where:{
-            id
-        }
-       }).then((resp)=>{
-        fs.unlink(path.join(__dirname,`../../public/img/${resp.dataValues.image}`),(err)=>{
-            
-            if(err) throw err;
-           
-            res.redirect(`/`);
-       })
-    }
-       ).catch(err=>console.log(err))
+       }).catch(err=>console.log(err))
+
+       res.redirect(`/products/dashboard`);
        
     },
     products:(req,res) =>{
