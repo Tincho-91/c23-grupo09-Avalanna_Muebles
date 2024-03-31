@@ -4,7 +4,9 @@ const { op } =require("sequelize");
 const bcrypt = require('bcryptjs');
 const { validationResult } = require('express-validator');
 const { v4: uuidv4 } = require('uuid');
-const {parse} = require("@formkit/tempo")
+const fs = require("fs");
+const path = require("path");
+
 const usersController = {
     login: (req,res)=>{
         res.render("users/login", {title:"Ingresar"});
@@ -199,29 +201,30 @@ if (!errors.isEmpty()) {
         
     },
 
-      destroy:(req,res)=>{
+      destroy: async(req,res)=>{
         const {id} = req.params;
-        db.User.destroy({
-          where:{
-            id,
-          }
-        }).then((resp)=>{
-          res.redirect("/");
-        }).catch(err=>console.log(err))
-        db.Product.findOne({
+
+        const userFound = await db.User.findOne({
           where:{
               id
           }
-         }).then((resp)=>{
-          fs.unlink(path.join(__dirname,`../../public/img/users/${resp.dataValues.image}`),(err)=>{
-              console.log(`archivo antes del err ${resp.dataValues.image}`);
+         }).catch(err=>console.log(err))
+ 
+          if (userFound.profileImage) {
+            fs.unlink(path.join(__dirname,`../../public/img/users/${userFound.profileImage}`),(err)=>{
               if(err) throw err;
-              console.log(`archivo ${resp.dataValues.image}`);
-              res.redirect(`/`);
+              console.log(`archivo ${userFound.profileImage}`);
          })
-        }
-        ).catch(err=>console.log(err))
-        
+          }
+         
+
+      await  db.User.destroy({
+          where:{
+            id,
+          }
+        }).catch(err=>console.log(err))
+
+        res.redirect(`/`);
       },
 
       address:(req,res)=>{
