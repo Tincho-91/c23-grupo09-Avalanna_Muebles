@@ -5,4 +5,6 @@ const editUserValidator = require("../../validations/editUserValidator");
 
 router.put("/editar/:id",editUserValidator, usersController.update);
 
+router.get("/all", usersController.listUsers);
+
 module.exports = router;

@@ -1,11 +1,12 @@
 
-window.addEventListener("load", function () {
+window.addEventListener("load", async function () {
 
     const inputs = document.querySelectorAll("input")
-    const form = document.querySelector("form")
-    const pErrors = document.querySelectorAll(".erroresForm");
     const divs = document.querySelectorAll("div")
-    const select = document.querySelector("select")
+
+    const users = await fetch("http://localhost:3000/api/users/all").then(resp=>{
+        return resp.json()
+    })
 
     const addErrorP = function(element){
         const errorP = document.querySelector(`.login_main_section-div-${element.name} p`)
@@ -32,7 +33,18 @@ window.addEventListener("load", function () {
         return value.length >= num
     }
 
-    const validation = function(element, e){
+    const checkEmail = function(element, users){
+        let emailUser = ""
+        users.forEach(user => {
+            if (element.value == user.email) {
+                emailUser = user.email
+            }
+        });
+
+        return emailUser.length > 1
+    }
+
+    const validation = function(element){
         if (element.value == "") {
             console.log("element", element.value);
             addErrorP(element)
@@ -49,9 +61,10 @@ window.addEventListener("load", function () {
                 if (!emailRegex.test(element.value)) {
                     addErrorP(element);
                     document.querySelector(`.error-${element.name}`).innerText = "El formato de correo electrónico no es válido";
-                } else {
-                  
-                    
+                } else if(!checkEmail(element, users)){
+                    addErrorP(element);
+                    document.querySelector(`.error-${element.name}`).innerText = "Este correo electrónico no se encuentra registrado";
+                }else { 
                  deleteError(element);
                 }
             }
@@ -74,9 +87,8 @@ window.addEventListener("load", function () {
     }
 
     inputs.forEach(input => {
-        console.log("INPUTTTTT",input)
-        input.addEventListener("blur", function(e){
-            validation(this,e)
+        input.addEventListener("blur", function(){
+            validation(this)
         })
     });
 

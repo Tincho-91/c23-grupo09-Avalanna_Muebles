@@ -1,4 +1,20 @@
-window.addEventListener("load", function () {
+window.addEventListener("load", async function () {
+
+    const users = await fetch("http://localhost:3000/api/users/all").then(resp=>{
+        return resp.json()
+    })
+    console.log("users", users);
+    const checkEmail = function(element, users){
+        let emailUser = ""
+        users.forEach(user => {
+            if (element.value == user.email) {
+                emailUser = user.email
+            }
+        });
+
+        return emailUser.length > 1
+    }
+   
 
     const inputs = document.querySelectorAll("input")
     const divs = document.querySelectorAll("div")
@@ -23,14 +39,13 @@ window.addEventListener("load", function () {
         element.style.backgroundColor= "var(--color-beige)"
                 element.style.border = "1px solid black"
     }
-    
+
     const min = function (value, num){
         return value.length >= num
     }
 
     const validation = function(element){
         if (element.value == "") {
-            console.log("element", element.value);
             addErrorP(element)
         }else{
             deleteError(element)
@@ -57,7 +72,10 @@ window.addEventListener("load", function () {
                 if (!emailRegex.test(element.value)) {
                     addErrorP(element);
                     document.querySelector(`.error-${element.name}`).innerText = "El formato de correo electrónico no es válido";
-                } else { 
+                } else if(checkEmail(element, users)){
+                    addErrorP(element);
+                    document.querySelector(`.error-${element.name}`).innerText = "Este correo electrónico ya se encuentra registrado";
+                }else { 
                  deleteError(element);
                 }
             }
@@ -107,7 +125,7 @@ window.addEventListener("load", function () {
     }
 
     inputs.forEach(input => {
-        input.addEventListener("blur", function(e){
+        input.addEventListener("blur", function(){
             validation(this)
         })
     });
