@@ -15,7 +15,7 @@
   <section class="register__main__section">
     <h1>Crear Cuenta</h1>
     <form action="/users/registrarme" method="post" class="register__main__section__form">
-        <div>
+        <div class="esEste">
             <label for="NameAndSurname">Nombre y Apellido*</label><br>
             <input type="text" name="NameAndSurname" id="name" value= "<%= locals.old && old.NameAndSurname ? old.NameAndSurname : null %>">
             <p class="register__main__section__form__p"><%= locals.errores && errores.NameAndSurname ? errores.NameAndSurname.msg : null%> </p>
@@ -67,6 +67,6 @@
   
    </main>
    <%- include("../partials/footer.ejs") %>
-
+   <script src="/js/registerUser.js"></script>
 </body>
 </html>
