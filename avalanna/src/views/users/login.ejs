@@ -15,11 +15,14 @@
 
         
             <form action="/users/ingresar" method="post" class="login__main__section__form">
-                
+                <div class="form_main_section-div-email">
                 <input type="email" name="email" id="email" value= "<%= locals.old && old.email ? old.email : null %>" placeholder="Email">
                 <p class="register__main__section__form__p" ><%= locals.errors && errors.email ? errors.email.msg : null%> </p>
+                </div>
+                <div class="form_main_section-div-password1">
                 <input type="password" name="password1" id="contraseña" placeholder="Contraseña">
                 <p class="register__main__section__form__p"><%= locals.errors && errors.password1 ? errors.password1.msg : null%></p>
+                </div>
                 <button type="submit" class="login__main__section__form-button">Entrar</button>
 
                 <div>
@@ -36,6 +39,6 @@
     </main> 
     
     <%- include("../partials/footer.ejs") %>
-
+<script src="/js/login.js"></script>
 </body>
 </html>
