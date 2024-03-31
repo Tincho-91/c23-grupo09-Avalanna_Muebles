@@ -3,7 +3,8 @@ const {body} = require('express-validator');
 const db = require("../database/models")
 
 module.exports = [
-    body('image').custom((value, { req }) => {
+    body('image').notEmpty().withMessage('El campo no puede estar vacío').bail()
+    .custom((value, { req }) => {
         if (req.errorValidationImage) {
             return false;
         };

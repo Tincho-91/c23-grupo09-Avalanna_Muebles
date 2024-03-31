@@ -8,14 +8,23 @@ module.exports = [
     
     body('phoneNumber').notEmpty().withMessage('El campo no puede estar vacío').bail()
     .isInt().withMessage("El valor ingresado debe ser un número").bail()
-    .isLength({min:8,max:12}).withMessage('El valor ingresado debe tener al menos 8 caracteres y maximo 12').bail(),
+    .isLength({min:8,max:12}).withMessage('El valor ingresado debe tener al menos 8 caracteres y maximo 12').bail()
+    .custom(async(value) => { 
+        console.log("value:",value);
+        let user ;
+        await db.User.findAll({where:{phoneNumber:value}}).then(resp =>{
+            if (resp[0]){ user = resp.User.dataValues}else{ user = null} 
+           console.log(resp[0])
+        })
+        return user ? false : true
+    }).withMessage("El telefono ya existe, utilice otro número"),
     body('email').notEmpty().withMessage('El campo no puede estar vacío').bail()
     .isEmail().withMessage("Debe ser un correo con formato válido").bail()
     .custom(async(value) => { 
         console.log("value:",value);
-        let user = ""
+        let user ;
         await db.User.findAll({where:{email:value}}).then(resp =>{
-            if (resp[0]){let user = resp.dataValues}else{ let user = null} 
+            if (resp[0]){ user = resp.User.dataValues}else{ user = null} 
            console.log(resp[0])
         })
         return user ? false : true
