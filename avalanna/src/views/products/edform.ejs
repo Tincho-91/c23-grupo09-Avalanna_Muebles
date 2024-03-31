@@ -7,17 +7,17 @@
     <main class="main_formEdit">
       </nav>
       <section class="edform_main_section">
-        <h1>Editar Producto<i><%= product.name%></i></h1>
+        <h1>Editar Producto "<%= product.name%>" </h1>
         <form action="/products/formEdit/<%= product.id %>?_method=PUT" method="post"enctype="multipart/form-data" class="edform_mainsection_form">
           
-          <div>
+          <div class="form_main_section-div-image">
             <label for="tel">Imagen</label>
             <input type="file" name="image" id="image" accept="*image/*" >
             <p class="erroresForm">
               <%= locals.errores && errores.image ? errores.image.msg : null %>
           </p>
           </div>
-          <div>
+          <div class="form_main_section-div-name">
             <label for="name">Nombre</label>
             <input type="text" name="name" id="name" value="<%= product.name %>" required>
             <p class="erroresForm">
@@ -25,7 +25,7 @@
           </p>
           </div>
 
-          <div>
+          <div class="form_main_section-div-price">
             <label for="price">Precio</label>
             <input type="number" name="price" id="price" value="<%= product.price %>" required>
             <p class="erroresForm">
@@ -33,14 +33,14 @@
           </p>
           </div>
 
-          <div>
+          <div class="form_main_section-div-discount">
             <label for="discount">Descuento</label>
             <input type="text" name="discount" id="discount" value="<%= product.discount %>" required>
             <p class="erroresForm">
               <%= locals.errores && errores.discount ? errores.discount.msg : null %>
           </p>
           </div>
-          <div>
+          <div class="form_main_section-div-description">
             <label for="description">Descripción</label>
             <input type="text" name="description" id="description" value="<%= product.description %>" required>
             <p class="erroresForm">
@@ -48,18 +48,19 @@
           </p>
           </div>
 
-          <div>
+          <div class="form_main_section-div-extraDescription">
             <label for="extraDescription">Descripción Adicional</label>
             <input type="text" name="extraDescription" id="extraDescription" value="<%= product.extraDescription %>" required>
             <p class="erroresForm">
               <%= locals.errores && errores.extraDescription ? errores.extraDescription.msg : null %>
           </p>
           </div>
-          <div>
+          <div class="form_main_section-div-categoryId">
 
             <label for="category">Categoria</label>
 
             <select class="categoria-edith"   type="category" name="categoryId" id="category" required>
+              <option value="" disabled selected> Seleccione una categoría </option>
 
               <option value="1" <%= product.categoryId == "living" ? "selected" : null;%>>Living</option>
 
@@ -117,6 +118,7 @@
       </main>
       <%- include("../partials/footer.ejs") %>
 
+      <script src="/js/createProducts.js"></script>
   </body>
 
   </html>

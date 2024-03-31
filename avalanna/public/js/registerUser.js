@@ -1,12 +1,8 @@
 window.addEventListener("load", function () {
 
     const inputs = document.querySelectorAll("input")
-    const form = document.querySelector("form")
-    const pErrors = document.querySelectorAll(".erroresForm");
     const divs = document.querySelectorAll("div")
-    const select = document.querySelector("select")
     
-
     const addErrorP = function(element){
         const errorP = document.querySelector(`.form_main_section-div-${element.name} p`)
         errorP.classList.add(`error-${element.name}`)
@@ -27,7 +23,7 @@ window.addEventListener("load", function () {
         element.style.backgroundColor= "var(--color-beige)"
                 element.style.border = "1px solid black"
     }
-
+    
     const min = function (value, num){
         return value.length >= num
     }
@@ -40,75 +36,69 @@ window.addEventListener("load", function () {
             deleteError(element)
         }
         
-        if (element.name == "name") {
+        if (element.name == "NameAndSurname") {
             if (element.value == ""){
                 addErrorP(element)
-            } else if (!min(element.value, 5)) {
-                console.log("ACA",min(element.value, 5));
+            } else if (!min(element.value, 8)) {
                 addErrorP(element)
                 const labelContent = document.querySelector(`.form_main_section-div-${element.name} label`).textContent
-                document.querySelector(`.error-${element.name}`).innerText = `"${labelContent.toUpperCase()}" debe tener un mínimo de 5 caracteres`
+                document.querySelector(`.error-${element.name}`).innerText = `"${labelContent.toUpperCase()}" debe tener un mínimo de 8 caracteres`
             }else{
                 deleteError(element)
             }
         }
 
-        if (element.name == "description") {
-            if (element.value == ""){
-                addErrorP(element)
-            } else if (!min(element.value, 20)) {
-                addErrorP(element)
-                const labelContent = document.querySelector(`.form_main_section-div-${element.name} label`).textContent
-                document.querySelector(`.error-${element.name}`).innerText = `"${labelContent.toUpperCase()}" debe tener un mínimo de 20 caracteres`
+        if (element.name == "email") {
+            if (element.value == "") {
+                addErrorP(element);
             } else {
-                deleteError(element)
+                
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(element.value)) {
+                    addErrorP(element);
+                    document.querySelector(`.error-${element.name}`).innerText = "El formato de correo electrónico no es válido";
+                } else { 
+                 deleteError(element);
+                }
             }
         }
 
-        if (element.name == "extraDescription") {
-            if (element.value == ""){
-                addErrorP(element)
-            } else if (!min(element.value, 10)) {
-                addErrorP(element)
-                const labelContent = document.querySelector(`.form_main_section-div-${element.name} label`).textContent
-                document.querySelector(`.error-${element.name}`).innerText = `"${labelContent.toUpperCase()}" debe tener un mínimo de 10 caracteres`
-            }else{
-                deleteError(element)
-            }
-        }
-
-        if (element.name == "image") {
-            const extPermitted = ["png", "jpg", "jpeg"]
-            if (element.value == ""){
-                addErrorP(element)
-            } else if ((element.value.includes("png") || element.value.includes("jpg" || element.value.includes("jpeg"))) == false ){
-               addErrorP(element)
-               document.querySelector(`.error-${element.name}`).innerText = `El archivo debe ser un formato válido (PNG, JPG O JPEG)`
-            }else if(element.value != ""){
-                deleteError(element)
-            }
-        }
-
-        if (element.name == "discount" || element.name == "price") {
-            if (element.value == ""){
-                addErrorP(element)
+        if (element.name == "phoneNumber") {
+            if (element.value == "") {
+                addErrorP(element);
+                
             } else if (!Number.isInteger(parseInt(element.value))) {
                 addErrorP(element)
                 const labelContent = document.querySelector(`.form_main_section-div-${element.name} label`).textContent
                 document.querySelector(`.error-${element.name}`).innerText = `"${labelContent.toUpperCase()}" debe ser un número`
+            
+            } else if (!(element.value.length>=8 && element.value.length<=12)) {
+                addErrorP(element)
+                const labelContent = document.querySelector(`.form_main_section-div-${element.name} label`).textContent
+                 document.querySelector(`.error-${element.name}`).innerText = `"${labelContent.toUpperCase()}" debe tener un mínimo de 8 caracteres y un maximo de 12 caracteres`
+
+            }
+        }
+
+        if (element.name == "password1") {
+            if (element.value == ""){
+                addErrorP(element)
+            } else if (!min(element.value, 8)) {
+                addErrorP(element)
+                const labelContent = document.querySelector(`.form_main_section-div-${element.name} label`).textContent
+                document.querySelector(`.error-${element.name}`).innerText = `"${labelContent.toUpperCase()}" debe tener un mínimo de 8 caracteres`
             }else{
                 deleteError(element)
             }
-           
         }
 
-        if (element.name == "height" || element.name =="width" || element.name == "depth") {
+        if (element.name == "password2") {
             if (element.value == ""){
                 addErrorP(element)
-            } else if (!min(element.value, 3)) {
+            } else if (!min(element.value, 8)) {
                 addErrorP(element)
                 const labelContent = document.querySelector(`.form_main_section-div-${element.name} label`).textContent
-                document.querySelector(`.error-${element.name}`).innerText = `"${labelContent.toUpperCase()}" debe tener un mínimo de 3 caracteres`
+                document.querySelector(`.error-${element.name}`).innerText = `"${labelContent.toUpperCase()}" debe tener un mínimo de 8 caracteres`
             }else{
                 deleteError(element)
             }
@@ -121,8 +111,4 @@ window.addEventListener("load", function () {
             validation(this)
         })
     });
-    select.addEventListener("blur", function(e){
-        validation(select)
-    })
-
 })
