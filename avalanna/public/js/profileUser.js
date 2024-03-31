@@ -4,19 +4,18 @@ window.addEventListener("load", function () {
     const form = document.querySelector("form")
     const pErrors = document.querySelectorAll(".erroresForm");
     const divs = document.querySelectorAll("div")
-    const emailInput = document.getElementById('email');
-    const errorContainer = document.getElementById('email-errors');
+   
     
 
     const addErrorP = function(element){
         const errorP = document.createElement("p");
         errorP.classList.add(`error-${element.name}`)
         errorP.classList.add("erroresForm")
-        const labelContent = document.querySelector(`.form_main_section-div-nameAndSurname${element.name} label`).textContent
+        const labelContent = document.querySelector(`.form_main_section-div-${element.name} label`).textContent
         errorP.innerText=`"${labelContent.toUpperCase()}" no puede estar vacío`
         divs.forEach(div=>{
             const oldErrorP= document.querySelector(`.error-${element.name}`)
-            const rightDiv = document.querySelector(`.form_main_section-div-nameAndSurname${element.name}`)
+            const rightDiv = document.querySelector(`.form_main_section-div-${element.name}`)
             oldErrorP ? rightDiv.replaceChild(errorP, oldErrorP) : rightDiv.appendChild(errorP)
         })
         element.style.border= "2px solid red"
@@ -49,13 +48,13 @@ window.addEventListener("load", function () {
             } else if (!min(element.value, 2)) {
                 console.log("EL ACT Y MIN IM PERM",min(element.value, 2));
                 addErrorP(element)
-                const labelContent = document.querySelector(`.form_main_section-div-nameAndSurname${element.name} label`).textContent
+                const labelContent = document.querySelector(`.form_main_section-div-${element.name} label`).textContent
                 document.querySelector(`.error-${element.name}`).innerText = `"${labelContent.toUpperCase()}" Deberá tener al menos 2 caracteres.`
             }else{
                 deleteError(element)
             }
         }
-
+ 
         if (element.name == "email") {
             if (element.value == "") {
                 addErrorP(element);
@@ -67,35 +66,34 @@ window.addEventListener("load", function () {
                     document.querySelector(`.error-${element.name}`).innerText = "El formato de correo electrónico no es válido";
                 } else {
                   
-                    if (checkExistingEmail(element.value)) {
-                        addErrorP(element);
-                        document.querySelector(`.error-${element.name}`).innerText = "Este correo electrónico ya está registrado";
-                    } else {
-                        
-                        deleteError(element);
-                    }
+                    
+                 deleteError(element);
                 }
             }
         }
         if (element.name == "phoneNumber") {
             if (element.value == "") {
                 addErrorP(element);
-            } else {
+            
                
-                const phoneRegex = /^\d{10}$/;
-                if (!phoneRegex.test(element.value)) {
-                    addErrorP(element);
-                    const labelContent = document.querySelector(`.form_main_section-div-phoneNumber${element.name} label`).textContent;
-                    document.querySelector(`.error-${element.name}`).innerText = `"${labelContent.toUpperCase()}" debe tener un formato válido (10 dígitos sin espacios ni guiones)`;
-                } else {
-                    deleteError(element);
-                }
+                
+            } else if (!Number.isInteger(parseInt(element.value))) {
+                addErrorP(element)
+                const labelContent = document.querySelector(`.form_main_section-div-${element.name} label`).textContent
+                document.querySelector(`.error-${element.name}`).innerText = `"${labelContent.toUpperCase()}" debe ser un número`
+            
+            
+            } else if (!(element.value.length>=8 && element.value.length<=12)) {
+                addErrorP(element)
+                const labelContent = document.querySelector(`.form_main_section-div-${element.name} label`).textContent
+                console.log("minimo 8 maximo 10",min(element.value, 8));
+                 document.querySelector(`.error-${element.name}`).innerText = `"${labelContent.toUpperCase()}" debe tener un mínimo de 8 caracteres y un maximo de 12 caracteres`
+
             }
         }
        
 
         if (element.name == "image") {
-            const extPermitted = ["png", "jpg", "jpeg"]
             if (element.value == ""){
                 addErrorP(element)
             } else if ((element.value.includes("png") || element.value.includes("jpg" || element.value.includes("jpeg"))) == false ){
