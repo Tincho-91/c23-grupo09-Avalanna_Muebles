@@ -2,7 +2,8 @@ const db = require("../database/models");
 const { op } =require("sequelize");
 const fs = require("fs");
 const path = require("path");
-const { Console } = require("console");
+const { Console, log } = require("console");
+const { validationResult } = require("express-validator");
 
 
 const productsController = {
@@ -30,15 +31,31 @@ const productsController = {
     },
 
     store:(req,res) =>{
-    	const producto = req.body;
+      const errors = validationResult(req);
 
-        producto.image = req.file.filename;
-
+      if (!errors.isEmpty()) {
+        console.log("req.body", req.body);
+        db.Category.findAll()
+        .then((categories)=>{
+            res.render("products/crear-formulario", { title: "formulario", categories:categories, usuario: req.session.user, old: req.body, errores : errors.mapped() })
+        })
+        .catch(err=>console.log(err))
+      }else{
+        const producto = req.body;
+        console.log("req.file", req.file);
+        if (req.file) {
+          producto.image = req.file.filename;
+        }else{
+          producto.image = "default.jpg"
+        }
+          
         db.Product.create(producto)
         .then((product)=>{
             res.redirect(`/products`);
         })
         .catch(err=> console.log(err))
+      }
+
     },
 
 
@@ -46,10 +63,8 @@ const productsController = {
         const { id } = req.params;
         db.Product.findByPk(id)
         .then((resp)=>{
-          res.render('products/edform', { title: 'Editar', product: resp.dataValues});
+          res.render('products/edform', { title: 'Editar', product: resp.dataValues, usuario: req.session.user});
         })
-
-        
     },
     cart: (req, res) => {
         res.render("products/productCart", { title: "Carrito de compra", usuario: req.session.user });
@@ -72,26 +87,28 @@ const productsController = {
         res.redirect("/products/dashboard");
     },
 
-    destroy:(req,res)=>{
+    destroy: async (req,res)=>{
         const {id}=req.params;
-       db.Product.destroy({
+
+        const productFound = await db.Product.findOne({
+          where:{
+              id
+          }
+         }).catch(err=>console.log(err))
+
+         fs.unlink(path.join(__dirname,`../../public/img/${productFound.image}`),(err)=>{
+            
+          if(err) throw err;
+         
+     })
+
+     await  db.Product.destroy({
         where:{
             id,
         }
-       })
-       db.Product.findOne({
-        where:{
-            id
-        }
-       }).then((resp)=>{
-        fs.unlink(path.join(__dirname,`../../public/img/${resp.dataValues.image}`),(err)=>{
-            
-            if(err) throw err;
-           
-            res.redirect(`/`);
-       })
-    }
-       ).catch(err=>console.log(err))
+       }).catch(err=>console.log(err))
+
+       res.redirect(`/products/dashboard`);
        
     },
     products:(req,res) =>{
@@ -129,13 +146,18 @@ const productsController = {
         
     },
     processUpdate:async (req, res) => {
+        const errors = validationResult(req);
         const { id } = req.params;
-        let avatar = ""
-        await db.Product.findByPk(id).then(resp =>{
-            if(resp.dataValues.image){
-            avatar = resp.dataValues.image
-        } else {avatar = "default.jpg"}
+      
+        if (!errors.isEmpty()) {
+          console.log(errors.mapped());
+          db.Product.findByPk(id)
+        .then((resp)=>{
+          res.render('products/edform', { title: 'Editar', product: resp.dataValues, errores: errors.mapped(), usuario: req.session.user});
         })
+        }else{
+        const oldProduct = await db.Product.findByPk(id)  
+        console.log("req.file", req.file);
         const {name, price, description,extradescription, discount} = req.body;
         db.Product.update(
           {
@@ -144,7 +166,7 @@ const productsController = {
             description: description ,
             extradescripcion: extradescription ,
             discount: +discount ,
-            image: req.file ? req.file.filename : avatar
+            image: req.file ? req.file.filename : oldProduct.image
         
           },
           {
@@ -158,6 +180,7 @@ const productsController = {
             res.redirect(`/products/detail/${id}`);
           })
           .catch((err) => console.log(err));
+        }
  
 }
 

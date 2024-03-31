@@ -8,56 +8,94 @@
   <section class="form_main_section">
     <h1>CARGAR PRODUCTOS</h1>
     <form action="/products/formCreate" method="POST" enctype="multipart/form-data" class="form_mainsection_form">
-      <div>
+      <div class="form_main_section-div-image">
         <label for="image">Imagen</label>
         <input type="file" name="image" id="image" accept="png jpg">
+        <p class="erroresForm">
+          <%= locals.errores && errores.image ? errores.image.msg : null %>
+      </p>
       </div>
-        <div>
+        <div class="form_main_section-div-name">
             <label for="name">Nombre</label>
-            <input type="text" name="name" id="name" required>
+            <input type="text" name="name" id="name" value= "<%= locals.old && old.name ? old.name : null %>" required>
+            <p class="erroresForm">
+              <%= locals.errores && errores.name ? errores.name.msg : null %>
+          </p>
         </div>
     
-          <div>
+          <div class="form_main_section-div-price">
 
             <label for="price">Precio</label>
-            <input type="text" name="price" id="price" required>
-
+            <input type="text" name="price" id="price" required value= "<%= locals.old && old.price ? old.price : null %>" >
+            <p class="erroresForm">
+              <%= locals.errores && errores.price ? errores.price.msg : null %>
+          </p>
           </div>
 
-        <div>
+        <div class="form_main_section-div-discount">
           <label for="discount">Descuento</label>
-          <input type="text" name="discount" id="discount" required>
+          <input type="text" name="discount" id="discount" required value= "<%= locals.old && old.discount ? old.discount : null %>" >
+          <p class="erroresForm">
+            <%= locals.errores && errores.discount ? errores.discount.msg : null %>
+        </p>
       </div>
   
 
-          <div>
+          <div class="form_main_section-div-description">
 
             <label for="descripcion">Descripción</label>
-            <input type="text" name="description" id="descripcion" required>
+            <input type="text" name="description" id="descripcion" required value= "<%= locals.old && old.description? old.description : null %>" >
+            <p class="erroresForm">
+              <%= locals.errores && errores.description ? errores.description.msg : null %>
+          </p>
           </div>
   
-          <div>
+          <div class="form_main_section-div-extraDescription">
             <label for="adicional">Descripción Adicional</label>
-            <input type="text" name="extraDescription" id="adicional" required>
+            <input type="text" name="extraDescription" id="adicional" required value= "<%= locals.old && old.extraDescription ? old.extraDescription : null %>" >
+            <p class="erroresForm">
+              <%= locals.errores && errores.extraDescription ? errores.extraDescription.msg : null %>
+          </p>
           </div>
 
-          <div>
+          <div class="form_main_section-div-categoryId">
             <label for="category">Categoria</label>
             <select name="categoryId" id="category" required>
+              <option value="" disabled selected> Seleccione una categoría </option>
             <% categories.forEach(category => { %>
-               <option value="<%= category.id %>"><%= category.name %></option>
+               <option value="<%= category.id %>" <%= locals.old && old.categoryId ? "selected": null %> ><%= category.name %></option>
                <% }) %>
             </select>
+            <p class="erroresForm">
+              <%= locals.errores && errores.categoryId ? errores.categoryId.msg : null %>
+          </p>
             
           </div>
 
-          <div>
-            <label for="medidias">Medidas</label>
-            <input type="text" name="height" class="form_mainsection_form-div-medidas" id="height" placeholder="Alto..." required>
-            <input type="text" name="width" class="form_mainsection_form-div-medidas" id="width" placeholder="Ancho..." required>
-            <input type="text" name="depth" class="form_mainsection_form-div-medidas" id="depth" placeholder="Profundidad..." required>
+          <h3>Medidas</h3>
+          <div class="form_main_section-div-height">
+            <label for="height">Alto</label>
+            <input type="text" name="height" id="height" placeholder="Alto..." required value= "<%= locals.old && old.height ? old.height : null %>" >
+            <p class="erroresForm">
+              <%= locals.errores && errores.height ? errores.height.msg : null %>
+          </p>
+        </div>
 
+          <div class="form_main_section-div-width">
+            <label for="width">Ancho</label>
+            <input type="text" name="width"  id="width" placeholder="Ancho..." required value= "<%= locals.old && old.width ? old.width : null %>" >
+            <p class="erroresForm">
+              <%= locals.errores && errores.width ? errores.width.msg : null %>
+          </p>
+        </div>
 
+        <div class="form_main_section-div-depth">
+          <label for="depth">Profundidad</label>
+            <input type="text" name="depth"  id="depth" placeholder="Profundidad..." required value= "<%= locals.old && old.depth ? old.depth : null %>" >
+            <p class="erroresForm">
+              <%= locals.errores && errores.depth ? errores.depth.msg : null %>
+          </p>
+        </div>
           
           <button type="submit">Cargar Producto</button> 
           
@@ -67,6 +105,6 @@
   
    </main>
    <%- include("../partials/footer.ejs") %>
-
+<script src="/js/createProducts.js"></script>
 </body>
 </html>

@@ -92,12 +92,14 @@
     width: 100%;
     z-index: 15;
     position:relative;
+    margin-top: 2%;
 }
 
 .header__menu-desplegable:hover .header__contenido-desplegable {
     display:block;
     width: 100%;
 }
+
 
 .header__contenido-desplegable a {
     display: block;
@@ -134,10 +136,10 @@
     padding: 1% 2%;
     position: relative;
     left: 25%;
-    top: -10%;
+    top: -5px;
 }
 #header__contenido-desplegable-profile button:hover{
-    top: -4%;
+    top: -5px;
 }
 #header__contenido-desplegable-profile-div{
     z-index: 20;
@@ -172,7 +174,6 @@ margin: 0 0 0 7%;
     top: 1%;
 }
 
-
 .iconos-profile-carrito-div{
     width: 8%;
    position: absolute;
@@ -185,18 +186,23 @@ margin: 0 0 0 7%;
 
 .iconos-profile-without-session-user{
     position: absolute;
-    top: 14%;
     right: 15%;
     font-size: 20px;
+    z-index: 15;
+    top: 8px;
 }
+
+
 .iconos-profile-without-session-user a i{
 color: black;
 }
+
 .iconos-profile-without-session-cart {
     position: absolute;
-    top: 14%;
+    top: 8px;
     right: 5%;
     font-size: 20px;
+    z-index: 15;
 }
 .iconos-profile-without-session-cart a i{
     color: black;
@@ -242,7 +248,7 @@ color: black;
 
     #iconos{
         right: 11px;
-        top: 12%;
+        top: 13px;
     }
     .iconos-vistas{
         top:5px;
@@ -270,7 +276,7 @@ color: black;
         margin-left: 15%;
     }
     #header__contenido-desplegable-profile button:hover{
-        top: 3%;
+        top: 2%;
     }
     #header__contenido-desplegable-profile i{
         width: 10%;
@@ -348,8 +354,8 @@ color: black;
 
     .search {
         font-size: 29px;
-        top: 10px;
-        padding: 3% 10%;
+        top: 8px;
+        padding: 2.5% 10%;
     }
 
     .lupa {
@@ -374,16 +380,35 @@ color: black;
         font-size: 40px;
         margin: 18px;
     }
+    .iconos-profile{
+        margin-top: 0.5%;
+    }
+    .iconos-profile-without-session {
+        top: 5px;
+    }
     #iconos .fa-cart-shopping{
         position: relative;
-        top: 1%;
+        top: 1px;
+    }
+    .header__menu-desplegable {
+        top: 10px;
+        width: 20%;
+        margin: 0;
+        padding: 0;
     }
     
+    .header__contenido-desplegable{
+        margin-left: -5%;
+    }
+
     .header__contenido-desplegable a {
-        font-size: 26px;
+        font-size: 25px;
     }
     .header__contenido-desplegable a:hover{
         border-bottom: 1px solid black;
+    }
+    .iconos-profile-without-session{
+        margin-left: 1%;
     }
     #header__contenido-desplegable-profile-div{
         margin-top: 0 ;
@@ -399,15 +424,16 @@ color: black;
             top: -4%;
         }
         #header__contenido-desplegable-profile button:hover{
-            top: -2%;
+            top: -1%;
         }
         .iconos-profile-without-session-user{
             font-size: 40px;
             right: 13%;
+            top: 15px;
         }
         .iconos-profile-without-session-cart{
             font-size: 40px;
-            
+            top: 15px;
         }
         
 } 
