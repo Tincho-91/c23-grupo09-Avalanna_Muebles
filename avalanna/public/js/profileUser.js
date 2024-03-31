@@ -1,41 +1,128 @@
 window.addEventListener("load", function () {
+
+    const inputs = document.querySelectorAll("input")
+    const form = document.querySelector("form")
+    const pErrors = document.querySelectorAll(".erroresForm");
+    const divs = document.querySelectorAll("div")
+    const emailInput = document.getElementById('email');
+    const errorContainer = document.getElementById('email-errors');
     
-    // Código de validación del formulario
-    document.getElementById("updateForm").addEventListener("submit", function (event) {
-        event.preventDefault(); // Evita que el formulario se envíe automáticamente
 
-        // Validación de campos
-        var nameAndSurname = document.getElementById("nameAndSurname").value;
-        var email = document.getElementById("email").value;
-        var phoneNumber = document.getElementById("phoneNumber").value;
-        var birthday = document.getElementById("date").value;
+    const addErrorP = function(element){
+        const errorP = document.createElement("p");
+        errorP.classList.add(`error-${element.name}`)
+        errorP.classList.add("erroresForm")
+        const labelContent = document.querySelector(`.form_main_section-div-nameAndSurname${element.name} label`).textContent
+        errorP.innerText=`"${labelContent.toUpperCase()}" no puede estar vacío`
+        divs.forEach(div=>{
+            const oldErrorP= document.querySelector(`.error-${element.name}`)
+            const rightDiv = document.querySelector(`.form_main_section-div-nameAndSurname${element.name}`)
+            oldErrorP ? rightDiv.replaceChild(errorP, oldErrorP) : rightDiv.appendChild(errorP)
+        })
+        element.style.border= "2px solid red"
+        element.style.backgroundColor = "rgba(255,0,0,10%)"
+    }
+      const deleteError = function(element){
+        const childP = document.querySelector(`.error-${element.name}`)
+        const divFather = document.querySelector(`.form_main_section-div-${element.name}`)        
+        childP ? divFather.removeChild(childP) : null
 
-        // Validar nombre y apellido
-        if (nameAndSurname.trim().length < 2) {
-            alert("El nombre y apellido deben tener al menos 2 caracteres");
-            return;
+        element.style.backgroundColor= "var(--color-beige)"
+                element.style.border = "1px solid black"
+    }
+
+    const min = function (value, num){
+        return value.length >= num
+    }
+
+    const validation = function(element){
+        if (element.value == "") {
+            console.log("element", element.value);
+            addErrorP(element)
+        }else{
+            deleteError(element)
+        }
+        
+        if (element.name == "nameAndSurname") {
+            if (element.value == ""){
+                addErrorP(element)
+            } else if (!min(element.value, 2)) {
+                console.log("EL ACT Y MIN IM PERM",min(element.value, 2));
+                addErrorP(element)
+                const labelContent = document.querySelector(`.form_main_section-div-nameAndSurname${element.name} label`).textContent
+                document.querySelector(`.error-${element.name}`).innerText = `"${labelContent.toUpperCase()}" Deberá tener al menos 2 caracteres.`
+            }else{
+                deleteError(element)
+            }
         }
 
-        // Validar email
-        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
-            alert("Debe ingresar un formato de email válido");
-            return;
+        if (element.name == "email") {
+            if (element.value == "") {
+                addErrorP(element);
+            } else {
+                
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(element.value)) {
+                    addErrorP(element);
+                    document.querySelector(`.error-${element.name}`).innerText = "El formato de correo electrónico no es válido";
+                } else {
+                  
+                    if (checkExistingEmail(element.value)) {
+                        addErrorP(element);
+                        document.querySelector(`.error-${element.name}`).innerText = "Este correo electrónico ya está registrado";
+                    } else {
+                        
+                        deleteError(element);
+                    }
+                }
+            }
+        }
+        if (element.name == "phoneNumber") {
+            if (element.value == "") {
+                addErrorP(element);
+            } else {
+               
+                const phoneRegex = /^\d{10}$/;
+                if (!phoneRegex.test(element.value)) {
+                    addErrorP(element);
+                    const labelContent = document.querySelector(`.form_main_section-div-phoneNumber${element.name} label`).textContent;
+                    document.querySelector(`.error-${element.name}`).innerText = `"${labelContent.toUpperCase()}" debe tener un formato válido (10 dígitos sin espacios ni guiones)`;
+                } else {
+                    deleteError(element);
+                }
+            }
+        }
+       
+
+        if (element.name == "image") {
+            const extPermitted = ["png", "jpg", "jpeg"]
+            if (element.value == ""){
+                addErrorP(element)
+            } else if ((element.value.includes("png") || element.value.includes("jpg" || element.value.includes("jpeg"))) == false ){
+               addErrorP(element)
+               document.querySelector(`.error-${element.name}`).innerText = `El archivo debe ser un formato válido (PNG, JPG O JPEG)`
+            }else if(element.value != ""){
+                deleteError(element)
+            }
         }
 
-        // Validar número de teléfono
-        if (phoneNumber.trim() === "") {
-            alert("El número de teléfono es obligatorio");
-            return;
-        }
+       }
 
-        // Validar fecha de nacimiento
-        if (birthday.trim() === "") {
-            alert("La fecha de nacimiento es obligatoria");
-            return;
-        }
-
-        // Si pasa todas las validaciones, enviar el formulario
-        this.submit();
+    inputs.forEach(input => {
+        input.addEventListener("blur", function(e){
+            validation(this)
+        })
     });
-});
+   
+
+})
+
+
+
+
+
+
+//emailInput.addEventListener('blur', function() {
+    const email = this.value;
+//}
+ 
