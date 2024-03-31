@@ -12,18 +12,19 @@
                     <form action="/users/editar/<%=user.id%>?_method=PUT" method="post"
                         class="actualizar__main__section__form" enctype="multipart/form-data">
 
-                        <div class="actualizar__main__section-form-div">
+                        <div class="actualizar__main__section-form-div form_main_section-div-nameAndSurname">
+
                             
                                 <label for="nameAndSurname">Nombre y Apellido</label>
                                 <input type="text" id="name" name="nameAndSurname"
-                                    value="<%= locals.user ? user.nameAndSurname : locals.old && old.NameAndSurname ? old.NameAndSurname : null %>">
+                                    value="<%= locals.user ? user.nameAndSurname : locals.old && old.nameAndSurname ? old.NameAndSurname : null %>">
                                 <p class="erroresForm">
                                     <%= locals.errores && errores.nameAndSurname ? errores.nameAndSurname.msg : null %>
                                 </p>
                            
                         </div>
 
-                        <div class="actualizar__main__section-form-div">
+                        <div class="actualizar__main__section-form-div form_main_section-div-email">
                             <label for="email">Email</label>
                             <input type="text" id="email" name="email"
                                 value="<%= locals.user ? user.email : locals.old && old.email ? old.email : null %>">
@@ -32,9 +33,9 @@
                             </p>
                         </div>
 
-                        <div class="actualizar__main__section-form-div">
+                        <div class="actualizar__main__section-form-div form_main_section-div-phoneNumber">
                             <label for="phoneNumber">Tel</label>
-                            <input type="text" id="phoneNumber" name="phoneNumber"
+                            <input type="number" id="phoneNumber" name="phoneNumber"
                                 value="<%= locals.user ? user.phoneNumber : locals.old && old.phoneNumber ? old.phoneNumber : null %>">
                             <p class="erroresForm">
                                 <%= locals.errores && errores.phoneNumber ? errores.phoneNumber.msg : null %>
@@ -53,7 +54,7 @@
                             </div>
                             <% } %>
 
-                                <div class="actualizar__main__section-form-div">
+                                <div class="actualizar__main__section-form-div form_main_section-div-birthday">
                                     <label for="date">Fecha de Nacimiento</label>
                                     <input type="date" name="birthday" id="date"
                                         value="<%= locals.user ? user.birthday : locals.old && old.birthday ? old.birthday : null %>">
@@ -82,7 +83,7 @@
                                       
 
 
-                                <div class="actualizar__main__section-form-div" id="actualizar__main__section-form-div-img">
+                                <div class="actualizar__main__section-form-div form_main_section-div-image" id="actualizar__main__section-form-div-img">
                                     <label for="image" class="actualizar__main__section__form-div-img-label">Foto de
                                         perfil</label><br>
                                     <% if(user.profileImage){%>
@@ -108,7 +109,7 @@
             </main>
 
             <%- include("../partials/footer.ejs") %>
-
+            <script src="/js/profileUser.js"></script>
     </body>
 
     </html>
