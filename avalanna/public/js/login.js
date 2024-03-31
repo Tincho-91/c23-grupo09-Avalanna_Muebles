@@ -8,14 +8,13 @@ window.addEventListener("load", function () {
     const select = document.querySelector("select")
 
     const addErrorP = function(element){
-        const errorP = document.createElement("p");
+        const errorP = document.querySelector(`.login_main_section-div-${element.name} p`)
         errorP.classList.add(`error-${element.name}`)
-        errorP.classList.add("erroresForm")
-        const labelContent = document.querySelector(`.form_main_section-div-${element.name} label`).textContent
+        const labelContent = document.querySelector(`.login_main_section-div-${element.name} label`).textContent
         errorP.innerText=`"${labelContent.toUpperCase()}" no puede estar vacío`
         divs.forEach(div=>{
             const oldErrorP= document.querySelector(`.error-${element.name}`)
-            const rightDiv = document.querySelector(`.form_main_section-div-${element.name}`)
+            const rightDiv = document.querySelector(`.login_main_section-div-${element.name}`)
             oldErrorP ? rightDiv.replaceChild(errorP, oldErrorP) : rightDiv.appendChild(errorP)
         })
         element.style.border= "2px solid red"
@@ -24,8 +23,7 @@ window.addEventListener("load", function () {
 
     const deleteError = function(element){
         const childP = document.querySelector(`.error-${element.name}`)
-        const divFather = document.querySelector(`.form_main_section-div-${element.name}`)        
-        childP ? divFather.removeChild(childP) : null
+        childP ? childP.innerText = null : null
         element.style.backgroundColor= "var(--color-beige)"
                 element.style.border = "1px solid black"
     }
@@ -60,10 +58,10 @@ window.addEventListener("load", function () {
         }
 
         if (element.name == "password1") {
-            if (!min(element.value, 20)) {
+            if (!min(element.value, 8)) {
                 addErrorP(element)
                 const labelContent = document.querySelector(`.login_main_section-div-${element.name} label`).textContent
-                document.querySelector(`.error-${element.name}`).innerText = `"${labelContent.toUpperCase()}" debe tener un mínimo de 20 caracteres`
+                document.querySelector(`.error-${element.name}`).innerText = `"${labelContent.toUpperCase()}" debe tener un mínimo de 8 caracteres`
             }else if (element.value == "") {
                 addErrorP(element)
             }else{
@@ -76,12 +74,10 @@ window.addEventListener("load", function () {
     }
 
     inputs.forEach(input => {
+        console.log("INPUTTTTT",input)
         input.addEventListener("blur", function(e){
             validation(this,e)
         })
     });
-    select.addEventListener("blur", function(e){
-        validation(select)
-    })
 
 })
