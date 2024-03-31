@@ -1,16 +1,14 @@
 window.addEventListener("load", function () {
 
     const inputs = document.querySelectorAll("input")
-    const form = document.querySelector("form")
-    const pErrors = document.querySelectorAll(".erroresForm");
+
     const divs = document.querySelectorAll("div")
    
     
 
     const addErrorP = function(element){
-        const errorP = document.createElement("p");
+        const errorP = document.querySelector(`.form_main_section-div-${element.name} p`)
         errorP.classList.add(`error-${element.name}`)
-        errorP.classList.add("erroresForm")
         const labelContent = document.querySelector(`.form_main_section-div-${element.name} label`).textContent
         errorP.innerText=`"${labelContent.toUpperCase()}" no puede estar vacío`
         divs.forEach(div=>{
@@ -21,11 +19,10 @@ window.addEventListener("load", function () {
         element.style.border= "2px solid red"
         element.style.backgroundColor = "rgba(255,0,0,10%)"
     }
-      const deleteError = function(element){
-        const childP = document.querySelector(`.error-${element.name}`)
-        const divFather = document.querySelector(`.form_main_section-div-${element.name}`)        
-        childP ? divFather.removeChild(childP) : null
 
+    const deleteError = function(element){
+        const childP = document.querySelector(`.error-${element.name}`)
+        childP ? childP.innerText = null : null
         element.style.backgroundColor= "var(--color-beige)"
                 element.style.border = "1px solid black"
     }

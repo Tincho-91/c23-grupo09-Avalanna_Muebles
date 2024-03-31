@@ -1,16 +1,11 @@
 window.addEventListener("load", function () {
 
     const inputs = document.querySelectorAll("input")
-    const form = document.querySelector("form")
-    const pErrors = document.querySelectorAll(".erroresForm");
     const divs = document.querySelectorAll("div")
-    const select = document.querySelector("select")
     
-
     const addErrorP = function(element){
-        const errorP = document.createElement("p");
+        const errorP = document.querySelector(`.form_main_section-div-${element.name} p`)
         errorP.classList.add(`error-${element.name}`)
-        errorP.classList.add("erroresForm")
         const labelContent = document.querySelector(`.form_main_section-div-${element.name} label`).textContent
         errorP.innerText=`"${labelContent.toUpperCase()}" no puede estar vacío`
         divs.forEach(div=>{
@@ -24,12 +19,11 @@ window.addEventListener("load", function () {
 
     const deleteError = function(element){
         const childP = document.querySelector(`.error-${element.name}`)
-        const divFather = document.querySelector(`.form_main_section-div-${element.name}`)        
-        childP ? divFather.removeChild(childP) : null
+        childP ? childP.innerText = null : null
         element.style.backgroundColor= "var(--color-beige)"
                 element.style.border = "1px solid black"
     }
-
+    
     const min = function (value, num){
         return value.length >= num
     }
@@ -46,7 +40,6 @@ window.addEventListener("load", function () {
             if (element.value == ""){
                 addErrorP(element)
             } else if (!min(element.value, 8)) {
-                console.log("ACA",min(element.value, 8));
                 addErrorP(element)
                 const labelContent = document.querySelector(`.form_main_section-div-${element.name} label`).textContent
                 document.querySelector(`.error-${element.name}`).innerText = `"${labelContent.toUpperCase()}" debe tener un mínimo de 8 caracteres`
@@ -82,7 +75,6 @@ window.addEventListener("load", function () {
             } else if (!(element.value.length>=8 && element.value.length<=12)) {
                 addErrorP(element)
                 const labelContent = document.querySelector(`.form_main_section-div-${element.name} label`).textContent
-                console.log("minimo 8 maximo 10",min(element.value, 8));
                  document.querySelector(`.error-${element.name}`).innerText = `"${labelContent.toUpperCase()}" debe tener un mínimo de 8 caracteres y un maximo de 12 caracteres`
 
             }
@@ -119,8 +111,4 @@ window.addEventListener("load", function () {
             validation(this)
         })
     });
-    select.addEventListener("blur", function(e){
-        validation(select)
-    })
-
 })
