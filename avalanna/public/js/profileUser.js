@@ -112,12 +112,3 @@ window.addEventListener("load", function () {
 
 })
 
-
-
-
-
-
-//emailInput.addEventListener('blur', function() {
-    const email = this.value;
-//}
- 

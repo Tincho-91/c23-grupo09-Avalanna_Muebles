@@ -104,7 +104,7 @@ DEJAR DE HACER: Darle poca importancia a los errores cometidos en los otros spri
 
 ## Retrospectiva, SPRINT 6
 
-![starfish retrospective](./avalanna/public/img/starfishRetrospective6.png)
+![starfish retrospective](./avalanna/public/img/starfishRetro6.png)
 
 Sexta retrospectiva referida al sprint 6: 
 

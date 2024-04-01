@@ -3,8 +3,7 @@ const {body} = require('express-validator');
 const db = require("../database/models")
 
 module.exports = [
-    body('image').notEmpty().withMessage('El campo no puede estar vacío').bail()
-    .custom((value, { req }) => {
+    body('image').custom((value, { req }) => {
         if (req.errorValidationImage) {
             return false;
         };
@@ -20,10 +19,10 @@ module.exports = [
     .isInt().withMessage("El valor ingresado debe ser un número entero").bail(),
 
     body('description').notEmpty().withMessage('El campo no puede estar vacío').bail()
-    .isLength({min:20,max:50}).withMessage('El valor ingresado debe tener un mínimo de 20 caracteres y un máximo de 250').bail(),
+    .isLength({min:20,max:250}).withMessage('El valor ingresado debe tener un mínimo de 20 caracteres y un máximo de 250').bail(),
 
     body('extraDescription').notEmpty().withMessage('El campo no puede estar vacío').bail()
-    .isLength({min:10,max:50}).withMessage('El valor ingresado debe tener un mínimo de 10 caracteres y un máximo de 250').bail(),
+    .isLength({min:10,max:250}).withMessage('El valor ingresado debe tener un mínimo de 10 caracteres y un máximo de 250').bail(),
 
     body('categoryId').notEmpty().withMessage('Debe seleccionar una de las opciones').bail(),
 
