@@ -1,5 +1,5 @@
 window.addEventListener("load", function () {
-
+    
     const inputs = document.querySelectorAll("input")
     const form = document.querySelector("form")
     const pErrors = document.querySelectorAll(".erroresForm");
@@ -124,5 +124,35 @@ window.addEventListener("load", function () {
     select.addEventListener("blur", function(e){
         validation(select)
     })
+    
+    const button = document.querySelector(".form-button")
 
+    button.addEventListener("click", function(e){
+        let errorValidate;
+
+        inputs.forEach(input=>{
+
+            if(input != document.querySelector(".search")){
+                if (document.querySelector(`.form_main_section-div-${input.name} p`).textContent.length > 0) {
+                    errorValidate = true;
+                    
+                }
+            }
+           
+        })
+        console.log("ERROR VALIDATE", errorValidate);
+
+        if (errorValidate) {
+            e.preventDefault()
+            
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Debe completar el formulario con los datos indicados",
+                footer: ''
+              });
+
+        }
+        
+    })
 })

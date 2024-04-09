@@ -51,16 +51,50 @@ module.exports = {
             }
         },
         listUsers: async (req,res) =>{
-            
-            try {
 
-                const users = await db.User.findAll();
+            let { page = 1 } = req.query;
+
+       const limit = 10
+        
+        const offset = limit * (parseInt(page) - 1);
+ 
+        const query = { limit, offset,  attributes: ['id', 'nameAndSurname', 'email']  };
     
-                return res.status(200).send(users);
-            } catch (error) {
-                return res.status(400).send(error.message);
+     try{
+        if (!Number.isInteger(parseInt(page))) {
+            throw new Error("Debe ingresar un número entero")
+      }
+            const users = await db.User.findAndCountAll(query);
+    
+            if (!users) {
+                throw new Error ("Usuarios inexistentes")
             }
+                
+            const arrayUsers = users.rows
+            arrayUsers.forEach( user=>{
+                user.dataValues.detail = `localhost:3000/users/editar/${user.id}`
+            })
+              
+            page == 1 ? previous = null : previous =`localhost:3000/api/products/?page=${parseInt(page) - 1}`
+
+            if (users.count > 10) {
+                offset < (users.count / parseInt(page)) ?  next = `localhost:3000/api/products/?page=${parseInt(page) + 1}` : next = null;
+            }else{
+                next = null
+            }
+
+            return res.status(200).json({
+                count: users.count,
+                users: arrayUsers,
+                next,
+                previous
+            });
     
-        }
+            
+    } catch (error) {
+         return res.status(400).send(error.message);
+    }
+          },
+        
     }
 

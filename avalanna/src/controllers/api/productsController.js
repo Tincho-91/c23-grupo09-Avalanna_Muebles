@@ -26,21 +26,61 @@ module.exports = {
         }
     },
 
-    list: async (req,res) =>{
+    list: async (req, res) => {
 
-        let {limit = 10 , page = 1} = req.query;
+        let { page = 1 } = req.query;
+
+       const limit = 10
         
-        limit = parseInt(limit)
-        const offset = limit * (parseInt(page)-1);
+        const offset = limit * (parseInt(page) - 1);
+ 
+        const query = { limit, offset, include: { association: "categories" }, attributes: ['id', 'name', 'description'] };
+    
         try {
-            const products = await db.Product.findAll({include:{association:"categories"},limit , offset });
+            if (!Number.isInteger(parseInt(page))) {
+                throw new Error("Debe ingresar un número entero")
+          }
 
-            return res.status(200).send(products);
+            const categories = await db.Category.findAndCountAll({include:{association:"products"}})
+
+            if (!categories) {
+                throw new Error("Categorias inexistentes")
+            }
+            
+            let countByCategory = {}
+           categories.rows.forEach(category => {
+            countByCategory[category.name]= category.dataValues.products.length
+           })
+
+          const products = await db.Product.findAndCountAll(query);
+
+          if (!products) {
+            throw new Error ("Productos inexistentes")
+          }
+            
+          const arrayProducts = products.rows
+          arrayProducts.forEach( product=>{
+            product.dataValues.detail = `localhost:3000/products/detail/${product.id}`
+            product.dataValues.associations = [{categories:product.dataValues.categories}]
+            delete product.dataValues.categories
+          })
+          page == 1 ? previous = null : previous =`localhost:3000/api/products/?page=${parseInt(page) - 1}`
+          offset < (products.count / parseInt(page)) ?  next = `localhost:3000/api/products/?page=${parseInt(page) + 1}` : next = null;
+
+          return res.status(200).json({
+            count: products.count,
+            countByCategory,
+            products:arrayProducts,
+            next,
+            previous,
+          });
+          
+
         } catch (error) {
-            return res.status(400).send(error.message);
+          return res.status(400).send(error.message);
         }
-
-    },
+      },
+    
     store:(req,res) =>{
     	const producto = req.body;
 
