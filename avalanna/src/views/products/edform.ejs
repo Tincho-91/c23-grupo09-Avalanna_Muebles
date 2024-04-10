@@ -13,47 +13,35 @@
           <div class="form_main_section-div-image">
             <label for="tel">Imagen</label>
             <input type="file" name="image" id="image" accept="*image/*" >
-            <p class="erroresForm">
-              <%= locals.errores && errores.image ? errores.image.msg : null %>
-          </p>
+            <p class="erroresForm"><%= locals.errores && errores.image ? errores.image.msg : null %></p>
           </div>
           <div class="form_main_section-div-name">
             <label for="name">Nombre</label>
             <input type="text" name="name" id="name" value="<%= product.name %>" required>
-            <p class="erroresForm">
-              <%= locals.errores && errores.name ? errores.name.msg : null %>
-          </p>
+            <p class="erroresForm"><%= locals.errores && errores.name ? errores.name.msg : null %></p>
           </div>
 
           <div class="form_main_section-div-price">
             <label for="price">Precio</label>
             <input type="number" name="price" id="price" value="<%= product.price %>" required>
-            <p class="erroresForm">
-              <%= locals.errores && errores.price ? errores.price.msg : null %>
-          </p>
+            <p class="erroresForm"><%= locals.errores && errores.price ? errores.price.msg : null %></p>
           </div>
 
           <div class="form_main_section-div-discount">
             <label for="discount">Descuento</label>
             <input type="text" name="discount" id="discount" value="<%= product.discount %>" required>
-            <p class="erroresForm">
-              <%= locals.errores && errores.discount ? errores.discount.msg : null %>
-          </p>
+            <p class="erroresForm"><%= locals.errores && errores.discount ? errores.discount.msg : null %></p>
           </div>
           <div class="form_main_section-div-description">
             <label for="description">Descripción</label>
             <input type="text" name="description" id="description" value="<%= product.description %>" required>
-            <p class="erroresForm">
-              <%= locals.errores && errores.description ? errores.description.msg : null %>
-          </p>
+            <p class="erroresForm"><%= locals.errores && errores.description ? errores.description.msg : null %></p>
           </div>
 
           <div class="form_main_section-div-extraDescription">
             <label for="extraDescription">Descripción Adicional</label>
             <input type="text" name="extraDescription" id="extraDescription" value="<%= product.extraDescription %>" required>
-            <p class="erroresForm">
-              <%= locals.errores && errores.extraDescription ? errores.extraDescription.msg : null %>
-          </p>
+            <p class="erroresForm"><%= locals.errores && errores.extraDescription ? errores.extraDescription.msg : null %></p>
           </div>
           <div class="form_main_section-div-categoryId">
 
@@ -83,29 +71,23 @@
           <div class="form_main_section-div-height">
             <label for="height">Alto</label>
             <input type="text" name="height" id="height" placeholder="Alto..." required  value="<%= product.height %>" >
-            <p class="erroresForm">
-              <%= locals.errores && errores.height ? errores.height.msg : null %>
-          </p>
+            <p class="erroresForm"><%= locals.errores && errores.height ? errores.height.msg : null %></p>
         </div>
 
           <div class="form_main_section-div-width">
             <label for="width">Ancho</label>
             <input type="text" name="width"  id="width" placeholder="Ancho..." required  value="<%= product.width %>" >
-            <p class="erroresForm">
-              <%= locals.errores && errores.width ? errores.width.msg : null %>
-          </p>
+            <p class="erroresForm"><%= locals.errores && errores.width ? errores.width.msg : null %></p>
         </div>
 
         <div class="form_main_section-div-depth">
           <label for="depth">Profundidad</label>
             <input type="text" name="depth"  id="depth" placeholder="Profundidad..." required  value="<%= product.depth %>" >
-            <p class="erroresForm">
-              <%= locals.errores && errores.depth ? errores.depth.msg : null %>
-          </p>
+            <p class="erroresForm"><%= locals.errores && errores.depth ? errores.depth.msg : null %></p>
         </div>
         
         <article class="botones_ed_borrar">
-          <button type="submit">Editar</button>
+          <button class="form-button" type="submit">Editar</button>
 
           <button type="submit">Borrar</button>
         </form>
@@ -119,6 +101,7 @@
       <%- include("../partials/footer.ejs") %>
 
       <script src="/js/createProducts.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </body>
 
   </html>

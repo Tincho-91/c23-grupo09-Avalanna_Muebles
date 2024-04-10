@@ -3,6 +3,7 @@ window.addEventListener("load", async function () {
 
     const inputs = document.querySelectorAll("input")
     const divs = document.querySelectorAll("div")
+    const button = document.querySelector(".form-button")
 
     const users = await fetch("http://localhost:3000/api/users/all").then(resp=>{
         return resp.json()
@@ -35,7 +36,7 @@ window.addEventListener("load", async function () {
 
     const checkEmail = function(element, users){
         let emailUser = ""
-        users.forEach(user => {
+        users.users.forEach(user => {
             if (element.value == user.email) {
                 emailUser = user.email
             }
@@ -91,5 +92,34 @@ window.addEventListener("load", async function () {
             validation(this)
         })
     });
+
+
+    button.addEventListener("click", function(e){
+        let errorValidate;
+
+        inputs.forEach(input=>{
+
+            if(input != document.querySelector(".search")){
+                if (document.querySelector(`.form_main_section-div-${input.name} p`).textContent.length > 0) {
+                    errorValidate = true;
+                    
+                }
+            }
+           
+        })
+
+        if (errorValidate) {
+            e.preventDefault()
+            
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Debe completar el formulario con los datos indicados",
+                footer: ''
+              });
+
+        }
+        
+    })
 
 })

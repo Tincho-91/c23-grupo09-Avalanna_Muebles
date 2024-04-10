@@ -18,9 +18,7 @@
                                 <label for="nameAndSurname">Nombre y Apellido</label>
                                 <input type="text" id="name" name="nameAndSurname"
                                     value="<%= locals.user ? user.nameAndSurname : locals.old && old.nameAndSurname ? old.NameAndSurname : null %>">
-                                <p class="erroresForm">
-                                    <%= locals.errores && errores.nameAndSurname ? errores.nameAndSurname.msg : null %>
-                                </p>
+                                <p class="erroresForm"><%= locals.errores && errores.nameAndSurname ? errores.nameAndSurname.msg : null %></p>
                            
                         </div>
 
@@ -28,18 +26,14 @@
                             <label for="email">Email</label>
                             <input type="text" id="email" name="email"
                                 value="<%= locals.user ? user.email : locals.old && old.email ? old.email : null %>">
-                            <p class="erroresForm">
-                                <%= locals.errores && errores.email ? errores.email.msg : null %>
-                            </p>
+                            <p class="erroresForm"><%= locals.errores && errores.email ? errores.email.msg : null %></p>
                         </div>
 
                         <div class="actualizar__main__section-form-div form_main_section-div-phoneNumber">
                             <label for="phoneNumber">Tel</label>
                             <input type="number" id="phoneNumber" name="phoneNumber"
                                 value="<%= locals.user ? user.phoneNumber : locals.old && old.phoneNumber ? old.phoneNumber : null %>">
-                            <p class="erroresForm">
-                                <%= locals.errores && errores.phoneNumber ? errores.phoneNumber.msg : null %>
-                            </p>
+                            <p class="erroresForm"><%= locals.errores && errores.phoneNumber ? errores.phoneNumber.msg : null %></p>
                         </div>
 
 
@@ -58,9 +52,7 @@
                                     <label for="date">Fecha de Nacimiento</label>
                                     <input type="date" name="birthday" id="date"
                                         value="<%= locals.user ? user.birthday : locals.old && old.birthday ? old.birthday : null %>">
-                                    <p class="erroresForm">
-                                        <%= locals.errores && errores.birthday  ? errores.birthday .msg : null %>
-                                    </p>
+                                    <p class="erroresForm"><%= locals.errores && errores.birthday  ? errores.birthday .msg : null %></p>
                                 </div>
 
                                 <% if (locals.addresses[0]) {%>
@@ -91,13 +83,11 @@
                                         <%} %>
 
                                             <input type="file" id="inputGroupFile02" name="image">
-                                            <p class="erroresForm">
-                                                <%= locals.errores && errores.image ? errores.image.msg : null %>
-                                            </p>
+                                            <p class="erroresForm"><%= locals.errores && errores.image ? errores.image.msg : null %></p>
                                 </div>
 
                                 <div class="actualizar__main__section-form-div-booton">
-                                    <button class="actualizar__main__section__form-button"
+                                    <button class="actualizar__main__section__form-button form-button"
                                         type="submit">Actualizar</button>
                                 </div>
 
@@ -110,6 +100,7 @@
 
             <%- include("../partials/footer.ejs") %>
             <script src="/js/profileUser.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     </body>
 
     </html>
