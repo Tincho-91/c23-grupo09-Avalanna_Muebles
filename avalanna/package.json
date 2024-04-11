@@ -3,10 +3,11 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "start":"nodemon ./src/bin/www",
     "server": "nodemon ./src/bin/www",
-    "client:start":"cd react-admin && npm run start",
+    "client:start":"cd react-admin & npm run dev-start",
     "db": "sequelize db:drop & sequelize db:create & sequelize db:migrate & sequelize db:seed:all",
-    "dev": "concurrently \"npm run server\" && \"npm run client:start\""
+    "dev": "concurrently \"npm run server\" \"npm run client:start\""
   },
   "dependencies": {
     "@formkit/tempo": "^0.0.13",
