@@ -98,11 +98,11 @@ window.addEventListener("load", async function () {
         let errorValidate;
 
         inputs.forEach(input=>{
-
-            if(input != document.querySelector(".search")){
-                if (document.querySelector(`.form_main_section-div-${input.name} p`).textContent.length > 0) {
+            
+            if((input != document.querySelector(".search")) && (input != document.querySelector(".rememberMeLogin"))){
+                
+                if (document.querySelector(`.login_main_section-div-${input.name} p`).textContent.length > 0) {
                     errorValidate = true;
-                    
                 }
             }
            
@@ -112,12 +112,17 @@ window.addEventListener("load", async function () {
             e.preventDefault()
             
             Swal.fire({
+                customClass: {
+                    confirmButton: 'swalBtnColor',
+                  },
                 icon: "error",
                 title: "Oops...",
                 text: "Debe completar el formulario con los datos indicados",
-                footer: ''
+                footer: '',
+              
               });
-
+            document.querySelector(".swalBtnColor").style.backgroundColor = "black"
+              
         }
         
     })

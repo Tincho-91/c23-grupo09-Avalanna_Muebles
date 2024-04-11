@@ -155,6 +155,21 @@ window.addEventListener("load", function () {
                 footer: ''
               });
 
+        }if (errorValidate) {
+            e.preventDefault()
+            
+            Swal.fire({
+                customClass: {
+                    confirmButton: 'swalBtnColor',
+                  },
+                icon: "error",
+                title: "Oops...",
+                text: "Debe completar el formulario con los datos indicados",
+                footer: '',
+              
+              });
+            document.querySelector(".swalBtnColor").style.backgroundColor = "black"
+              
         }
         
     })

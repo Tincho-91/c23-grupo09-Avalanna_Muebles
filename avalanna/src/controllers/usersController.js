@@ -167,7 +167,7 @@ if (!errors.isEmpty()) {
             direcciones.push(address.dataValues)
             
           }); 
-          req.session.user = resp.dataValues    
+           
           res.render("users/actualizar-datos-usuario", {title: "Editar", user:resp.dataValues, addresses:resp.dataValues.addresses, usuario: req.session.user});
           
           })}).catch(err=>console.log(err))

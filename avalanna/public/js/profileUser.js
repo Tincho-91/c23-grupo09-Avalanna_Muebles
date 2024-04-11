@@ -128,12 +128,17 @@ window.addEventListener("load", function () {
             e.preventDefault()
             
             Swal.fire({
+                customClass: {
+                    confirmButton: 'swalBtnColor',
+                  },
                 icon: "error",
                 title: "Oops...",
                 text: "Debe completar el formulario con los datos indicados",
-                footer: ''
+                footer: '',
+              
               });
-
+            document.querySelector(".swalBtnColor").style.backgroundColor = "black"
+              
         }
         
     })
