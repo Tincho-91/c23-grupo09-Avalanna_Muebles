@@ -3,12 +3,15 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon ./src/bin/www",
-    "db": "sequelize db:drop & sequelize db:create & sequelize db:migrate & sequelize db:seed:all"
+    "server": "nodemon ./src/bin/www",
+    "client:start":"cd react-admin && npm run start",
+    "db": "sequelize db:drop & sequelize db:create & sequelize db:migrate & sequelize db:seed:all",
+    "dev": "concurrently \"npm run server\" && \"npm run client:start\""
   },
   "dependencies": {
     "@formkit/tempo": "^0.0.13",
     "bcryptjs": "^2.4.3",
+    "concurrently": "^8.2.2",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "dotenv": "^16.4.3",
