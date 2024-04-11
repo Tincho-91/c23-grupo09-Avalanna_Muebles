@@ -6,7 +6,7 @@
 
     <main class="login__main">
         <section class="login__main__section-bienvenidos">
-        <img src="img/logo-circular.png" alt="">
+        <img src="/img/logo-circular.png" alt="">
         <h1>Bienvenidos</h1>
         </section>
     
@@ -16,15 +16,23 @@
         
             <form action="/users/ingresar" method="post" class="login__main__section__form">
                 
-                <input type="email" name="email" id="email" value= "<%= locals.old && old.email ? old.email : null %>" placeholder="Email">
+            <div class="login_main_section-div-email">
+                <label for="Email">Email</label>
+                <input type="email" name="email" id="email" value= "<%= locals.old && old.email ? old.email : null %>" >
                 <p class="register__main__section__form__p" ><%= locals.errors && errors.email ? errors.email.msg : null%> </p>
-                <input type="password" name="password1" id="contraseña" placeholder="Contraseña">
+            </div>
+
+            <div class="login_main_section-div-password1">
+                <label for="Contraseña">Contraseña</label>
+                <input type="password" name="password1" id="contraseña" >
                 <p class="register__main__section__form__p"><%= locals.errors && errors.password1 ? errors.password1.msg : null%></p>
+            </div>
+
                 <button type="submit" class="login__main__section__form-button">Entrar</button>
 
                 <div>
-                    <label class="login__main__section__form-label" for="">Recordar mi cuenta</label>
-                    <input class="" name="rememberMe" type="checkbox">
+                    <label id="login__main__section__form__div__recordar-label" for="">Recordar mi cuenta</label>
+                    <input id="login__main__section__form__div-input" name="rememberMe" type="checkbox">
                 </div>
 
             </form>
@@ -36,6 +44,6 @@
     </main> 
     
     <%- include("../partials/footer.ejs") %>
-
+<script src="/js/login.js"></script>
 </body>
 </html>

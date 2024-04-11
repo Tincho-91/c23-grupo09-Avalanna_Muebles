@@ -1,9 +1,29 @@
 
-
+.login_main_section-div-email{
+    display: flex;
+    flex-direction: column;
+}
+.login_main_section-div-password1{
+    display: flex;
+    flex-direction: column;
+}
 .login__main__section-form form div input{
-    width: 10%;
-    margin-top: 0%;
-    margin-right: 10%;
+    width: 100%;
+    text-align: center;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    background-color:var(--color-gris-claro);
+    border: none;
+    color: black;
+    padding: 3% 4%;
+    margin-top: 2%;
+}
+.login__main__section-form div label{
+    color: rgba(0, 0, 0, 70%);
+    font-size: 30px;
+    font-family: "Oxygen", sans-serif;
+    width: 100%;
+    
 }
 .login__main {
     font-family: "Raleway", sans-serif;
@@ -60,8 +80,8 @@
     align-items: center;
     width: 100%;
 }
-.login__main__section-form form input{
-    width: 70%;
+#login__main__section__form__div-input{
+    width: 50%;
     background-color:var(--color-gris-claro);
     border: none;
     color: black;
@@ -108,15 +128,15 @@
 .login__main__section__form div{
     display: flex;
     width: 100%;
-    margin-bottom: 20%;
+    margin-bottom: 5%;
     margin-top: 10%;
 }
 
-.login__main__section__form-label{
-    font-size: 15px;
+#login__main__section__form__div__recordar-label{
+    font-size: 100%;
     font-weight: bold;
-    width: 50%;
-    margin-left: 20%;
+    width: 100%;
+    margin-left: 1%;
     
 }
 
@@ -184,9 +204,12 @@ width: 10%;
     .login__main__section__form-label{
         font-size: 20px;
         width: 60%;
-        margin-left: 16%;
-        
-        
+        margin-left: 16%;  
+    }
+    #login__main__section__form__div__recordar-label{
+        font-size: 110%;
+        font-weight: bold;
+        width: 100%;
     }
 }
 
@@ -250,5 +273,10 @@ width: 10%;
   }
   .login__main__section__ul li a{
     font-size: 25px;
+}
+#login__main__section__form__div__recordar-label{
+    font-size: 135%;
+
+    width: 90%;
 }
 }

@@ -4,7 +4,9 @@ const { op } =require("sequelize");
 const bcrypt = require('bcryptjs');
 const { validationResult } = require('express-validator');
 const { v4: uuidv4 } = require('uuid');
-const {parse} = require("@formkit/tempo")
+const fs = require("fs");
+const path = require("path");
+
 const usersController = {
     login: (req,res)=>{
         res.render("users/login", {title:"Ingresar"});
@@ -39,11 +41,11 @@ const usersController = {
           .then((user) => {
             req.session.user = user.dataValues;
   
-            if (req.body.remember == "true") {
+            if (req.body.rememberMe == "on") {
               res.cookie("user", user.dataValues, { maxAge: 1000 * 60 * 15 });
               res.cookie("rememberMe", "true", { maxAge: 1000 * 60 * 15 });
             }
-  
+
             res.redirect("/");
           })
           .catch((err) => {
@@ -83,14 +85,9 @@ createUser: (req, res) => {
 },
       
      register:(req,res)=>{
-        res.render("users/register", {title:"Registrarme", user: req.session.user});
+        res.render("users/register", {title:"Registrarme", usuario: req.session.user});
     },
   
-
-  register: (req, res) => {
-    res.render("users/register", { title: "Registrarme", user: req.session.user });
-  },
- 
   edform: (req, res) => {
     const { id } = req.params;
     db.User.findByPk(id, {include:[
@@ -169,7 +166,8 @@ if (!errors.isEmpty()) {
           resp.dataValues.addresses.forEach(address => {
             direcciones.push(address.dataValues)
             
-          });     
+          }); 
+          req.session.user = resp.dataValues    
           res.render("users/actualizar-datos-usuario", {title: "Editar", user:resp.dataValues, addresses:resp.dataValues.addresses, usuario: req.session.user});
           
           })}).catch(err=>console.log(err))
@@ -197,35 +195,36 @@ if (!errors.isEmpty()) {
         db.User.findAll()
         .then((users)=>{
           
-          res.render("users/dashboard", { title: "Dashboard", users, propiedades, user: req.session.user })
+          res.render("users/dashboard", { title: "Dashboard", users, propiedades, usuario: req.session.user })
         })
         .catch(err=>console.log(err))
         
     },
 
-      destroy:(req,res)=>{
+      destroy: async(req,res)=>{
         const {id} = req.params;
-        db.User.destroy({
-          where:{
-            id,
-          }
-        }).then((resp)=>{
-          res.redirect("/");
-        }).catch(err=>console.log(err))
-        db.Product.findOne({
+
+        const userFound = await db.User.findOne({
           where:{
               id
           }
-         }).then((resp)=>{
-          fs.unlink(path.join(__dirname,`../../public/img/users/${resp.dataValues.image}`),(err)=>{
-              console.log(`archivo antes del err ${resp.dataValues.image}`);
+         }).catch(err=>console.log(err))
+ 
+          if (userFound.profileImage) {
+            fs.unlink(path.join(__dirname,`../../public/img/users/${userFound.profileImage}`),(err)=>{
               if(err) throw err;
-              console.log(`archivo ${resp.dataValues.image}`);
-              res.redirect(`/`);
+              console.log(`archivo ${userFound.profileImage}`);
          })
-        }
-        ).catch(err=>console.log(err))
-        
+          }
+         
+
+      await  db.User.destroy({
+          where:{
+            id,
+          }
+        }).catch(err=>console.log(err))
+
+        res.redirect(`/`);
       },
 
       address:(req,res)=>{
@@ -239,7 +238,7 @@ if (!errors.isEmpty()) {
         .then(([findUser, findAddress])=>{
           console.log("findUser:", findUser.dataValues);
           console.log("findAddress:", findAddress);
-          res.render("users/addressDetail",{title:"Domicilio", user:findUser.dataValues, addresses:findAddress.dataValues})
+          res.render("users/addressDetail",{title:"Domicilio", user:findUser.dataValues, addresses:findAddress.dataValues,  usuario: req.session.user})
 
         }).catch(err=>console.log(err));
       },
@@ -255,7 +254,7 @@ if (!errors.isEmpty()) {
 
       Promise.all([findUser, findAddress])
         .then(([findUser, findAddress])=>{
-          res.render("users/addressDetail",{title:"Domicilio", user:findUser.dataValues, addresses:findAddress.dataValues, errores:errors.mapped(), old:req.body})
+          res.render("users/addressDetail",{title:"Domicilio", user:findUser.dataValues, addresses:findAddress.dataValues, errores:errors.mapped(), old:req.body, usuario: req.session.user})
 
         }).catch(err=>console.log(err));
         }else {
@@ -305,7 +304,7 @@ if (!errors.isEmpty()) {
         const {id}=req.params;
         db.User.findByPk(id)
         .then(resp=>{
-          res.render("users/registerAddress",{title:"registrar address", user:resp.dataValues})
+          res.render("users/registerAddress",{title:"registrar address", user:resp.dataValues, usuario: req.session.user})
         }).catch(err=> console.log(err))
       },
 
@@ -316,7 +315,7 @@ if (!errors.isEmpty()) {
         if (!errors.isEmpty()) {
           db.User.findByPk(id)
         .then(resp=>{
-          res.render("users/registerAddress",{title:"registrar address", user:resp.dataValues, old:req.body, errores:errors.mapped()})
+          res.render("users/registerAddress",{title:"registrar address", user:resp.dataValues, old:req.body, errores:errors.mapped(), usuario: req.session.user})
         }).catch(err=> console.log(err))
 
         }else {

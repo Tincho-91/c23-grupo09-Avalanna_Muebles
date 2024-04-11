@@ -67,6 +67,13 @@
     width: 100%;
 }
 
+.form_mainsection_form h3{
+    color: rgba(0, 0, 0, 70%);
+    font-family: "Oxygen", sans-serif;
+    margin-right: 40%;
+    margin-top: 3%;
+}
+
 .form_mainsection_form div select{
     background-color: var(--color-beige);
     padding: 3%;
@@ -145,6 +152,11 @@
     .form_mainsection_form div label{
         font-size: 24px;
     }
+
+    .form_mainsection_form h3{
+        font-size: 34px;
+        margin-right: 51%;
+    }
     .form_mainsection_form--p-campos{
         font-size: 15px;
     }
@@ -188,6 +200,12 @@
     }
     .form_mainsection_form div label{
         font-size: 30px;
+    }
+    .form_mainsection_form h3{
+        font-size: 42px;
+        margin-top: 0%;
+        margin-right: 53%;
+        margin-bottom: 1%;
     }
     .form_mainsection_form--p-campos{
         font-size: 20px;
