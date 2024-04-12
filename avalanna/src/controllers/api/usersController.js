@@ -58,7 +58,7 @@ module.exports = {
         
         const offset = limit * (parseInt(page) - 1);
  
-        const query = { limit, offset,  attributes: ['id', 'nameAndSurname', 'email']  };
+        const query = { limit, offset,  attributes: ['id', 'nameAndSurname', 'email', 'profileImage']  };
     
      try{
         if (!Number.isInteger(parseInt(page))) {
@@ -72,7 +72,14 @@ module.exports = {
                 
             const arrayUsers = users.rows
             arrayUsers.forEach( user=>{
-                user.dataValues.detail = `localhost:3000/users/editar/${user.id}`
+                console.log("userImage", user.profileImage);
+                user.dataValues.detail = `localhost:3000/users/editar/${user.id}`;
+               if(user.profileImage != "default.jpg") {
+                user.dataValues.profileImage = `http://localhost:3000/img/users/${user.profileImage}`
+               }else{
+                user.dataValues.profileImage = `http://localhost:3000/img/${user.profileImage}`
+               }
+
             })
               
             page == 1 ? previous = null : previous =`localhost:3000/api/products/?page=${parseInt(page) - 1}`
@@ -82,6 +89,7 @@ module.exports = {
             }else{
                 next = null
             }
+            console.log("hola pasaste por aca");
 
             return res.status(200).json({
                 count: users.count,
@@ -89,7 +97,7 @@ module.exports = {
                 next,
                 previous
             });
-    
+   
             
     } catch (error) {
          return res.status(400).send(error.message);
