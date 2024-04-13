@@ -98,7 +98,7 @@ module.exports = {
                   name,
                   price,
                   description,
-                  extraDescription,
+                  extraDescription, 
                   categoryId,
                   discount,
                   height,
