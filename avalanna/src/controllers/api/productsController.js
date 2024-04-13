@@ -6,25 +6,50 @@ const path = require("path");
 module.exports = {
     detail: async (req, res) => {
         try {
-            const id = parseInt(req.params.id);
-
-            if(!Number.isInteger(id)){
-                throw new Error("Por favor ingrese un numero entero")
+            const id = parseInt(req.params.id);//parseo el id y lo convierto en num entero
+    
+            if (!Number.isInteger(id)) {//verifico si el id es un num entero y si no mensaje de error
+                throw new Error("Por favor ingrese un número entero");
             }
-
-            const product = await db.Product.findByPk(id,{
-                include:{association:'categories'}
-            })
-
-            if(!product){
-                throw new Error("El ID ingresado no corresponde a ningun producto")
+    //buscar el producto en la base de datos por su id
+            const product = await db.Product.findByPk(id, {
+                include: [{ association: "categories" }]
+            });
+        
+            if (!product) {//Se verifica si se encontró un producto con el id y si no mensaje d error
+                throw new Error("El ID ingresado no corresponde a ningun producto");
             }
-
-            return res.status(200).send(product);            
+        
+            // Construye el objeto literal 
+            const responseObject = {
+                id: product.id,
+                name: product.name,
+                price: product.price,
+                description: product.description,
+                extraDescription: product.extraDescription,
+                categoryId: product.categoryId,
+                discount: product.discount,
+                height: product.height,
+                width: product.width,
+                depth: product.depth,
+               
+            
+                // Array para las relaciones de uno a muchos
+                categories:[product.categories]
+            }
+                // URL para la imagen del producto (puedes modificar esto según tu implementación)
+                //imageUrl: /api/products/${product.id}/image
+        
+    
+            // Envia la respuesta con el objeto literal
+            return res.status(200).json(responseObject);
         } catch (error) {
-            res.status(400).send(error.message)
+         
+            return res.status(400).send(error.message);
+        
         }
     },
+
 
     list: async (req,res) =>{
 
