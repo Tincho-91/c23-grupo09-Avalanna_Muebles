@@ -18,6 +18,7 @@
 .products__main__section__article {
     width: 48.5%;
     margin:2% 0 2% 0;
+    
 }
 .products__main__section__article__a{
     display: flex;
@@ -27,7 +28,7 @@
     text-decoration: none;
     color: black;
     width: 100%;
-    background-color: white;
+    background-color: #D1D1D1;
     border: 0.5px solid rgba(0, 0, 0, 20%);
 }
 .products__main__section__article div img{
@@ -37,12 +38,14 @@
 .products__main__section__article__a p{
     font-family: "Oxygen", sans-serif;
     font-size: 13px;
-    margin: 0% 2%;
+    margin: 0;
+
 }
 .products__main__descuento-p{
-    width: 5%;
-    display: inline;
+    width: 100%;
+    display: block;
     color: rgba(0, 0, 0, 70%);
+    text-align: center;
 }
 .products__main__precio-total{
     padding: 8.3%;
@@ -61,6 +64,25 @@
     margin: 0;
 
 }
+.products__main__section-div-buttons{
+    width: 100%;
+    margin: 2%;
+    
+}
+.products__main__section-div-buttons button{
+    margin: 2%;
+    padding: 1%;
+    transition: all 1s;
+    border: 1px solid black;
+}
+
+.products__main__section-div-buttons button:hover{
+    cursor: pointer;
+    box-shadow: 2px 2px 10px black;
+   
+}
+
+
 @media(min-width:768px){
     .products__main__section {
         gap: 2%;
@@ -111,8 +133,16 @@
     .products__main__section__div h3{
         font-size: 18px;
     }
-    .products__main__section__div h3:hover{
+    .see-profile:hover{
         text-decoration: underline;
+        font-size: 18px;
+        color: black;
+        
+    }
+    .see-profile{
+        transition: all 1s;
+        padding-top: 1%;
+       
     }
     .products__main__section__article__a p{
         font-size: 14px;
