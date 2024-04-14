@@ -7,6 +7,7 @@ import ContentRowMovies from './ContentRowMovies';
 import ContentUsers from './ContentUsers';
 import NotFound from './NotFound';
 import {Link, Route, Routes} from 'react-router-dom';
+import ContentProducts from './ContentProducts';
 
 function SideBar(){
     return(
@@ -67,6 +68,12 @@ function SideBar(){
                         <span>Usuarios</span></Link>
                 </li>
 
+                <li className="nav-item nav-link">
+                <Link className="nav-link" to="/Productos">
+                        <i className="fas fa-fw fa-table"></i>
+                        <span>Productos</span></Link>
+                </li>
+
                 {/*<!-- Divider -->*/}
                 <hr className="sidebar-divider d-none d-md-block"/>
             </ul>
@@ -96,6 +103,7 @@ function SideBar(){
 
                 <Route path="/ContentRowMovies" element={ <ContentRowMovies />}/>
                 <Route path="/Usuarios" element={ <ContentUsers />}/>
+                <Route path="/Productos" element={ <ContentProducts />}/>
                 <Route component={NotFound} />
             </Routes>
             {/*<!-- End Microdesafio 2 -->*/}

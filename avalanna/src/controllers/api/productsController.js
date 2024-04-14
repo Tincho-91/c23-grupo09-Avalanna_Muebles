@@ -34,7 +34,7 @@ module.exports = {
         
         const offset = limit * (parseInt(page) - 1);
  
-        const query = { limit, offset, include: { association: "categories" }, attributes: ['id', 'name', 'description'] };
+        const query = { limit, offset, include: { association: "categories" }, attributes: ['id', 'name', 'description', 'image'] };
     
         try {
             if (!Number.isInteger(parseInt(page))) {
@@ -61,6 +61,7 @@ module.exports = {
           const arrayProducts = products.rows
           arrayProducts.forEach( product=>{
             product.dataValues.detail = `localhost:3000/products/detail/${product.id}`
+            product.dataValues.image = `http://localhost:3000/img/${product.image}`
             product.dataValues.associations = [{categories:product.dataValues.categories}]
             delete product.dataValues.categories
           })
