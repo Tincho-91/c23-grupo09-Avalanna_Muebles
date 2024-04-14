@@ -7,4 +7,6 @@ router.put("/editar/:id",editUserValidator, usersController.update);
 
 router.get("/all", usersController.listUsers);
 
+router.get("/:id", usersController.getUserById);
+
 module.exports = router;
