@@ -1,12 +1,13 @@
 import React from 'react';
 import image from '../assets/images/Imagotipo.png';
 import ContentWrapper from './ContentWrapper';
-import GenresInDb from './GenresInDb';
-import LastMovieInDb from './LastMovieInDb';
+import GenresInDb from './ListCategories';
+import LastProduct from './LastProduct';
 import ContentRowMovies from './ContentRowMovies';
 import ContentUsers from './ContentUsers';
 import NotFound from './NotFound';
 import {Link, Route, Routes} from 'react-router-dom';
+import ContentProducts from './ContentProducts';
 
 function SideBar(){
     return(
@@ -39,32 +40,18 @@ function SideBar(){
                 {/*<!-- Heading -->*/}
                 <div className="sidebar-heading">Actions</div>
 
-                {/*<!-- Nav Item - Pages -->*/}
-                <li className="nav-item">
-                <Link className="nav-link" to="/GenresInDb">
-                        <i className="fas fa-fw fa-folder"></i>
-                        <span>Pages</span>
-                    </Link>
-                </li>
-
-                {/*<!-- Nav Item - Charts -->*/}
-                <li className="nav-item">
-                    <Link className="nav-link" to="/LastMovieInDb">
-                        <i className="fas fa-fw fa-chart-area"></i>
-                        <span>Charts</span></Link>
-                </li>
-
-                {/*<!-- Nav Item - Tables -->*/}
-                <li className="nav-item nav-link">
-                <Link className="nav-link" to="/ContentRowMovies">
-                        <i className="fas fa-fw fa-table"></i>
-                        <span>Tables</span></Link>
-                </li>
+                
 
                 <li className="nav-item nav-link">
                 <Link className="nav-link" to="/Usuarios">
                         <i className="fas fa-fw fa-table"></i>
                         <span>Usuarios</span></Link>
+                </li>
+
+                <li className="nav-item nav-link">
+                <Link className="nav-link" to="/Productos">
+                        <i className="fas fa-fw fa-table"></i>
+                        <span>Productos</span></Link>
                 </li>
 
                 {/*<!-- Divider -->*/}
@@ -91,11 +78,9 @@ function SideBar(){
             <Routes>
                 <Route path="/" element={ <ContentWrapper/>} />
                
-                <Route path="/GenresInDb" element={<GenresInDb />} />
-                <Route path="/LastMovieInDb" element={<LastMovieInDb />} />
-
-                <Route path="/ContentRowMovies" element={ <ContentRowMovies />}/>
+                
                 <Route path="/Usuarios" element={ <ContentUsers />}/>
+                <Route path="/Productos" element={ <ContentProducts />}/>
                 <Route component={NotFound} />
             </Routes>
             {/*<!-- End Microdesafio 2 -->*/}

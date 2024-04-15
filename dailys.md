@@ -209,3 +209,28 @@ Flavia: Realiza las validaciones del frontend del formulario de update user.
 Martin: Realiza las validaciones del frontend del formulario de registro y corrige validaciones del backend.
 Melany: Comenzó a realizar las validaciones del frontend de los formularios de address y realiza correcciones de vista.
 Luana: Ausente.
+
+* Sprint 8
+08/04/2024
+Flavia: Realizó apis de detail usuarios y productos.
+Melany: Realizó apis de list usuarios y productos.
+Martin: Ausente por dengue.
+
+09/04/2024
+Flavia: Corrección de apis y repaso de React.
+Melany: Comenzó a realizar el dashboard en React.
+
+10/04/2024
+Comenzamos a preparar la presentación del proyecto.
+Flavia: Repasando temas.
+Melany: Bloqueo por CORS.
+
+11/04/2024
+Flavia: Repasando temas.
+Melany: Realizando dashboard de usuarios.
+
+12/04/2024
+Flavia: Comenzó a realizar el panel de count.
+Melany: Finalizó dashboard de usuarios y comenzó a realizar dashboard de productos.
+Martin: Anotó las conclusiones de la retro.
+

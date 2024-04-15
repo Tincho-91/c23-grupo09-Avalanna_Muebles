@@ -40,8 +40,7 @@
                 <div class="header__contenido-desplegable" id="header__contenido-desplegable-profile-div">
                     <a href="/users/editar/<%= locals.usuario.id %>" class="header__div__iconos-user-session">Mi cuenta</a>
                     <% if (locals.usuario.rolId == "2") { %>
-                        <a href="/users/dashboard" class="header__div__iconos-user-session">Administrar usuarios</a>
-                        <a href="/products/dashboard" class="header__div__iconos-user-session">Administrar productos</a>
+                        <a href="http://localhost:5173" class="header__div__iconos-user-session">Dashboard</a>
                         <% } %>
                     <a href="/users/logout" class="header__div__iconos-user-session">Cerrar sesión</a>
                 </div>

@@ -138,6 +138,6 @@ HACER MÁS: La buena comunicación que supimos tener en este sprint nos permiti�
 
 HACER MENOS: Con el fin de no trabarnos en el progreso, cuando un integrante tiene un problema ya sea personal o externo al sprint, aparte de brindar ayuda que se pueda, se reasigna la tarea a otro compañero con el fin de no trabar el proyecto.
 
-EMPEZAR A HACER: Como se hacerca la finalización del proyecto, es momento de ajustar los detalles finales, buscar las imperfecciones que se escapan de la vista y corregirlas y agregar detalles que puedan mejorar la experiencia del usuario.
+EMPEZAR A HACER: Como se acerca la finalización del proyecto, es momento de ajustar los detalles finales, buscar las imperfecciones que se escapan de la vista y corregirlas y agregar detalles que puedan mejorar la experiencia del usuario.
 
-DEJAR DE HACER: El no juntarnos seguido y aprobechar al máximo el tiempo de cada encuentro para cerrar los ultimos detalles y mantener la comunicación fluida es crucial en estos últimos días de trabajo en el sprint.
+DEJAR DE HACER: El no juntarnos seguido y aprovechar al máximo el tiempo de cada encuentro para cerrar los ultimos detalles y mantener la comunicación fluida es crucial en estos últimos días de trabajo en el sprint.

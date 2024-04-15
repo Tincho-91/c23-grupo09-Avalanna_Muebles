@@ -1,48 +1,78 @@
 import React from 'react';
 import SmallCard from './SmallCard';
+import {useState, useEffect} from "react";
 
 /*  Cada set de datos es un objeto literal */
 
-/* <!-- Movies in DB --> */
-
-let moviesInDB = {
-    title: 'Movies in Data Base',
-    color: 'primary', 
-    cuantity: 21,
-    icon: 'fa-clipboard-list'
-}
-
-/* <!-- Total awards --> */
-
-let totalAwards = {
-    title:' Total awards', 
-    color:'success', 
-    cuantity: '79',
-    icon:'fa-award'
-}
-
-/* <!-- Actors quantity --> */
-
-let actorsQuantity = {
-    title:'Actors quantity' ,
-    color:'warning',
-    cuantity:'49',
-    icon:'fa-user-check'
-}
-
-let cartProps = [moviesInDB, totalAwards, actorsQuantity];
-
 function ContentRowMovies(){
+    const [productsCount, setProductsCount] = useState({})
+    const [usersCount, setUsersCount] = useState({})
+    const [categoriesCount, setCategoriesCount] = useState({})
+
+    useEffect(()=>{
+        const getFetch = async () =>{
+            try {
+                const respProducts = await fetch(`https://8v2lk96m-3000.brs.devtunnels.ms/api/products/`)
+                const products = await respProducts.json();
+                console.log("respProducts", products);
+
+                const respUsers = await await fetch(`https://8v2lk96m-3000.brs.devtunnels.ms/api/users/all`)
+                const users = await respUsers.json()
+                console.log("respusers", users);
+                const prodObject = {
+                    name: "Productos",
+                    total: products.count
+                }
+
+                setProductsCount(prodObject);
+
+                const usersObject = {
+                    name: "Usuarios",
+                    total: users.count
+                }
+                
+                setUsersCount(usersObject);
+                
+                const totalCategories = Object.keys(products.countByCategory)
+            
+                const catObject = {
+                    name: "Categorías",
+                    total: totalCategories.length
+                }
+
+                setCategoriesCount(catObject)
+           
+            } catch (error) {
+                console.log(error)
+            }
+
+
+        }
+        getFetch();
+        console.log("productsCount", productsCount);
+        console.log("users", usersCount);
+        console.log("CATEGORIES", categoriesCount);
+
+
+    }, [])
+
+    const cartProps = [productsCount, usersCount, categoriesCount]
+
     return (
     
         <div className="row">
-            
-            {cartProps.map( (movie, i) => {
+            { !cartProps[0].name ? (
+                <h1>Cargando...</h1>
+            ) : (
+                <>
+                {cartProps.map( (responses, i) => {
 
-                return <SmallCard {...movie} key={i}/>
+                    return <SmallCard {...responses} key={i}/>
+                
+                })}
+    </>
+            )}
             
-            })}
-
         </div>
     )
 }
