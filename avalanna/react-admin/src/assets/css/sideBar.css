@@ -24,3 +24,12 @@
 .sidebar-dark .sidebar-heading {
     color: black !important
 }
+
+.nav-link a:hover{
+    text-decoration: underline;
+}
+
+
+.nav-link span:hover{
+    text-decoration: underline;
+}

@@ -2,12 +2,16 @@
 .dashboard__main{
     width: 100%;
 }
+.dashboard__main section{
+    display: flex;
+}
 
 .dashboard__main h1 {
 text-align: center;
 padding: 2%;
 font-size: 40px;
 font-weight: 700;
+display: block;
 }
 
 
@@ -16,22 +20,20 @@ font-weight: 700;
    text-align: center;
    margin-top: 1%;
 }
-.dashboard__main div button{
+.dashboard__main-div-button{
     width: 80%;
     padding: 1%;
     font-size: 26px;
     border: none;
     transition: all 1s;
     text-align: center;
+
 }
-.dashboard__main div button:hover{
+.dashboard__main-div-button:hover{
     box-shadow: 2px 2px 10px black;
     background-color: var(--color-gris-oscuro);
 }
-.dashboard__main div button:hover a{
-    color: white;
-    font-size: 30px;
-}
+
 
 .dashboard__main div button a{
     font-weight: 600;
@@ -44,7 +46,7 @@ font-weight: 700;
 
 .dashboard__main__table {
     padding: 3%;
-    width: 50%;
+    width: 100%;
     margin: 2% ;
 }
 .dashboard__main__table th{
@@ -72,9 +74,9 @@ font-weight: 700;
 }
 
 .dashboard__main__table__tbody__buttons i{
-    padding: 8%;
+    padding: 6%;
     transition: all 1s;
-    font-size: 25px;
+    font-size: 20px;
 
 }
 
@@ -104,3 +106,4 @@ font-weight: 700;
     border: none;
     background-color: var(--color-gris-claro);
 }
+

@@ -32,13 +32,13 @@ module.exports = {
                 height: product.height,
                 width: product.width,
                 depth: product.depth,
-               
-            
+                detail:`http://localhost:3000/products/detail/${product.id}`,
+                imageUrl: `http://localhost:3000/img/${product.image}`,
                 // Array para las relaciones de uno a muchos
                 categories:[product.categories]
             }
                 // URL para la imagen del producto (puedes modificar esto según tu implementación)
-                //imageUrl: /api/products/${product.id}/image
+                
         
     
             // Envia la respuesta con el objeto literal
@@ -84,7 +84,7 @@ module.exports = {
             
           const arrayProducts = products.rows
           arrayProducts.forEach( product=>{
-            product.dataValues.detail = `localhost:3000/products/detail/${product.id}`
+            product.dataValues.detail = `http://localhost:3000/products/detail/${product.id}`
             product.dataValues.image = `http://localhost:3000/img/${product.image}`
             product.dataValues.associations = [{categories:product.dataValues.categories}]
             delete product.dataValues.categories

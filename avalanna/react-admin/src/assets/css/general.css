@@ -4,3 +4,44 @@
 *{
     font-family: "Raleway", sans-serif;
 }
+.btn-danger{
+    background-color:#4D4D4D !important;
+    border-color: black;
+    font-weight: 500;
+}
+
+.btn-danger:hover{
+    background-color:black!important;
+    border-color: black;
+    color: white;
+}
+
+.border-left-dark{
+    border:2px solid #4D4D4D !important
+}
+
+.card-header{
+    background-color: #898989 !important;
+    
+}
+.card-header h5{
+    color: black !important;
+}
+
+.top-row-card{
+    background-color:  #898989 !important;
+    color: black;
+    font-weight: 600;
+    width: 100% !important;
+}
+
+.container-top-row-card{
+    width: 100% !important;
+    display: block !important;
+    max-width: 100%;
+}
+
+.card-row-categorie{
+    flex-direction: column;
+    
+}
