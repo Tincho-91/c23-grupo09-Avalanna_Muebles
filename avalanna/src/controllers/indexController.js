@@ -17,6 +17,8 @@ const indexController = {
           }); 
         
     },
-
+   nosotros:(req,res)=>{
+    res.render("nosotros",{title:"Nosotros"})
+   }
 }
 module.exports = indexController
