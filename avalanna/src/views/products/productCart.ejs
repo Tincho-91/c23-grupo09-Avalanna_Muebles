@@ -4,36 +4,35 @@
 
     <%- include("../partials/header.ejs") %>
 
-    <main>
-        <section >
+    <main class="productCart__main">
+        <section class="productCart__main__section">
             <div class="titulo-icon">
                 <p class="titulo">Carrito de compra</p>
-                <a href="/"><i class="fa-solid fa-cart-shopping icon-cart carrito" style="color: #000000;"></i></a>
+                
             </div>
-            <hr>
+
             <div class="subtitulos">
                 <h3 class="producto">Producto</h3>
                 <h3 class="precio-sillon">Precio</h3>
                 <h3 class="Cantidad">Cantidad</h3>
                 <h3 class="total">Total</h3>
             </div>
-            <hr>
-            <div class="contenedor-detalle">
-                <div class="producto-detalle">
-                    <img class="imagen-detalle" src="/img/mueblecocina.jpg" alt="producto" width="50%">
-                    <h4 class="texto-detalle">Combo de cocina en mdf con
-                        contorno y tiradores de aluminio.</h4>
-                </div>
+          
+            <article class="contenedor-detalle">
+                    <img class="imagen-detalle" src="/img/desayunador.png" alt="producto">
+                <div class="productCart__main__section-div-detalle">
+                    <h3 class="texto-detalle">Desayunador</h3>
+ 
 
-                <div class="producto-precio">
-                    <h4>$95000</h4>
+             <div class="productCart__main__section-div-detalle-buttons">
+                    <button class="uno">-</button>
+                    <p>1</p>
+                    <button class="uno">+</button>
                 </div>
-                <div class="producto-cantidad">
-                    <button class="uno">- 1 +</button>
+                
+                    <h4 class="productCart__main__section-div-detalle-subtotal">Subtotal $95000</h4>
                 </div>
-                <div class="producto-total">
-                    <h4>$95000</h4>
-                </div>
+            </article>
 
 
                 <article class="actualizar_seguir">
@@ -43,7 +42,7 @@
 
                 </article>
             </div>
-            <hr>
+            
         </section>
         <article class="subtotal_precio">
             <h2 class="subtotal">Subtotal</h2>
@@ -52,7 +51,6 @@
         
         <article class="finalizar-compra">
             <button class="finalizar">Finalizar compra</button>
-            <a href="//parzibyte.me/blog"></a>
             <div class="linea"></div>
         </article>
     </main>
