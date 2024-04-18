@@ -5,11 +5,10 @@
     <%- include("../partials/header.ejs") %>
 
     <main class="productCart__main">
+        <h1 class="titulo">Carrito de compra</h1>
         <section class="productCart__main__section">
-            <div class="titulo-icon">
-                <p class="titulo">Carrito de compra</p>
-                
-            </div>
+
+            
 
             <div class="subtitulos">
                 <h3 class="producto">Producto</h3>
@@ -19,7 +18,8 @@
             </div>
           
             <article class="contenedor-detalle">
-                    <img class="imagen-detalle" src="/img/desayunador.png" alt="producto">
+                <h3 class="contenedor-detalle-name">Desayunador</h3>
+                    <a href=""><img class="imagen-detalle" src="/img/desayunador.png" alt="producto"></a>
                 <div class="productCart__main__section-div-detalle">
                     <h3 class="texto-detalle">Desayunador</h3>
  
@@ -29,30 +29,32 @@
                     <p>1</p>
                     <button class="uno">+</button>
                 </div>
-                
-                    <h4 class="productCart__main__section-div-detalle-subtotal">Subtotal $95000</h4>
+                    <h4 class="productCart__main__section-div-detalle-subtotal">Precio $95000</h4>
                 </div>
             </article>
 
-
-                <article class="actualizar_seguir">
-                    <span class="boton1">
-                        <button>Seguir comprando</button></span>
-                    <span class="boton2"><button>Actualizar carrito</button></span>
-
-                </article>
+                
             </div>
             
         </section>
         <article class="subtotal_precio">
-            <h2 class="subtotal">Subtotal</h2>
-            <h2 class="precio-total">$950000</h2>
-        </article>
+            <h2>Resumen de compra</h2>
+            <div>
+                <h4 class="subtotal">Subtotal</h4>
+                <h4 class="precio-total">$950000</h4>
+                <h4>Descuentos aplicados</h4>
+            <h4>$50000</h4>
+            
+            <h4 class="subtotal">Total</h4>
+            <h4 class="precio-total">$950000</h4>
+            </div>
         
-        <article class="finalizar-compra">
-            <button class="finalizar">Finalizar compra</button>
+    
+            
             <div class="linea"></div>
         </article>
+        <button class="productCart__main_buttons"><a href="/">Continuar comprando</a></button>
+            <button class="productCart__main_buttons">Finalizar compra</button>
     </main>
 
     <%- include("../partials/footer.ejs") %>

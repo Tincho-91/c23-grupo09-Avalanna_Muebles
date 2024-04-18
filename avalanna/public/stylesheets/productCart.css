@@ -1,18 +1,42 @@
 .productCart__main{
     width: 100%;
     font-family: "Oxygen", sans-serif ;
-}
 
+    margin: 3% 0;
+    padding: 2% 0;
+}
+.productCart__main h1{
+    font-family: "Oxygen", sans-serif ;
+    width: 100%;
+}
+.productCart__main h2{
+    font-family: "Oxygen", sans-serif ;
+}
+.productCart__main h3{
+    font-family: "Oxygen", sans-serif ;
+}
+.productCart__main h4{
+    font-family: "Oxygen", sans-serif ;
+}
+.productCart__main p{
+    font-family: "Oxygen", sans-serif ;
+}
 .productCart__main__section {
     margin: 0 auto;
 }
 .texto-detalle{
     font-size: 16px;
+    font-weight: 600;
+}
+.contenedor-detalle-name{
+    display: none;
 }
 
 .titulo{
    text-align: center;
    margin-top: 3%;
+   font-size: 20px;
+   font-weight: 700;
 }
 
 .subtitulos {
@@ -27,22 +51,30 @@
 .contenedor-detalle{
     padding: 3%;
 }
+.contenedor-detalle a{
+    width: 40%;
+}
 
 .imagen-detalle{
-    width: 35%;
+    width: 100%;
     margin-left: 5%;
 }
 .contenedor-detalle {
     background-color: var(--color-beige);
     display: flex;
     gap: 2%;
-    
+    justify-content: space-around;
 }
 
 .productCart__main__section-div-detalle{
     display: flex;
     flex-direction: column;
     padding: 2%;
+    width: 50%;
+}
+
+.texto-detalle{
+    text-align: center;
 }
 
 .productCart__main__section-div-detalle div{
@@ -73,4 +105,117 @@
     margin-top: 8%;
  border-bottom: 1px solid black;
  width: 100%;
+}
+
+.subtotal_precio div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: var(--color-beige);
+}
+.subtotal_precio div h4{
+    display: inline;
+    width: 40%;
+    font-size: 15px;
+  
+}
+
+.subtotal_precio{
+    padding: 4%;
+    margin-top: 3%;
+    font-size: 15px;
+}
+
+
+.productCart__main_buttons{
+    margin-top: 3%;
+    padding: 1%;
+    background-color: var(--color-beige);
+}
+.productCart__main_buttons a{
+    color: black;
+    text-decoration: none;
+}
+
+.subtotal_precio h2{
+    background-color: var(--color-beige);
+    font-size: 18px;
+    font-weight: 600;
+}
+
+@media (min-width:768px){
+    .productCart__main h1{
+        font-size: 24px;
+        margin-top: -2%;
+        margin-bottom: 2%;
+    }
+    .texto-detalle {
+        font-size: 20px ;
+    }
+    .productCart__main__section-div-detalle-buttons button{
+        font-size: 18px;
+    }
+    .productCart__main__section-div-detalle-buttons p{
+        font-size: 18px;
+    }
+    .productCart__main__section-div-detalle-subtotal{
+        font-size: 18px;
+    }
+    .imagen-detalle{
+        width: 100%;
+    }
+    .contenedor-detalle a{
+        width: 25%;
+    }
+    .productCart__main__section-div-detalle-buttons{
+        width: 60%;
+       
+    }
+    .subtotal_precio h2{
+        font-size: 20px ;
+        text-align: center;
+    }
+    .subtotal_precio div h4{
+        font-size: 20px;
+    }
+    .productCart__main_buttons{
+        margin-left: 15%;
+        font-size: 20px;
+    }
+}
+
+@media (min-width:1024px){
+    .productCart__main{
+        display: flex;
+        flex-wrap: wrap;
+    }
+ 
+    .subtotal_precio{
+        width: 50%;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .subtotal_precio button{
+        display: block;
+    }
+    .productCart__main__section{
+        width: 48%;
+    }
+
+    .contenedor-detalle{
+        width: 100%;
+    }
+    
+    .contenedor-detalle a{
+        width: 25%;
+    }
+    .productCart__main_buttons{
+        margin-left: 25%;
+        transition: all 1s;
+    }
+    .productCart__main_buttons:hover{
+        box-shadow: 1px 1px 5px black;
+    }
+    
 }
