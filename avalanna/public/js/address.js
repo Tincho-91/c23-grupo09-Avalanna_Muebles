@@ -54,7 +54,7 @@ window.addEventListener("load", function () {
         if (element.name == "postalCode") {
             if (element.value == ""){
                 addErrorP(element)
-            } else if (!minAndMax(element.value, 4)) {
+            } else if (!min(element.value, 4)) {
                 addErrorP(element)
                 const labelContent = document.querySelector(`.form_main_section-div-${element.name} label`).textContent
                 document.querySelector(`.error-${element.name}`).innerText = `"${labelContent.toUpperCase()}" debe tener un mínimo de 4 caracteres.`

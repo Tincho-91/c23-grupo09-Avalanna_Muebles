@@ -7,12 +7,12 @@ function LastProduct(){
     useEffect(()=>{
         const getProduct = async () =>{
             try {
-            const resp = await fetch(`https://8v2lk96m-3000.brs.devtunnels.ms/api/products/`)
+            const resp = await fetch(`https://966v15r3-3000.brs.devtunnels.ms/api/products/`)
             const products = await resp.json()
 
             const id = +products.count
             console.log("id", id);
-            const response = await fetch(`https://8v2lk96m-3000.brs.devtunnels.ms/api/products/detail/${id}`)
+            const response = await fetch(`https://966v15r3-3000.brs.devtunnels.ms/api/products/detail/${id}`)
             const prod = await response.json()
              setProduct(prod)
             } catch (error) {
