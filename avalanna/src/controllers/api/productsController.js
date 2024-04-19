@@ -32,6 +32,7 @@ module.exports = {
                 height: product.height,
                 width: product.width,
                 depth: product.depth,
+                image: product.image,
                 detail:`http://localhost:3000/products/detail/${product.id}`,
                 imageUrl: `http://localhost:3000/img/${product.image}`,
                 // Array para las relaciones de uno a muchos
