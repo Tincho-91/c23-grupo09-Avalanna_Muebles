@@ -31,7 +31,7 @@ window.onload = async () =>{
         productsArray = getProducts;
         productsArray.forEach( element=> {
             if (element.id == product.id) {
-                buttonAdd.textContent = 'Agregado al Carrito'
+                buttonAdd.textContent = 'AGREGADO AL CARRITO'
                 console.log("element", element);
             }
         });
