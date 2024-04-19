@@ -1,11 +1,17 @@
 window.onload = async () =>{
+    const main = document.querySelector(".productCart__main")
     const containerArticle = document.querySelector(".productCart__main__section")
     const getProducts = JSON.parse(localStorage.getItem("addedToCart"));
     console.log("getProducts,", getProducts);
-    console.log("condicion", getProducts.length >= 1);
     const resume=document.querySelector(".subtotal_precio")
     const h1 = document.querySelector("h1")
     const buttons = document.querySelectorAll(".productCart__main_buttons")
+   
+    const resumenSubtotal = document.querySelector(".productCart__main__section_article-resumen-subtotal")
+    const resumenTotal = document.querySelector(".productCart__main__section_article-resumen-total")
+    let calcSubtotal = 0;
+    let calcDiscount = 0
+    const discountResume = document.querySelector(".productCart__main__section_article-resumen-discounts")
 
     if (getProducts.length >= 1) {
         console.log("hola");
@@ -44,7 +50,9 @@ window.onload = async () =>{
             divButtons.appendChild(buttonMinus);
 
             const p = document.createElement("p");
-            p.innerText="1"
+            const getPUnity = localStorage.getItem(`unity-${product.id}`)
+            getPUnity > 0 ? p.innerText = getPUnity : p.innerText = "1"
+            console.log("PLOCALSTORATE", getPUnity);
             divButtons.appendChild(p);
 
 
@@ -55,17 +63,44 @@ window.onload = async () =>{
         
             const h4 = document.createElement("h4")
             h4.classList.add("productCart__main__section-div-detalle-subtotal")
-            h4.innerText = `Precio $${product.price}`
+            h4.innerText = `Precio normal $${product.price}`
             divDetail.appendChild(h4)
-            
+
+            const h4ActualPrice = document.createElement("h4")
+            h4ActualPrice.classList.add("productCart__main__section-div-detalle-subtotal")
+            const calc = (product.price * product.discount) / 100 
+            h4ActualPrice.innerText = `Precio actual $${product.price - calc}`
+            divDetail.appendChild(h4ActualPrice)
+
             containerArticle.appendChild(container)
+        
             
-            
+            calcSubtotal = calcSubtotal + (+p.innerText * product.price)
+            resumenSubtotal.innerText = `$${calcSubtotal}`
+
+            calcDiscount = calcDiscount + (+p.innerText * calc)
+            discountResume.innerText = `$${calcDiscount}`
+
+            calcTotal = calcSubtotal - calcDiscount
+            resumenTotal.innerText = `$${calcTotal}`
             
             buttonMinus.addEventListener("click", async function(e){
             let pValue= p.textContent;
             const newP = +pValue - 1 
             p.innerText = newP
+
+            calcSubtotal = calcSubtotal - product.price
+           
+            resumenSubtotal.innerText = `$${calcSubtotal}`
+
+            calcDiscount = calcDiscount - calc
+            discountResume.innerText = `$${calcDiscount}`
+            
+            calcTotal = calcSubtotal - calcDiscount
+            resumenTotal.innerText = `$${calcTotal}`
+            localStorage.setItem(`unity-${product.id}`, p.innerText)
+          
+
             if (p.innerText == 0) {
                 console.log("hola pase if");
              Swal.fire({
@@ -79,14 +114,12 @@ window.onload = async () =>{
                   }).then(async (result) => {
                     if (result.isConfirmed) {
                      await Swal.fire({
-                        customClass: {
-                            confirmButton: 'swalBtnColor',
-                          },
                         title: "¡Eliminado!",
                         text: "El producto se ha eliminado de su carrito",
-                        icon: "success"
+                        icon: "success",
+                        confirmButtonColor:"black"
                       });
-            
+                     
                       const newArray = JSON.parse(localStorage.getItem("addedToCart"));
                       const arrayProducts = newArray.filter(element=> element.id != product.id)
                       const productsJson = JSON.stringify(arrayProducts);
@@ -95,11 +128,12 @@ window.onload = async () =>{
                       location.reload()
                      
                     }else{
-                        p.innerText=1
+                      p.innerText = 1
 
-                    }
+                  }
                     
                   })
+                 
               
             }
             console.log("a ver localstorage", localStorage.getItem("addedToCart"));
@@ -110,10 +144,25 @@ window.onload = async () =>{
             const newP = +pValue + 1 
             p.innerText = newP
             
+            calcSubtotal = calcSubtotal + product.price
+            resumenSubtotal.innerText = `$${calcSubtotal}`
+            
+            calcDiscount = calcDiscount + calc
+            discountResume.innerText = `$${calcDiscount}`
+
+            calcTotal = calcSubtotal - calcDiscount
+            resumenTotal.innerText = `$${calcTotal}`
+
+            localStorage.setItem(`unity-${product.id}`, p.innerText)
             })
+      
             console.log("a ver localstorage", localStorage.getItem("addedToCart"));
             
         })
+        
+        
+        
+        
 
     }else{
         h1.innerText = "Aún no has agregado ningún producto al carrito"
@@ -122,10 +171,15 @@ window.onload = async () =>{
         buttons.forEach(element=>{
             element.style.display ="none"
         })
+        const backHome = document.createElement("a");
+        backHome.href = "/"
+        backHome.classList.add("productCart__main__a")
+        backHome.innerText="Volver al Inicio"
+        main.appendChild(backHome)
 
     }
 
-        
+    
 
 
 

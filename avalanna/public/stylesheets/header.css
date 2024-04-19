@@ -208,6 +208,17 @@ color: black;
     color: black;
 }
 
+.iconos-profile-without-session p{
+    position: absolute;
+    font-size: 10px;
+    top: -7px;
+    right: 9px;
+    font-weight: 600;
+    padding: 0;
+    margin: 0;
+
+}
+
 @media(min-width:768px) {
     .header{
         padding: 1% 1% 1% 2%;
@@ -332,7 +343,9 @@ color: black;
     border-bottom: 1px solid rgba(0, 0, 0, 50%);
     margin: 0 0 0 4%;
     }
-
+    .iconos-profile-without-session p{
+        font-size: 14px;
+    }
 }
 
 
@@ -436,6 +449,11 @@ color: black;
             top: 15px;
         }
         
+        .iconos-profile-without-session p{
+            top:-12px;
+            right: 3px;
+            font-size: 18px;
+        }
 } 
 
 

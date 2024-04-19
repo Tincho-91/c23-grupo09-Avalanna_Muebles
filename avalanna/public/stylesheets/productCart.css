@@ -143,6 +143,17 @@
     font-weight: 600;
 }
 
+.productCart__main__a{
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    font-size: 14px;
+    padding:1%;
+    background-color: rgba(0, 0, 0, 70%);
+    border-radius: 10%;
+    margin-left: 35%;
+}
+
 @media (min-width:768px){
     .productCart__main h1{
         font-size: 24px;
@@ -182,11 +193,17 @@
         margin-left: 15%;
         font-size: 20px;
     }
+    .productCart__main__a{
+        margin-left: 42%;
+        margin-top: 4%;
+    }
 }
 
 @media (min-width:1024px){
     
-    
+    .productCart__main{
+        padding-bottom: 5%;
+    }
     .subtotal_precio{
         width: 50%;
         margin: 0;
@@ -222,4 +239,22 @@
         box-shadow: 1px 1px 5px black;
     }
     
+    .productCart__main__section-div-detalle{
+        margin-top: -2%;
+    }
+    .productCart__main__section-div-detalle-subtotal{
+        margin-top: 3%;
+    }
+
+    .productCart__main__a{
+        margin-left: 45%;
+        transition: all 1s;
+    }
+
+    .productCart__main__a:hover{
+        box-shadow: 1px 1px 5px black;
+        color: black;
+        background-color: rgba(0, 0, 0, 40%);
+    }
+
 }
