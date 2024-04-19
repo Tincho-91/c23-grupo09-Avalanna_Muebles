@@ -10,7 +10,7 @@ function ListCategories() {
 
     const getCategories = async () =>{
      try {
-         const resp = await fetch(`https://8v2lk96m-3000.brs.devtunnels.ms/api/products/`)
+         const resp = await fetch(`https://966v15r3-3000.brs.devtunnels.ms/api/products/`)
          
           const products = await resp.json()
           console.log("products", products.countByCategory);
