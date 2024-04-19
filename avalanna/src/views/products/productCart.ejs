@@ -4,60 +4,38 @@
 
     <%- include("../partials/header.ejs") %>
 
-    <main>
-        <section >
-            <div class="titulo-icon">
-                <p class="titulo">Carrito de compra</p>
-                <a href="/"><i class="fa-solid fa-cart-shopping icon-cart carrito" style="color: #000000;"></i></a>
-            </div>
-            <hr>
-            <div class="subtitulos">
-                <h3 class="producto">Producto</h3>
-                <h3 class="precio-sillon">Precio</h3>
-                <h3 class="Cantidad">Cantidad</h3>
-                <h3 class="total">Total</h3>
-            </div>
-            <hr>
-            <div class="contenedor-detalle">
-                <div class="producto-detalle">
-                    <img class="imagen-detalle" src="/img/mueblecocina.jpg" alt="producto" width="50%">
-                    <h4 class="texto-detalle">Combo de cocina en mdf con
-                        contorno y tiradores de aluminio.</h4>
-                </div>
+    <main class="productCart__main">
+        <h1 class="titulo">Carrito de compra</h1>
+        <section class="productCart__main__section">
 
-                <div class="producto-precio">
-                    <h4>$95000</h4>
-                </div>
-                <div class="producto-cantidad">
-                    <button class="uno">- 1 +</button>
-                </div>
-                <div class="producto-total">
-                    <h4>$95000</h4>
-                </div>
-
-
-                <article class="actualizar_seguir">
-                    <span class="boton1">
-                        <button>Seguir comprando</button></span>
-                    <span class="boton2"><button>Actualizar carrito</button></span>
-
-                </article>
-            </div>
-            <hr>
+            
         </section>
         <article class="subtotal_precio">
-            <h2 class="subtotal">Subtotal</h2>
-            <h2 class="precio-total">$950000</h2>
-        </article>
+            <h2>Resumen de compra</h2>
+            <div>
+                <h4 class="subtotal  ">Subtotal</h4>
+                <h4 class="precio-total productCart__main__section_article-resumen-subtotal">$950000</h4>
+                <h4>Descuentos aplicados</h4>
+            <h4 class="productCart__main__section_article-resumen-discounts">$50000</h4>
+            
+            <h4 class="subtotal">Total</h4>
+            <h4 class="precio-total productCart__main__section_article-resumen-total">$950000</h4>
+            </div>
         
-        <article class="finalizar-compra">
-            <button class="finalizar">Finalizar compra</button>
-            <a href="//parzibyte.me/blog"></a>
+    
+            
             <div class="linea"></div>
         </article>
+        <button class="productCart__main_buttons"><a href="/">Continuar comprando</a></button>
+            <button class="productCart__main_buttons">Finalizar compra</button>
     </main>
 
     <%- include("../partials/footer.ejs") %>
+    
+    <script src="/js/productCart.js" ></script>
+    <script src="/js/header.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="/js/header.js" ></script>
 </body>
 
 </html>
