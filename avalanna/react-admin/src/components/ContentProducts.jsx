@@ -25,7 +25,7 @@ function ContentProducts(){
 
        const getProducts = async () =>{
         try {
-            const resp = await fetch(`https://8v2lk96m-3000.brs.devtunnels.ms/api/products/?page=${page}`)
+            const resp = await fetch(`https://966v15r3-3000.brs.devtunnels.ms/api/products/?page=${page}`)
             console.log("page", page);
              const products = await resp.json()
              console.log("resp:",resp);

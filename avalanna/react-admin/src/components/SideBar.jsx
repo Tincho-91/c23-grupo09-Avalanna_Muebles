@@ -17,7 +17,7 @@ function SideBar(){
             
 
                 {/*<!-- Sidebar - Brand -->*/}
-                <a className="sidebar-brand d-flex align-items-center justify-content-center" href="/">
+                <a className="sidebar-brand d-flex align-items-center justify-content-center" href="http://localhost:3000/">
                     <div className="sidebar-brand-icon">
                         <img className="w-100" src={image} alt="Avalanna Muebles"/> 
                     </div>

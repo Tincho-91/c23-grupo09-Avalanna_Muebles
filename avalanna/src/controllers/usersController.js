@@ -147,7 +147,7 @@ if (!errors.isEmpty()) {
         phoneNumber: +phoneNumber,
         password: password,
         rolId: rol ? +rol : 1,
-        birthday: birthday,
+        birthday: birthday ? birthday : null,
         profileImage: req.file ? req.file.filename : avatar,
       },
       {
