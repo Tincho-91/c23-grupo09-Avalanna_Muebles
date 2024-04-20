@@ -17,21 +17,15 @@ window.onload = async () =>{
    }
     let productsArray =[]
     
-
-
     const resp = await fetch(`http://localhost:3000/api/products/detail/${id}`)
 
     const product = await resp.json();
     
     
-    
-
-    
     if (getProducts.length >= 1) {
       
         localStorage.setItem("cartProducts", getProducts.length)
     const cartProductsStorage = localStorage.getItem("cartProducts")
-    const pCartLentgh = document.createElement("p")
     cartProductsStorage > 0 ? pCartLentgh.innerText = cartProductsStorage : null
     divIconHeader.appendChild(pCartLentgh)
         productsArray = getProducts;
@@ -53,7 +47,7 @@ window.onload = async () =>{
         const productsJson = JSON.stringify(productsArray)
         localStorage.setItem("addedToCart", productsJson )
         console.log("localstorage", localStorage.getItem("addedToCart"));
-        buttonAdd.innerText = 'Agregado al Carrito'
+        buttonAdd.innerText = 'AGREGADO AL CARRITO'
         pCartLentgh.innerText = productsArray.length
         Swal.fire({
             customClass: {

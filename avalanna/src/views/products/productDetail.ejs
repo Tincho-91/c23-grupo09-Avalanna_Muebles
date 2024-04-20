@@ -42,18 +42,24 @@
     
     
     <div class="productDetail__uno">    
-        <h3 class="productDetail_relacionados">Productos relacionados</h3>
+        <h3 class="productDetail_relacionados">Productos destacados</h3>
 <article class="imagenes_relacionadas">
-     <img class="img1" src="/img/sillon1.png" alt="" width="600px">
-    <img class="img1" src="/img/sillon.png" alt="">
-    <img class="img1" src="/img/juego.png" alt="">
-    <img class="img1" src="/img/sillon2.png" alt="">
-    <img class="img1" src="/img/juego sillon.png" alt="">
-    <img class="img1" src="/img/divan.png" alt="">
+  
+        <% for (let i= 0; i < products.length; i++) { %>
+            <div>
+            <% i== 0 ? i++ : null %>
+           <a href=<%= `/products/detail/${products[i].id}` %>><img class="img1" src=<%= `/img/${products[i].image}` %> alt=`producto`></a> 
+           <h4><%= `${products[i].name}` %></h4>
+        </div>
+           <%   if (i === 6) {
+                break;
+              }%>
+            <%  } %>
+     
 </article>   
 </div>  
 </main> 
-
+<a href="https://wa.me/1130761743" target="_blank" class="index__main-wsp"><i class="fa-brands fa-whatsapp"></i></a>
 <%- include("../partials/footer.ejs") %>
 <script src="/js/productDetail.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

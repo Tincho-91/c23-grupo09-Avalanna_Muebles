@@ -5,7 +5,7 @@
         <div class="header__contenido-desplegable">
             <a href="/">Inicio</a>
             <a href="/products">Productos</a>
-            <a href="https://wa.me/1130761743">Muebles personalizados</a>
+            <a href="https://wa.me/1130761743" target="_blank">Muebles personalizados</a>
         </div>
         <% if (!locals.usuario) { %>
         <div class="header__contenido-desplegable header__forms">
@@ -20,8 +20,8 @@
     </div>
     
     <div class="header__div-form">
-        <form action="" class="input-container">
-            <input class="search" type="text" placeholder="Buscar..." id="search">
+        <form action="/search" method="GET" class="input-container">
+            <input class="search" name="keyword" type="text" placeholder="Buscar..." id="search">
             <i class="fa-solid fa-magnifying-glass lupa"></i>
         </form>
     </div>
