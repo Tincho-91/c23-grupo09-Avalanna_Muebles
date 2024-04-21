@@ -89,16 +89,6 @@ window.onload = async () =>{
             const newP = +pValue - 1 
             p.innerText = newP
 
-            calcSubtotal = calcSubtotal - product.price
-           
-            resumenSubtotal.innerText = `$${calcSubtotal}`
-
-            calcDiscount = calcDiscount - calc
-            discountResume.innerText = `$${calcDiscount}`
-            
-            calcTotal = calcSubtotal - calcDiscount
-            resumenTotal.innerText = `$${calcTotal}`
-            localStorage.setItem(`unity-${product.id}`, p.innerText)
           
 
             if (p.innerText == 0) {
@@ -119,6 +109,18 @@ window.onload = async () =>{
                         icon: "success",
                         confirmButtonColor:"black"
                       });
+
+                      
+            calcSubtotal = calcSubtotal - product.price
+           
+            resumenSubtotal.innerText = `$${calcSubtotal}`
+
+            calcDiscount = calcDiscount - calc
+            discountResume.innerText = `$${calcDiscount}`
+            
+            calcTotal = calcSubtotal - calcDiscount
+            resumenTotal.innerText = `$${calcTotal}`
+            localStorage.setItem(`unity-${product.id}`, p.innerText)
                      
                       const newArray = JSON.parse(localStorage.getItem("addedToCart"));
                       const arrayProducts = newArray.filter(element=> element.id != product.id)
@@ -129,7 +131,7 @@ window.onload = async () =>{
                      
                     }else{
                       p.innerText = 1
-
+                      
                   }
                     
                   })
