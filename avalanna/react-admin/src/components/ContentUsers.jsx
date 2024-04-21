@@ -20,7 +20,7 @@ function ContentUsers(){
 
        const getUsers = async () =>{
         try {
-            const resp = await fetch(`https://966v15r3-3000.brs.devtunnels.ms/api/users/all?page=${page}`)
+            const resp = await fetch(`https://8v2lk96m-3000.brs.devtunnels.ms/api/users/all?page=${page}`)
           console.log("page", page);
              const usuarios = await resp.json()
              console.log("resp:",resp);
@@ -58,11 +58,16 @@ function ContentUsers(){
                 <div className="products__main__section__div">
                     <h3> {user.nameAndSurname} </h3>
                     <p className="tachado products__main__descuento-p"> ID: {user.id}  </p>
-                        <p className="tachado products__main__descuento-p"> {user.email}  </p>
-                        <p></p>
+                        <p className="tachado products__main__descuento-p "> {user.email}  </p>
+                        <div>
                         <Link  to={`http://localhost:3000/users/editar/${user.id}`}>
                         <p className=" see-profile products__main__descuento-p"> Ver perfil </p>
                          </Link>
+                         <form action={`http://localhost:3000/users/delete/${user.id}?_method=DELETE`} method="POST">
+                                <button type="submit" className="eliminar form__dashboard_users-delete"> <p className=" see-profile products__main__descuento-p">  Eliminar perfil </p>
+                                </button>
+                              </form>
+                              </div>
                         
                 </div>
             </div>

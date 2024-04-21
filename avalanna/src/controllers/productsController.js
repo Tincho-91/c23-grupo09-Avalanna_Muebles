@@ -106,7 +106,7 @@ const productsController = {
         }
        }).catch(err=>console.log(err))
 
-       res.redirect(`/products/dashboard`);
+       res.redirect(`http://localhost:5173/Productos`);
        
     },
     products:(req,res) =>{

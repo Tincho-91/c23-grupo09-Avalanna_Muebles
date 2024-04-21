@@ -12,7 +12,19 @@ function SmallCard(props){
                             <div className="h5 mb-0 font-weight-bold text-gray-800">Total: {props.total}</div>
                         </div>
                         <div className="col-auto">
-                            <i className={`fas ${props.icon} fa-2x text-gray-300`}></i>
+                            { props.name == "Usuarios" ? (
+<>
+<i className={`fas fa-solid fa-address-book fa-2x text-gray-300`}></i>
+</>
+                            ):(
+                                 props.name == "Categorías" ? (
+<i className={`fas fa-solid fa-tags fa-2x text-gray-300`}></i>
+                                ):(
+<i className={`fas ${props.icon} fa-2x text-gray-300`}></i>
+                                )
+                                
+                            )}
+                           
                         </div>
                     </div>
                 </div>

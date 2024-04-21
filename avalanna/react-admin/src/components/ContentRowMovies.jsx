@@ -12,11 +12,11 @@ function ContentRowMovies(){
     useEffect(()=>{
         const getFetch = async () =>{
             try {
-                const respProducts = await fetch(`https://966v15r3-3000.brs.devtunnels.ms/api/products/`)
+                const respProducts = await fetch(`https://8v2lk96m-3000.brs.devtunnels.ms/api/products/`)
                 const products = await respProducts.json();
                 console.log("respProducts", products);
 
-                const respUsers = await await fetch(`https://966v15r3-3000.brs.devtunnels.ms/api/users/all`)
+                const respUsers = await await fetch(`https://8v2lk96m-3000.brs.devtunnels.ms/api/users/all`)
                 const users = await respUsers.json()
                 console.log("respusers", users);
                 const prodObject = {

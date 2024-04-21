@@ -203,10 +203,10 @@ if (!errors.isEmpty()) {
 
       destroy: async(req,res)=>{
         const {id} = req.params;
-
+        
         const userFound = await db.User.findOne({
           where:{
-              id
+              id,
           }
          }).catch(err=>console.log(err))
  
@@ -224,7 +224,7 @@ if (!errors.isEmpty()) {
           }
         }).catch(err=>console.log(err))
 
-        res.redirect(`/`);
+        res.redirect(`http://localhost:5173/Usuarios`);
       },
 
       address:(req,res)=>{

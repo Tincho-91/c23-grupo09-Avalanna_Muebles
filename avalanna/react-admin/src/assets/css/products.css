@@ -39,7 +39,6 @@
     font-family: "Oxygen", sans-serif;
     font-size: 13px;
     margin: 0;
-
 }
 .products__main__descuento-p{
     width: 100%;
@@ -81,7 +80,17 @@
     box-shadow: 2px 2px 10px black;
    
 }
+.see-profile{
+    border-top: 2px solid rgba(0, 0, 0, 20%);
+    border-bottom: 2px solid rgba(0, 0, 0, 20%);
+    font-weight: 600;
+}
 
+
+
+.products__main__section__div div form button p{
+border: none;
+}
 
 @media(min-width:768px){
     .products__main__section {
@@ -139,13 +148,19 @@
         color: black;
         
     }
+    .products__main__section__div form button {
+width: 100%;
+    }
     .see-profile{
         transition: all 1s;
-        padding-top: 1%;
-       
+        padding:1%;
+        border-top: 2px solid rgba(0, 0, 0, 20%);
+        border-bottom: 2px solid rgba(0, 0, 0, 20%);
     }
+    
     .products__main__section__article__a p{
         font-size: 14px;
     }
+
 
 }
