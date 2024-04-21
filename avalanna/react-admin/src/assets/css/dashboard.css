@@ -62,7 +62,9 @@ display: block;
     background-color: var(--color-gris-claro);
     font-size: 20px;
 }
-
+.dashboard__main__table__tbody__buttons{
+    width: 25%;
+}
 .dashboard__main__table__tbody__fila td img {
     width: 100%;
 }
@@ -77,13 +79,12 @@ display: block;
     padding: 6%;
     transition: all 1s;
     font-size: 20px;
-
 }
 
 .eliminar i{
-    padding: 80%;
+    padding: 40%;
     transition: all 1s;
-    font-size: 25px;
+    font-size: 22px;
     margin-left:-30% ;
 }
 
@@ -99,11 +100,9 @@ display: block;
 
 .dashboard__main__table__tbody__buttons form{
     display: inline;
-
 }
 
 .eliminar{
     border: none;
     background-color: var(--color-gris-claro);
 }
-

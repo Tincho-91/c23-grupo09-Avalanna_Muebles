@@ -4,30 +4,30 @@ window.onload = async () =>{
     const divIconHeader = document.querySelector(".iconos-profile-without-session")
     console.log("window.location", window.location);
     const path = window.location.href
-
+    const pCartLentgh = document.createElement("p")
+    
+    divIconHeader.appendChild(pCartLentgh)
     const params = path.split('/');
 
     const id = params.pop();
     console.log("id", id); 
-    
+    let getProducts = []
+   if(localStorage.getItem("addedToCart")){
+   getProducts = JSON.parse(localStorage.getItem("addedToCart"))
+   }
     let productsArray =[]
-    const getProducts = JSON.parse(localStorage.getItem("addedToCart"))
-
-
+    
     const resp = await fetch(`http://localhost:3000/api/products/detail/${id}`)
 
     const product = await resp.json();
     
     
-    localStorage.setItem("cartProducts", getProducts.length)
-    const cartProductsStorage = localStorage.getItem("cartProducts")
-    const pCartLentgh = document.createElement("p")
-    cartProductsStorage > 0 ? pCartLentgh.innerText = cartProductsStorage : null
-
-    divIconHeader.appendChild(pCartLentgh)
     if (getProducts.length >= 1) {
       
-
+        localStorage.setItem("cartProducts", getProducts.length)
+    const cartProductsStorage = localStorage.getItem("cartProducts")
+    cartProductsStorage > 0 ? pCartLentgh.innerText = cartProductsStorage : null
+    divIconHeader.appendChild(pCartLentgh)
         productsArray = getProducts;
         productsArray.forEach( element=> {
             if (element.id == product.id) {
@@ -47,7 +47,7 @@ window.onload = async () =>{
         const productsJson = JSON.stringify(productsArray)
         localStorage.setItem("addedToCart", productsJson )
         console.log("localstorage", localStorage.getItem("addedToCart"));
-        buttonAdd.innerText = 'Agregado al Carrito'
+        buttonAdd.innerText = 'AGREGADO AL CARRITO'
         pCartLentgh.innerText = productsArray.length
         Swal.fire({
             customClass: {

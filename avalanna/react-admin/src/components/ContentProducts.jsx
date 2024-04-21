@@ -7,6 +7,7 @@ import LastProduct from './LastProduct';
 function ContentProducts(){
     const [products, setProducts] = useState([]);
     const [keys, setKeys] = useState([])
+    const [categories,setCategories] = useState([])
     const [page, setPage]=useState("1");
     const [fetchResponse, setFetchResponse] = useState({})
 
@@ -25,7 +26,7 @@ function ContentProducts(){
 
        const getProducts = async () =>{
         try {
-            const resp = await fetch(`https://966v15r3-3000.brs.devtunnels.ms/api/products/?page=${page}`)
+            const resp = await fetch(`https://8v2lk96m-3000.brs.devtunnels.ms/api/products/?page=${page}`)
             console.log("page", page);
              const products = await resp.json()
              console.log("resp:",resp);
@@ -37,7 +38,7 @@ function ContentProducts(){
         
             const onlyKeys = newKeys.filter(key=> key != "description" && key != "detail")
             setKeys(onlyKeys)
-            
+            setCategories(["ID","NOMBRE","IMAGEN","CATEGORIA"])
            
         } catch (error) {
             console.log(error);
@@ -70,7 +71,7 @@ function ContentProducts(){
 <table className="dashboard__main__table">
   <thead className="dashboard__main__table__thead">
     <tr>
-     { keys.map((propiedad, i)=> { 
+     { categories.map((propiedad, i)=> { 
         return(
           propiedad == "associations" ? (
             <th key={propiedad+i}>
@@ -82,7 +83,7 @@ function ContentProducts(){
        </th>)
         )
          })}
-          <th> ACTIONS </th>
+          <th> ACCIONES </th>
     </tr>
   </thead>
   <tbody className="dashboard__main__table__tbody">
@@ -120,6 +121,12 @@ function ContentProducts(){
                     <Link to={`http://localhost:3000/products/formEdit/${obj.id}`}>
                       <i className="fa-solid fa-pen-to-square"></i>
                     </Link>
+                    
+                    <form action={`http://localhost:3000/products/delete/${obj.id}?_method=DELETE`} method="POST">
+                                <button type="submit" className="eliminar"><i className="fa-solid fa-trash"></i>
+                                </button>
+                              </form>
+                    
                     </td>
       </tr>
       )})}
