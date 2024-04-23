@@ -20,7 +20,7 @@ function ContentUsers(){
 
        const getUsers = async () =>{
         try {
-            const resp = await fetch(`https://8v2lk96m-3000.brs.devtunnels.ms/api/users/all?page=${page}`)
+            const resp = await fetch(`https://966v15r3-3000.brs.devtunnels.ms/api/users/all?page=${page}`)
           console.log("page", page);
              const usuarios = await resp.json()
              console.log("resp:",resp);

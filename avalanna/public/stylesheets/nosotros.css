@@ -3,7 +3,11 @@
     
 }
 
-
+.Quienes-somos{
+ text-align: center;
+ font-weight: 700;
+ margin-bottom: 2%;
+}
 .main-div{
     width: 80%;
     margin-left: 10%;
