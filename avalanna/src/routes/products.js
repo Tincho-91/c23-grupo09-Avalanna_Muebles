@@ -28,6 +28,7 @@ router.put('/formEdit/:id',uploadImage.single("image"), createProductValidator, 
 
 router.get('/dashboard',adminValidation, productController.dashboard)
 
+
 router.delete('/delete/:id', productController.destroy)
 
 module.exports = router;

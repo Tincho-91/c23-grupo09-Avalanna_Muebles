@@ -1,0 +1,27 @@
+.main{
+    background-color: #C7C1BF;
+    
+}
+
+.Quienes-somos{
+ text-align: center;
+ font-weight: 700;
+ margin-bottom: 2%;
+}
+.main-div{
+    width: 80%;
+    margin-left: 10%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+   
+    
+}
+
+.main-div img{
+    width: 100%;
+}
+.main-div-h4{
+    padding-top: 5%;
+    font-family: "Raleway", sans-serif;
+   
+}

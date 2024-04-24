@@ -6,41 +6,107 @@ const path = require("path");
 module.exports = {
     detail: async (req, res) => {
         try {
-            const id = parseInt(req.params.id);
-
-            if(!Number.isInteger(id)){
-                throw new Error("Por favor ingrese un numero entero")
+            const id = parseInt(req.params.id);//parseo el id y lo convierto en num entero
+    
+            if (!Number.isInteger(id)) {//verifico si el id es un num entero y si no mensaje de error
+                throw new Error("Por favor ingrese un número entero");
             }
-
-            const product = await db.Product.findByPk(id,{
-                include:{association:'categories'}
-            })
-
-            if(!product){
-                throw new Error("El ID ingresado no corresponde a ningun producto")
-            }
-
-            return res.status(200).send(product);            
-        } catch (error) {
-            res.status(400).send(error.message)
-        }
-    },
-
-    list: async (req,res) =>{
-
-        let {limit = 10 , page = 1} = req.query;
+    //buscar el producto en la base de datos por su id
+            const product = await db.Product.findByPk(id, {
+                include: [{ association: "categories" }]
+            });
         
-        limit = parseInt(limit)
-        const offset = limit * (parseInt(page)-1);
-        try {
-            const products = await db.Product.findAll({include:{association:"categories"},limit , offset });
-
-            return res.status(200).send(products);
+            if (!product) {//Se verifica si se encontró un producto con el id y si no mensaje d error
+                throw new Error("El ID ingresado no corresponde a ningun producto");
+            }
+        
+            // Construye el objeto literal 
+            const responseObject = {
+                id: product.id,
+                name: product.name,
+                price: product.price,
+                description: product.description,
+                extraDescription: product.extraDescription,
+                categoryId: product.categoryId,
+                discount: product.discount,
+                height: product.height,
+                width: product.width,
+                depth: product.depth,
+                image: product.image,
+                detail:`http://localhost:3000/products/detail/${product.id}`,
+                imageUrl: `http://localhost:3000/img/${product.image}`,
+                // Array para las relaciones de uno a muchos
+                categories:[product.categories]
+            }
+                // URL para la imagen del producto (puedes modificar esto según tu implementación)
+                
+        
+    
+            // Envia la respuesta con el objeto literal
+            return res.status(200).json(responseObject);
         } catch (error) {
+         
             return res.status(400).send(error.message);
+        
         }
-
     },
+
+    list: async (req, res) => {
+
+        let { page = 1 } = req.query;
+
+       const limit = 10
+        
+        const offset = limit * (parseInt(page) - 1);
+ 
+        const query = { limit, offset, include: { association: "categories" }, attributes: ['id', 'name', 'description', 'image'] };
+    
+        try {
+            if (!Number.isInteger(parseInt(page))) {
+                throw new Error("Debe ingresar un número entero")
+          }
+
+            const categories = await db.Category.findAndCountAll({include:{association:"products"}})
+
+            if (!categories) {
+                throw new Error("Categorias inexistentes")
+            }
+            
+            let countByCategory = {}
+           categories.rows.forEach(category => {
+            countByCategory[category.name]= category.dataValues.products.length
+           })
+
+          const products = await db.Product.findAndCountAll(query);
+
+          if (!products) {
+            throw new Error ("Productos inexistentes")
+          }
+            
+          const arrayProducts = products.rows
+          arrayProducts.forEach( product=>{
+            product.dataValues.detail = `http://localhost:3000/products/detail/${product.id}`
+            product.dataValues.image = `http://localhost:3000/img/${product.image}`
+            product.dataValues.associations = [{categories:product.dataValues.categories}]
+            delete product.dataValues.categories
+          })
+          page == 1 ? previous = null : previous =`localhost:3000/api/products/?page=${parseInt(page) - 1}`
+          offset < (products.count / parseInt(page)) ?  next = `localhost:3000/api/products/?page=${parseInt(page) + 1}` : next = null;
+
+          return res.status(200).json({
+            count: products.count,
+            countByCategory,
+            products:arrayProducts,
+            next,
+            previous,
+          });
+          
+
+        } catch (error) {
+          return res.status(400).send(error.message);
+        }
+      },
+    
     store:(req,res) =>{
     	const producto = req.body;
 
@@ -73,7 +139,7 @@ module.exports = {
                   name,
                   price,
                   description,
-                  extraDescription,
+                  extraDescription, 
                   categoryId,
                   discount,
                   height,

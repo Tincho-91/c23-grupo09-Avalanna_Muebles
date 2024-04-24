@@ -147,7 +147,7 @@ if (!errors.isEmpty()) {
         phoneNumber: +phoneNumber,
         password: password,
         rolId: rol ? +rol : 1,
-        birthday: birthday,
+        birthday: birthday ? birthday : null,
         profileImage: req.file ? req.file.filename : avatar,
       },
       {
@@ -167,7 +167,7 @@ if (!errors.isEmpty()) {
             direcciones.push(address.dataValues)
             
           }); 
-          req.session.user = resp.dataValues    
+           
           res.render("users/actualizar-datos-usuario", {title: "Editar", user:resp.dataValues, addresses:resp.dataValues.addresses, usuario: req.session.user});
           
           })}).catch(err=>console.log(err))
@@ -203,10 +203,10 @@ if (!errors.isEmpty()) {
 
       destroy: async(req,res)=>{
         const {id} = req.params;
-
+        
         const userFound = await db.User.findOne({
           where:{
-              id
+              id,
           }
          }).catch(err=>console.log(err))
  
@@ -224,7 +224,7 @@ if (!errors.isEmpty()) {
           }
         }).catch(err=>console.log(err))
 
-        res.redirect(`/`);
+        res.redirect(`http://localhost:5173/Usuarios`);
       },
 
       address:(req,res)=>{

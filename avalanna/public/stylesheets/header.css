@@ -132,10 +132,10 @@
     width: 95%;
     font-size: 10px;
     border: 1px solid rgba(0, 0, 0, 50%);
-    border-radius: 30%;
-    padding: 1% 2%;
+    
+    padding: 0% 0%;
     position: relative;
-    left: 25%;
+    left: 20%;
     top: -5px;
 }
 #header__contenido-desplegable-profile button:hover{
@@ -206,6 +206,17 @@ color: black;
 }
 .iconos-profile-without-session-cart a i{
     color: black;
+}
+
+.iconos-profile-without-session p{
+    position: absolute;
+    font-size: 10px;
+    top: -7px;
+    right: 9px;
+    font-weight: 600;
+    padding: 0;
+    margin: 0;
+
 }
 
 @media(min-width:768px) {
@@ -285,13 +296,14 @@ color: black;
     #header__contenido-desplegable-profile button{
         width: 100%;
         font-size: 16px;
-        left: 8%;
+        left:7%;
         top: 10%;
         padding: 10% 5%;
     }
     #header__contenido-desplegable-profile-div{
         z-index: 20;
         margin-top: 8%;
+        left: 3%;
     }
     .iconos-profile{
         display: flex;
@@ -332,7 +344,9 @@ color: black;
     border-bottom: 1px solid rgba(0, 0, 0, 50%);
     margin: 0 0 0 4%;
     }
-
+    .iconos-profile-without-session p{
+        font-size: 14px;
+    }
 }
 
 
@@ -412,6 +426,7 @@ color: black;
     }
     #header__contenido-desplegable-profile-div{
         margin-top: 0 ;
+        left: 2%;
     }
     #header__contenido-desplegable-profile-div a{
         font-size: 14px;
@@ -420,8 +435,9 @@ color: black;
         }
      #header__contenido-desplegable-profile button{
             font-size: 20px;
-            padding: 8% 2%;
+            padding: 7% 2% ;
             top: -4%;
+            left: 1%;
         }
         #header__contenido-desplegable-profile button:hover{
             top: -1%;
@@ -436,6 +452,11 @@ color: black;
             top: 15px;
         }
         
+        .iconos-profile-without-session p{
+            top:-12px;
+            right: 3px;
+            font-size: 18px;
+        }
 } 
 
 

@@ -7,7 +7,7 @@
     padding: 0%;
 }
 .productDetail__body h6{
-    font-family: "Raleway", sans-serif;
+    font-family: "Oxygen", sans-serif ;
     font-weight: 600;
     margin-left: 6%;
     font-size: 10px;
@@ -27,7 +27,7 @@ color: black;
 }
 .productDetail__main {
 background-color:var(--color-gris-claro);
-font-family: "Raleway", sans-serif;
+font-family: "Oxygen", sans-serif ;
 }
 
 
@@ -67,12 +67,12 @@ margin-top: 15px;
     text-align: center;
     font-size: 7px;
     font-weight: 700;
-    font-family: "Raleway", sans-serif;
+    font-family: "Oxygen", sans-serif ;
     padding-bottom: 3%;
     padding-top: 2%;
     }
     .seccion__productos--titulo h1{
-        font-family: "Raleway", sans-serif;
+        font-family: "Oxygen", sans-serif ;
     font-weight: 700;
     margin: 0;
     margin-bottom: 3%;
@@ -80,6 +80,7 @@ margin-top: 15px;
     .color{
         margin-right:50%;
         margin-bottom: 1%;
+        font-family: "Oxygen", sans-serif ;
     }
 .productDetail__main__section__div__precioUnico{
 padding:5% 1%;
@@ -88,7 +89,6 @@ padding:5% 1%;
 .productDetail-button{
 font-size: 5px;
 background-color:#a9a6a6;
-border-radius: 30%;
 margin-bottom: 7px;
 padding: 2%;
 display: block;
@@ -108,7 +108,6 @@ line-height: normal;
 .productDetail-button_a_p{
 font-size: 5px;
 background-color:#a9a6a6;
-border-radius: 20%;
 width: 40px;  
 border:none;
 padding: 1.5%;
@@ -121,7 +120,7 @@ margin-bottom: 5%;
 
 .productDetail-li{
 font-size: 7px;
-font-family:"Raleway";
+font-family: "Oxygen", sans-serif ;
 padding-top: 5%;
 margin-left: -4%;
 }
@@ -135,7 +134,7 @@ margin-left: -4%;
     width: 40%;
     padding: 1%;
     font-weight: 700;
-    font-family: "Raleway", sans-serif;
+    font-family: "Oxygen", sans-serif ;
     }
 .imagenes_relacionadas{
     display: flex;
@@ -149,17 +148,17 @@ margin-left: -4%;
 text-align:left;
 padding: 4%;
 margin:15% 1% 15% 3% ;
-font-family: "Raleway", sans-serif;
+font-family: "Oxygen", sans-serif ;
 }
 .Descripción__detail{
 padding: 5%;
 text-align:left ;
-font-family: "Raleway",sans-serif;
+font-family: "Oxygen", sans-serif ;
 font-weight: 600;
 }  
 .Descripción__detail {
     font-weight: 700;
-    font-family: "Raleway", sans-serif;
+    font-family: "Oxygen", sans-serif ;
 }
 
 .productDetail-descripcion{
@@ -167,7 +166,7 @@ font-size:12px ;
 margin-left: -5%;
 }
 .productDetail_descripcion-h6{
-    font-family: "Raleway", sans-serif;
+    font-family: "Oxygen", sans-serif ;
     font-weight: 600;
     margin:0;
 }
@@ -177,10 +176,25 @@ background-color:rgba(204, 211, 211, 0.995);
 }
 
 .img1 {
-border:5px solid rgba(204, 211, 211, 0.995);
-margin:1%;
-width: 30%;
+width: 80%;
+padding: 5%;
 }
+.imagenes_relacionadas a{
+    width: 90%;
+}
+.imagenes_relacionadas div{
+    width: 40%;
+    background-color: rgba(204, 211, 211, 0.995);
+    margin: 3%;
+    text-align: center;
+    border: 1px solid rgba(0,0,0,50%);
+}
+
+.imagenes_relacionadas div h4{
+    font-size: 8px;
+    font-weight: 700;
+}
+
 .productDetail-li{
 font-size:8px ;
 margin-left: -10%;
@@ -192,11 +206,12 @@ padding: 1%;
 }
 .tachado{
     text-decoration: line-through;
+    font-family: "Oxygen", sans-serif ;
 }
 
 @media(min-width:768px){
 .detalles {
-    width: 50%;
+    width: 55%;
     padding-bottom: 25px;
     margin-right:8px ;
     }
@@ -212,6 +227,20 @@ padding: 1%;
 
             .img1 {
                 border:15px solid rgba(204, 211, 211, 0.995);
+                padding: 0;
+            }
+            .imagenes_relacionadas a{
+                width: 20%;
+                margin: 3%;
+            }
+
+            .imagenes_relacionadas div{
+                width: 40%;
+                margin: 3%;
+            }
+            
+            .imagenes_relacionadas div h4{
+                font-size: 14px;
             }
             
             .precios{
@@ -222,17 +251,17 @@ padding: 1%;
                   
             .productDetail__main  p {
                 font-size: 10px;
-                text-align: left;
-                margin: 1% 2% 1% 5%;
+                text-align: center;
+                margin: 5% 2% 1% 5%;
                 padding:0% 1% ;
             }
             .productDetail-button{
                 font-size: 10px;
                 background-color:#a9a6a6;
                  margin-top: 2%;
-                 margin-bottom:8%;
+                 margin-bottom:10%;
                 padding: 2%;
-                margin-left: 3%;
+                margin-left: 7%;
                 width: 55%; 
             } 
             .productDetail__body h6{
@@ -242,12 +271,11 @@ padding: 1%;
             .productDetail-button_a_p{
                 font-size: 10px;
                 background-color:#a9a6a6;
-                border-radius: 30%;
                 margin-top: 2%;
                 margin-bottom:25%;
                padding: 2%;
                margin-right:85%;
-               margin-left: 3%;
+               margin-left: 7%;
                width: 25%;
             }
             .productDetail__main__section_div_buttons {
@@ -267,13 +295,14 @@ padding: 1%;
             .Descripción__detail{
                 font-size: 28px;
             }
+           
+          
+            
+            
 }
 
 @media (min-width:1024px){
-.color{
-margin-bottom: 7%;
-margin-left: 1px;
-}
+
     .detalles {
         width: 50%;
         padding-bottom: 10px;
@@ -288,6 +317,7 @@ margin-left: 1px;
         .seccion__productos--titulo{
             text-align: center;
             font-size: 30px;
+            
             }
             
             .precios{
@@ -296,17 +326,17 @@ margin-left: 1px;
 
           .productDetail__main  p {
                 font-size:20px;
-                text-align: left;
-                margin: 1% 2% 1% 5%;
+                text-align: center;
+                margin: 5% 2% 1% 5%;
                 padding:0% 1% ;
             
         }
             .productDetail-button{
                 font-size: 16px;
-                border-radius: 30%;
                 padding: -10%;
                 width: 50%;
-                margin-left: 3%;
+                margin-left: 8%;
+                
             } 
             .productDetail__main__section_div_buttons{
                 margin-top: 1%;
@@ -321,10 +351,9 @@ margin-left: 1px;
 
             .productDetail-button_a_p{
                 font-size: 16px;
-                border-radius: 30%;
                 width: 30%;
                 padding: -10px; 
-               margin-left: 3%;
+               margin-left: 8%;
             }
             .productDetail-button_a_p:hover{
                 background-color:var(--color-gris-oscuro);
@@ -336,17 +365,32 @@ margin-left: 1px;
             .imagenes_relacionadas{
                 display: flex;
                 flex-wrap: wrap;
-                justify-content: left ;
+                justify-content: center ;
                  width: 100%;
          }
          .productDetail_descripcion-h6{
             margin-left: -1%;
          }
-         .imagenes_relacionadas img{
-        width: 25%;
-        margin-left: 5%;
-      
-         }
+         
+
+         .imagenes_relacionadas a{
+            width: 15%;
+        
+        }
+
+        .imagenes_relacionadas div{
+            width: 20%;
+            transition: all 1s;
+        }
+        .imagenes_relacionadas div:hover{
+            width: 20.1%;
+            box-shadow: 1px 1px 10px black;
+        }
+        
+        .imagenes_relacionadas div h4{
+            font-size: 18px;
+        }
+        
         .productDetail__main h3{
             text-align: left;
             margin: 45px ;
@@ -357,5 +401,102 @@ margin-left: 1px;
        .productDetail-li{
         font-size:22px;
         margin-left: -4%;
+       }
+}
+@media (min-width:1440px){
+
+    
+
+    .detalles {
+        width: 45%;
+        padding-bottom: 10px;
+        margin-right:8px ;
+        }
+    
+        .productDetail-descripcion{
+            font-size: 35px;
+            text-align: right 5px;
+            margin-left: 3%;
+            
+        } 
+        .seccion__productos--titulo{
+            text-align: center;
+            font-size: 30px;
+            
+            }
+
+            .seccion__productos{
+              margin-left: 15%;
+              padding-bottom: 1%;
+                }
+            
+            .precios{
+                width: 30%;
+            }
+
+          .productDetail__main  p {
+                font-size:20px;
+                text-align: center;
+                margin: 0% 2% 1% 0%;
+                padding:0% 1% ;
+                
+            
+        }
+            .productDetail-button{
+                font-size: 20px;
+                padding: -10%;
+                margin: 5%;
+                width: 80%;
+                margin-left: 8%;
+               
+                
+            } 
+            .productDetail__main__section_div_buttons{
+                margin-top: 1%;
+            }
+            .productDetail_relacionados{
+                width: 25%;
+            }
+            .productDetail-button:hover{
+                background-color:var(--color-gris-oscuro);
+                color:#a9a6a6;
+                }
+
+            .productDetail-button_a_p{
+                font-size: 16px;
+                width: 30%;
+                padding: -10px; 
+               margin-left: 7%;
+            }
+            .productDetail-button_a_p:hover{
+                background-color:var(--color-gris-oscuro);
+            color: var(--color-gris-claro);
+            }
+            .Descripción__detail{
+                font-size: 35px;
+                padding: 1%;
+            }
+            .imagenes_relacionadas{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center ;
+                 width: 100%;
+         }
+         .productDetail_descripcion-h6{
+            margin-left: 8%;
+            padding-left: 2%;
+         }
+         
+        .productDetail__main h3{
+            text-align: left;
+            margin: 45px ;
+            margin-top: 15px;
+            font-size: 20px;
+            font-style: normal;
+       }
+       .productDetail-li{
+        font-size:22px;
+        margin-left: -1%;
+        margin-top: -3%;
        }
 }

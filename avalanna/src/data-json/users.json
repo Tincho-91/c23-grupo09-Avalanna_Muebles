@@ -12,7 +12,7 @@
         "email": "melany.strack@gmail.com",
         "profileImage":"melany.png",
         "phoneNumber": 1132884470,
-        "password": "mela123",
+        "password": "mela1234",
         "rolId": 1
     },
     {
@@ -20,7 +20,7 @@
         "email": "ampueroluana@gmail.com",
         "profileImage":"luana.png",
         "phoneNumber": 1122510314,
-        "password": "lua123",
+        "password": "lua12345",
         "rolId": 2
     },
     {
@@ -28,7 +28,7 @@
         "email": "milhouse.mb@gmail.com",
         "profileImage":"flavia.png",
         "phoneNumber": 1125002595,
-        "password": "fla123",
+        "password": "fla12345",
         "rolId": 2
     },
     {
@@ -36,7 +36,7 @@
         "email": "pancho@outlook.com",
         "profileImage":"pancho.png",
         "phoneNumber": 1234567894,
-        "password": "pancho",
+        "password": "panchodoto",
         "rolId": 1
     },
     {

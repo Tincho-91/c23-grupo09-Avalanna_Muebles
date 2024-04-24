@@ -17,27 +17,21 @@
                                     <label for="country">País</label>
                                     <input type="text" name="country" id="country"
                                         value="<%= locals.addresses ? addresses.country : locals.old && old.country ? old.country : null %>">
-                                    <p class="erroresForm">
-                                        <%= locals.errores && errores.country ? errores.country.msg : null %>
-                                    </p>
+                                    <p class="erroresForm"><%= locals.errores && errores.country ? errores.country.msg : null %></p>
                                 </div>
 
                                 <div class="actualizar__main__section-form-div form_main_section-div-province">
                                     <label for="province">Provincia</label>
                                     <input type="text" name="province" id="province"
                                         value="<%= locals.addresses ? addresses.province : locals.old && old.province ? old.province : null %>">
-                                    <p class="erroresForm">
-                                        <%= locals.errores && errores.province ? errores.province.msg : null %>
-                                    </p>
+                                    <p class="erroresForm"><%= locals.errores && errores.province ? errores.province.msg : null %></p>
                                 </div>
 
                                 <div class="actualizar__main__section-form-div form_main_section-div-locality">
                                     <label for="locality">Localidad</label>
                                     <input type="text" name="locality" id="locality"
                                         value="<%= locals.addresses ? addresses.locality : locals.old && old.locality ? old.locality : null %>">
-                                    <p class="erroresForm">
-                                        <%= locals.errores && errores.locality ? errores.locality.msg : null %>
-                                    </p>
+                                    <p class="erroresForm"><%= locals.errores && errores.locality ? errores.locality.msg : null %></p>
                                 </div>
 
 
@@ -45,33 +39,27 @@
                                     <label for="streetName">Nombre de la calle</label>
                                     <input type="text" name="streetName" id="streetName"
                                         value="<%= locals.addresses ? addresses.streetName : locals.old && old.streetName ? old.streetName : null %>">
-                                    <p class="erroresForm">
-                                        <%= locals.errores && errores.streetName ? errores.streetName.msg : null %>
-                                    </p>
+                                    <p class="erroresForm"><%= locals.errores && errores.streetName ? errores.streetName.msg : null %></p>
                                 </div>
 
                                 <div class="actualizar__main__section-form-div form_main_section-div-number">
                                     <label for="number">Número</label>
                                     <input type="number" name="number" id="number"
                                         value="<%= locals.addresses ? addresses.number : locals.old && old.number ? old.number : null %>">
-                                    <p class="erroresForm">
-                                        <%= locals.errores && errores.number ? errores.number.msg : null %>
-                                    </p>
+                                    <p class="erroresForm"><%= locals.errores && errores.number ? errores.number.msg : null %></p>
                                 </div>
 
                                 <div class="actualizar__main__section-form-div form_main_section-div-postalCode">
                                     <label for="postalCode">Código postal</label>
                                     <input type="number" name="postalCode" id="postalCode"
                                         value="<%= locals.addresses ? addresses.postalCode : locals.old && old.postalCode ? old.postalCode : null %>">
-                                    <p class="erroresForm">
-                                        <%= locals.errores && errores.postalCode ? errores.postalCode.msg : null %>
-                                    </p>
+                                    <p class="erroresForm"><%= locals.errores && errores.postalCode ? errores.postalCode.msg : null %></p>
                                 </div>
 
 
 
                                 <div class="actualizar__main__section-form-div-booton">
-                                    <button class="actualizar__main__section__form-button"
+                                    <button class="actualizar__main__section__form-button form-button"
                                         type="submit">Actualizar</button>
                                 </div>
 
@@ -90,6 +78,7 @@
             <%- include("../partials/footer.ejs") %>
 
             <script src="/js/address.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     </body>
 
     </html>

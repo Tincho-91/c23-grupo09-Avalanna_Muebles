@@ -7,17 +7,15 @@ const { validationResult } = require("express-validator");
 
 
 const productsController = {
-    detail: (req, res) => {
+    detail: async (req, res) => {
         const id = req.params.id;
-       
+       const product = await db.Product.findByPk(id);
+       const calc = product.price - ((product.price * product.discount) / 100)
          db.Product.findByPk(id)
-         .then((product) => {
-            const calc = product.price - ((product.price * product.discount) / 100)
-            res.render("products/productDetail", { title: product.name, product, calc, usuario: req.session.user })
-         })
-         .catch((err) =>{
-            console.log(err);
-          });
+
+         const products = await db.Product.findAll()
+
+         res.render("products/productDetail", { title: product.name, product, calc, usuario: req.session.user, products })
       },
     
 
@@ -108,7 +106,7 @@ const productsController = {
         }
        }).catch(err=>console.log(err))
 
-       res.redirect(`/products/dashboard`);
+       res.redirect(`http://localhost:5173/Productos`);
        
     },
     products:(req,res) =>{

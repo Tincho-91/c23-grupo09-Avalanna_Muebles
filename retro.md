@@ -120,3 +120,24 @@ priorizando la organizacion pactada al inicio del sprint y respetando el tiempo 
 EMPEZAR A HACER: Implementar medidas para garantizar que los bloqueos se resuelvan en un plazo máximo de dos días, con el fin de evitar retrasos en el trabajo del equipo y fomentar una mayor productividad.
 
 DEJAR DE HACER: Mergear múltiples ramas el día antes de entregar el sprint con el fin de disponer de más tiempo para verificar que todo esté funcionando correctamente .
+
+
+## Retrospectiva, SPRINT 7
+
+![starfish retrospective](./avalanna/public/img/starfishRetrospective7.png)
+
+Séptima retrospectiva referida al sprint 7:
+
+SEGUIR HACIENDO:
+    * Seguir optimizando el tiempo de las reuniones para aumentar la eficiencia.
+    * Comunicar de manera proactiva cualquier obstáculo que surja en las tareas.
+    * Priorizar las tareas más críticas o aquellas que estén bloqueando el progreso de otras actividades.
+    * Dividir tareas con plazos por dia para que no se atrasen.
+
+HACER MÁS: La buena comunicación que supimos tener en este sprint nos permitió tener un seguimiento y control de las tareas que hacíamos cada integrante, tambien la tranquilidad de saber como vienen nuestros compañeros.
+
+HACER MENOS: Con el fin de no trabarnos en el progreso, cuando un integrante tiene un problema ya sea personal o externo al sprint, aparte de brindar ayuda que se pueda, se reasigna la tarea a otro compañero con el fin de no trabar el proyecto.
+
+EMPEZAR A HACER: Como se acerca la finalización del proyecto, es momento de ajustar los detalles finales, buscar las imperfecciones que se escapan de la vista y corregirlas y agregar detalles que puedan mejorar la experiencia del usuario.
+
+DEJAR DE HACER: El no juntarnos seguido y aprovechar al máximo el tiempo de cada encuentro para cerrar los ultimos detalles y mantener la comunicación fluida es crucial en estos últimos días de trabajo en el sprint.

@@ -18,13 +18,13 @@
         <div class="form_main_section-div-NameAndSurname">
             <label for="NameAndSurname">Nombre y Apellido*</label><br>
             <input type="text" name="NameAndSurname" id="name" value= "<%= locals.old && old.NameAndSurname ? old.NameAndSurname : null %>">
-            <p class="register__main__section__form__p"><%= locals.errores && errores.NameAndSurname ? errores.NameAndSurname.msg : null%> </p>
+            <p class="register__main__section__form__p"><%= locals.errores && errores.NameAndSurname ? errores.NameAndSurname.msg : null%></p>
         </div>
     
           <div class="form_main_section-div-email">
             <label for="email">Email*</label><br>
             <input type="email" name="email" id="email" value= "<%= locals.old && old.email ? old.email : null %>">
-            <p class="register__main__section__form__p" ><%= locals.errores && errores.email ? errores.email.msg : null%> </p>
+            <p class="register__main__section__form__p" ><%= locals.errores && errores.email ? errores.email.msg : null%></p>
           </div>
           
             
@@ -41,25 +41,25 @@
           <div class="form_main_section-div-phoneNumber">
             <label for=" phoneNumber">Teléfono*</label><br>
             <input type=" tel" name="phoneNumber" id="phoneNumber" value= "<%= locals.old && old.phoneNumber ? old.phoneNumber : null %>">
-            <p class="register__main__section__form__p"><%= locals.errores && errores.phoneNumber ? errores.phoneNumber.msg : null%> </p>
+            <p class="register__main__section__form__p"><%= locals.errores && errores.phoneNumber ? errores.phoneNumber.msg : null%></p>
           </div>
   
           <div class="form_main_section-div-password1">
             <label for="contraseña">Contraseña*</label><br>
             <input type="password" name="password1" id="contraseña">
-            <p class="register__main__section__form__p"><%= locals.errores && errores.password1 ? errores.password1.msg : null%> </p>
+            <p class="register__main__section__form__p"><%= locals.errores && errores.password1 ? errores.password1.msg : null%></p>
           </div>
   
           <div class="form_main_section-div-password2">
             <label for="confirm">Confirmar contraseña*</label><br>
             <input type="password" name="password2" id="confirm" >
-            <p class="register__main__section__form__p"><%= locals.errores && errores.password1 ? errores.password1.msg : null%> </p>
+            <p class="register__main__section__form__p"><%= locals.errores && errores.password1 ? errores.password1.msg : null%></p>
           </div>
           <span>
             <p class="register__main__section__form--p-campos">*Campos obligatorios</p>
           </span>
           
-            <button type="submit">Crear cuenta</button>
+            <button class="form-button" type="submit">Crear cuenta</button>
           
     </form>
     <p class="register__main__section__form--p--cuenta">¿Ya tenés una cuenta? <a href="/users/ingresar" class="register__main__section__form__div__p__a">Iniciá sesión</a></p>
@@ -68,5 +68,6 @@
    </main>
    <%- include("../partials/footer.ejs") %>
    <script src="/js/registerUser.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>
